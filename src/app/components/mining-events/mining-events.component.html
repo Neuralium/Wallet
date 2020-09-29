@@ -7,7 +7,7 @@
   <mat-card-content>
     <div class="line-element" *ngFor="let miningEvent of miningEventsList  | slice:sliceStart:sliceEnd">
       <span class="">
-        <span class="timestamp">{{miningEvent.timestamp | date:'yyyy-MM-dd HH:mm:ss'}}</span>&nbsp;:&nbsp;<span class="message">{{miningEvent.eventName}}</span>
+        <span class="timestamp">{{miningEvent.timestamp | FormatTimestamp:'YYYY-MM-DD HH:mm:ss'}}</span>&nbsp;:&nbsp;<span class="message">{{miningEvent.eventName}}</span>
       </span>
     </div>
   </mat-card-content>

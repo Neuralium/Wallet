@@ -1,18 +1,18 @@
 import { Pipe, PipeTransform } from '@angular/core';
 import { DatePipe } from '@angular/common';
+import { DateTime } from 'luxon';
 
 @Pipe({
   name: 'formatTimelineDate'
 })
 export class FormatTimelineDatePipe extends DatePipe implements PipeTransform {
 
-  transform(value: Date, args?: any): any {
-    if(!value){
-      return null;
+  transform(value:  DateTime, args?: any): any {
+    if(value){
+      return value.toFormat('MMM dd, yyyy');
     }
-    else{
-      return super.transform(value, "MMM dd, yyyy");
-    }
+    
+    return null;
     
   }
 

@@ -11,6 +11,7 @@ import { Router } from '@angular/router';
 import { CONNECTED } from '../..//model/serverConnectionEvent';
 import { takeUntil } from 'rxjs/operators';
 import { Subject } from 'rxjs';
+import {remote} from 'electron';
 
 @Component({
   selector: 'main-menu',
@@ -92,8 +93,8 @@ export class MainMenuComponent implements OnInit, OnDestroy {
         else {
           this.configService.softwareLicenseAgreementShown = false;
           this.configService.saveSettings();
-          const remote = require('electron').remote
-          let w = remote.getCurrentWindow()
+
+          let w = remote.getCurrentWindow();
           w.close();
         }
       }));

@@ -1,0 +1,123 @@
+<h1 mat-dialog-title>{{ 'sms.Title' | translate }}</h1>
+
+<!-- <div *ngIf="error === true"> <--- Property 'error' does not exist on type 'SMSDialogComponent'
+
+  <div class="errorMessage">
+    {{ errorMessage }}
+  </div>
+  <hr />
+  <div class="errorException">
+    {{ errorException }}
+  </div>
+  <hr />
+  <button mat-button color="warn" [disabled]="isWalletCreationRunning" (click)="cancel()"><i class="fas fa-ban"></i>
+    {{ 'app.Cancel' | translate }}</button>
+</div> -->
+
+<div mat-dialog-content class="column">
+  <mat-divider></mat-divider>
+
+  <mat-horizontal-stepper linear=true #stepper>
+    <mat-step>
+      <ng-template matStepLabel></ng-template>
+      <mat-card>
+        <p>
+          {{ 'sms.IntroductionText' | translate }}
+        </p>
+      </mat-card>
+      <div class="row">
+        <button mat-button color="warn" (click)="cancel()"><i class="fas fa-ban"></i> {{ 'app.Cancel' | translate }}</button>
+        <button mat-button matStepperNext color="primary">{{ 'sms.Continue' | translate }}</button>
+      </div>
+    </mat-step>
+    <mat-step [stepControl]="initialFormGroup">
+      <ng-template matStepLabel></ng-template>
+      <mat-card>
+        <form [formGroup]="initialFormGroup">
+          <mat-form-field>
+            <mat-label>{{ 'sms.ConfirmationCode' | translate }}</mat-label>
+            <input matInput formControlName="confirmationCodeControl" placeholder="">
+            <mat-hint>{{ 'sms.ConfirmationCodeHint' | translate }}</mat-hint>
+            <mat-error *ngIf="confirmationCodeControl.invalid">{{getConfirmationCodeErrorMessage()}}</mat-error>
+          </mat-form-field>
+          <mat-form-field>
+            <mat-label>{{ 'sms.PhoneNumber' | translate }}</mat-label>
+            <input matInput formControlName="phoneNumberControl" placeholder="+1-888-123-4567" required>
+            <mat-hint>{{ 'sms.PhoneNumberHint' | translate }}</mat-hint>
+            <mat-error *ngIf="phoneNumberControl.invalid">{{getPhoneNumberErrorMessage()}}</mat-error>
+          </mat-form-field>
+        </form>
+      </mat-card>
+      <div *ngIf="isChineseNumber && !isValidChineseConfiguration">
+        <mat-card>
+          {{ 'sms.InvalidChineseConfiguration' | translate }}
+        </mat-card>
+      </div>
+      <div class="row">
+        <button mat-button matStepperPrevious color="primary">{{ 'sms.Previous' | translate }}</button>
+        <button mat-button color="warn" (click)="cancel()"><i class="fas fa-ban"></i> {{ 'app.Cancel' | translate }}</button>
+        <button mat-button matStepperNext [disabled]="initialFormGroup.invalid" color="primary" >{{ 'sms.Continue' | translate }}</button>
+      </div>
+    </mat-step>
+    <mat-step>
+      <ng-template matStepLabel></ng-template>
+      <mat-card>
+        <div *ngIf="selectedConfirmationCode !== 0">
+          <p>
+            {{ 'sms.EnsureConfirmationCode' | translate }}: <span class="phoneConfirm">{{selectedConfirmationCode}}</span>
+          </p>
+        </div>
+        <div *ngIf="selectedConfirmationCode === 0">
+          <p>
+            {{ 'sms.NoConfirmationCode' | translate }}
+          </p>
+        </div>
+       <p>
+         {{ 'sms.EnsurePhoneNumber' | translate }}: <span class="phoneConfirm">{{selectedPhoneNumber}}</span>
+       </p>
+      </mat-card>
+      <div class="row">
+        <button mat-button color="warn" [disabled]="isValidationRunning" (click)="cancel()"><i
+            class="fas fa-ban"></i> {{ 'app.Cancel' | translate }}</button>
+        <button mat-button matStepperNext color="primary" (click)="beginVerification()">{{ 'sms.Continue' | translate }}</button>
+      </div>
+    </mat-step>
+    <mat-step [stepControl]="responseFormGroup">
+      <ng-template matStepLabel></ng-template>
+      <mat-card>
+        <form [formGroup]="responseFormGroup">
+          <mat-form-field>
+            <mat-label>{{ 'sms.SmsCode' | translate }}</mat-label>
+            <input matInput formControlName="smsCodeControl" placeholder="1234567" required>
+            <mat-hint>{{ 'sms.SmsCodeHint' | translate }}</mat-hint>
+            <mat-error *ngIf="smsCodeControl.invalid">{{getSmsCodeErrorMessage()}}</mat-error>
+          </mat-form-field>
+        </form>
+      </mat-card>
+      <div class="row">
+        <!-- <button mat-button color="warn" [disabled]="isWalletCreationRunning" (click)="cancel()"><i <---Property 'isWalletCreationRunning' does not exist on type 'SMSDialogComponent'
+            class="fas fa-ban"></i> {{ 'app.Cancel' | translate }}</button> -->
+        <button mat-button matStepperNext color="primary" [disabled]="responseFormGroup.invalid">{{ 'sms.Continue' | translate }}</button>
+      </div>
+    </mat-step>
+    <mat-step>
+      <ng-template matStepLabel></ng-template>
+      <mat-card>
+        <p *ngIf="success === true">
+          {{ 'sms.ResultsSuccess' | translate }}
+        </p>
+        <p *ngIf="success === false">
+          {{ 'sms.ResultsFailure' | translate }}
+        </p>
+      </mat-card>
+      <div class="row">
+        <button mat-button color="warn" (click)="cancel()"><i
+            class="fas fa-ban"></i> {{ 'app.Close' | translate }}</button>
+      </div>
+    </mat-step>
+
+
+  </mat-horizontal-stepper>
+
+
+</div>

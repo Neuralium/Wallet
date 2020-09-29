@@ -30,7 +30,7 @@
     <div class="console-container">
       <div class="line-element" *ngFor="let message of serverMessages  | slice:sliceStart:sliceEnd">
         <span class="line-sub-element console-elements">
-          [<span class="console-timestamp">{{message.timestamp | date:'yyyy-MM-dd HH:mm:ss'}}</span> - <span
+          [<span class="console-timestamp">{{message.timestamp | FormatTimestamp:'YYYY-MM-DD HH:mm:ss'}}</span> - <span
             class="console-level">{{message.level}}</span>]&nbsp;:&nbsp;<span
             class="console-message">{{message.message}}</span>&nbsp;&#123;
           <span class="console-thread">{{message.GetThread().key}}</span>=<span

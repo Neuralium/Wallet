@@ -14,6 +14,8 @@
 		"friendlyNameForYourAccount": "a friendly name for your account",
 		"Hash": "Hash",
 		"Joint": "Joint",
+		"User" : "User",
+		"Server" : "Server",
 		"Locked": "Locked",
 		"New": "New",
 		"NoAccount": "No account",
@@ -26,9 +28,119 @@
 		"Status": "Status",
 		"TrustLevel": "Trust Level",
 		"Type": "Type",
-		"AccountCorrelated" : "Account Correlated"
+		"StandardType" : "Standard Account Type",
+		"AccountCorrelated" : "Account Correlated",
+		"NotCorrelated" : "Not Correlated",
+		"PhoneVerified" : "Phone Verified",
+		"EmailVerified" : "Email Verified",
+		"GateVerified" : "Gate Verified",
+		"KYCVerified" : "Identity Verified"
+	},
+	"verifyAccount": {
+		"Title" : "Account Verification",
+		"Begin" : "Begin",
+		"Continue" : "Continue",
+		"Introduction" : "Introduction",
+		"IntroductionText" : "In order to prevent abuse, the account creation process must go through some form of verification. Depending on where you are, different options are available.",
+		"EnterData" : "Enter Information",
+		"EnterConfirmationCode" : "Confirmation Code",
+		"TimeRemaining" : "Time Remaining",
+		"VerificationResults" : "Verification Results",
+		"ResultsSuccess" : "The verification was a success! your account Id is now verified by phone.",
+		"ResultsFailure" : "The verification was a failure. You can try again in 24 hours.",
+		"BypassVerification" : "TESTNET",
+		"SMS" : "SMS",
+		"Appointments" : "Appointment",
+		"POW" : "Proof of Work",
+		"VerificationModeSelection" : "Verification mode selection",
+		"DefaultHelpText" : "Here you must select a verification method among the available choices. Each method has it's advantages and inconvenients. Please pick the one that is right for you.",
+		"TESTNETHelpText" : "In TESTNET, the verification can be bypassed to create an account immediately.",
+		"AppointmentsHelpText" : "You will begin the Neuralium appointment verification process. This process may last many days and you will have to be present for your appointment when the date and time is confirmed. Advantages: anonymous.",
+		"POWHelpText" : "You will have to execute a time expensive CPU proof of work. Once it is completed, your account will be able to mine in the 1st and 2nd tiers as a Server."
+	},
+	"appointments" : {
+		"Title" : "Appointment Verification",
+		"IntroductionText" : "The appointment workflow is designed to verify and allow in honest users while keeping the vast majority of flooders out of the system.",
+		"Begin" : "Begin",
+		"Continue" : "Continue",
+		"RequestAppointmentText" : "In order to begin the process, please make an appointment request. An appointment request will be made and a confirmation should be received at a future time. This process can take minutes to many hours.",
+		"PreferredRegion" : "Please select your preferred world region",
+		"Orient" : "Orient",
+		"Occident" : "Occident",
+		"OccidentHelp" : "The western part of the world, this region covers most notably the Americas",
+		"OrientHelp" : "The eastern part of the world, this region coveres most notably Europe, Africa and Asia",
+		"RequestAppointmentButton" : "Make Appointment Request",
+		"RequestCompleted" : "Appointment request successfully sent",
+		"RequestConfirmed" : "Appointment request has been confirmed",
+		"VerificationRequestSent" : "Appointment verification request successfully sent.",
+		"VerificationRequestCompleted" : "Your appointment verification request has been confirmed.",
+		"VerificationRequestRejected" : "Your appointment verification request has been rejected.",
+		"AppointmentContextCached" : "Appointment context has been received.",
+		"TimeBeforeAppointment" : "Time remaining before appointment",
+		"RequestFailed" : "Appointment request failed",
+		"AppointmentRequestedText" : "You appointment has been requested. A confirmation will be received within a few minutes to a few hours.",
+		"AppointmentRequestedTimestamp" : "Request timestamp",
+		"AppointmentConfirmedText" : "Your appointment request has been confirmed and the appointment date and time is now set. Make sure to attend in time!",
+		"AppointmentTimestampUtc" : "Appointment Time (UTC)",
+		"AppointmentTimestampLocal" : "Appointment Time (Local Time)",
+		"AppointmentWindow" : "Appointment Window",
+		"Minutes" : "Minute(s)",
+		"Seconds" : "Second(s)",
+		"AppointmentContextReceived" : "Appointment Context Received",
+		"AppointmentVerificationRequestedText" : "Appointment verification request has been dispatched. A confirmation will be received within a few minutes to a few hours.",
+		"AppointmentVerificationCompletedText" : "Appointment verification request has been confirmed. You may now proceed and publish your account to the blockchain.",
+		"AppointmentVerificationRejectedText" : "Appointment verification request has been rejected. Please try again with a new appointment request.",
+		"InvalidPuzzleEngineVersion" : "Invalid puzzle engine version. Please update your software version."
+	},
+	"puzzles" : {
+		"Title" : "Puzzle",
+		"TimeBeforeAppointment" : "Your puzzle session will soon begin, please remain on stand-by. Estimated time remaining before the begining of your appointment",
+		"WaitingForPuzzle" : "the puzzle session should start any time now. Currently awaiting for the puzzle instructions...",
+		"TimeRemaining" : "Time remaining to complete the puzzle(s)",
+		"Next" : "Complete Puzzle",
+		"Complete" : "Complete Session",
+		"CompletedAndSend" : "Your puzzle(s) have been succesfully completed. Please wait while the results are being processed. This may take anywhere from a few minutes to a few hours.",
+		"PreparingPackage" : "Please wait while the appointment process completes, the results are packaged and dispatched for verification.",
+		"Puzzle" : "Puzzle",
+		"Of" : "of"
+	},
+	"pow" : {
+		"Title" : "Proof of Work nonce search",
+		"Introduction" : "Preparing to search for a secret nonce value",
+		"ProofOfWorkNonceSearch": "Current nonce value",
+		"Nonce" : "Nonce",
+		"Solution" : "Solution",
+		"SolutionFound" : "POW Solution has been found."
+	},
+	"sms" : {
+		"Title" : "SMS Verification",
+		"ConfirmationCodeHint" : "A confirmation code you may have obtained from an appointment process.",
+		"PhoneNumberHint" : "A phone number where you can receive an SMS message.",
+		"SmsCodeHint" : "The confirmation code that you have received by SMS message.",
+		"Begin" : "Begin",
+		"Continue" : "Continue",
+		"Previous" : "Previous",
+		"IntroductionText" : "Here we will verify your account by using a valid phone number.",
+		"InvalidChineseConfiguration" : "In China, because of the complexity of sending SMS, a valid Confirmation Code must be obtained first.",
+		"SMS" : "SMS",
+		"InvalidPhoneFormat" : "Invalid phone number format",
+		"InvalidConfirmationCodeFormat" : "Invalid confirmation code format",
+		"InvalidSMSCode" : "Invalid SMS code format",
+		"EnterConfirmationCode" : "Confirmation Code",
+		"PhoneNumber" : "Phone Number to Verify",
+		"ConfirmationCode" : "Confirmation Code",
+		"SmsCode" : "SMS Confirmation Code",
+		"VerificationResults" : "Verification Results",
+		"ResultsSuccess" : "The verification was a success! your account Id is now verified by phone.",
+		"ResultsFailure" : "The verification was a failure. You can try again in 24 hours.",
+		"EnsurePhoneNumber" : "Continue verification for phone number",
+		"EnsureConfirmationCode" : "Selected confirmation code",
+		"NoConfirmationCode" : "No confirmation code set"
 	},
 	"accountPublication": {
+		"PublicationMethodAppointment" : "Appointment publication method",
+		"PublicationMethodSMS" : "SMS publication method",
+		"PublicationMethodServer" : "Server publication method",
 		"AccountPublication": "Account publication",
 		"AccountPublicationEnded": "Account publication is complete.",
 		"AccountPublicationProcessExplanation": "Before any operations can be performed on the blockchain, your account must be presented publicly to others. Your account will be confirmed, and will be ready to operate once it is confirmed in a block.",
@@ -38,12 +150,11 @@
 		"CloseAccountPublication": "Close",
 		"NeedBlockchainSynced": "Blockchain needs to be synchronized in order to publish account.",
 		"NeedPeerToPublish": "Not enough peer connected in order to start publishing account.",
-		"ProofOfWorkNonceSearch": "Proof of Work nonce search",
+	
 		"PublishAccount": "Publish account",
 		"StartAccountPublication": "Publish account",
 		"WaitingForConfirmation": "Waiting for confirmation in a subsequent block.",
-		"SolutionNonce" : "Solution nonce",
-		"SolutionsHashes" : "Solution hashes"
+		"CannotPublishAccount" : "Impossible to publish account"
 	},
 	"app": {
 		"About": "About...",
@@ -77,7 +188,8 @@
 		"TestMode": "TestNet Tools",
 		"Version": "System version",
 		"Yes": "Yes",
-		"ServerRunningStop" : "The Neuralium node server is currently still running. Do you wish to stop it?"
+		"ServerRunningStop" : "The Neuralium node server is currently still running. Do you wish to stop it?",
+		"AppointmentTestWarning" : "Please take notice that this TESTNET is intended to specifically test the new appointments system. The appointment system is designed to stop fraud and spammers by squeezing new account creations into a narrow window of time. The first step is to make an appointment request for the next available appointment and to be present at the allocated date and time to execute a few short and simple puzzles. the appointment process can take many hours or days to complete, so long waits are normal. Once the entire process is complete, your validation will be completed and you will be able to publish your account. For more information, please view the TESTNET readme at "
 	},
 	"blockchain": {
 		"BlockId": "Block id",
@@ -143,6 +255,7 @@
 		"MiningControls" : "Mining Controls",
 		"Start" : "Press to Start Mining",
 		"Stop" : "Press to Stop Mining",
+		"Events" : "Mining Events",
 		"CurrentlyMining" : "Currently Mining",
 		"NotCurrentlyMining" : "Not Currently Mining",
 		"InformationPanel" : "Mining Information Panel",
@@ -169,6 +282,7 @@
 		"SecondTier" : "Mining in the 2nd tier",
 		"ThirdTier" : "Mining in the 3rd tier",
 		"FourthTier" : "Mining in the 4th tier",
+		"NotMining" : "Not mining",
 		"BlocksElected" : "Blocks Elected",
 		"BlocksProcessed" : "Blocks Processed",
 		"LastBlockElected" : "Last Elected Block Id",
@@ -192,7 +306,14 @@
 		"TotalBounties" : "Total Bounties",
 		"TotalTips" : "Total Tips",
 		"Protocol" : "Mining Protocol",
-		"PortNotConnectableCantMine" : "In order to mine in the 1st or 2nd tiers, your p2p port must be connectable. Cannot enable mining as is. If you cannot open the port, then configure mining to operate in the 3rd tier."
+		"MiningTier" : "Desired Mining Tier",
+		"1stTier" : "1st",
+		"2ndTier" : "2nd",
+		"3rdTier" : "3rd",
+		"4thTier" : "4th",
+		"AutoTier" : "Auto",
+		"PortNotConnectableCantMine" : "In order to mine in the 1st or 2nd tiers, your p2p port must be connectable. Cannot enable mining as is. If you cannot open the port, then configure mining to operate in the 3rd tier.",
+		"VerifyAccount" : "Verify your Account"
 	},
 	"neuralium": {
 		"Credit": "Credit",
@@ -257,13 +378,20 @@
 		"Title": "Tools",
 		"Explain": "Useful tools to help improve your Neuralium experience.",
 		"BlockExplorer" : "Block Explorer",
-		"ApiExplorer" : "API Explorer"
+		"ApiExplorer" : "API Explorer",
+		"PortMapping" : "Port Mapping",
+		"Utilities" : "Utilities"
 	},
 	"blockexplorer" : {
 		"Search" : "search"
 	},
 	"apiexplorer" : {
 		"Run" : "Run"
+	},
+	"utilities" : {
+		"TestP2pPort" : "Test peer to peer Port",
+		"PortSuccess" : "The port connection test was successful.",
+		"portFailure" : "The port connection test failed"
 	},
 	"sync": {
 		"BlockchainStatus": "Blockchain Status",
@@ -279,25 +407,36 @@
 		"ParagrahThree": "",
 		"ParagrahTwo": "In TESTNET mode, any neuralium tokens gained are for testing purposes only and may not be used in the production 'MainNet' network. Tokens gained in TESTNET mode may also be lost or reset at any time without prior notice.",
 		"Warning": "The node and the wallet are currently in TestNet Mode on a separate network.",
-		"Period": "This TESTNET build is valid until May 10th 2020."
+		"Period": "This TESTNET build is valid until October 9th 2020."
 	},
 	"wallet": {
+		"User" : "User",
+		"Server" : "Server",
+		"WalletType" : "Wallet Type",
 		"AccountCreation": "Account creation",
 		"BackupKeyPassphrase": "Super Key Phassphrase",
 		"ChangeKeyPassphrase": "Change Key Phassphrase",
-		"CommunicationKeyPassphrase": "Communication Key Phassphrase",
+
+		"ValidatorVerificationKeyPassphrase": "Validator Validation Key Phassphrase",
+		"ValidatorSecretKeyPassphrase": "Validator Secret Key Phassphrase",
+
+		"MessageKeyPassphrase": "Message Key Phassphrase",
 		"Create": "Create",
 		"CreateWallet": "Create a wallet",
-		"EncryptKeys": "encrypt keys",
-		"EncryptWallet": "encrypt wallet",
+		"EncryptKeys": "Encrypt keys",
+		"EncryptWallet": "Encrypt wallet",
 		"KeyCreation": "Generating keyset",
 		"KeyCreationProgress": "Key generation progress",
 		"LoadingWallet": "Loading Wallet",
 		"OnePassphraseForEachKey": "Unique passphrase per key",
 		"PassphraseForEncryptionOfAllKeys": "a Phassphrase for encryption of all keys",
+
+		"PassphraseForEncryptionOfValidatorSecretKey": "a Phassphrase for encryption of Super Key",
+		"PassphraseForEncryptionOfValidatorVerificationKey": "a Phassphrase for encryption of Super Key",
+		
 		"PassphraseForEncryptionOfBackupKey": "a Phassphrase for encryption of Super Key",
 		"PassphraseForEncryptionOfChangeKey": "a Phassphrase for encryption of Change Key",
-		"PassphraseForEncryptionOfCommunicationKey": "a Phassphrase for encryption of Communication Key",
+		"PassphraseForEncryptionOfMessageKey": "a Phassphrase for encryption of Message Key",
 		"PassphraseForEncryptionOfTransactionKey": "a Phassphrase for encryption of Transaction Key",
 		"PassphraseForKeys": "Phassphrase for keys",
 		"PassphraseForWalletEncryption": "enter a Phassphrase",
@@ -312,6 +451,10 @@
 		"WalletLoaded" : "Wallet has been successfully loaded.",
 		"WalletLoadFailed" : "Failed to load wallet.",
 		"PhassphraseTooShort" : "Passphrase is too short.",
-		"PhassphraseDifferent" : "Passphrases are different."
+		"PhassphraseDifferent" : "Passphrases are different.",
+		"Close" : "Close",
+		"Congratulations" : "Congratulations!",
+		"Completed" : "Your wallet has been succesfully created. Now as next step, we strongly recommend that you do a safety backup of your entire wallet folder. We also strongly recommend that you physically remove the super key from your account folder and store it safely on a drive outside of your computer.",
+		"WalletPath" : "You can locate your new wallet in the following path"
 	}
 }

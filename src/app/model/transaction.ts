@@ -1,7 +1,10 @@
+import { DateTime } from 'luxon';
+
+
 export class Transaction {
     id: string;
     source: string;
-    date: Date;
+    date:  DateTime;
     version: TransactionVersion;
     object:string;
     details: any;
@@ -10,7 +13,7 @@ export class Transaction {
     note:string;
     recipient : string;
 
-    constructor(id: string, source: string, date: Date, version: TransactionVersion, details: object, status: TransactionStatuses, local:boolean, note:string = "", recipient:string = ""){
+    constructor(id: string, source: string, date:  DateTime, version: TransactionVersion, details: object, status: TransactionStatuses, local:boolean, note:string = "", recipient:string = ""){
         this.id = id;
         this.source = source;
         this.date = date;
@@ -33,7 +36,7 @@ export class NeuraliumTransaction extends Transaction{
     amount:number;
     tip:number;
 
-    constructor(id: string, source: string, date: Date, version: TransactionVersion, details: object, status: TransactionStatuses, local:boolean, note:string = "", recipient:string = "", amount:number, tip:number){
+    constructor(id: string, source: string, date:  DateTime, version: TransactionVersion, details: object, status: TransactionStatuses, local:boolean, note:string = "", recipient:string = "", amount:number, tip:number){
         super(id,source,date,version,details,status,local,note, recipient);
         this.amount = amount;
         this.tip = tip;

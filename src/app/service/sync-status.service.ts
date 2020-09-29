@@ -7,6 +7,7 @@ import { CONNECTED, EventTypes } from '../model/serverConnectionEvent';
 import { LogService } from './log.service';
 import { takeUntil } from 'rxjs/operators';
 import { Subject } from 'rxjs';
+import { PeerConnectionDetails } from '../model/peer-connection-details';
 
 
 @Injectable({
@@ -21,8 +22,10 @@ export class SyncStatusService implements OnDestroy {
   currentWalletSyncUpdate: BehaviorSubject<SyncUpdate> = new BehaviorSubject<SyncUpdate>(NO_SYNC_UPDATE);
 
   syncList: Array<SyncProcess> = [];
+  peerConnectionDetails: Array<PeerConnectionDetails> = [];
   syncListObservable: BehaviorSubject<Array<SyncProcess>> = new BehaviorSubject<Array<SyncProcess>>(this.syncList);
   peerCountObservable: BehaviorSubject<number> = new BehaviorSubject<number>(0);
+  peerConnectionDetailsObservable: BehaviorSubject<Array<PeerConnectionDetails>> = new BehaviorSubject<Array<PeerConnectionDetails>>(this.peerConnectionDetails);
 
 
   walletSyncProcess: SyncProcess = null;
@@ -210,6 +213,11 @@ export class SyncStatusService implements OnDestroy {
     this.serverConnectionService.callQueryTotalConnectedPeersCount().then(total => {
       this.peerCountObservable.next(total);
     });
+
+    this.serverConnectionService.callQueryPeerConnectionDetails().then(details => {
+      this.peerConnectionDetails = details;
+      this.peerConnectionDetailsObservable.next(this.peerConnectionDetails);
+    });
   }
 
   refreshPeerCount() {
@@ -218,6 +226,10 @@ export class SyncStatusService implements OnDestroy {
 
   getPeerCount(): Observable<number> {
     return this.peerCountObservable;
+  }
+
+  getPeerConnectionDetails(): Observable<Array<PeerConnectionDetails>> {
+    return this.peerConnectionDetailsObservable;
   }
 
   private notifySyncing() {

@@ -2,7 +2,7 @@ import { CommonCall } from './commonCall';
 import { LogService } from '../..//service/log.service';
 import { ServerConnectionService } from '../..//service/server-connection.service';
 import { TransactionStatuses, TransactionVersion, Transaction, NeuraliumTransaction, NO_TRANSACTION } from '../..//model/transaction';
-import moment, * as momentObj from 'moment';
+import { DateTime } from 'luxon';
 
 export class TransactionsCall extends CommonCall {
 
@@ -18,11 +18,11 @@ export class TransactionsCall extends CommonCall {
         return new TransactionsCall(serviceConnectionService, logService);
     }
 
-    callQueryWalletTransactionHistory(chainType: number, accountUuid: string): Promise<Array<Transaction>> {
+    callQueryWalletTransactionHistory(chainType: number, accountCode: string): Promise<Array<Transaction>> {
         return new Promise<Array<Transaction>>((resolve, reject) => {
 
-            this.logEvent('queryWalletTransactionHistory - call', { 'chainType': chainType, 'accountUuid': accountUuid });
-            this.serviceConnectionService.invoke<Array<object>>('QueryWalletTransactionHistory', chainType, accountUuid)
+            this.logEvent('queryWalletTransactionHistory - call', { 'chainType': chainType, 'accountCode': accountCode });
+            this.serviceConnectionService.invoke<Array<object>>('QueryWalletTransactionHistory', chainType, accountCode)
               .then(
                 response => {
 
@@ -33,7 +33,7 @@ export class TransactionsCall extends CommonCall {
                       const id = transaction['transactionId'];
                       const source = transaction['sender'];
 
-                      const date =  moment.utc(transaction['timestamp']).toDate();
+                      const date =  DateTime.fromISO(transaction['timestamp']).toUTC();
                       const status = <TransactionStatuses>transaction['status'];
                       const version = <TransactionVersion>transaction['version'];
                       const amount = <number>Number(transaction['amount']);
@@ -55,19 +55,19 @@ export class TransactionsCall extends CommonCall {
           });
       }
 
-      callQueryTransationHistoryDetails(chainType: number, accountUuid: string, transactionId: string): Promise<Transaction> {
+      callQueryTransationHistoryDetails(chainType: number, accountCode: string, transactionId: string): Promise<Transaction> {
         return new Promise<Transaction>((resolve, reject) => {
 
-            this.logEvent('QueryTransationHistoryDetails - call', { 'chainType': chainType, 'accountUuid': accountUuid, 'transactionId' : transactionId });
-            this.serviceConnectionService.invoke<object>('QueryWalletTransationHistoryDetails', chainType, accountUuid, transactionId)
+            this.logEvent('QueryTransationHistoryDetails - call', { 'chainType': chainType, 'accountCode': accountCode, 'transactionId' : transactionId });
+            this.serviceConnectionService.invoke<object>('QueryWalletTransactionHistoryDetails', chainType, accountCode, transactionId)
               .then(
                 response => {
-                  this.logEvent('queryWalletTransationHistoryDetails - transaction', response);
+                  this.logEvent('QueryWalletTransactionHistoryDetails - transaction', response);
                   let transaction: Transaction; // <Transaction>response;
                     try {
                       const id = response['transactionId'];
                       const source = response['sender'];
-                      const date =  moment.utc(response['timestamp']).toDate();
+                      const date =  DateTime.fromISO(response['timestamp']).toUTC();
                       const details = JSON.parse(response['contents']); // {details:"détails to show"};
                       const status = <TransactionStatuses>response['status'];
                       const version = <TransactionVersion>response['version'];

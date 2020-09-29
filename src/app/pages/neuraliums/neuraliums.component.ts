@@ -18,7 +18,7 @@ import { ConfirmDialogComponent } from '../..//dialogs/confirm-dialog/confirm-di
 import { MatDialog } from '@angular/material/dialog';
 import { takeUntil } from 'rxjs/operators';
 import { Subject } from 'rxjs';
-
+import { DateTime, Duration } from 'luxon';
 
 @Component({
   selector: 'app-neuraliums',
@@ -59,7 +59,7 @@ export class NeuraliumsComponent implements OnInit, OnDestroy {
   }
 
 
-  get currentRemainingTime(): Date {
+  get currentRemainingTime(): Duration {
     return this.blockchainService.currentRemainingTime;
   }
 

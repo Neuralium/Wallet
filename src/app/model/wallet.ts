@@ -1,12 +1,15 @@
-import { WalletAccount } from "./walletAccount";
+import { WalletAccount, WalletAccountType } from "./walletAccount";
 import { WalletInfo } from "./blockchain";
 
 export enum EncryptionKey{
     Wallet = 0,
-    TransactionKey = '1',
-    MessageKey = '2',
-    ChangeKey = '3',
-    SuperKey = '4'
+    TransactionKey = 1,
+    MessageKey = 2,
+    ChangeKey = 3,
+    SuperKey = 4,
+
+    ValidatorVerificationKey = 5,
+    ValidatorSecretKey = 6
 }
 
 export class WalletCreation {
@@ -16,6 +19,7 @@ export class WalletCreation {
     encryptKeysIndividualy:boolean;
     passPhrases:Map<string, string>;
     publishAccount:boolean;
+    accountType:WalletAccountType;
 
     private constructor(){
         this.friendlyName = "Default";
@@ -24,6 +28,7 @@ export class WalletCreation {
         this.encryptKeysIndividualy = false;
         this.passPhrases = new Map<string, string>();
         this.publishAccount = false;
+        this.accountType = WalletAccountType.User;
     }
 
     static createNew(): WalletCreation {

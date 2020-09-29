@@ -7,6 +7,9 @@ import { BlockchainService } from './service/blockchain.service';
 import { SelectBlockchainDialogComponent } from './dialogs/select-blockchain-dialog/select-blockchain-dialog.component';
 import { NotificationService } from './service/notification.service';
 import { ServerService } from './service/server.service';
+import { AppointmentsService } from './service/appointment.service';
+import { AppointmentPuzzleDialogComponent } from './dialogs/appointment-puzzle-dialog/appointment-puzzle-dialog.component';
+import { POWDialogComponent } from './dialogs/POW-dialog/POW-dialog.component';
 
 import { TranslateService } from '@ngx-translate/core';
 import { Router } from '@angular/router';
@@ -42,6 +45,9 @@ export class AppComponent implements OnInit, OnDestroy {
   serverPort: number = 0;
   selectedBlockchain: Observable<BlockChain>;
   currentBlockchain: BlockChain = NO_BLOCKCHAIN;
+  puzzleWindowOpen:boolean = false;
+  powWindowOpen:boolean = false;
+  eventsRegistered: boolean = false;
 
   constructor(
     private electronService: ElectronService,
@@ -53,6 +59,7 @@ export class AppComponent implements OnInit, OnDestroy {
     private serverConnectionService: ServerConnectionService,
     private serverService: ServerService,
     private dialog: MatDialog,
+    private appointmentsService: AppointmentsService,
     private transactionService: TransactionsService,
     private miningService: MiningService) {
     this.translateService.setDefaultLang('en');
@@ -71,6 +78,27 @@ export class AppComponent implements OnInit, OnDestroy {
         })
       });
     });
+
+    this.translateService.get('app.AppointmentTestWarning').subscribe(text => {
+      const dialogRef = this.dialog.open(ConfirmDialogComponent, {
+        width: '500px',
+        data: text + ': https://www.neuralium.com/testnet-readme'
+      });
+    });
+  }
+
+  showPOW(nonce:number){
+    if(!this.powWindowOpen){
+      this.powWindowOpen = true;
+      const dialogRef = this.dialog.open(POWDialogComponent, {
+        width: '600px',
+        data: nonce
+      });
+
+      dialogRef.afterClosed().subscribe(() => {
+        this.powWindowOpen = false;
+      });
+    }
   }
 
   ngOnInit() {
@@ -84,6 +112,41 @@ export class AppComponent implements OnInit, OnDestroy {
     //   });
     // });
 
+
+    this.appointmentsService.onPuzzleWindowOpen.add(() => {
+
+      if(!this.puzzleWindowOpen){
+        this.puzzleWindowOpen = true;
+        const dialogRef = this.dialog.open(AppointmentPuzzleDialogComponent, {
+          width: '600px',
+          height: '600px'
+        });
+
+        dialogRef.afterClosed().subscribe(result => {
+          this.puzzleWindowOpen = false;
+        });
+      }
+    });
+
+    if (!this.eventsRegistered) {
+      this.serverConnectionService.eventNotifier.subscribe(event => {
+
+          switch (event.eventType) {
+              case EventTypes.POWBegin:
+                this.showPOW(0);
+                break;
+              case EventTypes.POWIteration:
+                this.showPOW(event.message.nonce);
+                break;
+              case EventTypes.POWSolution:
+                // do nothing, its finished anyways
+                  break;
+              default:
+                  break;
+          }
+      });
+      this.eventsRegistered = true;
+    }
 
     // when quitting, we may ask if the user also wants to shut down the node, or let it run
     this.electronService.ipcRenderer.on('quit', (event) => {

@@ -3,21 +3,21 @@
 
         <strong>{{ 'account.AccountStatus' | translate}}</strong> :
 
-        <span *ngIf="account.status === 4"><span class="text-danger" [tooltip]="AccountStatusTooltipContent" content-type="template" placement="bottom" show-delay="500"><i class="fas fa-lock"></i>
+        <span *ngIf="accountStatus === WalletAccountStatus.Published"><span class="text-danger" [tooltip]="AccountStatusTooltipContent" content-type="template" placement="bottom" show-delay="500"><i class="fas fa-lock"></i>
                 {{ 'account.Locked' | translate }}</span></span>
-        <span *ngIf="account.status === 2"><span class="text-warning" [tooltip]="AccountStatusTooltipContent" content-type="template" placement="bottom" show-delay="500"><i class="fas fa-lock"></i>
+        <span *ngIf="accountStatus === WalletAccountStatus.Dispatched"><span class="text-warning" [tooltip]="AccountStatusTooltipContent" content-type="template" placement="bottom" show-delay="500"><i class="fas fa-lock"></i>
                 {{ 'account.Dispatched' | translate }}</span></span>
-        <span *ngIf="account.status === 1"><span class="text-primary" [tooltip]="AccountStatusTooltipContent" content-type="template" placement="bottom" show-delay="500"><i class="fas fa-lock"></i>
+        <span *ngIf="accountStatus === WalletAccountStatus.New"><span class="text-primary" [tooltip]="AccountStatusTooltipContent" content-type="template" placement="bottom" show-delay="500"><i class="fas fa-lock"></i>
                 {{ 'account.New' | translate }}</span>&nbsp;&nbsp;&nbsp;<span [tooltip]="PublishStatusTooltipContent" content-type="template" placement="bottom" show-delay="500"><button mat-stroked-button color="primary"
-                [disabled]="!canPublish" (click)="publishAccount(account.accountUuid)">{{ 'dashboard.PublishAccount' | translate }}</button></span>
+                [disabled]="!canPublish" (click)="publishAccount(account.accountCode)">{{ 'dashboard.PublishAccount' | translate }}</button></span>
             </span>
     </span>
 
     <ng-template #AccountStatusTooltipContent>
-        <span *ngIf="account.status === 4">{{ 'account.Locked' | translate }}</span>
-        <span *ngIf="account.status === 2">{{ 'account.Dispatched' | translate }} :
+        <span *ngIf="accountStatus === WalletAccountStatus.Published">{{ 'account.Locked' | translate }}</span>
+        <span *ngIf="accountStatus === WalletAccountStatus.Dispatched">{{ 'account.Dispatched' | translate }} :
             {{ 'accountPublication.WaitingForConfirmation' | translate }}</span>
-        <span *ngIf="account.status === 1">{{ 'account.New' | translate }}</span>
+        <span *ngIf="accountStatus === WalletAccountStatus.New">{{ 'account.New' | translate }}</span>
     </ng-template>
 
     <ng-template #PublishStatusTooltipContent>

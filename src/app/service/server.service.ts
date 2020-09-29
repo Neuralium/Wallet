@@ -7,6 +7,9 @@ import { CONNECTED, EventTypes } from '../model/serverConnectionEvent';
 import { TranslateService } from '@ngx-translate/core';
 import { takeUntil } from 'rxjs/operators';
 import { Subject } from 'rxjs';
+import * as path from 'path';
+import * as child_process from 'child_process';
+import {remote} from 'electron';
 
 @Injectable({
   providedIn: 'root'
@@ -78,10 +81,9 @@ export class ServerService implements OnInit, OnDestroy {
 
       let serverPath = this.configService.serverPath;
       let serverName = this.configService.serverFileName;
-      var path = require('path');
 
       var filePath = path.join(serverPath, serverName);
-      var child_process = require('child_process');
+
 
       this.notificationService.showInfo(this.translateService.instant('server.StartingServer'));
 
@@ -155,7 +157,6 @@ export class ServerService implements OnInit, OnDestroy {
   exitWindow() {
 
     this.childProcess = null;
-    const remote = require('electron').remote;
     const w = remote.getCurrentWindow();
     w.close();
   }

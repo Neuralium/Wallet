@@ -1,0 +1,73 @@
+<h1 mat-dialog-title>{{ 'puzzles.Title' | translate }}</h1>
+<div mat-dialog-content class="column">
+    <mat-divider></mat-divider>
+    <div *ngIf="step === 1">
+        <div>
+            <span
+                style="margin-right: 10px;">{{ 'puzzles.TimeBeforeAppointment' | translate }}:</span><span>{{currentRemainingWaitTime}}</span>
+        </div>
+    </div>
+    <div *ngIf="step === 2">
+
+        <div *ngIf="!puzzleReady">
+            {{ 'puzzles.WaitingForPuzzle' | translate }}
+        </div>
+        <div *ngIf="puzzleReady && !isCompleted">
+
+            <div>{{ 'puzzles.Puzzle' | translate }}: {{index}} {{ 'puzzles.Of' | translate }} {{total}}</div>
+            <div>
+                <table style="width: 100%;">
+                    <tr>
+                        <td>
+                            <span
+                                style="margin-right: 10px;">{{ 'puzzles.TimeRemaining' | translate }}:</span><span>{{currentRemainingPuzzleTime}}</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <mat-progress-bar style="width:100%;" mode="determinate" [value]="remainingTimePercent">
+                            </mat-progress-bar>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div style="margin-bottom: 6px;">
+                <mat-expansion-panel hideToggle>
+                    <mat-expansion-panel-header style="height: 30px;">
+                        <mat-panel-title>
+                            Puzzle Instructions
+                        </mat-panel-title>
+                        <mat-panel-description>
+                            Click here do display instructions
+                        </mat-panel-description>
+                    </mat-expansion-panel-header>
+                    <mat-divider></mat-divider>
+                    <div style="margin-top: 5px;">
+                        <div [innerHTML]="instructions | trust"></div>
+                    </div>
+                </mat-expansion-panel>
+            </div>
+            <div style="height: 300px">
+                <iframe style="width: 100%;height: 100%;" frameBorder="0" (load)="puzzleLoaded()"
+                    [srcdoc]="puzzle | trust" #puzzleFrame>
+                </iframe>
+            </div>
+
+            <button *ngIf="!lastPuzzle" mat-raised-button (click)="complete()" [disabled]="nextDisabled">
+                {{ 'puzzles.Next' | translate }}</button>
+            <button *ngIf="lastPuzzle" mat-raised-button (click)="complete()" [disabled]="nextDisabled">
+                {{ 'puzzles.Complete' | translate }}</button>
+
+        </div>
+        <div *ngIf="puzzleReady && isCompleted">
+
+            {{ 'puzzles.CompletedAndSend' | translate }}
+        </div>
+
+    </div>
+    <div *ngIf="step === 3">
+
+        {{ 'puzzles.PreparingPackage' | translate }}
+
+    </div>
+</div>

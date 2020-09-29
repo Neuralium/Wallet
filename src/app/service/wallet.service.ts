@@ -1,43 +1,62 @@
-import { Injectable, OnDestroy } from '@angular/core';
+import { Injectable } from '@angular/core';
 import { NO_WALLET, Wallet, WalletCreation, EncryptionKey } from '../model/wallet';
 import { BehaviorSubject, Observable } from 'rxjs';
-import { NEURALIUM_BLOCKCHAIN, SECURITY_BLOCKCHAIN, CONTRACT_BLOCKCHAIN, BlockChain } from '../model/blockchain';
+import { NEURALIUM_BLOCKCHAIN, BlockChain } from '../model/blockchain';
 import { SyncStatusService } from './sync-status.service';
 import { NotificationService } from './notification.service';
 import { SyncProcess, ProcessType } from '../model/syncProcess';
 import { ServerConnectionService } from './server-connection.service';
-import { WalletAccount, NO_WALLET_ACCOUNT } from '../model/walletAccount';
+import { WalletAccount, NO_WALLET_ACCOUNT, AccountAppointmentConfirmationResult, AccountCanPublish } from '../model/walletAccount';
+import { WalletAccountAppointment, AppointmentStatus } from '../model/walletAccountAppointment';
+import { NeuraliumBlockchainType } from '../model/blockchain';
 import { EventTypes } from '../model/serverConnectionEvent';
 import { takeUntil } from 'rxjs/operators';
 import { Subject } from 'rxjs';
+import { DateTime } from 'luxon';
+
 
 @Injectable({
   providedIn: 'root'
 })
-export class WalletService implements OnDestroy {
+export class WalletService {
   selectedWallet: BehaviorSubject<Wallet> = new BehaviorSubject<Wallet>(NO_WALLET);
   wallets: Object = new Object();
-  currentBlockchainId: number = 0;
-  currentAccount: BehaviorSubject<WalletAccount> = new BehaviorSubject<WalletAccount>(NO_WALLET_ACCOUNT);
+  currentBlockchainId = 0;
+  currentAccountSubject: BehaviorSubject<WalletAccount> = new BehaviorSubject<WalletAccount>(NO_WALLET_ACCOUNT);
+  eventsRegistered = false;
 
 
   constructor(private syncStatusService: SyncStatusService, private serverConnectionService: ServerConnectionService, private notificationService: NotificationService) {
     this.wallets[NEURALIUM_BLOCKCHAIN.id] = NO_WALLET;
-    this.wallets[SECURITY_BLOCKCHAIN.id] = NO_WALLET;
-    this.wallets[CONTRACT_BLOCKCHAIN.id] = NO_WALLET;
+    // this.wallets[SECURITY_BLOCKCHAIN.id] = NO_WALLET;
+    // this.wallets[CONTRACT_BLOCKCHAIN.id] = NO_WALLET;
 
-    this.serverConnectionService.eventNotifier.pipe(takeUntil(this.unsubscribe$)).subscribe(event => {
+    this.serverConnectionService.eventNotifier.subscribe(event => {
       if (event.eventType === EventTypes.AccountPublicationEnded) {
         this.refreshWallet(this.currentBlockchainId);
       }
-    })
+    });
+
+    this.startListeningMiningEvents();
   }
 
-  private unsubscribe$ = new Subject<void>();
 
-  ngOnDestroy(): void {
-    this.unsubscribe$.next();
-    this.unsubscribe$.complete();
+  startListeningMiningEvents() {
+    if (!this.eventsRegistered) {
+      this.serverConnectionService.eventNotifier.subscribe(event => {
+
+        if (!event.isNeuralium) {
+          return;
+        }
+        switch (event.eventType) {
+
+          case EventTypes.AccountStatusUpdated:
+            this.reloadCurrentAccount(this.currentAccount);
+            break;
+        }
+      });
+      this.eventsRegistered = true;
+    }
   }
 
 
@@ -45,7 +64,7 @@ export class WalletService implements OnDestroy {
     return new Promise<SyncProcess>((resolve, reject) => {
       this.serverConnectionService.callCreateNewWallet(blockchainId, walletToCreate)
         .then(correlationId => {
-          var walletSyncProcess = SyncProcess.createNew(correlationId, "Creation of wallet " + walletToCreate.friendlyName, ProcessType.WalletCreation);
+          const walletSyncProcess = SyncProcess.createNew(correlationId, 'Creation of wallet ' + walletToCreate.friendlyName, ProcessType.WalletCreation);
           this.syncStatusService.startSync(walletSyncProcess);
           resolve(walletSyncProcess);
         });
@@ -78,23 +97,89 @@ export class WalletService implements OnDestroy {
   }
 
   private isNullOrEmpty(text: string) {
-    return !text || text === "";
+    return !text || text === '';
   }
 
   getWallet(): Observable<Wallet> {
     return this.selectedWallet;
   }
 
+  get currentAccount(): WalletAccount {
+    return this.currentAccountSubject.value;
+  }
+
+  get isCurrentAccountSet(): boolean {
+    return this.currentAccount && this.currentAccount !== NO_WALLET_ACCOUNT;
+  }
+
   getCurrentAccount(): Observable<WalletAccount> {
-    return this.currentAccount;
+    return this.currentAccountSubject;
   }
 
   setCurrentAccount(account: WalletAccount) {
-    this.serverConnectionService.callSetActiveAccount(this.currentBlockchainId, account.accountUuid).then(()=>{
-      this.serverConnectionService.callQueryWalletAccountDetails(this.currentBlockchainId, account.accountUuid).then(activeAccount =>{
-        this.currentAccount.next(activeAccount);
-      })
-    })
+    this.serverConnectionService.callSetActiveAccount(this.currentBlockchainId, account.accountCode).then(() => {
+      this.reloadCurrentAccount(account);
+    });
+  }
+
+  reloadCurrentAccount(account: WalletAccount) {
+    this.serverConnectionService.callQueryWalletAccountDetails(this.currentBlockchainId, account.accountCode).then(activeAccount => {
+      this.currentAccountSubject.next(activeAccount);
+    });
+  }
+
+  bypassAppointmentVerification(): Promise<boolean> {
+    if (this.currentBlockchainId === 0) {
+      return new Promise<boolean>((resolve, reject) => {
+        reject(false);
+      });
+    }
+    return this.serverConnectionService.callBypassAppointmentVerification(this.currentBlockchainId, this.currentAccount.accountCode);
+  }
+
+  GetAppointmentDetails(): Promise<WalletAccountAppointment> {
+    if (this.currentBlockchainId === 0) {
+      return new Promise<WalletAccountAppointment>((resolve, reject) => {
+        reject(null);
+      });
+    }
+    return this.serverConnectionService.callQueryWalletAccountAppointmentDetails(this.currentBlockchainId, this.currentAccount.accountCode);
+  }
+
+  canPublishAccount(): Promise<AccountCanPublish> {
+    if (this.currentBlockchainId === 0) {
+      return new Promise<AccountCanPublish>((resolve, reject) => {
+        reject(null);
+      });
+    }
+    return this.serverConnectionService.callCanPublishAccount(this.currentBlockchainId, this.currentAccount.accountCode);
+  }
+
+  queryAppointmentConfirmationResult(): Promise<AccountAppointmentConfirmationResult> {
+    if (this.currentBlockchainId === 0) {
+      return new Promise<AccountAppointmentConfirmationResult>((resolve, reject) => {
+        reject(null);
+      });
+    }
+    return this.serverConnectionService.callQueryAppointmentConfirmationResult(this.currentBlockchainId, this.currentAccount.accountCode);
+  }
+
+  setSMSConfirmationCode(confirmationCode: string): Promise<boolean> {
+    if (this.currentBlockchainId === 0) {
+      return new Promise<boolean>((resolve, reject) => {
+        reject(false);
+      });
+    }
+    return this.serverConnectionService.callSetSMSConfirmationCode(this.currentBlockchainId, this.currentAccount.accountCode, confirmationCode);
+  }
+
+  RequestAppointment(preferredRegion: number): Promise<number> {
+    if (this.currentBlockchainId === 0) {
+      return new Promise<number>((resolve, reject) => {
+        resolve(0);
+      });
+    }
+    return this.serverConnectionService.callRequestAppointment(this.currentBlockchainId, this.currentAccount.accountCode, preferredRegion);
   }
 
   getWalletAccounts(): Promise<Array<WalletAccount>> {
@@ -102,9 +187,10 @@ export class WalletService implements OnDestroy {
       this.serverConnectionService.callQueryWalletAccounts(this.currentBlockchainId)
         .then(accounts => {
           resolve(accounts);
-        })
+        });
     });
   }
+
 
   loadWallet(blockChainId: number): Promise<boolean> {
     return new Promise<boolean>((resolve, reject) => {
@@ -117,27 +203,31 @@ export class WalletService implements OnDestroy {
               this.serverConnectionService.callLoadWallet(blockChainId, '')
                 .then(longRunningContextId => {
 
-                  this.serverConnectionService.eventNotifier.pipe(takeUntil(this.unsubscribe$)).subscribe((event) => {
-                    if(event.correlationId === longRunningContextId){
+                  const unsubscribe$ = new Subject<void>();
+                  this.serverConnectionService.eventNotifier.pipe(takeUntil(unsubscribe$)).subscribe((event) => {
+                    if (event.correlationId === longRunningContextId) {
                       switch (event.eventType) {
                         case EventTypes.WalletLoadingEnded:
+                          unsubscribe$.next();
+                          unsubscribe$.complete();
                           resolve(true);
                           break;
                         case EventTypes.WalletLoadingError:
-                            resolve(false);
-                            break;
+                          unsubscribe$.next();
+                          unsubscribe$.complete();
+                          resolve(false);
+                          break;
                         default:
                           return;
                       }
                     }
                   });
                 });
-            }
-            else {
+            } else {
               resolve(true);
             }
           });
-        }else {
+        } else {
           resolve(false);
         }
       });
@@ -146,18 +236,19 @@ export class WalletService implements OnDestroy {
 
   setWallet(blockchainId: number, wallet: Wallet) {
 
-    var syncProcess = SyncProcess.createNew(new Date().getMilliseconds() * Math.random(), "Set wallet to blockchain cache", ProcessType.SyncingWallet);
+    const syncProcess = SyncProcess.createNew(DateTime.local().millisecond * Math.random(), 'Set wallet to blockchain cache', ProcessType.SyncingWallet);
     this.syncStatusService.startSync(syncProcess);
     this.currentBlockchainId = blockchainId;
+    this.selectedWallet.next(wallet);
     this.getWalletAccounts()
       .then(accounts => {
         wallet.accounts = accounts;
         if (wallet.accounts && wallet.accounts.length > 0) {
           wallet.accounts.forEach(account => {
-            if(account.isActive){
-              this.serverConnectionService.callQueryWalletAccountDetails(this.currentBlockchainId, account.accountUuid).then(activeAccount =>{
-                this.currentAccount.next(activeAccount);
-              })
+            if (account.isActive) {
+              this.serverConnectionService.callQueryWalletAccountDetails(this.currentBlockchainId, account.accountCode).then(activeAccount => {
+                this.currentAccountSubject.next(activeAccount);
+              });
             }
           });
         }
@@ -166,23 +257,23 @@ export class WalletService implements OnDestroy {
         this.wallets[blockchainId] = wallet;
         this.changeWallet(blockchainId);
         this.syncStatusService.endSync(syncProcess);
-      })
+      });
   }
 
   changeWallet(blockchainId: number) {
-    var wallet = this.wallets[blockchainId];
+    const wallet = this.wallets[blockchainId];
     this.selectedWallet.next(wallet);
   }
 
-  publishAccount(accountUuid: string) {
-    this.serverConnectionService.callPublishAccount(this.currentBlockchainId, accountUuid);
+  publishAccount(accountCode: string) {
+    this.serverConnectionService.callPublishAccount(this.currentBlockchainId, accountCode);
   }
 
-  refreshWallet(blockchainId: number):Promise<Wallet> {
+  refreshWallet(blockchainId: number): Promise<Wallet> {
 
     return new Promise<Wallet>((resolve, reject) => {
 
-      if(blockchainId && blockchainId !== 0){
+      if (blockchainId && blockchainId !== 0) {
         this.serverConnectionService.callQueryWalletInfo(blockchainId).then(walletInfo => {
           const wallet = Wallet.createNew(walletInfo);
           this.setWallet(blockchainId, wallet);
@@ -191,7 +282,6 @@ export class WalletService implements OnDestroy {
           reject(error);
         });
       }
-      resolve(null);
     });
   }
 }

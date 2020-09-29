@@ -1,10 +1,11 @@
 <div class="top-wrapper">
   <div style="margin: 6px;">
     <div class="side-wrapper centerMiningButton" style="margin: 10px;">
-      <mat-card class="half-card" style="margin: 10px; height: 205px;">
+      <div class="half-card" style="margin: 10px; height: 205px;">
 
         <div class="centerMiningButton">
-          <span class="mineHeader" style="font-weight: bold;">{{isMining ? ('mining.CurrentlyMining' | translate) : ('mining.NotCurrentlyMining' | translate)}}</span>
+          <span class="mineHeader"
+            style="font-weight: bold;">{{isMining ? ('mining.CurrentlyMining' | translate) : ('mining.NotCurrentlyMining' | translate)}}</span>
           <button class="mineButton" mat-icon-button [ngClass]="[isMining ? 'stopMining' : 'startMining']"
             (click)="toggleMining()" [disabled]="disableMiningButton">
 
@@ -12,25 +13,54 @@
           <span class="mineHeader">{{isMining ? ('mining.Stop' | translate) : ('mining.Start' | translate)}}</span>
 
         </div>
-      </mat-card>
-      <mat-card class="half-card" style="margin: 10px;height: 205px;padding:10px;">
-        <mat-card style="width: 100%;margin: 5px 1px;padding: 5px;">
-          <div style="display: inline-flex;">
-            <span style="display: block;">{{miningTierText}}</span>
-            <!-- <div *ngIf="isConnectable !== true"><app-help-icon [message]="miningportalert"></app-help-icon> </div> -->
-          </div>
-        </mat-card>
-        <mat-card style="width: 100%;margin: 5px 1px;padding: 5px;">
-          <div style="display: inline-flex;">
-            <span style="display: block;">{{connectibleText}}</span>
-            <!-- <div *ngIf="isConnectable !== true"><app-help-icon [message]="miningportalert"></app-help-icon> </div> -->
-          </div>
-        </mat-card>
-        <mat-card style="width: 100%;margin: 5px 1px;padding: 5px;">
-          <div style="display: inline-flex;">
-            <span style="display: block;">{{ 'mining.Protocol' | translate }}:&nbsp;{{ipmodeText}}</span>
-          </div>
-        </mat-card>
+      </div>
+      <mat-card class="half-card" style="height: 205px;padding: 0;margin: 0;margin-left: 25px;">
+        <div style="padding: 10px;">
+
+          <!-- <div *ngIf="showVerify">
+            <button mat-raised-button color="accent" (click)="verifyAccount($event)">{{ 'mining.VerifyAccount' | translate }}</button>
+          </div> -->
+
+          <table>
+            <tr style="border-bottom: 1pt solid #d6d6d6;" [hidden]="hideTierSelector">
+              <td style="padding: 3px;">
+                <div style="display: inline-flex;width: 100%;">
+                  <span style="display: block;">{{'mining.MiningTier' | translate}}:</span>
+                  <div style="width: 50px;">
+                    <mat-select style="width: 65px;padding-left: 10px;" [(value)]="miningService.SelectedTier">
+                      <mat-option [value]="1">{{ 'mining.1stTier' | translate }}</mat-option>
+                      <mat-option [value]="3">{{ 'mining.3rdTier' | translate }}</mat-option>
+                      <mat-option [value]="0">{{ 'mining.AutoTier' | translate }}</mat-option>
+                    </mat-select>
+                  </div>
+                </div>
+              </td>
+            </tr>
+            <tr style="border-bottom: 1pt solid #d6d6d6;">
+              <td style="padding: 3px;">
+                <div style="display: inline-flex;">
+                  <span style="display: block;">{{miningTierText}}</span>
+                  <!-- <div *ngIf="isConnectable !== true"><app-help-icon [message]="miningportalert"></app-help-icon> </div> -->
+                </div>
+              </td>
+            </tr>
+            <tr style="border-bottom: 1pt solid #d6d6d6;" [hidden]="hideConnectable">
+              <td style="padding: 3px;">
+                <div style="display: inline-flex;">
+                  <span style="display: block;">{{connectibleText}}</span>
+                  <!-- <div *ngIf="isConnectable !== true"><app-help-icon [message]="miningportalert"></app-help-icon> </div> -->
+                </div>
+              </td>
+            </tr>
+            <tr style="border-bottom: 1pt solid #d6d6d6;" [hidden]="hideMiningProtocol">
+              <td style="padding: 3px;">
+                <div style="display: inline-flex;">
+                  <span style="display: block;">{{ 'mining.Protocol' | translate }}:&nbsp;{{ipmodeText}}</span>
+                </div>
+              </td>
+            </tr>
+          </table>
+        </div>
       </mat-card>
     </div>
     <div style="margin: 23px 10px 10px 10px;">

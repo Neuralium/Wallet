@@ -1,30 +1,51 @@
+
+
+export enum WalletAccountType {
+    Unknown = 0,
+    User = 1,
+    Server = 2,
+    Moderator = 3,
+    Joint = 4
+}
+
+
+export enum WalletAccountStatus {
+    Unknown = 0,
+    New = 1,
+    Dispatched = 2,
+    Published = 3,
+    Rejected = 255
+}
+
 export class WalletAccount {
-    accountUuid: string;
+    accountCode: string;
     accountId: string;
     status: WalletAccountStatus;
     declarationBlockId: number;
-    correlated: boolean;
-    accountType: WalletaccountType;
+    correlated: number;
+    accountType: WalletAccountType;
     friendlyName: string;
     isEncrypted: boolean;
     isActive: boolean;
-    accountHash : string;
-    trustLevel : number;
+    accountHash: string;
+    trustLevel: number;
+    inAppointment:boolean;
 
     static createNew(
-        accountUuid: string,
+        accountCode: string,
         accountId: string,
         status: WalletAccountStatus,
         declarationBlockId: number,
-        correlated: boolean,
-        accountType: WalletaccountType,
+        correlated: number,
+        accountType = WalletAccountType.User,
         friendlyName: string,
         isEncrypted: boolean,
         isActive: boolean,
-        accountHash:string = "",
-        trustLevel:number = 0) {
-        var newAccount = new WalletAccount();
-        newAccount.accountUuid = accountUuid;
+        inAppointment:boolean,
+        accountHash: string = '',
+        trustLevel: number = 0) {
+        const newAccount = new WalletAccount();
+        newAccount.accountCode = accountCode;
         newAccount.accountId = accountId;
         newAccount.status = status;
         newAccount.declarationBlockId = declarationBlockId;
@@ -33,8 +54,10 @@ export class WalletAccount {
         newAccount.friendlyName = friendlyName;
         newAccount.isEncrypted = isEncrypted;
         newAccount.isActive = isActive;
+        newAccount.inAppointment = inAppointment;
         newAccount.accountHash = accountHash;
         newAccount.trustLevel = trustLevel;
+
         return newAccount;
     }
 }
@@ -46,7 +69,7 @@ export class WalletKey {
     status: string;
 }
 
-export class XmssWalletKey inheritaccountUuids WalletKey{
+export class XmssWalletKey inheritaccountCodes WalletKey{
     keyUseIndex: number;
     warningIndex: number;
     maximumUseIndex: number;
@@ -55,25 +78,62 @@ export class XmssWalletKey inheritaccountUuids WalletKey{
 }
 */
 
+
 export const NO_WALLET_ACCOUNT = <WalletAccount>{
-    accountUuid: "",
-    accountId: "",
-    status: 1,
+    accountCode: '',
+    accountId: '',
+    status: WalletAccountStatus.New,
     declarationBlockId: 0,
-    correlated: false,
-    accountType: 1,
-    friendlyName: "",
+    correlated: 0,
+    accountType: WalletAccountType.User,
+    friendlyName: '',
     isEncrypted: false,
-    isActive: false
+    isActive: false,
+};
+
+
+export class AccountAppointmentConfirmationResult {
+    verified: boolean | null;
+    confirmationCode:  string | null;
+
+    static createNew(
+        verified: boolean | null,
+        confirmationCode:  string | null) {
+        const result = new AccountAppointmentConfirmationResult();
+
+        result.verified = verified;
+        result.confirmationCode = confirmationCode;
+        
+        return result;
+    }
 }
 
-export enum WalletAccountStatus {
-    New = 1,
-    Dispatched = 2,
-    Published = 3
+
+export enum AccountPublicationModes {
+    Unknown = 0,
+            Appointment = 1,
+            SMS = 2,
+            Server = 3
 }
 
-export enum WalletaccountType {
-    Standard = 1,
-    Joint = 2
+export class AccountCanPublish {
+    canPublish: boolean | null;
+    publishMode: AccountPublicationModes | null;
+    confirmationCode:  string | null;
+    requesterId:string | null;
+
+    static createNew(
+        canPublish: boolean | null,
+        publishMode: AccountPublicationModes | null,
+        confirmationCode:  string | null,
+        requesterId:string | null) {
+        const result = new AccountCanPublish();
+
+        result.canPublish = canPublish;
+        result.publishMode = publishMode;
+        result.confirmationCode = confirmationCode;
+        result.requesterId = requesterId;
+        
+        return result;
+    }
 }

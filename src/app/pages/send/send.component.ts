@@ -81,7 +81,7 @@ export class SendComponent implements OnInit, OnDestroy {
   initialise(account: WalletAccount) {
     this.neuraliumService.getNeuraliumTotal().pipe(takeUntil(this.unsubscribe$)).subscribe(total => this.neuraliumTotal = total);
 
-    this.currentAccountUuId = account.accountUuid;
+    this.currentAccountUuId = account.accountCode;
     
   }
 

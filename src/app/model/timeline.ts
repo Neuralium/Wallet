@@ -1,4 +1,6 @@
 import { NeuraliumTransaction, NO_TRANSACTION, NO_NEURALIUM_TRANSACTION } from './transaction';
+import { DateTime } from 'luxon';
+
 
 export enum EntryType {
     debit = 0,
@@ -19,11 +21,11 @@ export enum EntryCreditType {
 
 export class TimelineHeader {
     numberOfDays: number;
-    firstDay: Date;
+    firstDay:  DateTime;
 
     private constructor() { }
 
-    static create(numberOfDays: number, firstDay: Date) {
+    static create(numberOfDays: number, firstDay:  DateTime) {
         const header = new TimelineHeader();
         header.numberOfDays = numberOfDays;
         header.firstDay = firstDay;
@@ -32,14 +34,14 @@ export class TimelineHeader {
 }
 
 export class TimelineDay {
-    day: Date;
+    day:  DateTime;
     id: number;
     endingTotal: number;
     entries: Array<TimelineEntry>;
 
     private constructor() { }
 
-    static create(day: Date, id: number, endingTotal: number) {
+    static create(day:  DateTime, id: number, endingTotal: number) {
         const timelineDay = new TimelineDay();
         timelineDay.day = day;
         timelineDay.id = id;
@@ -51,7 +53,7 @@ export class TimelineDay {
 
 export class TimelineEntry {
     transactionId:string;
-    timestamp: Date;
+    timestamp:  DateTime;
     senderAccountId: string;
     recipientAccountIds: string;
     amount: number;
@@ -70,7 +72,7 @@ export class TimelineEntry {
         return this.showDetails && this.transaction !== null && this.transaction !== NO_NEURALIUM_TRANSACTION;
     }
 
-    static create(transactionId:string, timestamp: Date, senderAccountId: string, recipientAccountIds: string,
+    static create(transactionId:string, timestamp:  DateTime, senderAccountId: string, recipientAccountIds: string,
         amount: number, tips: number, total: number, direction: EntryDirection, creditType: EntryCreditType, confirmed: boolean) {
         const timelineEntry = new TimelineEntry();
         timelineEntry.transactionId = transactionId;

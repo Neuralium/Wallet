@@ -16,11 +16,11 @@ export class AccountCall extends CommonCall {
         return new AccountCall(serviceConnectionService, logService)
     }
 
-    callSetActiveAccount(chainType: number, accountUuid: string): Promise<boolean> {
+    callSetActiveAccount(chainType: number, accountCode: string): Promise<boolean> {
         return new Promise<boolean>((resolve, reject) => {
 
-            this.logEvent("SetActiveAccount - call", { chainType, accountUuid });
-            this.serviceConnectionService.invoke<boolean>("SetActiveAccount", chainType, accountUuid)
+            this.logEvent("SetActiveAccount - call", { chainType, accountCode });
+            this.serviceConnectionService.invoke<boolean>("SetActiveAccount", chainType, accountCode)
               .then(
                 response => {
                   this.logEvent("setActiveAccount - response", response);

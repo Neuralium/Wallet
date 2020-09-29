@@ -1,5 +1,8 @@
 import { MenuConfig } from "./ui-config";
 
+export const NullBlockchainType:number = 0;
+export const NeuraliumBlockchainType:number = 1001;
+
 export class ChainStatus {
  
   walletInfo : WalletInfo;
@@ -9,6 +12,7 @@ export class ChainStatus {
 
 export class WalletInfo {
   walletExists: boolean;
+  walletFullyCreated : boolean;
   isWalletLoaded: boolean;
   walletEncrypted: boolean;
   walletPath: string;
@@ -38,43 +42,13 @@ export const NO_BLOCKCHAIN = <BlockChain>{
 }
 
 export const NEURALIUM_BLOCKCHAIN = <BlockChain>{
-  id: 1001, label: "Neuralium",
+  id: NeuraliumBlockchainType, label: "Neuralium",
   enabled: true,
   icon: "fas fa-bezier-curve",
   menuConfig: {
     showDashboard: true,
     showSend: true,
     showReceive: true,
-    showHistory: true,
-    showTools : true,
-    showContacts: true,
-    showSettings: true
-  }
-}
-
-export const CONTRACT_BLOCKCHAIN = <BlockChain>{
-  id: 2, label: "Contract",
-  enabled: true,
-  icon: "fas fa-file-signature",
-  menuConfig: {
-    showDashboard: true,
-    showSend: false,
-    showReceive: true,
-    showHistory: true,
-    showTools: true,
-    showContacts: true,
-    showSettings: true
-  }
-}
-
-export const SECURITY_BLOCKCHAIN = <BlockChain>{
-  id: 3, label: "Security",
-  enabled: true,
-  icon: "fas fa-shield-alt",
-  menuConfig: {
-    showDashboard: true,
-    showSend: false,
-    showReceive: false,
     showHistory: true,
     showTools : true,
     showContacts: true,

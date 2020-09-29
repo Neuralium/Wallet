@@ -13,6 +13,10 @@ import { Subject } from 'rxjs';
   styleUrls: ['./mining-events.component.scss']
 })
 export class MiningEventsComponent implements OnInit, OnDestroy {
+  constructor(private miningService: MiningService) { 
+    this.pageSize = 10;
+    this.sliceEnd = this.pageSize;
+  }
   miningEventsList: Array<MiningEvent> = [];
   pageSize: number = 10;
   pageEvent: PageEvent;
@@ -20,18 +24,14 @@ export class MiningEventsComponent implements OnInit, OnDestroy {
   pageSizeOptions: number[] = [10, 20, 30];
   sliceStart:number = 0;
   sliceEnd:number = this.pageSize;
-  constructor(private miningService: MiningService) { 
-    this.pageSize = 10;
-    this.sliceEnd = this.pageSize;
-  }
+
+  private unsubscribe$ = new Subject<void>();
 
   ngOnInit() {
 
     this.miningEventsList = this.miningService.getMiningEvents();
 
   }
-
-  private unsubscribe$ = new Subject<void>();
 
 
   ngOnDestroy(): void {

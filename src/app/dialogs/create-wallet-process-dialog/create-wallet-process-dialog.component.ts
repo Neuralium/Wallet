@@ -1,4 +1,4 @@
-import { Component, OnInit, ChangeDetectorRef, OnDestroy } from '@angular/core';
+import { Component, OnInit, ChangeDetectorRef, OnDestroy, ViewChild } from '@angular/core';
 import { FormGroup, FormControl, Validators, ValidatorFn, AbstractControl, FormBuilder } from '@angular/forms';
 
 import { NotificationService } from '../..//service/notification.service';
@@ -6,7 +6,7 @@ import { SyncStatusService } from '../..//service/sync-status.service';
 import { BlockchainService } from '../..//service/blockchain.service';
 import { ServerConnectionService } from '../..//service/server-connection.service';
 import { WalletService } from '../..//service/wallet.service';
-import { WalletCreation, Wallet } from '../..//model/wallet';
+import { WalletCreation, Wallet, EncryptionKey } from '../..//model/wallet';
 import { SyncProcess, NO_SYNC, ProcessType } from '../..//model/syncProcess';
 import { MatDialogRef } from '@angular/material/dialog';
 import { DialogResult } from '../..//config/dialog-result';
@@ -14,13 +14,8 @@ import { TranslateService } from '@ngx-translate/core';
 import { EventTypes } from '../..//model/serverConnectionEvent';
 import { takeUntil } from 'rxjs/operators';
 import { Subject } from 'rxjs';
-
-const WALLET_KEY:string = '0';
-const ALL_KEYS:string = '1';
-const TRANSACTION_KEY:string = '1';
-const MESSAGE_KEY:string = '2';
-const CHANGE_KEY:string = '3';
-const SUPER_KEY:string = '4';
+import { MatStepper } from '@angular/material/stepper';
+import { WalletAccountType } from '../..//model/walletAccount';
 
 @Component({
   selector: 'app-create-wallet-process-dialog',
@@ -28,6 +23,75 @@ const SUPER_KEY:string = '4';
   styleUrls: ['./create-wallet-process-dialog.component.css']
 })
 export class CreateWalletProcessDialogComponent implements OnInit, OnDestroy {
+
+  get passWordInputType(): string {
+    if (this.showPasswords) {
+      return 'text';
+    }
+    else {
+      return 'password';
+    }
+  }
+
+  constructor(
+    private translateService: TranslateService,
+    private walletService: WalletService,
+    private serverConnectionService: ServerConnectionService,
+    private blockchainService: BlockchainService,
+    private notificationService: NotificationService,
+    private syncStatusService: SyncStatusService,
+    public dialogRef: MatDialogRef<CreateWalletProcessDialogComponent>,
+    private changeDetector: ChangeDetectorRef,
+    fb: FormBuilder) {
+
+      this.form1 = fb.group({
+        'walletPassphrase': this.walletPassphrase,
+        'walletPassphraseConfirm': this.walletPassphraseConfirm,
+        'allKeysPassphrase': this.allKeysPassphrase,
+        'allKeysPassphraseConfirm': this.allKeysPassphraseConfirm
+      });
+
+      this.form2 = fb.group({
+        'transactionKeyPassphrase': this.transactionKeyPassphrase,
+        'transactionKeyPassphraseConfirm': this.transactionKeyPassphraseConfirm,
+        'messageKeyPassphrase': this.messageKeyPassphrase,
+        'messageKeyPassphraseConfirm': this.messageKeyPassphraseConfirm,
+        'changeKeyPassphrase': this.changeKeyPassphrase,
+        'changeKeyPassphraseConfirm': this.changeKeyPassphraseConfirm,
+        'backupKeyPassphrase': this.backupKeyPassphrase,
+        'backupKeyPassphraseConfirm': this.backupKeyPassphraseConfirm,
+
+        'validatorVerificationKeyPassphrase': this.validatorVerificationKeyPassphrase,
+        'validatorVerificationKeyPassphraseConfirm': this.validatorVerificationKeyPassphraseConfirm,
+        'validatorSecretKeyPassphrase': this.validatorSecretKeyPassphrase,
+        'validatorSecretKeyPassphraseConfirm': this.validatorSecretKeyPassphraseConfirm
+      });
+    }
+  
+
+  get isServerWallet():boolean {
+    return this.walletToCreate.accountType === WalletAccountType.Server;
+  }
+
+  get isWalletValid() {
+    var isValid: boolean = true;
+
+    isValid = this.accountNameValid;
+
+    if (isValid) {
+      isValid = !(this.form1.invalid || this.form2.invalid);
+    }
+
+    return isValid;;
+  }
+
+  get accountNameValid(): boolean {
+    return !this.isNullOrEmpty(this.walletToCreate.friendlyName);
+  }
+
+  get accountNameNotValid() :boolean{
+    return !this.accountNameValid;
+  }
 
 
   form1: FormGroup;
@@ -44,8 +108,8 @@ export class CreateWalletProcessDialogComponent implements OnInit, OnDestroy {
   walletToCreate: WalletCreation;
   walletCreationSyncProcess: SyncProcess = NO_SYNC;
   walletCreationProcesses: Array<SyncProcess> = [];
-  currentStep: string = "";
-  accountUuid: string = "";
+  currentStep: string = '';
+  accountCode: string = '';
   isWalletCreationRunning: boolean;
   isAccountCreationRunning: boolean;
   isKeyCreationRunning: boolean;
@@ -55,18 +119,10 @@ export class CreateWalletProcessDialogComponent implements OnInit, OnDestroy {
   keyIndex:number = 0;
   totalKeys: number = 0;
   error: boolean = false;
+  walletPath:string = '';
   
-  errorMessage: string = "";
-  errorException: string = "";
-
-  get passWordInputType(): string {
-    if (this.showPasswords) {
-      return "text";
-    }
-    else {
-      return "password";
-    }
-  }
+  errorMessage: string = '';
+  errorException: string = '';
 
   walletPassphrase = new FormControl('', []);
   walletPassphraseConfirm = new FormControl('', []);
@@ -75,52 +131,31 @@ export class CreateWalletProcessDialogComponent implements OnInit, OnDestroy {
 
   transactionKeyPassphrase = new FormControl('', []);
   transactionKeyPassphraseConfirm = new FormControl('', []);
-  communicationKeyPassphrase = new FormControl('', []);
-  communicationKeyPassphraseConfirm = new FormControl('', []);
+  messageKeyPassphrase = new FormControl('', []);
+  messageKeyPassphraseConfirm = new FormControl('', []);
   changeKeyPassphrase = new FormControl('', []);
   changeKeyPassphraseConfirm = new FormControl('', []);
   backupKeyPassphrase = new FormControl('', []);
   backupKeyPassphraseConfirm = new FormControl('', []);
 
-  constructor(
-    private translateService: TranslateService,
-    private walletService: WalletService,
-    private serverConnectionService: ServerConnectionService,
-    private blockchainService: BlockchainService,
-    private notificationService: NotificationService,
-    private syncStatusService: SyncStatusService,
-    public dialogRef: MatDialogRef<CreateWalletProcessDialogComponent>,
-    private changeDetector: ChangeDetectorRef,
-    fb: FormBuilder) {
+  validatorVerificationKeyPassphrase = new FormControl('', []);
+  validatorVerificationKeyPassphraseConfirm = new FormControl('', []);
+  validatorSecretKeyPassphrase = new FormControl('', []);
+  validatorSecretKeyPassphraseConfirm = new FormControl('', []);
 
-      this.form1 = fb.group({
-        "walletPassphrase": this.walletPassphrase,
-        "walletPassphraseConfirm": this.walletPassphraseConfirm,
-        "allKeysPassphrase": this.allKeysPassphrase,
-        "allKeysPassphraseConfirm": this.allKeysPassphraseConfirm
-      });
+  @ViewChild('stepper')
+  stepperComponent: MatStepper;
 
-      this.form2 = fb.group({
-        "transactionKeyPassphrase": this.transactionKeyPassphrase,
-        "transactionKeyPassphraseConfirm": this.transactionKeyPassphraseConfirm,
-        "communicationKeyPassphrase": this.communicationKeyPassphrase,
-        "communicationKeyPassphraseConfirm": this.communicationKeyPassphraseConfirm,
-        "changeKeyPassphrase": this.changeKeyPassphrase,
-        "changeKeyPassphraseConfirm": this.changeKeyPassphraseConfirm,
-        "backupKeyPassphrase": this.backupKeyPassphrase,
-        "backupKeyPassphraseConfirm": this.backupKeyPassphraseConfirm
-      });
-    }
+  private unsubscribe$ = new Subject<void>();
 
 
   ngOnInit() {
+
     this.initialiseValues();
 
     this.runValidate();
     
   }
-
-  private unsubscribe$ = new Subject<void>();
 
 
   ngOnDestroy(): void {
@@ -155,13 +190,18 @@ export class CreateWalletProcessDialogComponent implements OnInit, OnDestroy {
 
     this.transactionKeyPassphrase.setValidators([this.transactionKeyPassphraseValidator()]);
     this.transactionKeyPassphraseConfirm.setValidators([this.transactionKeyPassphraseConfirmValidator()]);
-    this.communicationKeyPassphrase.setValidators([this.communicationKeyPassphraseValidator()]);
-    this.communicationKeyPassphraseConfirm.setValidators([this.communicationKeyPassphraseConfirmValidator()]);
+    this.messageKeyPassphrase.setValidators([this.messageKeyPassphraseValidator()]);
+    this.messageKeyPassphraseConfirm.setValidators([this.messageKeyPassphraseConfirmValidator()]);
 
     this.changeKeyPassphrase.setValidators([this.changeKeyPassphraseValidator()]);
     this.changeKeyPassphraseConfirm.setValidators([this.changeKeyPassphraseConfirmValidator()]);
     this.backupKeyPassphrase.setValidators([this.backupKeyPassphraseValidator()]);
     this.backupKeyPassphraseConfirm.setValidators([this.backupKeyPassphraseConfirmValidator()]);
+
+    this.validatorVerificationKeyPassphrase.setValidators([this.validatorVerificationKeyPassphraseValidator()]);
+    this.backupKeyPassphraseConfirm.setValidators([this.validatorVerificationKeyPassphraseConfirmValidator()]);
+    this.validatorSecretKeyPassphrase.setValidators([this.validatorSecretKeyPassphraseValidator()]);
+    this.validatorSecretKeyPassphraseConfirm.setValidators([this.validatorSecretKeyPassphraseConfirmValidator()]);
 
     Object.keys(this.form2.controls).forEach(field => {
       const control = this.form2.get(field);
@@ -217,7 +257,7 @@ export class CreateWalletProcessDialogComponent implements OnInit, OnDestroy {
   allKeysPassphraseValidator(): ValidatorFn {
     return (control: AbstractControl): { [key: string]: any } | null => {
 
-      if(!this.walletToCreate || !this.walletToCreate.encryptWallet || (!this.walletToCreate.encryptKey || this.walletToCreate.encryptKeysIndividualy)){
+      if(!this.walletToCreate || (!this.walletToCreate.encryptKey || this.walletToCreate.encryptKeysIndividualy)){
         return null;
       }
 
@@ -229,7 +269,7 @@ export class CreateWalletProcessDialogComponent implements OnInit, OnDestroy {
   allKeysPassphraseConfirmValidator(): ValidatorFn {
     return (control: AbstractControl): { [key: string]: any } | null => {
 
-      if(!this.walletToCreate || !this.walletToCreate.encryptWallet || (!this.walletToCreate.encryptKey || this.walletToCreate.encryptKeysIndividualy)){
+      if(!this.walletToCreate|| (!this.walletToCreate.encryptKey || this.walletToCreate.encryptKeysIndividualy)){
         return null;
       }
 
@@ -242,7 +282,7 @@ export class CreateWalletProcessDialogComponent implements OnInit, OnDestroy {
   transactionKeyPassphraseValidator(): ValidatorFn {
     return (control: AbstractControl): { [key: string]: any } | null => {
 
-      if(!this.walletToCreate || !this.walletToCreate.encryptWallet || !this.walletToCreate.encryptKey || !this.walletToCreate.encryptKeysIndividualy){
+      if(!this.walletToCreate || !this.walletToCreate.encryptKey || !this.walletToCreate.encryptKeysIndividualy){
         return null;
       }
 
@@ -254,7 +294,7 @@ export class CreateWalletProcessDialogComponent implements OnInit, OnDestroy {
   transactionKeyPassphraseConfirmValidator(): ValidatorFn {
     return (control: AbstractControl): { [key: string]: any } | null => {
 
-      if(!this.walletToCreate || !this.walletToCreate.encryptWallet || !this.walletToCreate.encryptKey || !this.walletToCreate.encryptKeysIndividualy){
+      if(!this.walletToCreate || !this.walletToCreate.encryptKey || !this.walletToCreate.encryptKeysIndividualy){
         return null;
       }
 
@@ -272,43 +312,43 @@ export class CreateWalletProcessDialogComponent implements OnInit, OnDestroy {
     return this.getErrorMessage('transactionKeyPassphraseConfirm');
   }
 
-  communicationKeyPassphraseValidator(): ValidatorFn {
+  messageKeyPassphraseValidator(): ValidatorFn {
     return (control: AbstractControl): { [key: string]: any } | null => {
 
-      if(!this.walletToCreate || !this.walletToCreate.encryptWallet || !this.walletToCreate.encryptKey || !this.walletToCreate.encryptKeysIndividualy){
+      if(!this.walletToCreate || !this.walletToCreate.encryptKey || !this.walletToCreate.encryptKeysIndividualy){
         return null;
       }
 
-      return this.validateSource(this.communicationKeyPassphrase.value, 'communicationKeyPassphrase');
+      return this.validateSource(this.messageKeyPassphrase.value, 'messageKeyPassphrase');
     };
   }
 
 
-  communicationKeyPassphraseConfirmValidator(): ValidatorFn {
+  messageKeyPassphraseConfirmValidator(): ValidatorFn {
     return (control: AbstractControl): { [key: string]: any } | null => {
 
-      if(!this.walletToCreate || !this.walletToCreate.encryptWallet || !this.walletToCreate.encryptKey || !this.walletToCreate.encryptKeysIndividualy){
+      if(!this.walletToCreate || !this.walletToCreate.encryptKey || !this.walletToCreate.encryptKeysIndividualy){
         return null;
       }
 
-      return this.validateConfirmation(this.communicationKeyPassphrase.value, this.communicationKeyPassphraseConfirm.value, 'communicationKeyPassphraseConfirm');
+      return this.validateConfirmation(this.messageKeyPassphrase.value, this.messageKeyPassphraseConfirm.value, 'messageKeyPassphraseConfirm');
     };
   }
 
-  getCommunicationKeyPassphraseErrorMessage(){
+  getMessageKeyPassphraseErrorMessage(){
 
-    return this.getErrorMessage('communicationKeyPassphrase');
+    return this.getErrorMessage('messageKeyPassphrase');
   }
 
-  getCommunicationKeyPassphraseConfirmErrorMessage(){
+  getMessageKeyPassphraseConfirmErrorMessage(){
 
-    return this.getErrorMessage('communicationKeyPassphraseConfirm');
+    return this.getErrorMessage('messageKeyPassphraseConfirm');
   }
 
   changeKeyPassphraseValidator(): ValidatorFn {
     return (control: AbstractControl): { [key: string]: any } | null => {
 
-      if(!this.walletToCreate || !this.walletToCreate.encryptWallet || !this.walletToCreate.encryptKey || !this.walletToCreate.encryptKeysIndividualy){
+      if(!this.walletToCreate || !this.walletToCreate.encryptKey || !this.walletToCreate.encryptKeysIndividualy){
         return null;
       }
 
@@ -320,7 +360,7 @@ export class CreateWalletProcessDialogComponent implements OnInit, OnDestroy {
   changeKeyPassphraseConfirmValidator(): ValidatorFn {
     return (control: AbstractControl): { [key: string]: any } | null => {
 
-      if(!this.walletToCreate || !this.walletToCreate.encryptWallet || !this.walletToCreate.encryptKey || !this.walletToCreate.encryptKeysIndividualy){
+      if(!this.walletToCreate || !this.walletToCreate.encryptKey || !this.walletToCreate.encryptKeysIndividualy){
         return null;
       }
 
@@ -341,7 +381,7 @@ export class CreateWalletProcessDialogComponent implements OnInit, OnDestroy {
   backupKeyPassphraseValidator(): ValidatorFn {
     return (control: AbstractControl): { [key: string]: any } | null => {
 
-      if(!this.walletToCreate || !this.walletToCreate.encryptWallet || !this.walletToCreate.encryptKey || !this.walletToCreate.encryptKeysIndividualy){
+      if(!this.walletToCreate || !this.walletToCreate.encryptKey || !this.walletToCreate.encryptKeysIndividualy){
         return null;
       }
 
@@ -353,7 +393,7 @@ export class CreateWalletProcessDialogComponent implements OnInit, OnDestroy {
   backupKeyPassphraseConfirmValidator(): ValidatorFn {
     return (control: AbstractControl): { [key: string]: any } | null => {
 
-      if(!this.walletToCreate || !this.walletToCreate.encryptWallet || !this.walletToCreate.encryptKey || !this.walletToCreate.encryptKeysIndividualy){
+      if(!this.walletToCreate || !this.walletToCreate.encryptKey || !this.walletToCreate.encryptKeysIndividualy){
         return null;
       }
 
@@ -370,6 +410,75 @@ export class CreateWalletProcessDialogComponent implements OnInit, OnDestroy {
 
     return this.getErrorMessage('backupKeyPassphraseConfirm');
   }
+
+
+  validatorVerificationKeyPassphraseValidator(): ValidatorFn {
+    return (control: AbstractControl): { [key: string]: any } | null => {
+
+      if(!this.walletToCreate || !this.walletToCreate.encryptKey || !this.walletToCreate.encryptKeysIndividualy || !this.isServerWallet){
+        return null;
+      }
+
+      return this.validateSource(this.validatorVerificationKeyPassphrase.value, 'validatorVerificationKeyPassphrase');
+    };
+  }
+
+
+  validatorVerificationKeyPassphraseConfirmValidator(): ValidatorFn {
+    return (control: AbstractControl): { [key: string]: any } | null => {
+
+      if(!this.walletToCreate || !this.walletToCreate.encryptKey || !this.walletToCreate.encryptKeysIndividualy || !this.isServerWallet){
+        return null;
+      }
+
+      return this.validateConfirmation(this.validatorVerificationKeyPassphrase.value, this.validatorVerificationKeyPassphraseConfirm.value, 'validatorVerificationKeyPassphraseConfirm');
+    };
+  }
+
+  getValidatorVerificationKeyPassphraseErrorMessage(){
+
+    return this.getErrorMessage('validatorVerificationKeyPassphrase');
+  }
+
+  getValidatorVerificationKeyPassphraseConfirmErrorMessage(){
+
+    return this.getErrorMessage('validatorVerificationKeyPassphraseConfirm');
+  }
+
+
+  validatorSecretKeyPassphraseValidator(): ValidatorFn {
+    return (control: AbstractControl): { [key: string]: any } | null => {
+
+      if(!this.walletToCreate || !this.walletToCreate.encryptKey || !this.walletToCreate.encryptKeysIndividualy || !this.isServerWallet){
+        return null;
+      }
+
+      return this.validateSource(this.validatorSecretKeyPassphrase.value, 'validatorSecretKeyPassphrase');
+    };
+  }
+
+
+  validatorSecretKeyPassphraseConfirmValidator(): ValidatorFn {
+    return (control: AbstractControl): { [key: string]: any } | null => {
+
+      if(!this.walletToCreate || !this.walletToCreate.encryptKey || !this.walletToCreate.encryptKeysIndividualy || !this.isServerWallet){
+        return null;
+      }
+
+      return this.validateConfirmation(this.validatorSecretKeyPassphrase.value, this.validatorSecretKeyPassphraseConfirm.value, 'validatorSecretKeyPassphraseConfirm');
+    };
+  }
+
+  getValidatorSecretKeyPassphraseErrorMessage(){
+
+    return this.getErrorMessage('validatorSecretKeyPassphrase');
+  }
+
+  getValidatorSecretKeyPassphraseConfirmErrorMessage(){
+
+    return this.getErrorMessage('validatorSecretKeyPassphraseConfirm');
+  }
+
 
   getErrorMessage(key:string){
     if (this.walletPassphrase.hasError(key)) {
@@ -413,11 +522,9 @@ export class CreateWalletProcessDialogComponent implements OnInit, OnDestroy {
       this.startProcess();
     }
     else {
-      this.notificationService.showWarn(this.translateService.instant("error.InformationsNotCorrectPleaseRetry"));
+      this.notificationService.showWarn(this.translateService.instant('error.InformationsNotCorrectPleaseRetry'));
     }
   }
-
-  
 
   cancel() {
     this.dialogRef.close(DialogResult.Cancel);
@@ -433,10 +540,15 @@ export class CreateWalletProcessDialogComponent implements OnInit, OnDestroy {
       if(this.walletToCreate.encryptKey){
 
         if(this.walletToCreate.encryptKeysIndividualy){
-          this.walletToCreate.passPhrases[1] = this.transactionKeyPassphrase.value;
-          this.walletToCreate.passPhrases[2] = this.communicationKeyPassphrase.value;
-          this.walletToCreate.passPhrases[3] = this.changeKeyPassphrase.value;
-          this.walletToCreate.passPhrases[4] = this.backupKeyPassphrase.value;
+          this.walletToCreate.passPhrases[EncryptionKey.TransactionKey] = this.transactionKeyPassphrase.value;
+          this.walletToCreate.passPhrases[EncryptionKey.MessageKey] = this.messageKeyPassphrase.value;
+          this.walletToCreate.passPhrases[EncryptionKey.ChangeKey] = this.changeKeyPassphrase.value;
+          this.walletToCreate.passPhrases[EncryptionKey.SuperKey] = this.backupKeyPassphrase.value;
+
+          if(this.isServerWallet){
+            this.walletToCreate.passPhrases[EncryptionKey.ValidatorVerificationKey] = this.validatorVerificationKeyPassphrase.value;
+            this.walletToCreate.passPhrases[EncryptionKey.ValidatorSecretKey] = this.validatorSecretKeyPassphrase.value;
+          }
         }
         else{
           this.walletToCreate.passPhrases[1] = this.allKeysPassphrase.value;
@@ -452,17 +564,20 @@ export class CreateWalletProcessDialogComponent implements OnInit, OnDestroy {
 
   endProcess() {
 
+    
     this.walletService.loadWallet(this.currentBlockchainId).then(isLoaded => {
       if (isLoaded === true) {
         this.walletService.refreshWallet(this.currentBlockchainId).then(wallet => {
 
-          this.notificationService.showSuccess(this.translateService.instant("wallet.WalletCreated"));
-          this.walletService.endCreateWalletProcess(this.walletCreationSyncProcess);
-          if (this.walletToCreate.publishAccount) {
-            this.dialogRef.close(this.accountUuid);
-          } else {
-            this.dialogRef.close(DialogResult.WalletCreated);
+          if(wallet){
+            this.walletPath = wallet.walletInfo.walletPath;
+            
+            this.notificationService.showSuccess(this.translateService.instant('wallet.WalletCreated'));
+            this.walletService.endCreateWalletProcess(this.walletCreationSyncProcess);
+        
+            this.stepperComponent.next();
           }
+
         });
       }
       else {
@@ -471,13 +586,19 @@ export class CreateWalletProcessDialogComponent implements OnInit, OnDestroy {
     });
   }
 
+  finish(){
+    if (this.walletToCreate.publishAccount) {
+      this.dialogRef.close(this.accountCode);
+    } else {
+      this.dialogRef.close(DialogResult.WalletCreated);
+    }
+  }
+
   startSyncStatusProcess() {
     this.syncStatusService.syncListObservable.pipe(takeUntil(this.unsubscribe$)).subscribe(processes => {
       this.walletCreationProcesses = processes.filter(process => process.processType === ProcessType.WalletCreation);
     })
   }
-
-
 
   subscribeToEvents() {
     this.serverConnectionService.eventNotifier.pipe(takeUntil(this.unsubscribe$)).subscribe((event) => {
@@ -492,8 +613,8 @@ export class CreateWalletProcessDialogComponent implements OnInit, OnDestroy {
         case EventTypes.WalletCreationStep:
           this.isWalletCreationRunning = true;
           var step = event.message;
-          var stepIndex = step["stepIndex"];
-          var stepTotal = step["stepTotal"];
+          var stepIndex = step['stepIndex'];
+          var stepTotal = step['stepTotal'];
           this.walletCreationStep = stepIndex / stepTotal * 100;
           break;
         case EventTypes.AccountCreationStarted:
@@ -502,13 +623,13 @@ export class CreateWalletProcessDialogComponent implements OnInit, OnDestroy {
         case EventTypes.AccountCreationStep:
           this.isAccountCreationRunning = true;
           var step = event.message;
-          var stepIndex = step["stepIndex"];
-          var stepTotal = step["stepTotal"];
+          var stepIndex = step['stepIndex'];
+          var stepTotal = step['stepTotal'];
           this.accountCreationStep = stepIndex / stepTotal * 100;
           break;
         case EventTypes.AccountCreationEnded:
           this.isAccountCreationRunning = false;
-          this.accountUuid = event.message['accountUuid'];
+          this.accountCode = event.message['accountCode'];
           break;
         case EventTypes.KeyGenerationStarted:
           this.isKeyCreationRunning = true;
@@ -558,29 +679,8 @@ export class CreateWalletProcessDialogComponent implements OnInit, OnDestroy {
     let baseline:number = keyPart*(this.keyIndex);
     this.keyCreationStep = baseline + ((keyPart * this.percentage) / (100));
   }
-  
-
-  get isWalletValid() {
-    var isValid: boolean = true;
-
-    isValid = this.accountNameValid;
-
-    if (isValid) {
-      isValid = !(this.form1.invalid || this.form2.invalid);
-    }
-
-    return isValid;;
-  }
-
-  get accountNameValid(): boolean {
-    return !this.isNullOrEmpty(this.walletToCreate.friendlyName);
-  }
-
-  get accountNameNotValid() :boolean{
-    return !this.accountNameValid;
-  }
 
   private isNullOrEmpty(text: string) {
-    return !text || text === "";
+    return !text || text === '';
   }
 }

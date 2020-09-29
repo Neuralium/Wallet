@@ -8,16 +8,15 @@
     </ng-template>
     <mat-divider></mat-divider>
     <div class="row item">
-      <div class="item" style="width: 40%">
-        <mat-card style="flex-grow:1;">
+      <div class="item" style="width: 40%;margin: 0;">
+        <mat-card style="flex-grow:1;min-height: 365px;">
           <mat-card-title>{{ 'mining.InformationPanel' | translate }}&nbsp;<app-help-icon [message]="'mining.ExplainInfoPanel'">
             </app-help-icon>
           </mat-card-title>
           <mat-card-content>
             <mat-divider></mat-divider>
             
-            <div style="padding-top: 3px;">
-              <mat-card *ngIf="currentAccount" style="margin-bottom:1em;">
+            <div style="padding-top: 3px;padding: 13px;"  *ngIf="currentAccount">
                 <table>
                   <tr>
                     <td>{{ 'account.CurrentAccount' | translate }}</td>
@@ -32,7 +31,7 @@
                   <tr>
                     <td>{{ 'mining.CurrentDifficulty' | translate }}</td>
                     <td></td>
-                    <td><span style="font-weight: bold;">0x{{currentDifficulty.toString(16)}}</span></td>
+                    <td><span style="font-weight: bold;">0x{{currentDifficulty.toString(16).toUpperCase()}}</span></td>
                   </tr>
                   <tr *ngIf="showRemainingTime">
                     <td><strong>{{ 'blockchain.NextBlockRemainingTime' | translate }}</strong></td>
@@ -40,7 +39,7 @@
                     <td>
                       <div>
                         <mat-progress-bar style="width:100px;" mode="determinate" [value]="remainingTimePercent">
-                        </mat-progress-bar><small>{{currentRemainingTime | date:'HH:mm:ss'}}</small>
+                        </mat-progress-bar><small>{{currentRemainingTime | formatTimelineTime}}</small>
                       </div>
                     </td>
                   </tr>
@@ -48,13 +47,12 @@
                 <hr />
                 <mat-expansion-panel>
                   <mat-expansion-panel-header>
-                    <td>{{ 'mining.Statistics' | translate }}</td>
                     <div style="width: 100%;">
                       <table style="width: 100%;">
                         <tr>
-                          
+                          <td>{{ 'mining.Statistics' | translate }}</td>
                           <td style="width: 100%;"></td>
-                          <td style="padding-right: 20px;"><button mat-raised-button (click)="refreshStatistics($event)">{{ 'mining.RefreshStatistics' | translate }}</button></td>
+                          <td style="padding-right: 20px;"><button mat-flat-button (click)="refreshStatistics($event)">{{ 'mining.RefreshStatistics' | translate }}</button></td>
                         </tr>
                       </table>
                     </div>
@@ -68,9 +66,9 @@
                           <mat-panel-title>
                             {{ 'mining.StatisticsSession' | translate }}
                           </mat-panel-title>
-                          <mat-panel-description>
+                          <!-- <mat-panel-description>
                             {{ 'mining.StatisticsSessionDescription' | translate }}
-                          </mat-panel-description>
+                          </mat-panel-description> -->
                         </mat-expansion-panel-header>
       
                         <div>
@@ -130,9 +128,9 @@
                           <mat-panel-title>
                             {{ 'mining.StatisticsAggregate' | translate }}
                           </mat-panel-title>
-                          <mat-panel-description>
+                          <!-- <mat-panel-description>
                             {{ 'mining.StatisticsAggregateDescription' | translate }}
-                          </mat-panel-description>
+                          </mat-panel-description> -->
                         </mat-expansion-panel-header>
       
       
@@ -186,26 +184,27 @@
       
                 </mat-expansion-panel>
       
-              </mat-card>
             </div>
 
           </mat-card-content>
         </mat-card>
       
-        
-        <mat-accordion>
-          <mat-expansion-panel>
-            <mat-expansion-panel-header>
-              {{ 'mining.Advanced' | translate }}
-            </mat-expansion-panel-header>
-
-              <button mat-raised-button (click)="clearCachedCredentials($event)">{{ 'mining.ClearCachedCredentials' | translate }}</button>
-
-          </mat-expansion-panel>
-        </mat-accordion>
+        <div style="margin: 1em;">
+          <mat-accordion>
+            <mat-expansion-panel>
+              <mat-expansion-panel-header>
+                {{ 'mining.Advanced' | translate }}
+              </mat-expansion-panel-header>
+  
+                <button mat-raised-button (click)="clearCachedCredentials($event)">{{ 'mining.ClearCachedCredentials' | translate }}</button>
+  
+            </mat-expansion-panel>
+          </mat-accordion>
+        </div>
+       
       </div>
-      <div class="item" style="width: 40%">
-        <mat-card style="flex-grow:1;">
+      <div class="item" style="width: 40%;margin: 0;">
+        <mat-card style="flex-grow:1;min-height: 365px;">
           <mat-card-title>{{ 'mining.MiningControls' | translate }}&nbsp;<app-help-icon [message]="'mining.Explain'">
             </app-help-icon>
           </mat-card-title>
@@ -214,13 +213,19 @@
             <app-mining></app-mining>
           </mat-card-content>
         </mat-card>
-        <mat-card>
-          <mat-card-title>{{ 'app.Events' | translate }}</mat-card-title>
-          <mat-card-content>
-            <mat-divider></mat-divider>
-            <app-mining-events></app-mining-events>
-          </mat-card-content>
-        </mat-card>
+        <div style="margin: 1em;">
+          <mat-accordion>
+            <mat-expansion-panel>
+              <mat-expansion-panel-header>
+                {{ 'mining.Events' | translate }}
+              </mat-expansion-panel-header>
+  
+              <app-mining-events></app-mining-events>
+  
+            </mat-expansion-panel>
+          </mat-accordion>
+        </div>
+      
       </div>
     </div>
   </mat-tab>

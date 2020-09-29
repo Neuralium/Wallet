@@ -62,7 +62,7 @@ mat-expansion-panel-header{
 .startMining{
     width: 135px;
     height: 124px;
-    background-image: url("assets/img/mine.png");
+    background-image: url("../../../assets/img/mine.png");
     background-size: 135px 124px;
     color:whitesmoke;
     cursor: pointer;
@@ -72,7 +72,7 @@ mat-expansion-panel-header{
 .startMining:hover{
     width: 135px;
     height: 124px;
-    background-image: url("assets/img/mine.png");
+    background-image: url("../../../assets/img/mine.png");
     background-size: 135px 124px;
     color:whitesmoke;
     cursor: pointer;
@@ -83,7 +83,7 @@ mat-expansion-panel-header{
 .stopMining{
     width: 135px;
     height: 124px;
-    background-image: url("assets/img/stop.png");
+    background-image: url("../../../assets/img/stop.png");
     background-size: 135px 124px;
     color:whitesmoke;
     cursor: pointer;

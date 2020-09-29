@@ -9,8 +9,10 @@
             <tr>
               <td><strong>{{ 'account.Type' | translate }}</strong></td>
               <td>
-                <span *ngIf="account.accountType === 1">{{ 'account.Standard' | translate }}</span>
-                <span *ngIf="account.accountType === 2">{{ 'account.Joint' | translate }}</span>
+                <span *ngIf="account.accountType === 1">{{ 'account.User' | translate }}</span>
+                <span *ngIf="account.accountType === 2">{{ 'account.Server' | translate }}</span>
+                <span *ngIf="account.accountType === 3">{{ 'account.Moderator' | translate }}</span>
+                <span *ngIf="account.accountType === 4">{{ 'account.Joint' | translate }}</span>
               </td>
             </tr>
             <tr *ngIf="account.status !== 3"  >
@@ -40,7 +42,7 @@
             </tr>
             <tr>
               <td><strong>{{ 'account.AccountCorrelated' | translate }}</strong></td>
-              <td>{{account.correlated}}</td>
+              <td>{{correlatedText}}</td>
             </tr>
             <tr>
               <td><strong>{{ 'account.WalletEncryption' | translate }}</strong></td>
@@ -55,7 +57,7 @@
     </div>
     <div class="alignCenter" style="flex-grow:1;">
         <span *ngIf="account.status === 1">
-          <button mat-stroked-button color="primary" [disabled]="!canPublish" (click)="publishAccount(account.accountUuid)">{{ 'dashboard.PublishAccount' | translate }}</button>
+          <button mat-stroked-button color="primary" [disabled]="!canPublish" (click)="publishAccount(account.accountCode)">{{ 'dashboard.PublishAccount' | translate }}</button>
         </span>
     </div>
   </div>
@@ -79,7 +81,7 @@
     <span class="text-uppercase"> {{account.friendlyName}} {{account.accountId}}</span>
     <span *ngIf="account.isActive">
       <button mat-button [disabled]="!canPublish"
-        (click)="publishAccount(account.accountUuid)">{{ 'dashboard.PublishAccount' | translate }}</button>
+        (click)="publishAccount(account.accountCode)">{{ 'dashboard.PublishAccount' | translate }}</button>
     </span>
   </span>
   <span *ngIf="account.status === 4">

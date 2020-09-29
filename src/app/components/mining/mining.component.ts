@@ -8,6 +8,18 @@ import { AppConfig } from './../../../environments/environment';
 import { takeUntil } from 'rxjs/operators';
 import { Subject } from 'rxjs';
 import { IpMode } from '../../model/enums';
+import { NotificationService } from '../..//service/notification.service';
+import { WalletService } from '../..//service/wallet.service';
+import { WalletAccount, WalletAccountType } from '../..//model/walletAccount';
+import { MatDialog } from '@angular/material/dialog';
+import { VerifyAccountDialogComponent } from '../..//dialogs/verify-account-dialog/verify-account-dialog.component';
+import { DialogResult } from '../..//config/dialog-result';
+
+
+interface Tiers {
+  value: string;
+  name: string;
+}
 
 
 @Component({
@@ -30,11 +42,18 @@ export class MiningComponent implements OnInit, OnDestroy {
   miningportalert = '';
   miningTierText = '';
   ipmodeText = '';
+  currentAccount: WalletAccount;
+  hideTierSelector:boolean = true;
+  hideConnectable:boolean = true;
+  hideMiningProtocol:boolean = true;
 
-  constructor(private miningService: MiningService,
+  constructor(public miningService: MiningService,
     private configService: ConfigService,
     private translateService: TranslateService,
-    private serverConnectionService: ServerConnectionService) {
+    private notificationService: NotificationService,
+    private walletService: WalletService,
+    private serverConnectionService: ServerConnectionService,
+    public dialog: MatDialog) {
 
       this.serverConnectionService.isConnectedToServer().pipe(takeUntil(this.unsubscribe$)).subscribe(connected => {
         if (connected === CONNECTED) {
@@ -43,6 +62,14 @@ export class MiningComponent implements OnInit, OnDestroy {
        });
     }
 
+
+    
+    get showVerify(): boolean {
+      if(!this.currentAccount){
+        return false;
+      }
+      return this.miningService.selectedTier === 3 && this.currentAccount.correlated === 0;
+    }
     private unsubscribe$ = new Subject<void>();
 
 
@@ -53,10 +80,36 @@ export class MiningComponent implements OnInit, OnDestroy {
    
   ngOnInit() {
 
+  
+    this.walletService.getCurrentAccount().pipe(takeUntil(this.unsubscribe$)).subscribe(account => {
+      this.currentAccount = account;
+
+      if(account.accountType === WalletAccountType.User){
+        this.hideTierSelector = true;
+        this.hideConnectable = true;
+        this.hideMiningProtocol = true;
+        this.miningService.SelectedTier = 3;
+      }
+      else{
+        this.hideTierSelector = false;
+        this.hideConnectable = false;
+        this.hideMiningProtocol = false;
+      }
+    });
+
     this.serverConnectionService.eventNotifier.pipe(takeUntil(this.unsubscribe$)).subscribe(event => {
 
       if (event.eventType === EventTypes.MiningStarted) {
+        this.miningService.updateChainStatus();
         this.queryIpMode();
+      }
+      if (event.eventType === EventTypes.MiningEnded) {
+        this.miningService.updateChainStatus();
+        this.ipmodeText = '';
+      }
+      if (event.eventType === EventTypes.Error) {
+        this.notificationService.showError(event.message.message, 'Start Mining');
+        this.disableMiningButton = false;
       }
     });
 
@@ -71,24 +124,29 @@ export class MiningComponent implements OnInit, OnDestroy {
 
     this.miningService.miningTier.pipe(takeUntil(this.unsubscribe$)).subscribe(miningTier => {
       
-      let tierKey = 'mining.ThirdTier';
-      if(miningTier === 1){
-        tierKey = 'mining.FirstTier';
-      }
-      else if(miningTier === 2){
-        tierKey = 'mining.SecondTier';
-      }
-      else if (miningTier === 3){
-        tierKey = 'mining.ThirdTier';
-      }
-      else if (miningTier === 4){
-        tierKey = 'mining.Fourth';
-      }
-      
-      this.translateService.get(tierKey).subscribe(text => {
-        this.miningTierText = text;
-      });
+      this.miningTierText = '';
 
+
+        let tierKey = 'mining.NotMining';
+        if(this.isMining){
+          if(miningTier === 1){
+            tierKey = 'mining.FirstTier';
+          }
+          else if(miningTier === 2){
+            tierKey = 'mining.SecondTier';
+          }
+          else if (miningTier === 3){
+            tierKey = 'mining.ThirdTier';
+          }
+          else if (miningTier === 4){
+            tierKey = 'mining.Fourth';
+          }
+        }
+        
+        this.translateService.get(tierKey).subscribe(text => {
+          this.miningTierText = text;
+        });
+    
     });
 
     this.delegateAccount = this.configService.delegateAccount;
@@ -99,21 +157,25 @@ export class MiningComponent implements OnInit, OnDestroy {
   }
 
   queryIpMode(){
-    this.miningService.callQueryMiningIPMode().then(ipmode => {
-      let mode:number = ipmode;
-      this.ipmodeText = '';
-      if(ipmode === IpMode.IPv4){
+    // wait a few seconds before we query. there is a delay between the event mining and the protocol known
+    setTimeout(() => {
+      this.miningService.callQueryMiningIPMode().then(ipmode => {
+        let mode:number = ipmode;
+        this.ipmodeText = '';
+        if(ipmode === IpMode.IPv4){
+  
+          this.ipmodeText = 'Ipv4';
+        }
+        if(ipmode === IpMode.IPv6){
+          this.ipmodeText = 'Ipv6';
+        }
+        if(ipmode === IpMode.Both){
+          this.ipmodeText = 'Ipv4 & Ipv6';
+        }
+      });
 
-        this.ipmodeText = 'Ipv4';
-      }
-      if(ipmode === IpMode.IPv6){
-        this.ipmodeText = 'Ipv6';
-      }
-      if(ipmode === IpMode.Both){
-        this.ipmodeText = 'Ipv4 & Ipv6';
-      }
-
-    });
+    }, 3000);
+    
   }
   private getMiningPortConnectableFromServer() {
     this.serverConnectionService.callQueryMiningPortConnectable().then(connectable => {
@@ -158,15 +220,15 @@ export class MiningComponent implements OnInit, OnDestroy {
   }
 
   startMining() {
-    if(this.isConnectable === false){
-      this.translateService.get('mining.PortNotConnectableCantMine').subscribe(message => {
-        alert(message);
-      });
+    if(this.isConnectable === false && (this.miningService.SelectedTier === 1 || this.miningService.SelectedTier === 2)){
+      // this.translateService.get('mining.PortNotConnectableCantMine').subscribe(message => {
+      //   alert(message);
+      // });
       
-      return;
+      // return;
     }
     this.disableMiningButton = true;
-    this.miningService.startMining();
+    this.miningService.startMining(this.miningService.SelectedTier);
   }
 
   stopMining() {
@@ -201,5 +263,28 @@ export class MiningComponent implements OnInit, OnDestroy {
 
     return this.selectedStrategy === 'TransactionSizeStrategy';
 
+  }
+
+  verifyDialogOpen:boolean = false;
+  verifyAccount(event){
+    setTimeout(() => {
+      const dialogRef = this.dialog.open(VerifyAccountDialogComponent, {
+        width: '850px'
+      });
+      dialogRef.afterClosed().subscribe(dialogResult => {
+        this.verifyDialogOpen = false;
+        if (dialogResult === DialogResult.Cancel) {
+          
+        }
+        else if (dialogResult === DialogResult.WalletCreated) {
+          // setTimeout(() => {
+          //   this.walletService.refreshWallet(this.blockchainService.getCurrentBlockchain().id);
+          // }, 100);
+        }
+        else if (dialogResult !== "") {
+         
+        }
+      });
+    });
   }
 }

@@ -57,7 +57,7 @@
                                 <img *ngIf="isMining(item)" src="./assets/img/mine_icon_s.png" class="img-fluid" />
                        
                         </div>
-                        <div class="time">{{item.timestamp | formatTimelineTime}}</div>
+                        <div class="time">{{item.timestamp | formatTimelineTime2}}</div>
                         <div class="account" *ngIf="isDebit(item) || isCredit(item)">
                             <span *ngIf="isDebit(item)">{{item.recipientAccountIds | formatAccountNumber}}
                                 {{getAccountNames(item.recipientAccountIds)}}</span>

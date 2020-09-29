@@ -18,8 +18,8 @@ export class TotalNeuralium {
 }
 
 export const NO_NEURALIUM_TOTAL = <TotalNeuralium>{
-    total: 500,
-    credit: 10,
-    debit: 20,
-    frozen: 10
+    total: 0,
+    credit: 0,
+    debit: 0,
+    frozen: 0
 }

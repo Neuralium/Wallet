@@ -1,0 +1,47 @@
+<h1 mat-dialog-title>{{ 'verifyAccount.Title' | translate }}</h1>
+
+<div mat-dialog-content class="column">
+  <mat-divider></mat-divider>
+
+  <mat-horizontal-stepper linear=true #stepper>
+    <mat-step>
+      <ng-template matStepLabel></ng-template>
+      <mat-card>
+        <p>
+          {{ 'verifyAccount.IntroductionText' | translate }}
+        </p>
+      </mat-card>
+      <div class="row">
+        <button mat-button color="warn" (click)="cancel()"><i class="fas fa-ban"></i>
+          {{ 'app.Cancel' | translate }}</button>
+        <button mat-button matStepperNext color="primary">{{ 'verifyAccount.Begin' | translate }}</button>
+      </div>
+    </mat-step>
+    <mat-step>
+      <ng-template matStepLabel></ng-template>
+      <mat-card>
+        <form [formGroup]="form1">
+          <mat-label style="display: block;">{{ 'verifyAccount.VerificationModeSelection' | translate }}</mat-label>
+          <mat-button-toggle-group name="fontStyle" aria-label="Font Style" formControlName="verificationTypeSelector"
+            [(ngModel)]="verificationSelection" (change)="displayHelpText()">
+              <!-- <mat-button-toggle [hidden]="hideBypassVerification" [value]="1">{{ 'verifyAccount.BypassVerification' | translate }}</mat-button-toggle> -->
+              <mat-button-toggle [hidden]="hideAppointments" [value]="2">{{ 'verifyAccount.Appointments' | translate }}</mat-button-toggle>
+              <mat-button-toggle [hidden]="hidePOW" [value]="3">{{ 'verifyAccount.POW' | translate }}</mat-button-toggle>
+          </mat-button-toggle-group>
+        </form>
+      </mat-card>
+      <mat-card>
+        {{helpText}}
+      </mat-card>
+      <div class="row">
+        <button mat-button color="warn" (click)="cancel()"><i class="fas fa-ban"></i>
+          {{ 'app.Cancel' | translate }}</button>
+        <button mat-button color="primary" [disabled]="!canBegin"
+          (click)="beginVerification()">{{ 'verifyAccount.Continue' | translate }}</button>
+      </div>
+    </mat-step>
+
+  </mat-horizontal-stepper>
+
+
+</div>

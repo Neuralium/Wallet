@@ -4,14 +4,14 @@ import { Observable, of, BehaviorSubject, throwError } from 'rxjs';
 import { TranslateService } from '@ngx-translate/core';
 import { takeUntil } from 'rxjs/operators';
 import { Subject } from 'rxjs';
+import * as Store from 'electron-store';
 
-const Store = require('electron-store');
 
 @Injectable({
   providedIn: 'root'
 })
 export class ContactsService implements OnDestroy {
-  store = new Store();
+  store = new Store.default();
   contacts: Array<Contact> = [];
   observableContacts: BehaviorSubject<Array<Contact>> = new BehaviorSubject<Array<Contact>>(this.contacts);
 
@@ -29,7 +29,7 @@ export class ContactsService implements OnDestroy {
 
   private loadContacts() {
     if (this.store.has('contacts')) {
-      this.contacts = this.store.get('contacts');
+      this.contacts = <Array<Contact>>this.store.get('contacts');
       this.observableContacts.next(this.contacts);
     }
     else {

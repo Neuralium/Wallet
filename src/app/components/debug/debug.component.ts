@@ -8,9 +8,10 @@ import { SyncStatusService } from '../..//service/sync-status.service';
 import { EventTypes, ResponseResult } from '../..//model/serverConnectionEvent';
 import { PassphraseParameters, KeyPassphraseParameters } from '../..//model/passphraseRequiredParameters';
 import { AppConfig } from '../../../environments/environment';
-import moment, * as momentObj from 'moment';
+import { DateTime } from 'luxon';
 import { takeUntil } from 'rxjs/operators';
 import { Subject } from 'rxjs';
+import { NeuraliumBlockchainType } from '../..//model/blockchain';
 
 @Component({
   selector: 'app-debug',
@@ -19,7 +20,7 @@ import { Subject } from 'rxjs';
 })
 export class DebugComponent implements OnInit, OnDestroy {
   currentPlatform: string;
-  accountUuid: string;
+  accountCode: string;
   addNeuraliumsEnabled: boolean = true;
 
   showAccountCommands: boolean = false;
@@ -44,7 +45,7 @@ export class DebugComponent implements OnInit, OnDestroy {
 
     this.walletService.getCurrentAccount().pipe(takeUntil(this.unsubscribe$)).subscribe(account => {
       if (account !== NO_WALLET_ACCOUNT) {
-        this.accountUuid = account.accountUuid;
+        this.accountCode = account.accountCode;
         this.showAccountCommands = true;
         this.addNeuraliumsEnabled = account.status === WalletAccountStatus.Published;
       }
@@ -66,9 +67,9 @@ export class DebugComponent implements OnInit, OnDestroy {
   addNeuraliums() {
     if (this.addNeuraliumsEnabled) {
       this.addNeuraliumsEnabled = false;
-      this.serverConnection.callRefillNeuraliums(this.accountUuid)
+      this.serverConnection.callRefillNeuraliums(this.accountCode)
         .then(() => {
-          this.notification.showSuccess("Refill called for " + this.accountUuid);
+          this.notification.showSuccess("Refill called for " + this.accountCode);
         })
         .catch(error => {
           this.notification.showError(error);
@@ -88,27 +89,27 @@ export class DebugComponent implements OnInit, OnDestroy {
   }
 
   testRemainingTime() {
-    this.serverConnection.propagateEvent(0, EventTypes.BlockInserted, ResponseResult.Success, { "chainType": 0, "blockId": 1, "timestamp": moment().toDate(), "hash": "haché", "lifespan": 20 });
+    this.serverConnection.propagateEvent(0, EventTypes.BlockInserted, ResponseResult.Success, NeuraliumBlockchainType, { "chainType": 0, "blockId": 1, "timestamp": DateTime.local().toJSDate(), "hash": "haché", "lifespan": 20 });
   }
 
   enterWalletPassphrase(){
-    var parameters = new PassphraseParameters();
+    const parameters = new PassphraseParameters();
     parameters.attempt = 1;
     parameters.chainType = 1001;
     parameters.correlationId = 1;
     parameters.keyCorrelationCode = 1;
-    this.serverConnection.propagateEvent(1,EventTypes.RequestWalletPassphrase,ResponseResult.Default,parameters);
+    this.serverConnection.propagateEvent(1,EventTypes.RequestWalletPassphrase,ResponseResult.Default, NeuraliumBlockchainType,parameters);
   }
 
   enterKeyPassphrase(){
-    var parameters = new KeyPassphraseParameters();
+    const parameters = new KeyPassphraseParameters();
     parameters.attempt = 3;
     parameters.chainType = 1001;
     parameters.correlationId = 1;
     parameters.keyCorrelationCode = 1;
     parameters.accountID = "fdvbhvb";
     parameters.keyname = "Key Name";
-    this.serverConnection.propagateEvent(1,EventTypes.RequestWalletPassphrase,ResponseResult.Default,parameters);
+    this.serverConnection.propagateEvent(1,EventTypes.RequestWalletPassphrase,ResponseResult.Default, NeuraliumBlockchainType,parameters);
   }
 
 }

@@ -20,7 +20,10 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
 
 import { FormatTimestampPipe, FormatDateWithTime } from './pipes/format-timestamp.pipe';
 import { FormatNeuraliumPipe } from './pipes/format-neuralium.pipe';
+import { TrustHtmlPipe } from './pipes/trust-html.pipe';
+
 import { LimitStringPipe } from './pipes/limit-string.pipe';
+import { ValuesPipe } from './pipes/values.pipe';
 
 import { HighlightDirective } from './directives/highlight.directive';
 
@@ -60,14 +63,26 @@ import { SendNeuraliumsComponent } from './components/send-neuraliums/send-neura
 import { NeuraliumsHistoryComponent } from './components/neuraliums-history/neuraliums-history.component';
 import { BlockExplorerComponent } from './components/blockexplorer/blockexplorer.component';
 import { ApiExplorerComponent } from './components/apiexplorer/apiexplorer.component';
+import { UtilitiesComponent } from './components/utilities/utilities.component';
+
+
 
 import { SelectBlockchainDialogComponent } from './dialogs/select-blockchain-dialog/select-blockchain-dialog.component';
 import { AskOrCreateWalletDialogComponent } from './dialogs/ask-or-create-wallet-dialog/ask-or-create-wallet-dialog.component';
 import { CreateWalletProcessDialogComponent } from './dialogs/create-wallet-process-dialog/create-wallet-process-dialog.component';
+import { VerifyAccountDialogComponent } from './dialogs/verify-account-dialog/verify-account-dialog.component';
+
 import { ConfirmDialogComponent } from './dialogs/confirm-dialog/confirm-dialog.component';
 import { EditContactDialogComponent } from './dialogs/edit-contact-dialog/edit-contact-dialog.component';
 import { LanguageSelectionDialogComponent } from './dialogs/language-selection-dialog/language-selection-dialog.component';
 import { PublishAccountDialogComponent } from './dialogs/publish-account-dialog/publish-account-dialog.component';
+import { AppointmentsDialogComponent } from './dialogs/appointments-dialog/appointments-dialog.component';
+import { AppointmentPuzzleDialogComponent } from './dialogs/appointment-puzzle-dialog/appointment-puzzle-dialog.component';
+import { AppointmentPuzzleTestDialogComponent } from './dialogs/appointment-puzzle-test-dialog/appointment-puzzle-test-dialog.component';
+import { POWDialogComponent } from './dialogs/POW-dialog/POW-dialog.component';
+import { SMSDialogComponent } from './dialogs/sms-dialog/sms-dialog.component';
+
+
 import { SoftwareLicenseAgreementComponent } from './dialogs/terms-of-service-dialog/software-license-agreement-dialog.component';
 import { AboutDialogComponent } from './dialogs/about-dialog/about-dialog.component';
 import { ServerConnectionDialogComponent } from './dialogs/server-connection-dialog/server-connection-dialog.component';
@@ -76,8 +91,10 @@ import { TestModeAlterDialogComponent } from './dialogs/test-mode-alter-dialog/t
 import { AskKeyDialogComponent } from './dialogs/ask-key-dialog/ask-key-dialog.component';
 import { AskCopyWalletKeyFileDialogComponent } from './dialogs/ask-copy-key-dialog/ask-copy-key-dialog.component';
 import { FormatTimelineDatePipe } from './pipes/format-timeline-date.pipe';
-import { FormatTimelineTimePipe } from './pipes/format-timeline-time.pipe';
+import { FormatTimelineTimePipe, FormatETATimePipe, FormatTimelineTimePipe2 } from './pipes/format-timeline-time.pipe';
+
 import { FormatAccountNumberPipe } from './pipes/format-account-number.pipe';
+import { UpnpComponent } from './components/upnp/upnp.component';
 
 
 export function createTranslateLoader(http: HttpClient) {
@@ -105,11 +122,17 @@ export function createTranslateLoader(http: HttpClient) {
     SelectBlockchainDialogComponent,
     AskOrCreateWalletDialogComponent,
     CreateWalletProcessDialogComponent,
+    VerifyAccountDialogComponent,
     ConfirmDialogComponent,
     EditContactDialogComponent,
     LanguageSelectionDialogComponent,
     MiningComponent,
     PublishAccountDialogComponent,
+    AppointmentsDialogComponent,
+    AppointmentPuzzleDialogComponent,
+    AppointmentPuzzleTestDialogComponent,
+    POWDialogComponent,
+    SMSDialogComponent,
     DebugComponent,
     SoftwareLicenseAgreementComponent,
     AboutDialogComponent,
@@ -119,12 +142,11 @@ export function createTranslateLoader(http: HttpClient) {
     WalletSyncDisplayComponent,
     BlockchainInfoComponent,
     MiningEventsComponent,
-    FormatTimestampPipe,
-    FormatDateWithTime,
     ServerConnectionDialogComponent,
     HighlightDirective,
     TransactionDetailsDialogComponent,
     FormatNeuraliumPipe,
+    TrustHtmlPipe,
     HistoryListComponent,
     AccountPublicationStatusComponent,
     LimitStringPipe,
@@ -135,13 +157,20 @@ export function createTranslateLoader(http: HttpClient) {
     SendNeuraliumsComponent,
     NeuraliumsHistoryComponent,
     BlockExplorerComponent,
+    UtilitiesComponent,
     ApiExplorerComponent,
     AskKeyDialogComponent,
     AskCopyWalletKeyFileDialogComponent,
     TestPageComponent,
+    FormatTimestampPipe,
+    FormatDateWithTime,
     FormatTimelineDatePipe,
     FormatTimelineTimePipe,
-    FormatAccountNumberPipe
+    FormatETATimePipe,
+    FormatTimelineTimePipe2,
+    FormatAccountNumberPipe,
+    ValuesPipe,
+    UpnpComponent
   ],
   imports: [
     BrowserModule,
@@ -170,10 +199,16 @@ export function createTranslateLoader(http: HttpClient) {
     SelectBlockchainDialogComponent,
     AskOrCreateWalletDialogComponent,
     CreateWalletProcessDialogComponent,
+    VerifyAccountDialogComponent,
     ConfirmDialogComponent,
     EditContactDialogComponent,
     LanguageSelectionDialogComponent,
     PublishAccountDialogComponent,
+    AppointmentsDialogComponent,
+    AppointmentPuzzleDialogComponent,
+    AppointmentPuzzleTestDialogComponent,
+    POWDialogComponent,
+    SMSDialogComponent,
     SoftwareLicenseAgreementComponent,
     AboutDialogComponent,
     ServerConnectionDialogComponent,

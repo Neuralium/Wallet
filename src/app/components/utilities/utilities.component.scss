@@ -1,0 +1,20 @@
+.column {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+  }
+  
+  .column > * {
+    padding-top: 1em;
+    flex-grow:1;
+  }
+
+  mat-card{
+    margin:1em;
+    width: 550px;
+}
+
+.container-centered{
+  display: flex;
+  justify-content:center;
+}

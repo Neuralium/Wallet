@@ -10,10 +10,10 @@ export class AccountsService implements OnDestroy {
   constructor() { }
 
   private unsubscribe$ = new Subject<void>();
-  private accountIdIntroRegex: RegExp = /^[{]?(?:(?:STANDARD|JOINT)\:|(?:ST|JT)\:|[SJ][:]?)/i;
+  private accountIdIntroRegex: RegExp = /^[{]?(?:(?:USER|SERVER|MODERATOR|JOINT)\:|(?:USR|SVR|JT|MOD)\:|[USJM][:]?)/i;
     private accountIdTailRegex: RegExp = /(?:[0-9A-Z][-]?)+[}]?$/i;
     
-  private accountIdRegex: RegExp = /^[{]?(?:(?:STANDARD|JOINT)\:|(?:ST|JT)\:|[SJ][:]?)(?:[0-9A-Z][-]?)+[}]?$/i;
+  private accountIdRegex: RegExp = /^[{]?(?:(?:USER|SERVER|MODERATOR|JOINT)\:|(?:USR|SVR|JT|MOD)\:|[USJM][:]?)(?:[0-9A-Z][-]?)+[}]?$/i;
   private presentationRegex: RegExp = /^[{]?[*]/;
 
   ngOnDestroy(): void {

@@ -1,13 +1,22 @@
-import { Component, OnInit, Inject, OnDestroy } from '@angular/core';
+import { Component, OnInit, Inject, OnDestroy, Optional } from '@angular/core';
 import { ServerConnectionService } from '../..//service/server-connection.service';
 import { WalletService } from '../..//service/wallet.service';
+import { NotificationService } from '../..//service/notification.service';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { EventTypes } from '../..//model/serverConnectionEvent';
 import { SyncStatusService } from '../..//service/sync-status.service';
 import { TransactionsService } from '../..//service/transactions.service';
+import { TranslateService } from '@ngx-translate/core';
+import {  AccountCanPublish, AccountPublicationModes } from '../..//model/walletAccount';
+
 import { SyncStatus } from '../..//model/syncProcess';
 import { takeUntil } from 'rxjs/operators';
 import { Subject } from 'rxjs';
+
+interface IDialogParameter {
+  accountCode: string;
+  confirmationCode: number;
+}
 
 @Component({
   selector: 'app-publish-account-dialog',
@@ -15,32 +24,52 @@ import { Subject } from 'rxjs';
   styleUrls: ['./publish-account-dialog.component.scss']
 })
 export class PublishAccountDialogComponent implements OnInit, OnDestroy {
-  isBlockchainSynced: boolean = false;
-  isAccountPublicationRunning: boolean = false;
-  isAccountPublicationEnded: boolean = false;
-  showCloseButton: boolean = true;
-  accountPublicationStep: number;
-  accountPublicationStepName: string = "";
-  nonceStep: string = "";
-  errorOccured: boolean = false;
-
-  message: string = "";
-  canPublish: boolean = false;
-
-  finalNonce: number = 0;
-  solutions: Array<number>;
 
   constructor(
     private serverConnectionService: ServerConnectionService,
     private walletService: WalletService,
     private synStatusService: SyncStatusService,
     private transactionService: TransactionsService,
+    private notificationService: NotificationService,
+    private translateService: TranslateService,
     public dialogRef: MatDialogRef<PublishAccountDialogComponent>,
-    @Inject(MAT_DIALOG_DATA) public accountUuid: string) {
+    @Optional() @Inject(MAT_DIALOG_DATA) public parameters: IDialogParameter) {
 
   }
+  isAccountPublicationRunning: boolean = false;
+  isAccountPublicationEnded: boolean = false;
+  showCloseButton: boolean = true;
+  accountPublicationStep: number;
+  accountPublicationStepName: string = '';
+  errorOccured: boolean = false;
+
+  message: string = '';
+  publicationMode: AccountPublicationModes = AccountPublicationModes.Unknown;
+  AccountPublicationModes = AccountPublicationModes;
+
+  isBlockchainSynced: boolean = false;
+  canPublish: boolean = false;
+
+
+  private unsubscribe$ = new Subject<void>();
 
   ngOnInit() {
+
+    // let's determine the mode we are using
+
+    this.walletService.canPublishAccount().then(result => {
+
+      if (!result.canPublish) {
+        this.translateService.get('accountPublication.CannotPublishAccount').subscribe((res: string) => {
+          this.notificationService.showError(res);
+          this.dialogRef.close();
+        });
+      }
+
+      this.publicationMode = result.publishMode;
+
+    });
+
     this.transactionService.getCanSendTransactions().pipe(takeUntil(this.unsubscribe$)).subscribe(canSend => {
       this.canPublish = canSend;
     });
@@ -49,9 +78,6 @@ export class PublishAccountDialogComponent implements OnInit, OnDestroy {
       this.isBlockchainSynced = syncStatus === SyncStatus.Synced;
     });
   }
-
-
-  private unsubscribe$ = new Subject<void>();
 
 
   ngOnDestroy(): void {
@@ -68,9 +94,9 @@ export class PublishAccountDialogComponent implements OnInit, OnDestroy {
           break;
         case EventTypes.AccountPublicationStep:
           var step = event.message;
-          this.accountPublicationStepName = step["stepName"];
-          var stepIndex = step["stepIndex"];
-          var stepTotal = step["stepTotal"];
+          this.accountPublicationStepName = step['stepName'];
+          var stepIndex = step['stepIndex'];
+          var stepTotal = step['stepTotal'];
           this.accountPublicationStep = stepIndex / stepTotal * 100;
           break;
         case EventTypes.AccountPublicationError:
@@ -81,16 +107,18 @@ export class PublishAccountDialogComponent implements OnInit, OnDestroy {
         case EventTypes.AccountPublicationMessage:
           this.message = event.message;
           break;
-        case EventTypes.AccountPublicationPOWNonceIteration:
-          this.nonceStep = event.message["nonce"];
+        case EventTypes.POWBegin:
+
           break;
-        case EventTypes.AccountPublicationPOWNonceFound:
-          this.finalNonce = event.message["nonce"];
-          this.solutions = event.message["solutions"];
+        case EventTypes.POWIteration:
+
+          break;
+        case EventTypes.POWSolution:
+
           break;
         case EventTypes.AccountPublicationEnded:
           this.isAccountPublicationRunning = false;
-          this.accountPublicationStepName = "";
+          this.accountPublicationStepName = '';
           this.accountPublicationStep = 100;
           this.isAccountPublicationEnded = true;
           this.showCloseButton = true;
@@ -104,7 +132,7 @@ export class PublishAccountDialogComponent implements OnInit, OnDestroy {
 
   startPublishAccount() {
     this.startListeningToAccountPublicationEvents();
-    this.walletService.publishAccount(this.accountUuid);
+    this.walletService.publishAccount(this.parameters.accountCode);
     this.isAccountPublicationRunning = true;
   }
 

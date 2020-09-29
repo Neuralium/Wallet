@@ -78,21 +78,29 @@ export class DashboardComponent implements OnInit, OnDestroy {
         if (blockchainId !== 0) {
           if (!wallet.isLoaded) {
 
-            this.walletService.loadWallet(blockchainId).then(isLoaded => {
+            this.blockchainService.updateChainStatus().then(chainStatus => {
 
-              let key:string = 'wallet.WalletLoaded';
-              if(isLoaded === false){
-                key = 'wallet.WalletLoadFailed';
+              if(chainStatus.walletInfo.walletExists && chainStatus.walletInfo.walletFullyCreated){
+                this.walletService.loadWallet(blockchainId).then(isLoaded => {
+
+                  let key:string = 'wallet.WalletLoaded';
+                  if(isLoaded === false){
+                    key = 'wallet.WalletLoadFailed';
+                  }
+                  this.translateService.get(key).subscribe((res: string) => {
+                    this.notificationService.showSuccess(res);
+                  });
+                  
+                  if (isLoaded === false) {
+                    this.askCreateOrCopyWallet();
+                  }
+                  else {
+                    this.walletService.refreshWallet(blockchainId);
+                  }
+                });
               }
-              this.translateService.get(key).subscribe((res: string) => {
-                this.notificationService.showSuccess(res);
-              });
-              
-              if (isLoaded === false) {
+              else{
                 this.askCreateOrCopyWallet();
-              }
-              else {
-                this.walletService.refreshWallet(blockchainId);
               }
             });
           }
@@ -181,11 +189,11 @@ export class DashboardComponent implements OnInit, OnDestroy {
   }
 
 
-  publishAccount(accountUuid: string) {
+  publishAccount(accountCode: string) {
     setTimeout(() => {
       let dialogRef = this.dialog.open(PublishAccountDialogComponent, {
-        width: '450px',
-        data: accountUuid
+        width: '700px',
+        data: accountCode
       });
 
       dialogRef.afterClosed().subscribe(() => {

@@ -11,6 +11,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatCardModule } from '@angular/material/card';
 import {MatSlideToggleModule} from '@angular/material/slide-toggle';
+import {MatRadioModule} from '@angular/material/radio';
 import {MatButtonModule} from '@angular/material/button';
 import {MatGridListModule} from '@angular/material/grid-list';
 import {MatProgressBarModule} from '@angular/material/progress-bar';
@@ -26,6 +27,8 @@ import {MatTabsModule} from '@angular/material/tabs';
 import {MatPaginatorModule} from '@angular/material/paginator';
 import {MatStepperModule} from '@angular/material/stepper';
 import {MatCheckboxModule} from '@angular/material/checkbox';
+import {MatButtonToggleModule} from '@angular/material/button-toggle';
+
 
 @NgModule({
   declarations: [],
@@ -41,6 +44,8 @@ import {MatCheckboxModule} from '@angular/material/checkbox';
     MatInputModule,
     MatCardModule,
     MatSlideToggleModule,
+    MatRadioModule,
+    MatButtonToggleModule,
     MatButtonModule,
     MatGridListModule,
     MatProgressBarModule,
@@ -68,6 +73,8 @@ import {MatCheckboxModule} from '@angular/material/checkbox';
     MatInputModule,
     MatCardModule,
     MatSlideToggleModule,
+    MatRadioModule,
+    MatButtonToggleModule,
     MatButtonModule,
     MatGridListModule,
     MatProgressBarModule,

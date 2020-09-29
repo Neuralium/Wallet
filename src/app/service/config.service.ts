@@ -1,12 +1,15 @@
-import { Injectable, OnDestroy } from '@angular/core';
+import { Injectable, OnInit, OnDestroy } from '@angular/core';
 import { remote } from 'electron';
 import { TranslateService } from '@ngx-translate/core';
 import * as FS from 'fs-extra';
 import { AppConfig } from '../../environments/environment';
 import { takeUntil } from 'rxjs/operators';
 import { Subject } from 'rxjs';
+import { ServerConnectionService } from '../service/server-connection.service';
+import * as Store from 'electron-store';
+import * as os from 'os';
+import * as path from 'path';
 
-const Store = require('electron-store');
 const app = remote.app;
 
 class Settings {
@@ -25,12 +28,13 @@ class Settings {
 @Injectable({
   providedIn: 'root'
 })
-export class ConfigService implements OnDestroy {
+export class ConfigService{
   settings: Settings;
-  store = new Store();
+  store = new Store.default();
 
   defaultServerPathValid: boolean = false;
   defaultSettingsValue:Settings;
+  serverConnectionService:ServerConnectionService;
 
   get defaultSettings():Settings {
     if(!this.defaultSettingsValue) {
@@ -43,20 +47,35 @@ export class ConfigService implements OnDestroy {
     this.loadSettings();
   }
 
-  private unsubscribe$ = new Subject<void>();
 
-  ngOnDestroy(): void {
-    this.unsubscribe$.next();
-    this.unsubscribe$.complete();
+  setServerConnectionService(serverConnectionService:ServerConnectionService){
+
+    this.serverConnectionService = serverConnectionService;
+    this.serverConnectionService.serverConnection.subscribe(connected => {
+      if(connected){
+        this.updateLocale();
+      }
+    });
   }
+
+  updateLocale(){
+
+    try{
+      this.serverConnectionService.setLocale(this.language);
+    }
+    catch(error){
+      console.log('failed to set locale');
+    }
+  }
+
 
   getLanguagesList() {
     return [
       { 'code': 'en', 'language': 'English' },
       { 'code': 'fr', 'language': 'Français' },
       { 'code': 'es', 'language': 'Español'  },
-      { 'code': 'zh', 'language': '汉语' },
-      { 'code': 'zh-TW', 'language': '漢語' },
+      { 'code': 'zh-CN', 'language': '汉语' }, // simplified
+      { 'code': 'zh-TW', 'language': '漢語' }, // traditional
       { 'code': 'ar', 'language': 'العربية' },
       { 'code': 'pt', 'language': 'Português' },
       { 'code': 'ru', 'language': 'Русский' },
@@ -93,9 +112,9 @@ export class ConfigService implements OnDestroy {
 
     
 
-    const os = require('os');
+
     if (this.store.has(this.SettingsSetName)) {
-      this.settings = this.store.get(this.SettingsSetName);
+      this.settings = <Settings>this.store.get(this.SettingsSetName);
     } else {
       this.settings = new Settings();
     }
@@ -124,7 +143,6 @@ export class ConfigService implements OnDestroy {
   }
 
   defineDefaultSettings(): Settings {
-    const os = require('os');
 
     const settings: Settings = new Settings();
     settings.currentPlatform = os.platform();
@@ -196,7 +214,7 @@ export class ConfigService implements OnDestroy {
 
   getExistingNodePath(paths:Array<string>): string {
     console.log('Start looking for a valid server path');
-    const path = require('path');
+
     let pathFound: boolean = false;
     let finalPath: string = undefined;
 
@@ -230,7 +248,6 @@ export class ConfigService implements OnDestroy {
   }
 
   validateServerPath(nodeDirectoryPath: string, exeName:string): string {
-    const path = require('path');
     // time to test the value
     if (FS.existsSync(nodeDirectoryPath) === false) {
       // this is critical, even the auto path does not work
@@ -270,7 +287,7 @@ export class ConfigService implements OnDestroy {
     let defaultPath: string = this.settings.serverPath;
 
     if (!defaultPath) {
-      const homedir = require('os').homedir();
+      const homedir = os.homedir();
       defaultPath = homedir;
     }
 
@@ -308,10 +325,17 @@ export class ConfigService implements OnDestroy {
 
   set language(language: string) {
     this.settings.language = language;
+
+    this.updateLocale();
   }
 
   get language(): string {
     return this.settings.language;
+  }
+
+  // some operations (like sending SMS messages) are not allowed or are restricted in mainland China, so we need to know sometimes.
+  get isMainlandChina(): boolean {
+    return this.settings.language === 'zh' || this.settings.language === 'zh-TW';
   }
 
   restoreDefaultLanguage() {

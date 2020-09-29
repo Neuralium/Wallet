@@ -16,7 +16,7 @@ class DialogParameters{
 })
 export class AskCopyWalletKeyFileDialogComponent implements OnInit, OnDestroy {
   keyName:string;
-  accountUuid:string;
+  accountCode:string;
   attempt:number;
 
   constructor(
@@ -28,7 +28,7 @@ export class AskCopyWalletKeyFileDialogComponent implements OnInit, OnDestroy {
 
         let keyRequest = (<RequestCopyKeyFileParameters>this.data.parameters);
         this.keyName = keyRequest.keyname;
-        this.accountUuid = keyRequest.accountID;
+        this.accountCode = keyRequest.accountID;
       }
      }
 

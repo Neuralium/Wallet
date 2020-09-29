@@ -13,6 +13,18 @@
     </ng-template>
     <app-tools-apiexplorer></app-tools-apiexplorer>
   </mat-tab>
+  <mat-tab style="width: 100%">
+    <ng-template mat-tab-label>
+      <i class="fas fa-list-ul"></i>&nbsp; {{ 'tools.PortMapping' | translate }}
+    </ng-template>
+    <app-tools-upnp></app-tools-upnp>
+  </mat-tab>
+  <mat-tab style="width: 100%">
+    <ng-template mat-tab-label>
+      <i class="fas fa-list-ul"></i>&nbsp; {{ 'tools.Utilities' | translate }}
+    </ng-template>
+    <app-tools-utilities></app-tools-utilities>
+  </mat-tab>
 
 
 </mat-tab-group>

@@ -8,6 +8,7 @@ import { SyncStatusService } from '../..//service/sync-status.service';
 import { SyncStatus } from '../..//model/syncProcess';
 import { takeUntil } from 'rxjs/operators';
 import { Subject } from 'rxjs';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-account-details',
@@ -15,24 +16,45 @@ import { Subject } from 'rxjs';
   styleUrls: ['./account-details.component.scss']
 })
 export class AccountDetailsComponent implements OnInit, OnDestroy {
-  @Input() account: WalletAccount;
-  @Input() isCurrent: boolean;
-
-  canPublish: boolean = false;
 
   constructor(
     public dialog: MatDialog,
     private walletService: WalletService,
     private blockchainService: BlockchainService,
+    private translateService: TranslateService,
     private syncService: SyncStatusService) { }
+  @Input() account: WalletAccount;
+  @Input() isCurrent: boolean;
+
+  canPublish: boolean = false;
+  correlatedText:string = '';
+
+  private unsubscribe$ = new Subject<void>();
 
   ngOnInit() {
+
+    let key:string = 'account.NotCorrelated';
+
+    if(this.account.correlated === 1){
+      key = 'account.PhoneVerified';
+    }
+    if(this.account.correlated === 2){
+      key = 'account.EmailVerified';
+    }
+    if(this.account.correlated === 3){
+      key = 'account.GateVerified';
+    }
+    if(this.account.correlated === 4){
+      key = 'account.KYCVerified';
+    }
+    this.translateService.get(key).subscribe(text => {
+      this.correlatedText = text;
+    });
+
     this.syncService.getCurrentBlockchainSyncStatus().pipe(takeUntil(this.unsubscribe$)).subscribe(syncStatus => {
       this.canPublish = syncStatus === SyncStatus.Synced;
     })
   }
-
-  private unsubscribe$ = new Subject<void>();
   
   
     ngOnDestroy(): void {
@@ -41,12 +63,12 @@ export class AccountDetailsComponent implements OnInit, OnDestroy {
     }
   
 
-  publishAccount(accountUuid: string) {
+  publishAccount(accountCode: string) {
     if (this.canPublish) {
       setTimeout(() => {
         let dialogRef = this.dialog.open(PublishAccountDialogComponent, {
-          width: '450px',
-          data: accountUuid
+          width: '700px',
+          data: accountCode
         });
 
         dialogRef.afterClosed().subscribe(() => {
@@ -59,5 +81,4 @@ export class AccountDetailsComponent implements OnInit, OnDestroy {
   setAccountAsCurrent(account: WalletAccount) {
     this.walletService.setCurrentAccount(account);
   }
-
 }

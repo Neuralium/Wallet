@@ -1,3 +1,5 @@
+import { DateTime } from 'luxon';
+
 export enum ProcessType{
     Undefined = 0,
     WalletCreation = 1,
@@ -20,9 +22,9 @@ export class SyncProcess{
     stepsDone:number;
     processType:ProcessType;
 
-    static createNew(id:number = 0, subjet: string = "", processType:ProcessType = ProcessType.Undefined, stepsCount:number = 0): SyncProcess {
+    static createNew(id:number = 0, subjet: string = '', processType:ProcessType = ProcessType.Undefined, stepsCount:number = 0): SyncProcess {
         var sync = new SyncProcess();
-        sync.id = id !== 0 ? id : new Date().getMilliseconds() * Math.random();
+        sync.id = id !== 0 ? id : DateTime.local().millisecond * Math.random();
         sync.subject = subjet;
         sync.processType = processType;
         sync.stepsTotal = stepsCount;
@@ -32,7 +34,7 @@ export class SyncProcess{
 
 export const NO_SYNC = <SyncProcess>{
     id: 0,
-    subject:"No sync",
+    subject:'No sync',
     stepsTotal: 0,
     stepsDone:0,
     processType:ProcessType.Undefined

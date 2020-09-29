@@ -5,7 +5,7 @@ import { MiningStatistics } from '../..//model/mining-statistics';
 import { MiningHistory } from '../..//model/mining-history';
 import { EventTypes } from '../..//model/serverConnectionEvent';
 import { IpMode } from '../..//model/enums';
-import moment, * as momentObj from 'moment';
+import { DateTime } from 'luxon';
 
 export class MiningCall extends CommonCall {
 
@@ -21,11 +21,11 @@ export class MiningCall extends CommonCall {
     return new MiningCall(serviceConnectionService, logService);
   }
 
-  callStartMining(chainType: number, delegateAccountId: string) {
+  callStartMining(chainType: number, tier:number, delegateAccountId: string) {
     return new Promise<boolean>((resolve, reject) => {
 
-      this.logEvent('StartMining - call', { 'chainType': chainType, 'delegateAccountId': delegateAccountId });
-      this.serviceConnectionService.invoke<boolean>('StartMining', chainType, delegateAccountId)
+      this.logEvent('StartMining - call', { 'chainType': chainType, 'delegateAccountId': delegateAccountId, 'tier' : tier });
+      this.serviceConnectionService.invoke<boolean>('StartMining', chainType, delegateAccountId, tier)
         .then(
           response => {
             this.logEvent('StartMining - response', response);
@@ -86,7 +86,7 @@ export class MiningCall extends CommonCall {
                 const transactionTips = <number>miningHistory['transactionTips'];
 
                 const message = <EventTypes>miningHistory['message'];
-                const timestamp = moment.utc(miningHistory['timestamp']).toDate();
+                const timestamp = DateTime.fromISO(miningHistory['timestamp']).toUTC();
                 const level = <number>miningHistory['level'];
                 const parameters = <Array<Object>>miningHistory['parameters'];
 
@@ -118,7 +118,7 @@ export class MiningCall extends CommonCall {
               if ((<any>response).sessionObj) {
                 let startDate = (<any>response).sessionObj.start;
                 if (startDate) {
-                  miningStatistic.startedSession = moment.utc(startDate).toDate();
+                  miningStatistic.startedSession = DateTime.fromISO(startDate).toUTC();
                 }
                 miningStatistic.blockStartedSession = <number>((<any>response).sessionObj.blockStarted);
                 miningStatistic.blocksProcessedSession = <number>((<any>response).sessionObj.blocksProcessed);

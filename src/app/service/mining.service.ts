@@ -6,7 +6,7 @@ import { ConfigService } from './config.service';
 
 import { TranslateService } from '@ngx-translate/core';
 import { EventTypes } from '../model/serverConnectionEvent';
-import moment, * as momentObj from 'moment';
+import { DateTime } from 'luxon';
 import { NotificationService } from './notification.service';
 import { MiningHistory } from '../model/mining-history';
 import { MiningStatistics } from '../model/mining-statistics';
@@ -19,12 +19,12 @@ const NO_BLOCKCHAIN_ID = 0;
 const MAXIMUM_MESSAGE_COUNT = 30;
 
 export class MiningEvent {
-  timestamp: Date;
+  timestamp:  DateTime;
   eventName: string;
 
   static create(eventName: string): MiningEvent {
     const event = new MiningEvent();
-    event.timestamp = moment().toDate();
+    event.timestamp = new DateTime();
     event.eventName = eventName;
     return event;
   }
@@ -53,7 +53,14 @@ export class MiningService implements OnDestroy {
     return this.isMining.value;
   }
 
+  get SelectedTier(): number {
+    return this.selectedTier;
+  }
+  set SelectedTier(value: number) {
+      this.selectedTier = value;
+  }
 
+  selectedTier:number = 3;
 
   constructor(
     private serverConnection: ServerConnectionService,
@@ -123,9 +130,9 @@ export class MiningService implements OnDestroy {
     }
   }
 
-  startMining() {
+  startMining(tier:number) {
     if (this.currentBlockchainId !== NO_BLOCKCHAIN_ID) {
-      this.serverConnection.callStartMining(this.currentBlockchainId, null).then(response => {
+      this.serverConnection.callStartMining(this.currentBlockchainId, tier, null).then(response => {
         // the answer means nothing. we must wait for the event
         if (response) {
           this.queryMiningHistory();

@@ -1,0 +1,33 @@
+<h1 mat-dialog-title>{{ 'pow.Title' | translate }}</h1>
+
+<div *ngIf="!solutionFound && powIteration.nonce === 0">
+  <p>
+    {{ 'pow.Introduction' | translate }}
+  </p>
+
+</div>
+<div *ngIf="!solutionFound && powIteration.nonce !== 0">
+  <div>
+    <mat-progress-spinner style="margin: 19px auto;" diameter="50" mode="indeterminate"></mat-progress-spinner>
+  </div>
+  <div>
+    <strong>{{ 'pow.ProofOfWorkNonceSearch' | translate }}: {{powIteration.nonce}}...</strong>
+  </div>
+
+</div>
+<div *ngIf="solutionFound">
+
+  <p>
+    {{ 'pow.SolutionFound' | translate }}
+  </p>
+
+  <div class="solutionset">
+    <div><span class="solutionitem">{{'pow.Nonce' | translate}}:</span><span>{{powSolution.nonce}}</span></div>
+    <div><span class="solutionitem">{{'pow.Solution' | translate}}:</span><span>{{powSolution.solution}}</span></div>
+  </div>
+</div>
+
+<div class="row">
+  <button mat-button color="warn" (click)="cancel()"><i class="fas fa-ban"></i>
+    {{ 'app.Close' | translate }}</button>
+</div>

@@ -16,11 +16,11 @@ export class DebugCall extends CommonCall {
         return new DebugCall(serviceConnectionService, logService)
     }
 
-    callRefillNeuraliums(accountUuid: string): Promise<boolean> {
+    callRefillNeuraliums(accountCode: string): Promise<boolean> {
         return new Promise<boolean>((resolve, reject) => {
 
-            this.logEvent("RefillNeuraliums - call", { 'accountUuid': accountUuid });
-            this.serviceConnectionService.invoke<boolean>("RefillNeuraliums", accountUuid)
+            this.logEvent("RefillNeuraliums - call", { 'accountCode': accountCode });
+            this.serviceConnectionService.invoke<boolean>("RefillNeuraliums", accountCode)
               .then(
                 response => {
                   this.logEvent("RefillNeuraliums - response", response);

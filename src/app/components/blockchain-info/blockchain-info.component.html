@@ -1,4 +1,9 @@
 <mat-card>
+   <!-- <button (click)="test4()">TEST Begin</button>
+  <button (click)="test()">TEST Appointment</button>
+  <button (click)="test2()">TEST Publish</button>
+  <button (click)="test3()">TEST SMS</button>
+  <button (click)="test5()">TEST Puzzle</button>   -->
   <div style="text-align: right;"><span
         class="accoutId">{{ 'account.AccountNumber' | translate }}:&nbsp;</span>
          <span class="accoutIdEntry">{{account.accountId}}</span></div>
@@ -32,7 +37,7 @@
           <td>
             <div>
               <mat-progress-bar style="width:100px;" mode="determinate" [value]="remainingTimePercent">
-              </mat-progress-bar><small>{{currentRemainingTime | date:'HH:mm:ss'}}</small>
+              </mat-progress-bar><small>{{currentRemainingTime | formatETATime}}</small>
             </div>
           </td>
         </tr>
@@ -102,13 +107,43 @@
   <mat-card-content>
     <table>
       <tr>
-        <td><strong>{{ 'sync.Peer' | translate }}</strong></td>
-        <td>{{peerCount}}</td>
-      </tr>
-      <tr>
         <td><strong>{{ 'app.Version' | translate }}</strong></td>
         <td>{{systemVersion}}</td>
       </tr>
+      <tr>
+        <td><strong>{{ 'sync.Peer' | translate }}</strong></td>
+        <td>{{peerCount}} total, {{mobilePeerCount}} mobile</td>
+      </tr>
+    </table>
+    <table class="table" *ngIf="peerConnectionDetails.length > 0">
+      <thead>
+        <tr>
+          <th *ngFor="let column of displayedColumns" scope="col">
+          <p *ngIf="column == 'isConnected'">
+          <mat-button-toggle-group [(ngModel)]="peerConnectionDetailsShowConnected">
+              <mat-button-toggle [value]="true"> connected</mat-button-toggle>
+              <mat-button-toggle [value]="false"> all</mat-button-toggle>
+          </mat-button-toggle-group>
+          </p>
+          <p *ngIf="column == 'type'">
+            <mat-button-toggle-group [(ngModel)]="peerConnectionDetailsShowFullNode">
+                <mat-button-toggle [value]="true"> full nodes</mat-button-toggle>
+                <mat-button-toggle [value]="false"> all</mat-button-toggle>
+            </mat-button-toggle-group>
+          </p>
+          <p *ngIf="!['isConnected', 'type'].includes(column)">
+          {{column}}
+          </p>
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let data of filterPeerConnectionDetails(peerConnectionDetails)">
+            <td *ngFor="let column of displayedColumns">
+              <div  [ngStyle]="{'color': data.isConnected ? 'green' : 'red'}">{{data[column]}} </div>
+            </td>
+        </tr>
+      </tbody>
     </table>
   </mat-card-content>
 </mat-card>

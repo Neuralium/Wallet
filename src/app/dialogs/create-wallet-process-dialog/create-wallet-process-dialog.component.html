@@ -39,6 +39,13 @@
         </p>
         -->
         <p>
+          <span>{{ 'wallet.WalletType' | translate }}:</span>
+          <mat-radio-group aria-label="Select an option" name="walletType" [(ngModel)]="walletToCreate.accountType">
+            <span style="margin-left: 12px;"><mat-radio-button [value]="1">{{ 'wallet.User' | translate }}</mat-radio-button></span>
+            <span style="margin-left: 12px;"><mat-radio-button [value]="2">{{ 'wallet.Server' | translate }}</mat-radio-button></span>
+          </mat-radio-group>
+        </p>
+        <p>
           <mat-label>
             <mat-slide-toggle [(ngModel)]="walletToCreate.encryptWallet" name="encryptWallet"></mat-slide-toggle>
             {{ 'wallet.EncryptWallet' | translate }}
@@ -189,31 +196,31 @@
           <div>
             <mat-card>
               <mat-form-field appearance="legacy">
-                <mat-label>{{ 'wallet.CommunicationKeyPassphrase' | translate }}</mat-label>
-                <input [type]="passWordInputType" matInput #communicationKeyPassphraseControl
-                  placeholder="Passphrase for keys" formControlName="communicationKeyPassphrase"
-                  name="communicationKeyPassphrase" (input)="validateIndividualKeysPassphrases()">
+                <mat-label>{{ 'wallet.MessageKeyPassphrase' | translate }}</mat-label>
+                <input [type]="passWordInputType" matInput #messageKeyPassphraseControl
+                  placeholder="Passphrase for keys" formControlName="messageKeyPassphrase"
+                  name="messageKeyPassphrase" (input)="validateIndividualKeysPassphrases()">
                 <i matSuffix class="fas fa-lock"></i>
-                <mat-hint>{{ 'wallet.PassphraseForEncryptionOfAllKeys' | translate }}</mat-hint>
+                <mat-hint>{{ 'wallet.PassphraseForEncryptionOfMessageKey' | translate }}</mat-hint>
                 <mat-hint align="end" aria-live="polite">
-                  {{communicationKeyPassphraseControl.value.length}} / {{communicationKeyPassphraseStrength.max}}
+                  {{messageKeyPassphraseControl.value.length}} / {{messageKeyPassphraseStrength.max}}
                 </mat-hint>
-                <mat-error *ngIf="communicationKeyPassphrase.invalid">{{getCommunicationKeyPassphraseErrorMessage()}}
+                <mat-error *ngIf="messageKeyPassphrase.invalid">{{getMessageKeyPassphraseErrorMessage()}}
                 </mat-error>
               </mat-form-field>
               <mat-form-field appearance="legacy">
                 <mat-label>{{ 'app.ConfirmPassphrase' | translate }}</mat-label>
                 <input [type]="passWordInputType" matInput #passPhrasesWallet placeholder="Confirm Passphrase"
-                  formControlName="communicationKeyPassphraseConfirm" name="communicationKeyPassphraseConfirm"
+                  formControlName="messageKeyPassphraseConfirm" name="messageKeyPassphraseConfirm"
                   (input)="validateIndividualKeysPassphrases()">
                 <i matSuffix class="fas fa-lock"></i>
-                <mat-error *ngIf="communicationKeyPassphraseConfirm.invalid">
-                  {{getCommunicationKeyPassphraseConfirmErrorMessage()}}
+                <mat-error *ngIf="messageKeyPassphraseConfirm.invalid">
+                  {{getMessageKeyPassphraseConfirmErrorMessage()}}
                 </mat-error>
               </mat-form-field>
               <div>
-                <mat-password-strength #communicationKeyPassphraseStrength
-                  [password]="communicationKeyPassphraseControl.value">
+                <mat-password-strength #messageKeyPassphraseStrength
+                  [password]="messageKeyPassphraseControl.value">
                 </mat-password-strength>
               </div>
 
@@ -228,7 +235,7 @@
                   formControlName="changeKeyPassphrase" name="changeKeyPassphrase"
                   (input)="validateIndividualKeysPassphrases()">
                 <i matSuffix class="fas fa-lock"></i>
-                <mat-hint>{{ 'wallet.PassphraseForEncryptionOfAllKeys' | translate }}</mat-hint>
+                <mat-hint>{{ 'wallet.PassphraseForEncryptionOfChangeKey' | translate }}</mat-hint>
                 <mat-hint align="end" aria-live="polite">
                   {{changeKeyPassphraseControl.value.length}} / {{changeKeyPassphraseStrength.max}}
                 </mat-hint>
@@ -260,7 +267,7 @@
                   formControlName="backupKeyPassphrase" name="backupKeyPassphrase"
                   (input)="validateIndividualKeysPassphrases()">
                 <i matSuffix class="fas fa-lock"></i>
-                <mat-hint>{{ 'wallet.PassphraseForEncryptionOfAllKeys' | translate }}</mat-hint>
+                <mat-hint>{{ 'wallet.PassphraseForEncryptionOfBackupKey' | translate }}</mat-hint>
                 <mat-hint align="end" aria-live="polite">
                   {{backupKeyPassphraseControl.value.length}} / {{backupKeyPassphraseStrength.max}}
                 </mat-hint>
@@ -281,6 +288,71 @@
               </div>
 
             </mat-card>
+          </div>
+
+          <!--Validator keys -->
+          <div *ngIf="isServerWallet">
+            <div>
+              <mat-card>
+                <mat-form-field appearance="legacy">
+                  <mat-label>{{ 'wallet.ValidatorVerificationKeyPassphrase' | translate }}</mat-label>
+                  <input [type]="passWordInputType" matInput #validatorVerificationKeyPassphraseControl placeholder="Passphrase for keys"
+                    formControlName="validatorVerificationKeyPassphrase" name="validatorVerificationKeyPassphrase"
+                    (input)="validateIndividualKeysPassphrases()">
+                  <i matSuffix class="fas fa-lock"></i>
+                  <mat-hint>{{ 'wallet.PassphraseForEncryptionOfValidatorVerificationKey' | translate }}</mat-hint>
+                  <mat-hint align="end" aria-live="polite">
+                    {{validatorVerificationKeyPassphraseControl.value.length}} / {{validatorVerificationKeyPassphraseStrength.max}}
+                  </mat-hint>
+                  <mat-error *ngIf="validatorVerificationKeyPassphrase.invalid">{{getValidatorVerificationKeyPassphraseErrorMessage()}}</mat-error>
+                </mat-form-field>
+                <mat-form-field appearance="legacy">
+                  <mat-label>{{ 'app.ConfirmPassphrase' | translate }}</mat-label>
+                  <input [type]="passWordInputType" matInput #passPhrasesWallet placeholder="Confirm Passphrase"
+                    formControlName="validatorVerificationKeyPassphraseConfirm" name="validatorVerificationKeyPassphraseConfirmValidatorVerificationKeyPassphraseConfirm"
+                    (input)="validateIndividualKeysPassphrases()">
+                  <i matSuffix class="fas fa-lock"></i>
+                  <mat-error *ngIf="validatorVerificationKeyPassphraseConfirm.invalid">{{getValidatorVerificationKeyPassphraseConfirmErrorMessage()}}
+                  </mat-error>
+                </mat-form-field>
+                <div>
+                  <mat-password-strength #validatorVerificationKeyPassphraseStrength [password]="validatorVerificationKeyPassphraseControl.value">
+                  </mat-password-strength>
+                </div>
+  
+              </mat-card>
+            </div>
+
+            <div>
+              <mat-card>
+                <mat-form-field appearance="legacy">
+                  <mat-label>{{ 'wallet.ValidatorSecretKeyPassphrase' | translate }}</mat-label>
+                  <input [type]="passWordInputType" matInput #validatorSecretKeyPassphraseControl placeholder="Passphrase for keys"
+                    formControlName="validatorSecretKeyPassphrase" name="validatorSecretKeyPassphrase"
+                    (input)="validateIndividualKeysPassphrases()">
+                  <i matSuffix class="fas fa-lock"></i>
+                  <mat-hint>{{ 'wallet.PassphraseForEncryptionOfValidatorSecretKey' | translate }}</mat-hint>
+                  <mat-hint align="end" aria-live="polite">
+                    {{validatorSecretKeyPassphraseControl.value.length}} / {{validatorSecretKeyPassphraseStrength.max}}
+                  </mat-hint>
+                  <mat-error *ngIf="validatorSecretKeyPassphrase.invalid">{{getValidatorSecretKeyPassphraseErrorMessage()}}</mat-error>
+                </mat-form-field>
+                <mat-form-field appearance="legacy">
+                  <mat-label>{{ 'app.ConfirmPassphrase' | translate }}</mat-label>
+                  <input [type]="passWordInputType" matInput #passPhrasesWallet placeholder="Confirm Passphrase"
+                    formControlName="validatorSecretKeyPassphraseConfirm" name="validatorSecretKeyPassphraseConfirm"
+                    (input)="validateIndividualKeysPassphrases()">
+                  <i matSuffix class="fas fa-lock"></i>
+                  <mat-error *ngIf="validatorSecretKeyPassphraseConfirm.invalid">{{getValidatorSecretKeyPassphraseConfirmErrorMessage()}}
+                  </mat-error>
+                </mat-form-field>
+                <div>
+                  <mat-password-strength #validatorSecretKeyPassphraseStrength [password]="validatorSecretKeyPassphraseControl.value">
+                  </mat-password-strength>
+                </div>
+  
+              </mat-card>
+            </div>
           </div>
         </form>
         </mat-card>
@@ -368,13 +440,13 @@
           &nbsp;{{ 'wallet.TransactionKeyPassphrase' | translate }}
         </mat-list-item>
         <mat-list-item role="listitem" *ngIf="walletToCreate.encryptKey && walletToCreate.encryptKeysIndividualy">
-          <span *ngIf="!communicationKeyPassphrase.invalid">
+          <span *ngIf="!messageKeyPassphrase.invalid">
             <mat-icon fontSet="fas" fontIcon="fa-check" color="primary"></mat-icon>
           </span>
-          <span *ngIf="communicationKeyPassphrase.invalid">
+          <span *ngIf="messageKeyPassphrase.invalid">
             <mat-icon fontSet="fas" fontIcon="fa-ban" color="warn"></mat-icon>
           </span>
-          &nbsp;{{ 'wallet.CommunicationKeyPassphrase' | translate }}
+          &nbsp;{{ 'wallet.MessageKeyPassphrase' | translate }}
         </mat-list-item>
         <mat-list-item role="listitem" *ngIf="walletToCreate.encryptKey && walletToCreate.encryptKeysIndividualy">
           <span *ngIf="!changeKeyPassphrase.invalid">
@@ -394,6 +466,26 @@
           </span>
           &nbsp;{{ 'wallet.BackupKeyPassphrase' | translate }}
         </mat-list-item>
+
+        <mat-list-item role="listitem" *ngIf="walletToCreate.encryptKey && walletToCreate.encryptKeysIndividualy && isServerWallet">
+          <span *ngIf="!validatorVerificationKeyPassphrase.invalid">
+            <mat-icon fontSet="fas" fontIcon="fa-check" color="primary"></mat-icon>
+          </span>
+          <span *ngIf="validatorVerificationKeyPassphrase.invalid">
+            <mat-icon fontSet="fas" fontIcon="fa-ban" color="warn"></mat-icon>
+          </span>
+          &nbsp;{{ 'wallet.ValidatorVerificationKeyPassphrase' | translate }}
+        </mat-list-item>
+
+        <mat-list-item role="listitem" *ngIf="walletToCreate.encryptKey && walletToCreate.encryptKeysIndividualy && isServerWallet">
+          <span *ngIf="!validatorSecretKeyPassphrase.invalid">
+            <mat-icon fontSet="fas" fontIcon="fa-check" color="primary"></mat-icon>
+          </span>
+          <span *ngIf="validatorSecretKeyPassphrase.invalid">
+            <mat-icon fontSet="fas" fontIcon="fa-ban" color="warn"></mat-icon>
+          </span>
+          &nbsp;{{ 'wallet.ValidatorSecretKeyPassphrase' | translate }}
+        </mat-list-item>
       </mat-list>
       <div class="row">
         <button mat-button matStepperPrevious [disabled]="isWalletCreationRunning">Back</button>
@@ -403,6 +495,27 @@
         <button mat-button color="primary" [disabled]="isWalletCreationRunning || !isWalletValid"
           (click)="createWallet()"><i class=""></i> {{ 'app.Create' | translate }}</button>
       </div>
+    </mat-step>
+
+    <mat-step>
+      <ng-template matStepLabel>Completed</ng-template>
+      <mat-card class="column">
+        <div>
+          <h2 style="margin: auto;width: 50%;">{{ 'wallet.Congratulations' | translate }}</h2>
+
+          <p style="padding-top: 16px;">
+            {{ 'wallet.Completed' | translate }}
+          </p>
+          <p>{{ 'wallet.WalletPath' | translate }}:</p>
+          <p style="margin: auto;width: 50%;font-weight: 500;">{{walletPath}}</p>
+          <hr />
+        </div>
+      
+        <div class="row">
+          <button mat-button color="primary"  style="width: 200px;margin: auto;"
+            (click)="finish()"><i class=""></i>  {{ 'wallet.Close' | translate }}</button>
+        </div>
+      </mat-card>
     </mat-step>
   </mat-horizontal-stepper>
 

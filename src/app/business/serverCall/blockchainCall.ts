@@ -4,20 +4,37 @@ import { ServerConnectionService } from '../..//service/server-connection.servic
 import { BlockchainInfo, BlockInfo, DigestInfo } from '../..//model/blockchain-info';
 import { WalletAccountStatus } from '../..//model/walletAccount';
 import { ChainStatus, WalletInfo } from '../..//model/blockchain';
-import moment, * as momentObj from 'moment';
+import { OperatingModes } from '../..//model/enums';
+
+import { DateTime } from 'luxon';
 
 export class BlockchainCall extends CommonCall {
 
     private constructor(
-      protected serviceConnectionService : ServerConnectionService,
+      protected serviceConnectionService: ServerConnectionService,
         logService: LogService) {
-        super(serviceConnectionService, logService)
+        super(serviceConnectionService, logService);
     }
 
     static create(
-      serviceConnectionService : ServerConnectionService,
+      serviceConnectionService: ServerConnectionService,
         logService: LogService) {
-        return new BlockchainCall(serviceConnectionService, logService)
+        return new BlockchainCall(serviceConnectionService, logService);
+    }
+
+    callSetPuzzleAnswers(chainType: number, answers: Array<number>) {
+      return new Promise<void>((resolve, reject) => {
+
+        this.logEvent('SetPuzzleAnswers - call', { chainType, answers });
+        this.serviceConnectionService.invoke<void>('SetPuzzleAnswers', chainType, answers)
+          .then(
+            () => {
+              resolve();
+            })
+          .catch(reason => {
+            reject('SetPuzzleAnswers error : ' + reason);
+          });
+    });
     }
 
     callQueryBlockChainInfo(chainType: number) {
@@ -28,21 +45,21 @@ export class BlockchainCall extends CommonCall {
               .then(
                 account => {
                   this.logEvent('QueryBlockChainInfo - response', account);
-                  let blockId: number = account['blockId'];
-                  let blockHash: string = account['blockHash'];
-                  let publicBlockId: number = <WalletAccountStatus>account['publicBlockId'];
-                  let blockTimestamp:Date =  moment.utc(account['blockTimestamp']).toDate();
-                  let blockLifespan: number = account['blockLifespan'];
-                  let digestId: number = account['digestId'];
-                  let digestHash: string = account['digestHash'];
-                  let digestBlockId: number = account['digestBlockId'];
-                  let digestTimestamp: Date =  moment.utc(account["digestTimestamp"]).toDate();
-                  let publicDigestId: number = account['publicDigestId'];
-    
-                  let blockInfo = BlockInfo.create(blockId, blockTimestamp, blockHash, publicBlockId, blockLifespan);
-                  let digestInfo = DigestInfo.create(digestId, digestBlockId, digestTimestamp, digestHash, publicDigestId);
-    
-                  let blockchainInfo = BlockchainInfo.create(blockInfo, digestInfo);
+                  const blockId: number = account['blockId'];
+                  const blockHash: string = account['blockHash'];
+                  const publicBlockId: number = <WalletAccountStatus>account['publicBlockId'];
+                  const blockTimestamp:  DateTime =  DateTime.fromISO(account['blockTimestamp']).toUTC();
+                  const blockLifespan: number = account['blockLifespan'];
+                  const digestId: number = account['digestId'];
+                  const digestHash: string = account['digestHash'];
+                  const digestBlockId: number = account['digestBlockId'];
+                  const digestTimestamp:  DateTime =  DateTime.fromISO(account['digestTimestamp']).toUTC();
+                  const publicDigestId: number = account['publicDigestId'];
+
+                  const blockInfo = BlockInfo.create(blockId, blockTimestamp, blockHash, publicBlockId, blockLifespan);
+                  const digestInfo = DigestInfo.create(digestId, digestBlockId, digestTimestamp, digestHash, publicDigestId);
+
+                  const blockchainInfo = BlockchainInfo.create(blockInfo, digestInfo);
                   resolve(blockchainInfo);
                 })
               .catch(reason => {
@@ -83,7 +100,7 @@ export class BlockchainCall extends CommonCall {
           });
       }
 
-      callQueryBlock(chainType: number, blockId:number){
+      callQueryBlock(chainType: number, blockId: number) {
         return new Promise<string>((resolve, reject) => {
 
           this.logEvent('queryBlock - call', { 'chainType': chainType, 'blockId' : blockId });
@@ -95,6 +112,22 @@ export class BlockchainCall extends CommonCall {
               })
             .catch(reason => {
               reject('QueryBlock error : ' + reason + '. chain type parameters: ' + chainType + 'blockId: ' + blockId);
+            });
+        });
+      }
+
+      callGetCurrentOperatingMode(chainType: number): Promise<OperatingModes> {
+        return new Promise<OperatingModes>((resolve, reject) => {
+
+          this.logEvent('GetCurrentOperatingMode - call', { 'chainType': chainType });
+          this.serviceConnectionService.invoke<OperatingModes>('GetCurrentOperatingMode', chainType)
+            .then(
+              response => {
+                this.logEvent('GetCurrentOperatingMode - response', response);
+                resolve(response);
+              })
+            .catch(reason => {
+              reject('GetCurrentOperatingMode error : ' + reason + '. chain type parameters: ' + chainType);
             });
         });
       }

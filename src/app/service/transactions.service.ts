@@ -48,7 +48,7 @@ export class TransactionsService implements OnDestroy {
 
     this.walletService.getWallet().pipe(takeUntil(this.unsubscribe$)).subscribe(wallet => {
       if (wallet.accounts && wallet.accounts.length > 0) {
-        this.accountId = wallet.accounts.filter(account => account.isActive)[0].accountUuid;
+        this.accountId = wallet.accounts.filter(account => account.isActive)[0].accountCode;
       } else {
         this.accountId = undefined;
       }

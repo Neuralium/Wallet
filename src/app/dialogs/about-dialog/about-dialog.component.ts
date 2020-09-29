@@ -1,6 +1,6 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { MatDialogRef } from '@angular/material/dialog';
-import moment, * as momentObj from 'moment';
+import { DateTime } from 'luxon';
 import { takeUntil } from 'rxjs/operators';
 import { Subject } from 'rxjs';
 
@@ -15,7 +15,7 @@ export class AboutDialogComponent implements OnInit, OnDestroy {
   public Year:number;
 
   constructor(public dialogRef: MatDialogRef<AboutDialogComponent>) { 
-   this.Year = (moment().toDate()).getFullYear();
+   this.Year = DateTime.local().year;
   }
 
   ngOnInit() {

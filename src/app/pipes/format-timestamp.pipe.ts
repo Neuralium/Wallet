@@ -1,19 +1,27 @@
 import { Pipe, PipeTransform } from '@angular/core';
 import { DatePipe } from '@angular/common';
-import moment, * as momentObj from 'moment';
+import { DateTime } from 'luxon';
 
 @Pipe({
-  name: 'formatTimestamp'
+  name: 'FormatTimestamp'
 })
 export class FormatTimestampPipe implements PipeTransform {
 
-  transform(value: Date, format?: Array<string>): any {
-    if(!value || value.getFullYear() === 1){
+  transform(value:  DateTime, format?: string): any {
+    if(!value || value.year === 1){
       return null;
     }
     else{
 
-      return moment(value).format('LL');
+      let date:string;
+      if(format){
+
+        date= value.toFormat(format);
+      }
+      else{
+        date = value.toLocaleString(DateTime.DATE_FULL);
+      }
+      return date;
     }
     
   }
@@ -25,14 +33,13 @@ export class FormatTimestampPipe implements PipeTransform {
 })
 export class FormatDateWithTime extends DatePipe implements PipeTransform {
 
-  transform(value: Date, args?: any): any {
-    if(!value || value.getFullYear() === 1){
+  transform(value:  DateTime, args?: any): any {
+    if(!value || value.year === 1){
       return null;
     }
     else{
-      let date:moment.Moment = moment(value);
 
-      return date.format('LL') + ', ' + date.format('LTS');
+      return value.toLocaleString(DateTime.DATE_FULL) + ', ' + value.toLocaleString(DateTime.TIME_WITH_SHORT_OFFSET);
     }
     
   }

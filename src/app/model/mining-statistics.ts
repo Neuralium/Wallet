@@ -1,7 +1,9 @@
 
+import { DateTime } from 'luxon';
+
 export class MiningStatistics {
     
-    startedSession: Date = null;
+    startedSession:  DateTime | null = null;
     blockStartedSession: number = 0;
     blocksProcessedSession: number = 0;
     blocksElectedSession: number = 0;

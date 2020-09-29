@@ -1,9 +1,11 @@
+import { DateTime } from 'luxon';
+
 export class BlockchainInfo{
     blockInfo:BlockInfo;
     digestInfo:DigestInfo;
 
     static create(blockInfo:BlockInfo, digestInfo:DigestInfo):BlockchainInfo{
-      var blockchainInfo = new BlockchainInfo();
+      const blockchainInfo = new BlockchainInfo();
       blockchainInfo.blockInfo = blockInfo;
       blockchainInfo.digestInfo = digestInfo;
       return blockchainInfo;
@@ -12,13 +14,13 @@ export class BlockchainInfo{
 
 export class BlockInfo{
     id:number;
-    timestamp:Date;
+    timestamp:DateTime;
     hash:string;
     publicId:number;
     lifespan:number;
 
-    static create(id:number, timestamp:Date, hash:string, publicId:number, lifespan:number = 0):BlockInfo{
-      var block = new BlockInfo();
+    static create(id:number, timestamp:DateTime, hash:string, publicId:number, lifespan:number = 0):BlockInfo{
+      const block = new BlockInfo();
       block.id = id;
       block.timestamp = timestamp;
       block.hash = hash;
@@ -31,12 +33,12 @@ export class BlockInfo{
 export class DigestInfo{
   id:number;
   blockId:number;
-  timestamp:Date;
+  timestamp:DateTime;
   hash:string;
   publicId:number;
 
-  static create(id:number, blockId:number, timestamp:Date, hash:string, publicId:number):DigestInfo{
-    var digest = new DigestInfo();
+  static create(id:number, blockId:number, timestamp:DateTime, hash:string, publicId:number):DigestInfo{
+    const digest = new DigestInfo();
     digest.id = id;
     digest.timestamp = timestamp;
     digest.hash = hash;

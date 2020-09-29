@@ -1,26 +1,35 @@
+import { NeuraliumBlockchainType, NullBlockchainType } from '../model/blockchain';
+
 export const CONNECTED = true;
 
 export class ServerConnectionEvent {
     correlationId: number;
     eventType: EventTypes;
     eventResponse: ResponseResult;
+    blockchainType: number;
     message: any;
 
     static createNew(
         correlationId: number,
         eventType: EventTypes = EventTypes.DefaultEvent,
         eventResponse: ResponseResult = ResponseResult.Success,
+        blockchainType: number = NullBlockchainType,
         message: any = "")
         : ServerConnectionEvent {
         var item = new ServerConnectionEvent();
         item.correlationId = correlationId;
         item.eventType = eventType;
         item.eventResponse = eventResponse;
+        item.blockchainType = blockchainType;
         item.message = message;
         return item;
     }
 
-    static NO_EVENT = <ServerConnectionEvent>{ correlationId: 0, message: "No event" };
+    get isNeuralium(): boolean {
+        return this.blockchainType === NeuraliumBlockchainType;
+    }
+
+    static NO_EVENT = <ServerConnectionEvent>{ correlationId: 0, message: "No event", blockchainType: NeuraliumBlockchainType };
 }
 
 export enum ResponseResult {
@@ -30,6 +39,7 @@ export enum ResponseResult {
 }
 
 export enum EventTypes {
+
     DefaultEvent = 0,
     WalletLoadingStarted = 1,
     WalletLoadingEnded = 2,
@@ -53,59 +63,70 @@ export enum EventTypes {
     KeyGenerationMessage = 120,
     KeyGenerationPercentageUpdate = 121,
     KeyGenerationError = 122,
-    AccountPublicationStarted = 123,
-    AccountPublicationEnded = 124,
-    AccountPublicationMessage = 125,
-    AccountPublicationStep = 126,
-    AccountPublicationPOWNonceIteration = 127,
-    AccountPublicationPOWNonceFound = 128,
-    AccountPublicationError = 129,
-    WalletSyncStarted = 130,
-    WalletSyncEnded = 131,
-    WalletSyncUpdate = 132,
-    WalletSyncError = 133,
-    TransactionSent = 134,
-    TransactionCreated = 135,
-    TransactionConfirmed = 136,
-    TransactionReceived = 137,
-    TransactionMessage = 138,
-    TransactionRefused = 139,
-    TransactionError = 140,
-    BlockchainSyncStarted = 141,
-    BlockchainSyncEnded = 142,
-    BlockchainSyncUpdate = 143,
-    BlockchainSyncError = 144,
-    MiningStarted = 145,
-    MiningEnded = 146,
-    MiningElected = 147,
-    MiningPrimeElected = 148,
-    MiningPrimeElectedMissed = 149,
-    MiningStatusChanged = 150,
-    BlockInserted = 151,
-    DigestInserted = 152,
-    BlockInterpreted = 153,
-    Message = 154,
-    Error = 155,
-    RequestCopyKeyFile = 156,
-    Alert = 157,
-    ConnectableStatusChanged = 158,
-    RequireNodeUpdate = 159,
-    ImportantWalletUpdate = 160,
-    TransactionHistoryUpdated = 161,
-    ElectionContextCached = 162,
-    ElectionProcessingCompleted = 163,
-    RequestShutdown = 164,
+    AccountStatusUpdated = 123,
+    AccountPublicationStarted = 124,
+    AccountPublicationEnded = 125,
+    AccountPublicationMessage = 126,
+    AccountPublicationStep = 127,
+    AccountPublicationError = 128,
+    WalletSyncStarted = 129,
+    WalletSyncEnded = 130,
+    WalletSyncUpdate = 131,
+    WalletSyncError = 132,
+    TransactionSent = 133,
+    TransactionCreated = 134,
+    TransactionConfirmed = 135,
+    TransactionReceived = 136,
+    TransactionMessage = 137,
+    TransactionRefused = 138,
+    TransactionError = 139,
+    BlockchainSyncStarted = 140,
+    BlockchainSyncEnded = 141,
+    BlockchainSyncUpdate = 142,
+    BlockchainSyncError = 143,
+    MiningStarted = 144,
+    MiningEnded = 145,
+    MiningElected = 146,
+    MiningPrimeElected = 147,
+    MiningPrimeElectedMissed = 148,
+    MiningStatusChanged = 149,
+    BlockInserted = 150,
+    DigestInserted = 151,
+    BlockInterpreted = 152,
+    Message = 153,
+    Error = 154,
+    RequestCopyKeyFile = 155,
+    Alert = 156,
+    ConnectableStatusChanged = 157,
+    RequireNodeUpdate = 158,
+    ImportantWalletUpdate = 159,
+    TransactionHistoryUpdated = 160,
+    ElectionContextCached = 161,
+    ElectionProcessingCompleted = 162,
+    RequestShutdown = 163,
+    POWBegin = 164,
+    POWIteration = 165,
+    POWSolution = 166,
+    AppointmentRequestSent = 167,
+    AppointmentRequestConfirmed = 168,
+    AppointmentContextCached = 169,
+    AppointmentPuzzlePreparation = 170,
+    AppointmentPuzzleBegin = 171,
+    AppointmentPuzzleCompleted = 172,
+    AppointmentVerificationRequestCompleted = 173,
+    AppointmentVerificationCompleted = 174,
+    InvalidPuzzleEngineVersion = 175,
 
 
 
-AccountTotalUpdated = 1001,
-NeuraliumMiningBountyAllocated = 1002,
-NeuraliumMiningPrimeElected = 1003,
-NeuraliumTimelineUpdated = 1004,
+    AccountTotalUpdated = 1001,
+    NeuraliumMiningBountyAllocated = 1002,
+    NeuraliumMiningPrimeElected = 1003,
+    NeuraliumTimelineUpdated = 1004,
 
-// INTERNAL TO WALLET DESKTOP
-ShutdownStarted = 10001,
-ShutdownCompleted = 10002
+    // INTERNAL TO WALLET DESKTOP
+    ShutdownStarted = 10001,
+    ShutdownCompleted = 10002
 
 }
 

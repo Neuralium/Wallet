@@ -102,17 +102,17 @@ export class HistoryComponent implements OnInit, OnDestroy {
         break;
 
       case Tabs.Sent:
-        this.filteredTransactions = this.transactions.filter(transaction => { return transaction.local });
+        this.filteredTransactions = this.transactions.filter(transaction => transaction.local);
         break;
 
       case Tabs.Received:
-        this.filteredTransactions = this.transactions.filter(transaction => { return !transaction.local });
+        this.filteredTransactions = this.transactions.filter(transaction => !transaction.local);
         break;
 
       default:
         break;
     }
-    this.filteredTransactions = this.filteredTransactions.sort((a, b) => { return b.date.getTime() - a.date.getTime() })
+    this.filteredTransactions = this.filteredTransactions.sort((a, b) => b.date.toMillis() - a.date.toMillis());
 
   }
 

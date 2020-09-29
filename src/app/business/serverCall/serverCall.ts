@@ -2,6 +2,7 @@ import { CommonCall } from './commonCall';
 import { LogService } from '../..//service/log.service';
 import { ServerConnectionService } from '../..//service/server-connection.service';
 import { SystemInfo } from '../..//model/systemInfo';
+import { PeerConnectionDetails } from '../../model/peer-connection-details';
 
 
 export class ServerCall extends CommonCall {
@@ -30,6 +31,22 @@ export class ServerCall extends CommonCall {
                 })
               .catch(reason => {
                 reject('shutdown error : ' + reason);
+              });
+          });
+      }
+
+      callTestP2pPort(): Promise<boolean> {
+        return new Promise<boolean>((resolve, reject) => {
+
+            this.logEvent('TestP2pPort - call', null);
+            this.serviceConnectionService.invoke<boolean>('TestP2pPort')
+              .then(
+                response => {
+                  this.logEvent('TestP2pPort - response', response);
+                  resolve(response);
+                })
+              .catch(reason => {
+                reject('TestP2pPort error : ' + reason);
               });
           });
       }
@@ -64,6 +81,21 @@ export class ServerCall extends CommonCall {
                 })
               .catch(reason => {
                 reject('QueryTotalConnectedPeersCount error : ' + reason);
+              });
+          });
+      }
+      callQueryPeerConnectionDetails() {
+        return new Promise<Array<PeerConnectionDetails>>((resolve, reject) => {
+
+            this.logEvent('QueryPeerConnectionDetails - call', null);
+            this.serviceConnectionService.invoke<Array<PeerConnectionDetails>>('QueryPeerConnectionDetails')
+              .then(
+                response => {
+                  this.logEvent('QueryPeerConnectionDetails - response length', response.length);
+                  resolve(response);
+                })
+              .catch(reason => {
+                reject('QueryPeerConnectionDetails error : ' + reason);
               });
           });
       }
