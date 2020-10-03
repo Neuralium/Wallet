@@ -29,13 +29,14 @@
 
           <mat-button-toggle-group name="fontStyle" aria-label="Font Style" [(ngModel)]="preferredRegion" (change)="displayPreferredRegionInfo()">
             <mat-button-toggle [value]="1"><div style="width:100px">{{ 'appointments.Occident' | translate }}</div></mat-button-toggle>
-            <mat-button-toggle [value]="2"><div style="width:100px">{{ 'appointments.Orient' | translate }}</div></mat-button-toggle>
+            <mat-button-toggle [value]="2"><div style="width:100px">{{ 'appointments.Central' | translate }}</div></mat-button-toggle>
+            <mat-button-toggle [value]="4"><div style="width:100px">{{ 'appointments.Orient' | translate }}</div></mat-button-toggle>
           </mat-button-toggle-group>
         </div>
         <div>
           <mat-card>
             <p>{{preferredRegionDetailsText}}</p>
-            <div [ngClass]="[preferredRegion==1 ? 'occidentMap' : 'orientMap']"></div>
+            <div [ngClass]="[getPreferredRegionClass()]"></div>
           </mat-card>
         </div>
       </div>

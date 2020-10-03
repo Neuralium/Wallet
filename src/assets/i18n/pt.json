@@ -55,28 +55,32 @@
     "VerificationModeSelection": "Seleção do modo de verificação",
     "DefaultHelpText": "Aqui você deve selecionar um método de verificação entre as opções disponíveis. Cada método tem suas vantagens e inconvenientes. Escolha aquele que é certo para você.",
     "TESTNETHelpText": "No TESTNET, a verificação pode ser ignorada para criar uma conta imediatamente.",
-    "AppointmentsHelpText": "Você começará o processo de verificação de nomeação do Neuralium. Este processo pode durar vários dias e você terá que estar presente para a sua consulta quando a data for confirmada. Vantagens: anônimo.",
+    "AppointmentsHelpText": "Você começará o processo de verificação de nomeação do Neuralium. Este processo pode durar vários dias e você terá que estar presente para a sua consulta quando a data e hora forem confirmadas. Vantagens: anônimo.",
     "POWHelpText": "Você terá que executar uma prova de trabalho dispendiosa da CPU. Assim que for concluído, sua conta poderá minerar na 1ª e 2ª camadas como um servidor."
   },
   "appointments": {
     "Title": "Verificação de nomeação",
-    "IntroductionText": "O fluxo de trabalho de nomeação é projetado para verificar os usuários pretendidos, mantendo a grande maioria dos inundadores fora do sistema.",
+    "IntroductionText": "O fluxo de trabalho de nomeação é projetado para verificar e permitir a entrada de usuários honestos, mantendo a grande maioria dos inundadores fora do sistema.",
     "Begin": "Início",
     "Continue": "Continuar",
-    "RequestAppointmentText": "Para iniciar o processo, solicite uma consulta explicitamente. Uma solicitação de agendamento será feita e uma confirmação deve ser recebida em um momento futuro.",
-    "PreferredRegion": "Selecione a sua região preferida",
+    "RequestAppointmentText": "Para iniciar o processo, solicite uma consulta. Uma solicitação de agendamento será feita e uma confirmação deve ser recebida em um momento futuro. Esse processo pode levar de minutos a muitas horas.",
+    "PreferredRegion": "Selecione sua região mundial preferida",
     "Orient": "Orientar",
+    "Central": "Central",
     "Occident": "Ocidente",
+    "OccidentHelp": "A parte ocidental do mundo, esta região cobre principalmente as Américas",
+    "CentralHelp": "A parte central do mundo, esta região cobre principalmente a Europa, África e Oriente Médio",
+    "OrientHelp": "A parte oriental do mundo, esta região cobre principalmente China, Índia, Austrália e toda a Ásia",
     "RequestAppointmentButton": "Fazer solicitação de nomeação",
     "RequestCompleted": "Pedido de nomeação enviado com sucesso",
     "RequestConfirmed": "O pedido de nomeação foi confirmado",
-    "VerificationRequestSent": "Pedido de verificação de compromisso enviado com sucesso",
-    "VerificationRequestCompleted": "A solicitação de verificação de agendamento foi confirmada.",
-    "VerificationRequestRejected": "A solicitação de verificação de compromisso foi rejeitada.",
+    "VerificationRequestSent": "Solicitação de verificação de compromisso enviada com sucesso.",
+    "VerificationRequestCompleted": "O seu pedido de verificação de nomeação foi confirmado.",
+    "VerificationRequestRejected": "O seu pedido de verificação de nomeação foi rejeitado.",
     "AppointmentContextCached": "O contexto do compromisso foi recebido.",
     "TimeBeforeAppointment": "Tempo restante antes do compromisso",
     "RequestFailed": "O pedido de nomeação falhou",
-    "AppointmentRequestedText": "Sua nomeação foi solicitada. Devemos agora aguardar a confirmação.",
+    "AppointmentRequestedText": "Sua consulta foi solicitada. Uma confirmação será recebida dentro de alguns minutos a algumas horas.",
     "AppointmentRequestedTimestamp": "Solicitar carimbo de data / hora",
     "AppointmentConfirmedText": "O seu pedido de marcação foi confirmado e a data e hora da marcação estão agora definidas. Certifique-se de comparecer a tempo!",
     "AppointmentTimestampUtc": "Hora do Compromisso (UTC)",
@@ -85,20 +89,24 @@
     "Minutes": "Minutos)",
     "Seconds": "Segundo (s)",
     "AppointmentContextReceived": "Contexto de Compromisso Recebido",
-    "AppointmentVerificationRequestedText": "A solicitação de verificação de compromisso foi enviada. Aguardamos agora a confirmação.",
+    "AppointmentVerificationRequestedText": "A solicitação de verificação de compromisso foi enviada. Uma confirmação será recebida dentro de alguns minutos a algumas horas.",
     "AppointmentVerificationCompletedText": "A solicitação de verificação de agendamento foi confirmada. Agora você pode prosseguir e publicar sua conta no blockchain.",
-    "AppointmentVerificationRejectedText": "A solicitação de verificação de compromisso foi rejeitada.",
-    "InvalidPuzzleEngineVersion": "Versão inválida do mecanismo de quebra-cabeça. Atualize a versão do seu software."
+    "AppointmentVerificationRejectedText": "A solicitação de verificação de compromisso foi rejeitada. Por favor, tente novamente com um novo pedido de agendamento.",
+    "InvalidPuzzleEngineVersion": "Versão inválida do mecanismo de quebra-cabeça. Atualize a versão do seu software.",
+    "PuzzleInstructions": "Instruções de quebra-cabeça",
+    "PuzzleClickInstructions": "Clique aqui para exibir as instruções"
   },
   "puzzles": {
     "Title": "Enigma",
-    "TimeBeforeAppointment": "Sua sessão de quebra-cabeça começará em breve. Tempo estimado restante antes do início de sua consulta",
+    "TimeBeforeAppointment": "Sua sessão de quebra-cabeça começará em breve, por favor, fique em espera. Tempo estimado restante antes do início de sua consulta",
     "WaitingForPuzzle": "a sessão de quebra-cabeça deve começar a qualquer momento. Aguardando as instruções do quebra-cabeça ...",
-    "TimeRemaining": "Tempo restante para completar o quebra-cabeça",
-    "Next": "Próximo Quebra-cabeça",
+    "TimeRemaining": "Tempo restante para completar o (s) quebra-cabeça (s)",
+    "Next": "Quebra-cabeça Completo",
     "Complete": "Sessão Completa",
-    "CompletedAndSend": "Seus quebra-cabeças foram concluídos. Aguarde enquanto os resultados estão sendo processados.",
-    "PreparingPackage": "Aguarde enquanto o processo de nomeação é concluído e envia os resultados para verificação."
+    "CompletedAndSend": "Seu (s) quebra-cabeça (s) foram concluídos com sucesso. Aguarde enquanto os resultados estão sendo processados. Isso pode levar de alguns minutos a algumas horas.",
+    "PreparingPackage": "Aguarde enquanto o processo de nomeação é concluído, os resultados são embalados e enviados para verificação.",
+    "Puzzle": "Enigma",
+    "Of": "do"
   },
   "pow": {
     "Title": "Prova de trabalho nonce search",
@@ -183,7 +191,8 @@
     "TestMode": "Ferramentas TestNet",
     "Version": "Versão do sistema",
     "Yes": "sim",
-    "ServerRunningStop": "O servidor de nó Neuralium ainda está em execução. Você deseja parar com isso?"
+    "ServerRunningStop": "O servidor de nó Neuralium ainda está em execução. Você deseja parar com isso?",
+    "AppointmentTestWarning": "Observe que este TESTNET se destina a testar especificamente o novo sistema de agendamento. O sistema de nomeação é projetado para impedir fraudes e spammers, comprimindo a criação de novas contas em uma janela de tempo estreita. O primeiro passo é fazer um pedido de agendamento para o próximo compromisso disponível e estar presente na data e hora atribuídas para executar alguns quebra-cabeças curtos e simples. o processo de agendamento pode levar muitas horas ou dias para ser concluído, portanto esperas longas são normais. Assim que todo o processo for concluído, sua validação estará concluída e você poderá publicar sua conta. Para obter mais informações, consulte o leia-me do TESTNET em"
   },
   "blockchain": {
     "BlockId": "Id de bloco",
@@ -401,7 +410,7 @@
     "ParagrahThree": "",
     "ParagrahTwo": "No modo TESTNET, quaisquer tokens de neuralium obtidos são apenas para fins de teste e não podem ser usados na rede de produção 'MainNet'. Os tokens adquiridos no modo TESTNET também podem ser perdidos ou redefinidos a qualquer momento sem aviso prévio.",
     "Warning": "O nó e a carteira estão atualmente no modo TestNet em uma rede separada.",
-    "Period": "Esta versão do TESTNET é válida até 18 de agosto de 2020."
+    "Period": "Esta construção TESTNET é válida até 9 de outubro de 2020."
   },
   "wallet": {
     "User": "Do utilizador",

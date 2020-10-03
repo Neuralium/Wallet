@@ -55,28 +55,32 @@
     "VerificationModeSelection": "Modus electio sunt comprobatio",
     "DefaultHelpText": "Hic est eligere verificationem in modum praesto sunt electiones. Quisque in modum habet commoda et inconvenientiis. Placere elige unum quod rectum est pro vobis.",
     "TESTNETHelpText": "In TESTNET, confirmationis potest creare rationem statim praetermisisse.",
-    "AppointmentsHelpText": "Incipiam tibi per Neuralium appointment verificationem processus. Hoc processus permanere possint diebus multis: et tu nunc habes quod tuum est confirmata appointment cum balanus. Commoda: anonymous.",
+    "AppointmentsHelpText": "Incipiam tibi per Neuralium appointment verificationem processus. Hoc processus permanere possint diebus multis: et tu nunc habes quod tuum est confirmata appointment cum balanus quod vicis. Commoda: anonymous.",
     "POWHelpText": "Et erit in tempore faciendum opus pretiosa CPU probationem. Cum autem percurritur, poterit mea ob gratiam tui ut Servo in gradibus 1 et 2."
   },
   "appointments": {
     "Title": "appointment sunt comprobatio",
-    "IntroductionText": "Nominatio workflow est disposito users ut quin animo nente suis in terminis maior ratio de flooders.",
+    "IntroductionText": "Quin et workflow optime constituit, est ad patitur users in honestus nente suis in terminis maior ratio de flooders.",
     "Begin": "incipe",
     "Continue": "continue",
-    "RequestAppointmentText": "Processus in primis placet explicitely constitutio postulat. Petitionem et confirmationem constitutio accipienda erit in futurum.",
-    "PreferredRegion": "Placere eligere voluisset, regionem vestram",
+    "RequestAppointmentText": "Processus in primis placet obsecro constitutio. Petitionem et confirmationem constitutio accipienda erit in futurum. Hic processus potest capere plures minutes ut horis.",
+    "PreferredRegion": "Placere eligere vestri pocius mundus regionem",
     "Orient": "óriens",
+    "Central": "Centralis",
     "Occident": "Occidentales",
+    "OccidentHelp": "Et occidentis parte mundi, hoc cadit regione notissimus in Americas",
+    "CentralHelp": "Et media pars mundi, hoc cadit regione notissimus Europa, Africa et Oriente Medio",
+    "OrientHelp": "Ab oriente vero erit pars mundi, hoc cadit regione notissimus Sinis, India et Australia et Asia totius",
     "RequestAppointmentButton": "Request fac nominatio",
     "RequestCompleted": "Tempus postulatio missa tincidunt",
     "RequestConfirmed": "Iam confirmata appointment petitio",
-    "VerificationRequestSent": "Verificationem tempus postulatio missa tincidunt",
-    "VerificationRequestCompleted": "Iam confirmata appointment verificationem petitionem.",
-    "VerificationRequestRejected": "Appointment verificationem petitionem rejectum est.",
+    "VerificationRequestSent": "Verificationem tempus postulatio missa tincidunt.",
+    "VerificationRequestCompleted": "Confirmata appointment verificationem est petitio tua.",
+    "VerificationRequestRejected": "Appointment verificationem est petitio tua est.",
     "AppointmentContextCached": "Appointment context receptum est.",
     "TimeBeforeAppointment": "Temporis ad tempus",
     "RequestFailed": "Defecit petitionem appointment",
-    "AppointmentRequestedText": "Et appointment reqested est. Debemus autem perseveraverunt confirmare.",
+    "AppointmentRequestedText": "Et appointment rogatus est. Confirmatio recipientur a paucis minutis horarum.",
     "AppointmentRequestedTimestamp": "request indicatione temporis",
     "AppointmentConfirmedText": "Quae petitio tua appointment confirmata appointment cum balanus quod vicis et nunc est profectus. Fac, ut nervi comitantur tempore!",
     "AppointmentTimestampUtc": "Tempus appointment (UTC)",
@@ -85,20 +89,24 @@
     "Minutes": "Minute (s)",
     "Seconds": "Secundo (s)",
     "AppointmentContextReceived": "Appointment accepistis Context",
-    "AppointmentVerificationRequestedText": "Appointment verificationem petitionem missum est. Non expecto modo confirmatio est.",
+    "AppointmentVerificationRequestedText": "Appointment verificationem petitionem missum est. Confirmatio recipientur a paucis minutis horarum.",
     "AppointmentVerificationCompletedText": "Iam confirmata appointment verificationem petitionem. Et nunc procedere Tu blockchain publish in ratione vestra.",
-    "AppointmentVerificationRejectedText": "Appointment verificationem petitionem rejectum est.",
-    "InvalidPuzzleEngineVersion": "Aliquam Pompeius engine version. Placere update vestri software version."
+    "AppointmentVerificationRejectedText": "Appointment verificationem petitionem rejectum est. Aliquam tempus novam petitionem.",
+    "InvalidPuzzleEngineVersion": "Aliquam Pompeius engine version. Placere update vestri software version.",
+    "PuzzleInstructions": "Institutiones Games",
+    "PuzzleClickInstructions": "Click here ostentationem facere iussus"
   },
   "puzzles": {
     "Title": "Games",
-    "TimeBeforeAppointment": "Pompeius mox incipiam vestri session. Munus tuum ante principium temporis amet",
+    "TimeBeforeAppointment": "Sessionem aenigma tuum erit incipere primum, placere manere a sto-by. Munus tuum ante principium temporis amet",
     "WaitingForPuzzle": "sessionem ullum tempus aenigmate. Currently exspectantes aenigmate per instructiones ...",
-    "TimeRemaining": "Temporis Pompeius perficere",
-    "Next": "deinde puzzle",
+    "TimeRemaining": "Perficere temporis Pompeius (s)",
+    "Next": "integrum Games",
     "Complete": "Sessio integrum",
-    "CompletedAndSend": "Sollicitat tui fuerint. Dum velit expectare eventus sunt potuimus.",
-    "PreparingPackage": "Libet expectare dum complet tempus processus ad probationem immittit consequat."
+    "CompletedAndSend": "Aenigma tuum (s) sunt felicius tractaturo perficitur. Dum velit expectare eventus sunt potuimus. Quae potest pati a quoquam paulisper.",
+    "PreparingPackage": "Commodo exspecto dum complet appointment processus et eventus sunt et packaged pro verificationem mittit.",
+    "Puzzle": "Games",
+    "Of": "autem"
   },
   "pow": {
     "Title": "Interim quaero documenta Opus",
@@ -183,7 +191,8 @@
     "TestMode": "TestNet Tools",
     "Version": "ratio version",
     "Yes": "Ita",
-    "ServerRunningStop": "Est currently adhuc in Neuralium nodi server currit. Vis prohiberet?"
+    "ServerRunningStop": "Est currently adhuc in Neuralium nodi server currit. Vis prohiberet?",
+    "AppointmentTestWarning": "Et suscipe benedictionem hanc notitiam TESTNET test esse in animo per novas designationes, scilicet ratio. Nominationem designatur ratio dissolvere fraude nova creatura spammers expressi in angusto tempore fenestram. Primum praeceptum est constitutio Petentibus deinde ut praesto adesse balanus designabatur tempore facere pauci simplex sollicitat. Dies datus processus completam Horas et quamdiu manet normales. Postquam absolvit totum tibi erit sanatio propter confici poterit praedicare. Pro magis notitia, placere ad readme videre TESTNET"
   },
   "blockchain": {
     "BlockId": "id obstructionum",
@@ -401,7 +410,7 @@
     "ParagrahThree": "",
     "ParagrahTwo": "In TESTNET modus, aliqua signa neuralium lucrata solum proposita est ad probandum quod non possunt ad productionem 'MainNet' network. Signa parta amissa TESTNET modus potest esse, vel etiam quando non reset prior notitiam.",
     "Warning": "Et nodi, et pera, sunt currently in TestNet separatum Modus in network.",
-    "Period": "Hoc constructum TESTNET valet ad MMXX 18th August."
+    "Period": "Hoc constructum TESTNET valet ad MMXX October 9th."
   },
   "wallet": {
     "User": "User",

@@ -31,6 +31,12 @@ enum AppointmentSteps {
   AppointmentCompleted = 6
 }
 
+enum AppointmentsRegions {
+  Occident = 1 << 0, // 1
+	Central  = 1 << 1, // 2
+	Orient   = 1 << 2  // 4
+}
+
 
 @Component({
   selector: 'app-appointments-dialog',
@@ -64,6 +70,7 @@ export class AppointmentsDialogComponent implements OnInit, OnDestroy {
 
   preferredRegionDetailsText:string = '';
   occidentHelpText: string = '';
+  centralHelpText: string = '';
   orientHelpText: string = '';
 
   ngOnInit() {
@@ -220,7 +227,7 @@ export class AppointmentsDialogComponent implements OnInit, OnDestroy {
   displayPreferredRegionInfo(){
 
     
-    if(this.preferredRegion === 1){
+    if(this.preferredRegion === AppointmentsRegions.Occident){
       if(this.occidentHelpText){
         this.preferredRegionDetailsText = this.occidentHelpText;
       }
@@ -231,7 +238,18 @@ export class AppointmentsDialogComponent implements OnInit, OnDestroy {
         });
       }
     }
-    else if(this.preferredRegion === 2){
+    else if(this.preferredRegion === AppointmentsRegions.Central){
+      if(this.orientHelpText){
+        this.preferredRegionDetailsText = this.centralHelpText;
+      }
+      else{
+        this.translateService.get('appointments.CentralHelp').subscribe(text => {
+          this.centralHelpText = text;
+          this.preferredRegionDetailsText = text;
+        });
+      }
+    }
+    else if(this.preferredRegion === AppointmentsRegions.Orient){
       if(this.orientHelpText){
         this.preferredRegionDetailsText = this.orientHelpText;
       }
@@ -241,6 +259,18 @@ export class AppointmentsDialogComponent implements OnInit, OnDestroy {
           this.preferredRegionDetailsText = text;
         });
       }
+    }
+  }
+
+  getPreferredRegionClass(): string{
+    if(this.preferredRegion === AppointmentsRegions.Occident){
+      return 'occidentMap';
+    }
+    else if(this.preferredRegion === AppointmentsRegions.Central){
+      return 'centralMap';
+    }
+    else if(this.preferredRegion === AppointmentsRegions.Orient){
+      return 'orientMap';
     }
   }
 }

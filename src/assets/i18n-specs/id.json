@@ -1353,10 +1353,10 @@
     },
     {
       "Key": "testMode.Period",
-      "MatchingTranslation": "This TESTNET build is valid until August 18th 2020.",
+      "MatchingTranslation": "This TESTNET build is valid until October 9th 2020.",
       "Locked": false,
       "TimeAdded": "2019-11-13T14:46:51.0847767Z",
-      "LastUpdate": "2020-08-18T04:48:24.9905079Z"
+      "LastUpdate": "2020-09-29T13:50:53.8210767Z"
     },
     {
       "Key": "wallet.AccountCreation",
@@ -1738,10 +1738,10 @@
     },
     {
       "Key": "verifyAccount.AppointmentsHelpText",
-      "MatchingTranslation": "You will begin the Neuralium appointment verification process. This process may last many days and you will have to be present for your appointment when the date is confirmed. Advantages: anonymous.",
+      "MatchingTranslation": "You will begin the Neuralium appointment verification process. This process may last many days and you will have to be present for your appointment when the date and time is confirmed. Advantages: anonymous.",
       "Locked": false,
       "TimeAdded": "2020-07-31T23:53:05.1180541Z",
-      "LastUpdate": "2020-08-18T04:47:31.0717762Z"
+      "LastUpdate": "2020-09-29T13:50:48.500732Z"
     },
     {
       "Key": "verifyAccount.POWHelpText",
@@ -1759,10 +1759,10 @@
     },
     {
       "Key": "appointments.IntroductionText",
-      "MatchingTranslation": "The appointment workflow is designed to verify intended users while keeping the vast majority of flooders out of the system.",
+      "MatchingTranslation": "The appointment workflow is designed to verify and allow in honest users while keeping the vast majority of flooders out of the system.",
       "Locked": false,
       "TimeAdded": "2020-07-31T23:53:05.3567163Z",
-      "LastUpdate": "2020-08-18T04:47:31.7868067Z"
+      "LastUpdate": "2020-09-29T13:50:48.8481456Z"
     },
     {
       "Key": "appointments.Begin",
@@ -1780,17 +1780,17 @@
     },
     {
       "Key": "appointments.RequestAppointmentText",
-      "MatchingTranslation": "In order to begin the process, please request an appointment explicitely. An appointment request will be made and a confirmation should be received at a future time.",
+      "MatchingTranslation": "In order to begin the process, please make an appointment request. An appointment request will be made and a confirmation should be received at a future time. This process can take minutes to many hours.",
       "Locked": false,
       "TimeAdded": "2020-07-31T23:53:05.6053634Z",
-      "LastUpdate": "2020-08-18T04:47:32.2245261Z"
+      "LastUpdate": "2020-09-29T13:50:49.1611725Z"
     },
     {
       "Key": "appointments.PreferredRegion",
-      "MatchingTranslation": "Please select your preferred region",
+      "MatchingTranslation": "Please select your preferred world region",
       "Locked": false,
       "TimeAdded": "2020-07-31T23:53:05.6842772Z",
-      "LastUpdate": "2020-08-18T04:47:32.3960284Z"
+      "LastUpdate": "2020-09-29T13:50:49.4202342Z"
     },
     {
       "Key": "appointments.Orient",
@@ -1829,24 +1829,24 @@
     },
     {
       "Key": "appointments.VerificationRequestSent",
-      "MatchingTranslation": "Appointment verification request successfully sent",
+      "MatchingTranslation": "Appointment verification request successfully sent.",
       "Locked": false,
       "TimeAdded": "2020-07-31T23:53:06.6501043Z",
-      "LastUpdate": "2020-08-18T04:47:33.5275706Z"
+      "LastUpdate": "2020-09-29T13:50:49.9901795Z"
     },
     {
       "Key": "appointments.VerificationRequestCompleted",
-      "MatchingTranslation": "Appointment verification request has been confirmed.",
+      "MatchingTranslation": "Your appointment verification request has been confirmed.",
       "Locked": false,
       "TimeAdded": "2020-07-31T23:53:07.0630569Z",
-      "LastUpdate": "2020-08-18T04:47:33.7072779Z"
+      "LastUpdate": "2020-09-29T13:50:50.2178174Z"
     },
     {
       "Key": "appointments.VerificationRequestRejected",
-      "MatchingTranslation": "Appointment verification request has been rejected.",
+      "MatchingTranslation": "Your appointment verification request has been rejected.",
       "Locked": false,
       "TimeAdded": "2020-07-31T23:53:07.1628757Z",
-      "LastUpdate": "2020-08-18T04:47:33.9334548Z"
+      "LastUpdate": "2020-09-29T13:50:50.5245166Z"
     },
     {
       "Key": "appointments.AppointmentContextCached",
@@ -1871,10 +1871,10 @@
     },
     {
       "Key": "appointments.AppointmentRequestedText",
-      "MatchingTranslation": "You appointment has been reqested. We must now wait for the confirmation.",
+      "MatchingTranslation": "You appointment has been requested. A confirmation will be received within a few minutes to a few hours.",
       "Locked": false,
       "TimeAdded": "2020-07-31T23:53:08.8810339Z",
-      "LastUpdate": "2020-08-18T04:47:34.6462665Z"
+      "LastUpdate": "2020-09-29T13:50:50.8191791Z"
     },
     {
       "Key": "appointments.AppointmentRequestedTimestamp",
@@ -1934,10 +1934,10 @@
     },
     {
       "Key": "appointments.AppointmentVerificationRequestedText",
-      "MatchingTranslation": "Appointment verification request has been dispatched. We now await the confirmation.",
+      "MatchingTranslation": "Appointment verification request has been dispatched. A confirmation will be received within a few minutes to a few hours.",
       "Locked": false,
       "TimeAdded": "2020-07-31T23:53:10.8484207Z",
-      "LastUpdate": "2020-08-18T04:47:36.8556501Z"
+      "LastUpdate": "2020-09-29T13:50:51.0838795Z"
     },
     {
       "Key": "appointments.AppointmentVerificationCompletedText",
@@ -1948,10 +1948,10 @@
     },
     {
       "Key": "appointments.AppointmentVerificationRejectedText",
-      "MatchingTranslation": "Appointment verification request has been rejected.",
+      "MatchingTranslation": "Appointment verification request has been rejected. Please try again with a new appointment request.",
       "Locked": false,
       "TimeAdded": "2020-07-31T23:53:11.3535531Z",
-      "LastUpdate": "2020-08-18T04:47:37.4492045Z"
+      "LastUpdate": "2020-09-29T13:50:51.4128553Z"
     },
     {
       "Key": "appointments.InvalidPuzzleEngineVersion",
@@ -1969,10 +1969,10 @@
     },
     {
       "Key": "puzzles.TimeBeforeAppointment",
-      "MatchingTranslation": "Your puzzle session will begin soon. Estimated time remaining before the begining of your appointment",
+      "MatchingTranslation": "Your puzzle session will soon begin, please remain on stand-by. Estimated time remaining before the begining of your appointment",
       "Locked": false,
       "TimeAdded": "2020-07-31T23:53:11.6458993Z",
-      "LastUpdate": "2020-08-18T04:47:38.1781199Z"
+      "LastUpdate": "2020-09-29T13:50:51.9077448Z"
     },
     {
       "Key": "puzzles.WaitingForPuzzle",
@@ -1983,17 +1983,17 @@
     },
     {
       "Key": "puzzles.TimeRemaining",
-      "MatchingTranslation": "Time remaining to complete puzzle",
+      "MatchingTranslation": "Time remaining to complete the puzzle(s)",
       "Locked": false,
       "TimeAdded": "2020-07-31T23:53:11.8535995Z",
-      "LastUpdate": "2020-08-18T04:47:38.5740383Z"
+      "LastUpdate": "2020-09-29T13:50:52.1863751Z"
     },
     {
       "Key": "puzzles.Next",
-      "MatchingTranslation": "Next Puzzle",
+      "MatchingTranslation": "Complete Puzzle",
       "Locked": false,
       "TimeAdded": "2020-07-31T23:53:12.0018646Z",
-      "LastUpdate": "2020-08-18T04:47:38.8079341Z"
+      "LastUpdate": "2020-09-29T13:50:52.5386469Z"
     },
     {
       "Key": "puzzles.Complete",
@@ -2004,17 +2004,17 @@
     },
     {
       "Key": "puzzles.CompletedAndSend",
-      "MatchingTranslation": "Your puzzles have been completed. Please wait while the results are being processed.",
+      "MatchingTranslation": "Your puzzle(s) have been succesfully completed. Please wait while the results are being processed. This may take anywhere from a few minutes to a few hours.",
       "Locked": false,
       "TimeAdded": "2020-07-31T23:53:12.3225754Z",
-      "LastUpdate": "2020-08-18T04:47:39.2094649Z"
+      "LastUpdate": "2020-09-29T13:50:52.8686358Z"
     },
     {
       "Key": "puzzles.PreparingPackage",
-      "MatchingTranslation": "Please wait while the appointment process completes and sends the results for verification.",
+      "MatchingTranslation": "Please wait while the appointment process completes, the results are packaged and dispatched for verification.",
       "Locked": false,
       "TimeAdded": "2020-07-31T23:53:12.490943Z",
-      "LastUpdate": "2020-08-18T04:47:39.4625873Z"
+      "LastUpdate": "2020-09-29T13:50:53.0645966Z"
     },
     {
       "Key": "pow.Title",
@@ -2757,6 +2757,69 @@
       "Locked": false,
       "TimeAdded": "2020-08-18T04:48:23.045864Z",
       "LastUpdate": "2020-08-18T04:48:23.2490927Z"
+    },
+    {
+      "Key": "appointments.OccidentHelp",
+      "MatchingTranslation": "The western part of the world, this region covers most notably the Americas",
+      "Locked": false,
+      "TimeAdded": "2020-09-29T13:50:49.4202867Z",
+      "LastUpdate": "2020-09-29T13:50:49.5805509Z"
+    },
+    {
+      "Key": "appointments.OrientHelp",
+      "MatchingTranslation": "The eastern part of the world, this region covers most notably China, India, Australia and the whole of Asia",
+      "Locked": false,
+      "TimeAdded": "2020-09-29T13:50:49.5805977Z",
+      "LastUpdate": "2020-10-01T21:49:40.8951869Z"
+    },
+    {
+      "Key": "puzzles.Puzzle",
+      "MatchingTranslation": "Puzzle",
+      "Locked": false,
+      "TimeAdded": "2020-09-29T13:50:53.0646364Z",
+      "LastUpdate": "2020-09-29T19:53:35.3869027Z"
+    },
+    {
+      "Key": "puzzles.Of",
+      "MatchingTranslation": "of",
+      "Locked": false,
+      "TimeAdded": "2020-09-29T13:50:53.161941Z",
+      "LastUpdate": "2020-09-29T13:50:53.245999Z"
+    },
+    {
+      "Key": "app.AppointmentTestWarning",
+      "MatchingTranslation": "Please take notice that this TESTNET is intended to specifically test the new appointments system. The appointment system is designed to stop fraud and spammers by squeezing new account creations into a narrow window of time. The first step is to make an appointment request for the next available appointment and to be present at the allocated date and time to execute a few short and simple puzzles. the appointment process can take many hours or days to complete, so long waits are normal. Once the entire process is complete, your validation will be completed and you will be able to publish your account. For more information, please view the TESTNET readme at ",
+      "Locked": false,
+      "TimeAdded": "2020-09-29T13:50:53.2464587Z",
+      "LastUpdate": "2020-09-29T19:53:35.5841273Z"
+    },
+    {
+      "Key": "appointments.Central",
+      "MatchingTranslation": "Central",
+      "Locked": false,
+      "TimeAdded": "2020-10-01T21:49:40.3640717Z",
+      "LastUpdate": "2020-10-01T21:49:40.5164018Z"
+    },
+    {
+      "Key": "appointments.CentralHelp",
+      "MatchingTranslation": "The central part of the world, this region covers most notably Europe, Africa and the Middle East",
+      "Locked": false,
+      "TimeAdded": "2020-10-01T21:49:40.5164559Z",
+      "LastUpdate": "2020-10-01T21:49:40.6895363Z"
+    },
+    {
+      "Key": "appointments.PuzzleInstructions",
+      "MatchingTranslation": "Puzzle Instructions",
+      "Locked": false,
+      "TimeAdded": "2020-10-01T21:49:40.8954062Z",
+      "LastUpdate": "2020-10-01T21:49:41.1364023Z"
+    },
+    {
+      "Key": "appointments.PuzzleClickInstructions",
+      "MatchingTranslation": "Click here do display instructions",
+      "Locked": false,
+      "TimeAdded": "2020-10-01T21:49:41.1364329Z",
+      "LastUpdate": "2020-10-01T21:49:41.3163544Z"
     }
   ]
 }

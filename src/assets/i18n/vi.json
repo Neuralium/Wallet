@@ -55,28 +55,32 @@
     "VerificationModeSelection": "Lựa chọn chế độ xác minh",
     "DefaultHelpText": "Tại đây, bạn phải chọn một phương pháp xác minh trong số các lựa chọn có sẵn. Mỗi phương pháp đều có ưu điểm và nhược điểm riêng. Hãy chọn một trong những phù hợp với bạn.",
     "TESTNETHelpText": "Trong TESTNET, việc xác minh có thể được bỏ qua để tạo tài khoản ngay lập tức.",
-    "AppointmentsHelpText": "Bạn sẽ bắt đầu quá trình xác minh cuộc hẹn Neuralium. Quá trình này có thể kéo dài nhiều ngày và bạn sẽ phải có mặt trong cuộc hẹn khi ngày được xác nhận. Ưu điểm: ẩn danh.",
+    "AppointmentsHelpText": "Bạn sẽ bắt đầu quá trình xác minh cuộc hẹn Neuralium. Quá trình này có thể kéo dài nhiều ngày và bạn sẽ phải có mặt trong cuộc hẹn khi ngày và giờ được xác nhận. Ưu điểm: ẩn danh.",
     "POWHelpText": "Bạn sẽ phải thực hiện bằng chứng làm việc của CPU tốn kém về thời gian. Sau khi hoàn tất, tài khoản của bạn sẽ có thể khai thác ở cấp 1 và cấp 2 dưới dạng Máy chủ."
   },
   "appointments": {
     "Title": "Xác minh cuộc hẹn",
-    "IntroductionText": "Quy trình cuộc hẹn được thiết kế để xác minh những người dùng dự định trong khi vẫn giữ phần lớn lũ lụt không tham gia vào hệ thống.",
+    "IntroductionText": "Quy trình công việc cuộc hẹn được thiết kế để xác minh và cho phép những người dùng trung thực trong khi vẫn giữ phần lớn những người không tham gia vào hệ thống.",
     "Begin": "Bắt đầu",
     "Continue": "Tiếp tục",
-    "RequestAppointmentText": "Để bắt đầu quá trình, vui lòng yêu cầu một cuộc hẹn rõ ràng. Yêu cầu cuộc hẹn sẽ được thực hiện và xác nhận sẽ được nhận vào một thời điểm trong tương lai.",
-    "PreferredRegion": "Vui lòng chọn khu vực ưa thích của bạn",
+    "RequestAppointmentText": "Để bắt đầu quá trình, vui lòng đặt lịch hẹn trước. Yêu cầu cuộc hẹn sẽ được thực hiện và xác nhận sẽ được nhận vào một thời điểm trong tương lai. Quá trình này có thể mất vài phút đến nhiều giờ.",
+    "PreferredRegion": "Vui lòng chọn khu vực thế giới ưa thích của bạn",
     "Orient": "Phương Đông",
+    "Central": "Trung tâm",
     "Occident": "phương tây",
+    "OccidentHelp": "Phần phía tây của thế giới, khu vực này bao gồm đặc biệt là châu Mỹ",
+    "CentralHelp": "Phần trung tâm của thế giới, khu vực này bao gồm nhiều nhất là Châu Âu, Châu Phi và Trung Đông",
+    "OrientHelp": "Phần phía đông của thế giới, khu vực này bao gồm đáng chú ý nhất là Trung Quốc, Ấn Độ, Úc và toàn bộ châu Á",
     "RequestAppointmentButton": "Đặt lịch hẹn",
     "RequestCompleted": "Đã gửi yêu cầu cuộc hẹn thành công",
     "RequestConfirmed": "Yêu cầu cuộc hẹn đã được xác nhận",
-    "VerificationRequestSent": "Đã gửi thành công yêu cầu xác minh cuộc hẹn",
-    "VerificationRequestCompleted": "Yêu cầu xác minh cuộc hẹn đã được xác nhận.",
-    "VerificationRequestRejected": "Yêu cầu xác minh cuộc hẹn đã bị từ chối.",
+    "VerificationRequestSent": "Đã gửi thành công yêu cầu xác minh cuộc hẹn.",
+    "VerificationRequestCompleted": "Yêu cầu xác minh cuộc hẹn của bạn đã được xác nhận.",
+    "VerificationRequestRejected": "Yêu cầu xác minh cuộc hẹn của bạn đã bị từ chối.",
     "AppointmentContextCached": "Bối cảnh cuộc hẹn đã được nhận.",
     "TimeBeforeAppointment": "Thời gian còn lại trước cuộc hẹn",
     "RequestFailed": "Yêu cầu cuộc hẹn không thành công",
-    "AppointmentRequestedText": "Cuộc hẹn của bạn đã được yêu cầu lại. Bây giờ chúng ta phải chờ xác nhận.",
+    "AppointmentRequestedText": "Cuộc hẹn của bạn đã được yêu cầu. Xác nhận sẽ được nhận trong vòng vài phút đến vài giờ.",
     "AppointmentRequestedTimestamp": "Yêu cầu dấu thời gian",
     "AppointmentConfirmedText": "Yêu cầu cuộc hẹn của bạn đã được xác nhận và ngày giờ cuộc hẹn đã được thiết lập. Hãy chắc chắn để tham dự trong thời gian!",
     "AppointmentTimestampUtc": "Giờ hẹn (UTC)",
@@ -85,20 +89,24 @@
     "Minutes": "Phút",
     "Seconds": "Thứ hai",
     "AppointmentContextReceived": "Bối cảnh cuộc hẹn đã nhận",
-    "AppointmentVerificationRequestedText": "Yêu cầu xác minh cuộc hẹn đã được gửi đi. Bây giờ chúng tôi đang chờ xác nhận.",
+    "AppointmentVerificationRequestedText": "Yêu cầu xác minh cuộc hẹn đã được gửi đi. Xác nhận sẽ được nhận trong vòng vài phút đến vài giờ.",
     "AppointmentVerificationCompletedText": "Yêu cầu xác minh cuộc hẹn đã được xác nhận. Bây giờ bạn có thể tiếp tục và xuất bản tài khoản của mình lên blockchain.",
-    "AppointmentVerificationRejectedText": "Yêu cầu xác minh cuộc hẹn đã bị từ chối.",
-    "InvalidPuzzleEngineVersion": "Phiên bản công cụ giải đố không hợp lệ. Vui lòng cập nhật phiên bản phần mềm của bạn."
+    "AppointmentVerificationRejectedText": "Yêu cầu xác minh cuộc hẹn đã bị từ chối. Vui lòng thử lại với yêu cầu cuộc hẹn mới.",
+    "InvalidPuzzleEngineVersion": "Phiên bản công cụ giải đố không hợp lệ. Vui lòng cập nhật phiên bản phần mềm của bạn.",
+    "PuzzleInstructions": "Hướng dẫn câu đố",
+    "PuzzleClickInstructions": "Bấm vào đây để hiển thị hướng dẫn"
   },
   "puzzles": {
     "Title": "Câu đố",
-    "TimeBeforeAppointment": "Phiên giải đố của bạn sẽ sớm bắt đầu. Thời gian ước tính còn lại trước khi bắt đầu cuộc hẹn của bạn",
+    "TimeBeforeAppointment": "Phiên giải đố của bạn sẽ sớm bắt đầu, vui lòng tiếp tục chờ. Thời gian ước tính còn lại trước khi bắt đầu cuộc hẹn của bạn",
     "WaitingForPuzzle": "phiên giải đố sẽ bắt đầu bất kỳ lúc nào. Hiện đang chờ hướng dẫn câu đố ...",
-    "TimeRemaining": "Thời gian còn lại để hoàn thành câu đố",
-    "Next": "Câu đố tiếp theo",
+    "TimeRemaining": "Thời gian còn lại để hoàn thành (các) câu đố",
+    "Next": "Hoàn thành câu đố",
     "Complete": "Hoàn thành phiên",
-    "CompletedAndSend": "Câu đố của bạn đã được hoàn thành. Vui lòng đợi trong khi kết quả được xử lý.",
-    "PreparingPackage": "Vui lòng đợi trong khi quá trình hẹn hoàn tất và gửi kết quả để xác minh."
+    "CompletedAndSend": "(Các) câu đố của bạn đã được hoàn thành thành công. Vui lòng đợi trong khi kết quả được xử lý. Quá trình này có thể mất từ vài phút đến vài giờ.",
+    "PreparingPackage": "Vui lòng đợi trong khi quá trình đặt lịch hẹn hoàn tất, kết quả được đóng gói và gửi đi để xác minh.",
+    "Puzzle": "Câu đố",
+    "Of": "của"
   },
   "pow": {
     "Title": "Proof of Work nonce tìm kiếm",
@@ -183,7 +191,8 @@
     "TestMode": "Công cụ TestNet",
     "Version": "Phiên bản hệ thống",
     "Yes": "Đúng",
-    "ServerRunningStop": "Máy chủ nút Neuralium hiện vẫn đang chạy. Bạn có muốn ngăn chặn nó?"
+    "ServerRunningStop": "Máy chủ nút Neuralium hiện vẫn đang chạy. Bạn có muốn ngăn chặn nó?",
+    "AppointmentTestWarning": "Xin lưu ý rằng TESTNET này nhằm mục đích kiểm tra cụ thể hệ thống cuộc hẹn mới. Hệ thống cuộc hẹn được thiết kế để ngăn chặn gian lận và những kẻ gửi thư rác bằng cách ép các sáng tạo tài khoản mới vào một khoảng thời gian hẹp. Bước đầu tiên là thực hiện một yêu cầu cuộc hẹn cho cuộc hẹn có sẵn tiếp theo và có mặt vào ngày và giờ được phân bổ để thực hiện một vài câu đố ngắn và đơn giản. Quá trình đặt lịch hẹn có thể mất nhiều giờ hoặc nhiều ngày để hoàn thành, vì vậy việc chờ đợi lâu là bình thường. Khi toàn bộ quá trình hoàn tất, quá trình xác thực của bạn sẽ hoàn tất và bạn có thể xuất bản tài khoản của mình. Để biết thêm thông tin, vui lòng xem TESTNET readme tại"
   },
   "blockchain": {
     "BlockId": "Id khối",
@@ -401,7 +410,7 @@
     "ParagrahThree": "",
     "ParagrahTwo": "Trong chế độ TESTNET, mọi mã thông báo neuralium thu được chỉ dành cho mục đích thử nghiệm và không được sử dụng trong mạng 'MainNet' sản xuất. Các token đạt được trong chế độ TESTNET cũng có thể bị mất hoặc đặt lại bất kỳ lúc nào mà không cần thông báo trước.",
     "Warning": "Nút và ví hiện đang ở Chế độ TestNet trên một mạng riêng biệt.",
-    "Period": "Bản dựng TESTNET này có hiệu lực đến ngày 18 tháng 8 năm 2020."
+    "Period": "Bản dựng TESTNET này có hiệu lực đến ngày 9 tháng 10 năm 2020."
   },
   "wallet": {
     "User": "Người sử dụng",

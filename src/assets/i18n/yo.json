@@ -55,28 +55,32 @@
     "VerificationModeSelection": "Aṣayan ipo idaniloju",
     "DefaultHelpText": "Nibi o gbọdọ yan ọna ijerisi kan laarin awọn yiyan ti o wa. Ọna kọọkan ni awọn anfani ati awọn aibalẹ. Jọwọ mu eyi ti o tọ fun ọ.",
     "TESTNETHelpText": "Ni TESTNET, iṣeduro naa le ṣee rekọja lati ṣẹda iwe ipamọ lẹsẹkẹsẹ.",
-    "AppointmentsHelpText": "Iwọ yoo bẹrẹ ilana iṣeduro iṣeduro Neuralium. Ilana yii le ṣiṣe ni ọpọlọpọ awọn ọjọ ati pe iwọ yoo ni lati wa fun ipade rẹ nigbati o ba jẹrisi ọjọ naa. Awọn anfani: ailorukọ.",
+    "AppointmentsHelpText": "Iwọ yoo bẹrẹ ilana ijẹrisi ipinnu Neuralium. Ilana yii le ṣiṣe ni ọpọlọpọ awọn ọjọ ati pe iwọ yoo ni lati wa fun ipinnu lati pade rẹ nigbati ọjọ ati akoko ba jẹrisi. Awọn anfani: alailorukọ.",
     "POWHelpText": "Iwọ yoo ni lati ṣe imudaniloju akoko Sipiyu gbowolori ti iṣẹ. Ni kete ti o ti pari, akọọlẹ rẹ yoo ni anfani si mi ni awọn ipele 1st ati 2 bi Server."
   },
   "appointments": {
     "Title": "Ijerisi Apamọ",
-    "IntroductionText": "Ṣiṣẹda iṣẹ ipinnu lati pade ni a ṣe lati ṣeduro awọn olumulo ti o pinnu lakoko ti o tọju nọmba to poju ti awọn oluṣọ omi kuro ninu eto naa.",
+    "IntroductionText": "Ti ṣe apẹrẹ ṣiṣiṣẹ ṣiṣeduro lati rii daju ati gba laaye ninu awọn olumulo oloootitọ lakoko ti o pa ọpọlọpọ to pọ julọ ti awọn iṣan omi kuro ninu eto naa.",
     "Begin": "Berè",
     "Continue": "Tẹsiwaju",
-    "RequestAppointmentText": "Lati le bẹrẹ ilana naa, jọwọ beere ipinnu lati pade ni akoko kan. Ibeere ipinnu lati pade yoo ṣee ṣe ati iṣeduro kan yẹ ki o gba ni ọjọ iwaju kan.",
-    "PreferredRegion": "Jọwọ yan ẹkun ti o fẹ",
+    "RequestAppointmentText": "Lati bẹrẹ ilana naa, jọwọ ṣe ibeere ipinnu lati pade. Ibeere ipinnu lati pade yoo ṣee ṣe ati pe o yẹ ki o gba idaniloju ni akoko ọjọ iwaju. Ilana yii le gba awọn iṣẹju si awọn wakati pupọ.",
+    "PreferredRegion": "Jọwọ yan agbegbe agbaye ti o fẹ julọ",
     "Orient": "Ila-oorun",
+    "Central": "Aarin",
     "Occident": "Iṣẹju",
+    "OccidentHelp": "Apa iwọ-oorun ti agbaye, agbegbe yii ni pataki julọ ni Amẹrika",
+    "CentralHelp": "Aringbungbun aye, agbegbe yii ni pataki julọ ni Yuroopu, Afirika ati Aarin Ila-oorun",
+    "OrientHelp": "Apa ila-oorun ti agbaye, agbegbe yii ni pataki julọ China, India, Australia ati gbogbo Esia",
     "RequestAppointmentButton": "Ṣe Ibeere Apẹrẹ",
     "RequestCompleted": "Ibeere ipinnu lati pade ni ifijišẹ firanṣẹ",
     "RequestConfirmed": "Ibeere ti akoko ipade ti jẹrisi",
-    "VerificationRequestSent": "Ibeere ijẹrisi ipinnu lati pade ni ifijišẹ firanṣẹ",
-    "VerificationRequestCompleted": "A ti fidi ibeere ijẹrisi ipade adehun mulẹ.",
-    "VerificationRequestRejected": "O ti beere ibeere idaniloju adehun ipade.",
+    "VerificationRequestSent": "Ibeere ijẹrisi ipinnu lati pade ti ṣaṣeyọri.",
+    "VerificationRequestCompleted": "Ibeere ijerisi ipinnu lati pade rẹ ti fidi rẹ mulẹ.",
+    "VerificationRequestRejected": "A ti kọ ibeere ijerisi ipinnu lati pade rẹ.",
     "AppointmentContextCached": "O ti gba idari lati pade.",
     "TimeBeforeAppointment": "Akoko to ku ṣaaju ipinnu lati pade",
     "RequestFailed": "Ibeere ipinnu lati pade kuna",
-    "AppointmentRequestedText": "Ti pade ipinnu lati pade. A gbọdọ duro de ìmúdájú nisinsinyi.",
+    "AppointmentRequestedText": "O ti pade ipinnu lati pade. Ijẹrisi yoo gba laarin iṣẹju diẹ si awọn wakati diẹ.",
     "AppointmentRequestedTimestamp": "Beere timestamp",
     "AppointmentConfirmedText": "A ti fidi ibeere ibere ipade rẹ mulẹ ati ọjọ ipade ati ọjọ ti ṣeto. Rii daju lati wa ni akoko!",
     "AppointmentTimestampUtc": "Akoko Idajọ (UTC)",
@@ -85,20 +89,24 @@
     "Minutes": "Iṣẹju (s)",
     "Seconds": "Keji (s)",
     "AppointmentContextReceived": "Ti gba Ifọrọranṣẹ Ọdun",
-    "AppointmentVerificationRequestedText": "Ibeere ijẹrisi ipinnu lati pade ti firanṣẹ. A n duro de idaniloju bayi.",
+    "AppointmentVerificationRequestedText": "Ti firanṣẹ ibeere ijẹrisi ipinnu lati pade. Ijẹrisi yoo gba laarin iṣẹju diẹ si awọn wakati diẹ.",
     "AppointmentVerificationCompletedText": "A ti fidi ibeere ijẹrisi ipade adehun mulẹ. O le tẹsiwaju bayi ki o jade akọọlẹ rẹ si blockchain.",
-    "AppointmentVerificationRejectedText": "O ti beere ibeere idaniloju adehun ipade.",
-    "InvalidPuzzleEngineVersion": "Ẹya ti ko ni nkan adojuru ẹya ẹrọ. Jọwọ mu ẹya sọfitiwia rẹ ṣiṣẹ."
+    "AppointmentVerificationRejectedText": "A ti kọ ibeere ijẹrisi ipinnu lati pade. Jọwọ gbiyanju lẹẹkansi pẹlu ibeere ipinnu lati pade tuntun.",
+    "InvalidPuzzleEngineVersion": "Ẹya ti ko ni nkan adojuru ẹya ẹrọ. Jọwọ mu ẹya sọfitiwia rẹ ṣiṣẹ.",
+    "PuzzleInstructions": "Awọn ilana adojuru",
+    "PuzzleClickInstructions": "Tẹ ibi ṣe awọn itọnisọna ifihan"
   },
   "puzzles": {
     "Title": "Ohun iruju",
-    "TimeBeforeAppointment": "Akoko adojuru rẹ yoo bẹrẹ laipẹ. Akoko iṣiro to ku ṣaaju iṣaaju ti ipinnu lati pade rẹ",
+    "TimeBeforeAppointment": "Igba adojuru rẹ yoo bẹrẹ laipẹ, jọwọ wa ni imurasilẹ. Isiro akoko ti o ku ṣaaju ibẹrẹ ti ipinnu lati pade rẹ",
     "WaitingForPuzzle": "awọn adojuru igba yẹ ki o bẹrẹ eyikeyi akoko bayi. Lọwọlọwọ nduro fun awọn ilana adojuru ...",
-    "TimeRemaining": "Akoko to ku lati pari adojuru",
-    "Next": "Ohun kan ti o tẹle",
+    "TimeRemaining": "Akoko ti o ku lati pari adojuru (s)",
+    "Next": "Pizzle adojuru",
     "Complete": "Ipari Pari",
-    "CompletedAndSend": "Awọn isiro rẹ ti pari. Jọwọ duro lakoko ti o ti n tẹsiwaju awọn abajade.",
-    "PreparingPackage": "Jọwọ duro lakoko ti ilana ipade ipade ti pari ati firanṣẹ awọn abajade fun iṣeduro."
+    "CompletedAndSend": "Awọn adojuru (s) rẹ ti pari ni aṣeyọri. Jọwọ duro lakoko ti a n ṣiṣẹ awọn abajade. Eyi le gba nibikibi lati iṣẹju diẹ si awọn wakati diẹ.",
+    "PreparingPackage": "Jọwọ duro lakoko ilana ipinnu lati pade pari, awọn abajade ti ṣajọ ati firanṣẹ fun iṣeduro.",
+    "Puzzle": "Adojuru",
+    "Of": "ti"
   },
   "pow": {
     "Title": "Prowe imudaniloju wiwa wiwa",
@@ -183,7 +191,8 @@
     "TestMode": "Awọn irin-iṣẹ Idanwo-idanwo",
     "Version": "Ẹya ẹrọ",
     "Yes": "Bẹẹni",
-    "ServerRunningStop": "Olupin ẹyọ Neuralium ṣi ṣiṣẹ lọwọlọwọ. Ṣe o fẹ lati da duro?"
+    "ServerRunningStop": "Olupin ẹyọ Neuralium ṣi ṣiṣẹ lọwọlọwọ. Ṣe o fẹ lati da duro?",
+    "AppointmentTestWarning": "Jọwọ ṣe akiyesi pe TESTNET yii ni ipinnu lati ṣe idanwo pataki ni eto awọn ipinnu lati pade titun. A ṣe apẹrẹ eto ipade lati da jegudujera ati awọn apanirun jẹ nipasẹ fifun awọn ẹda akọọlẹ tuntun sinu ferese kekere ti akoko. Igbesẹ akọkọ ni lati ṣe ibeere ipinnu lati pade fun ipinnu lati pade ti o tẹle ati lati wa ni ọjọ ti a pin ati akoko lati ṣe awọn isiro kekere ati kukuru. ilana ipinnu lati pade le gba awọn wakati pupọ tabi awọn ọjọ lati pari, nitorinaa awọn iduro gigun jẹ deede. Ni kete ti gbogbo ilana ti pari, afọwọsi rẹ yoo pari ati pe iwọ yoo ni anfani lati tẹ akọọlẹ rẹ jade. Fun alaye diẹ sii, jọwọ wo iwe TESTNET ni"
   },
   "blockchain": {
     "BlockId": "Idaduro id",
@@ -401,7 +410,7 @@
     "ParagrahThree": "",
     "ParagrahTwo": "Ni ipo TESTNET, eyikeyi àmi neuralium ti o jere wa fun awọn idi idanwo nikan o le ma ṣee lo ninu iṣelọpọ 'MainNet' nẹtiwọọki. Awọn asami ti o jere ni ipo TESTNET le tun sọnu tabi tun bẹrẹ ni eyikeyi akoko laisi akiyesi ṣaaju.",
     "Warning": "Apọn ati apamọwọ wa Lọwọlọwọ Ipo TestNet lori netiwọki miiran.",
-    "Period": "Kọ TESTNET yii wulo titi di August 18th 2020."
+    "Period": "Kọ TESTNET yii wulo titi Oṣu Kẹwa Ọjọ 9th 2020."
   },
   "wallet": {
     "User": "Olumulo",

@@ -55,28 +55,32 @@
     "VerificationModeSelection": "Wybór trybu weryfikacji",
     "DefaultHelpText": "Tutaj musisz wybrać metodę weryfikacji spośród dostępnych opcji. Każda metoda ma swoje zalety i wady. Wybierz ten, który jest odpowiedni dla Ciebie.",
     "TESTNETHelpText": "W TESTNET można ominąć weryfikację i od razu utworzyć konto.",
-    "AppointmentsHelpText": "Rozpoczniesz proces weryfikacji wizyty w Neuralium. Ten proces może trwać wiele dni i będziesz musiał być obecny na wizycie, gdy data zostanie potwierdzona. Zalety: anonimowość.",
+    "AppointmentsHelpText": "Rozpoczniesz proces weryfikacji wizyty w Neuralium. Ten proces może trwać wiele dni i będziesz musiał być obecny podczas wizyty, gdy data i godzina zostaną potwierdzone. Zalety: anonimowość.",
     "POWHelpText": "Będziesz musiał wykonać kosztowny dowód pracy procesora. Po zakończeniu Twoje konto będzie mogło wydobywać na 1. i 2. poziomie jako serwer."
   },
   "appointments": {
     "Title": "Weryfikacja terminu",
-    "IntroductionText": "Obieg spotkań ma na celu weryfikację zamierzonych użytkowników, przy jednoczesnym zachowaniu zdecydowanej większości powodzi z systemu.",
+    "IntroductionText": "Przepływ pracy ma na celu weryfikację i umożliwienie uczciwym użytkownikom, przy jednoczesnym utrzymaniu zdecydowanej większości zalewaczy poza systemem.",
     "Begin": "Zaczynać",
     "Continue": "Kontyntynuj",
-    "RequestAppointmentText": "Aby rozpocząć proces, poproś wyraźnie o spotkanie. Zostanie wysłana prośba o spotkanie, a potwierdzenie powinno zostać przesłane w przyszłości.",
-    "PreferredRegion": "Wybierz preferowany region",
+    "RequestAppointmentText": "Aby rozpocząć proces, umów się na spotkanie. Zostanie wysłana prośba o spotkanie, a potwierdzenie powinno zostać przesłane w przyszłości. Ten proces może zająć od kilku minut do wielu godzin.",
+    "PreferredRegion": "Wybierz preferowany region świata",
     "Orient": "Orient",
+    "Central": "Centralny",
     "Occident": "Zachód",
+    "OccidentHelp": "W zachodniej części świata region ten obejmuje przede wszystkim obie Ameryki",
+    "CentralHelp": "Centralna część świata obejmuje przede wszystkim Europę, Afrykę i Bliski Wschód",
+    "OrientHelp": "Wschodnia część świata obejmuje przede wszystkim Chiny, Indie, Australię i całą Azję",
     "RequestAppointmentButton": "Poproś o spotkanie",
     "RequestCompleted": "Prośba o spotkanie wysłana pomyślnie",
     "RequestConfirmed": "Potwierdzono prośbę o spotkanie",
-    "VerificationRequestSent": "Prośba o weryfikację spotkania została pomyślnie wysłana",
-    "VerificationRequestCompleted": "Prośba o weryfikację spotkania została potwierdzona.",
-    "VerificationRequestRejected": "Prośba o weryfikację spotkania została odrzucona.",
+    "VerificationRequestSent": "Prośba o weryfikację spotkania została pomyślnie wysłana.",
+    "VerificationRequestCompleted": "Twoja prośba o weryfikację spotkania została potwierdzona.",
+    "VerificationRequestRejected": "Twoja prośba o weryfikację spotkania została odrzucona.",
     "AppointmentContextCached": "Otrzymano kontekst spotkania.",
     "TimeBeforeAppointment": "Czas pozostały do powołania",
     "RequestFailed": "Prośba o spotkanie nie powiodła się",
-    "AppointmentRequestedText": "Poproszono o spotkanie. Musimy teraz poczekać na potwierdzenie.",
+    "AppointmentRequestedText": "Poproszono o spotkanie. Potwierdzenie zostanie odebrane w ciągu kilku minut do kilku godzin.",
     "AppointmentRequestedTimestamp": "Poproś o sygnaturę czasową",
     "AppointmentConfirmedText": "Twoja prośba o spotkanie została potwierdzona, a data i godzina spotkania są ustawione. Przyjdź na czas!",
     "AppointmentTimestampUtc": "Godzina spotkania (UTC)",
@@ -85,20 +89,24 @@
     "Minutes": "Minuty)",
     "Seconds": "Sekundy)",
     "AppointmentContextReceived": "Otrzymano kontekst spotkania",
-    "AppointmentVerificationRequestedText": "Wysłano prośbę o weryfikację terminu. Teraz czekamy na potwierdzenie.",
+    "AppointmentVerificationRequestedText": "Wysłano prośbę o weryfikację terminu. Potwierdzenie zostanie odebrane w ciągu kilku minut do kilku godzin.",
     "AppointmentVerificationCompletedText": "Prośba o weryfikację spotkania została potwierdzona. Możesz teraz kontynuować i opublikować swoje konto w łańcuchu bloków.",
-    "AppointmentVerificationRejectedText": "Prośba o weryfikację spotkania została odrzucona.",
-    "InvalidPuzzleEngineVersion": "Nieprawidłowa wersja silnika puzzli. Zaktualizuj wersję oprogramowania."
+    "AppointmentVerificationRejectedText": "Prośba o weryfikację spotkania została odrzucona. Spróbuj ponownie z nową prośbą o spotkanie.",
+    "InvalidPuzzleEngineVersion": "Nieprawidłowa wersja silnika puzzli. Zaktualizuj wersję oprogramowania.",
+    "PuzzleInstructions": "Instrukcje łamigłówki",
+    "PuzzleClickInstructions": "Kliknij tutaj, aby wyświetlić instrukcje"
   },
   "puzzles": {
     "Title": "Puzzle",
-    "TimeBeforeAppointment": "Twoja sesja układanki wkrótce się rozpocznie. Szacowany czas pozostały do rozpoczęcia wizyty",
+    "TimeBeforeAppointment": "Twoja sesja układanki wkrótce się rozpocznie, pozostań w trybie gotowości. Szacowany czas pozostały do rozpoczęcia wizyty",
     "WaitingForPuzzle": "sesja układanki powinna rozpocząć się teraz. Obecnie czekam na instrukcje układanki ...",
-    "TimeRemaining": "Czas pozostały do zakończenia układanki",
-    "Next": "Następna łamigłówka",
+    "TimeRemaining": "Czas pozostały do ukończenia łamigłówki",
+    "Next": "Complete Puzzle",
     "Complete": "Ukończ sesję",
-    "CompletedAndSend": "Twoje łamigłówki zostały ukończone. Proszę czekać, trwa przetwarzanie wyników.",
-    "PreparingPackage": "Poczekaj, aż proces spotkania dobiegnie końca i wyślij wyniki do weryfikacji."
+    "CompletedAndSend": "Twoje puzzle zostały pomyślnie ukończone. Proszę czekać, trwa przetwarzanie wyników. Może to zająć od kilku minut do kilku godzin.",
+    "PreparingPackage": "Poczekaj, aż proces spotkania się zakończy, wyniki zostaną spakowane i wysłane do weryfikacji.",
+    "Puzzle": "Puzzle",
+    "Of": "z"
   },
   "pow": {
     "Title": "Poszukiwanie dowodów pracy",
@@ -183,7 +191,8 @@
     "TestMode": "Narzędzia TestNet",
     "Version": "Wersja systemu",
     "Yes": "tak",
-    "ServerRunningStop": "Serwer węzłów Neuralium obecnie nadal działa. Chcesz to zatrzymać?"
+    "ServerRunningStop": "Serwer węzłów Neuralium obecnie nadal działa. Chcesz to zatrzymać?",
+    "AppointmentTestWarning": "Proszę zauważyć, że ten TESTNET jest przeznaczony specjalnie do testowania nowego systemu spotkań. System spotkań ma na celu powstrzymanie oszustw i spamerów poprzez ograniczenie tworzenia nowych kont w wąskim przedziale czasu. Pierwszym krokiem jest umówienie się na następne wolne spotkanie i stawienie się w wyznaczonym terminie i godzinie, aby rozwiązać kilka krótkich i prostych zagadek. proces umawiania się może zająć wiele godzin lub dni, więc długie oczekiwanie jest normalne. Po zakończeniu całego procesu Twoja walidacja zostanie zakończona i będziesz mógł opublikować swoje konto. Aby uzyskać więcej informacji, zapoznaj się z plikiem Readme TESTNET pod adresem"
   },
   "blockchain": {
     "BlockId": "Identyfikator bloku",
@@ -401,7 +410,7 @@
     "ParagrahThree": "",
     "ParagrahTwo": "W trybie TESTNET wszelkie zdobyte tokeny neuralium służą wyłącznie do celów testowych i nie mogą być używane w produkcyjnej sieci „MainNet”. Tokeny zdobyte w trybie TESTNET mogą również zostać utracone lub zresetowane w dowolnym momencie bez wcześniejszego powiadomienia.",
     "Warning": "Węzeł i portfel są obecnie w trybie TestNet w oddzielnej sieci.",
-    "Period": "Ta kompilacja TESTNET jest ważna do 18 sierpnia 2020 r."
+    "Period": "Ta kompilacja TESTNET jest ważna do 9 października 2020 r."
   },
   "wallet": {
     "User": "Użytkownik",

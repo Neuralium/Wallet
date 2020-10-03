@@ -55,28 +55,32 @@
     "VerificationModeSelection": "驗證模式選擇",
     "DefaultHelpText": "在這裡，您必須在可用選項中選擇一種驗證方法。每種方法都有其優點和不便之處。請選擇最適合您的一個。",
     "TESTNETHelpText": "在TESTNET中，可以繞過驗證以立即創建一個帳戶。",
-    "AppointmentsHelpText": "您將開始Neuralium約會驗證過程。該過程可能會持續許多天，並且在確認日期後，您將必須在場進行預約。優點：匿名。",
+    "AppointmentsHelpText": "您將開始Neuralium約會驗證過程。該過程可能會持續很多天，並且您必須在確認日期和時間後到場進行預約。優點：匿名。",
     "POWHelpText": "您將必須執行耗時的CPU工作量證明。完成後，您的帳戶將可以在第一層和第二層中作為服務器進行挖掘。"
   },
   "appointments": {
     "Title": "預約確認",
-    "IntroductionText": "約會工作流旨在驗證目標用戶，同時將絕大多數泛洪者拒之門外。",
+    "IntroductionText": "約會工作流旨在驗證並允許誠實用戶，同時將絕大多數洪災者拒之門外。",
     "Begin": "開始",
     "Continue": "繼續",
-    "RequestAppointmentText": "為了開始該過程，請明確要求預約。將提出預約請求，並在以後的時間收到確認。",
-    "PreferredRegion": "請選擇您的首選地區",
+    "RequestAppointmentText": "為了開始該過程，請預約。將提出預約請求，並在以後的時間收到確認。此過程可能需要幾分鐘到幾個小時。",
+    "PreferredRegion": "請選擇您喜歡的世界地區",
     "Orient": "東方",
+    "Central": "中央",
     "Occident": "歐美",
+    "OccidentHelp": "在世界的西部，該地區最著名的是美洲",
+    "CentralHelp": "世界中心地區，該地區最著名的是歐洲，非洲和中東",
+    "OrientHelp": "世界東部，該地區最著名的是中國，印度，澳大利亞和整個亞洲",
     "RequestAppointmentButton": "進行預約請求",
     "RequestCompleted": "預約請求已成功發送",
     "RequestConfirmed": "預約請求已被確認",
-    "VerificationRequestSent": "預約驗證請求已成功發送",
-    "VerificationRequestCompleted": "預約確認請求已被確認。",
-    "VerificationRequestRejected": "預約驗證請求已被拒絕。",
+    "VerificationRequestSent": "約會驗證請求已成功發送。",
+    "VerificationRequestCompleted": "您的約會驗證請求已被確認。",
+    "VerificationRequestRejected": "您的約會驗證請求已被拒絕。",
     "AppointmentContextCached": "約會上下文已收到。",
     "TimeBeforeAppointment": "預約前剩餘時間",
     "RequestFailed": "預約請求失敗",
-    "AppointmentRequestedText": "您的約會已被要求。現在我們必須等待確認。",
+    "AppointmentRequestedText": "您的約會已被要求。幾分鐘至幾小時內將收到確認。",
     "AppointmentRequestedTimestamp": "請求時間戳",
     "AppointmentConfirmedText": "您的約會請求已被確認，約會日期和時間現已設置。確保及時參加！",
     "AppointmentTimestampUtc": "預約時間（UTC）",
@@ -85,20 +89,24 @@
     "Minutes": "分鐘）",
     "Seconds": "秒",
     "AppointmentContextReceived": "收到預約上下文",
-    "AppointmentVerificationRequestedText": "預約確認請求已發送。現在，我們等待確認。",
+    "AppointmentVerificationRequestedText": "預約確認請求已發送。幾分鐘至幾小時內將收到確認。",
     "AppointmentVerificationCompletedText": "預約確認請求已被確認。您現在可以繼續並將您的帳戶發佈到區塊鏈。",
-    "AppointmentVerificationRejectedText": "預約驗證請求已被拒絕。",
-    "InvalidPuzzleEngineVersion": "無效的拼圖引擎版本。請更新您的軟件版本。"
+    "AppointmentVerificationRejectedText": "預約驗證請求已被拒絕。請使用新的約會請求重試。",
+    "InvalidPuzzleEngineVersion": "無效的拼圖引擎版本。請更新您的軟件版本。",
+    "PuzzleInstructions": "拼圖說明",
+    "PuzzleClickInstructions": "點擊這裡做顯示說明"
   },
   "puzzles": {
     "Title": "難題",
-    "TimeBeforeAppointment": "您的拼圖課程即將開始。開始約會之前的預計剩餘時間",
+    "TimeBeforeAppointment": "您的拼圖課程即將開始，請保持待機狀態。開始約會之前的預計剩餘時間",
     "WaitingForPuzzle": "拼圖課程應該現在開始。目前正在等待拼圖說明...",
-    "TimeRemaining": "剩餘時間完成拼圖",
-    "Next": "下一個難題",
+    "TimeRemaining": "完成拼圖所需的時間",
+    "Next": "完整拼圖",
     "Complete": "完成會議",
-    "CompletedAndSend": "您的難題已經完成。請稍候，正在處理結果。",
-    "PreparingPackage": "約會過程完成後，請等待，並將結果發送以進行驗證。"
+    "CompletedAndSend": "您的難題已成功完成。請稍候，正在處理結果。這可能需要幾分鐘到幾小時。",
+    "PreparingPackage": "約會過程完成時，請等待，結果將打包並發送以進行驗證。",
+    "Puzzle": "難題",
+    "Of": "的"
   },
   "pow": {
     "Title": "工作量證明隨機數搜索",
@@ -183,7 +191,8 @@
     "TestMode": "TestNet工具",
     "Version": "系統版本",
     "Yes": "是",
-    "ServerRunningStop": "Neuralium節點服務器當前仍在運行。您想停止嗎？"
+    "ServerRunningStop": "Neuralium節點服務器當前仍在運行。您想停止嗎？",
+    "AppointmentTestWarning": "請注意，此TESTNET旨在專門測試新的約會系統。約會系統旨在通過將新帳戶創建壓縮到狹窄的時間範圍內來阻止欺詐和垃圾郵件發送者。第一步是對下一個可用約會提出約會請求，並在分配的日期和時間出現，以執行一些簡短的難題。約會過程可能需要數小時或數天才能完成，因此長時間的等待是正常的。整個過程完成後，您的驗證將完成，您將能夠發布您的帳戶。有關更多信息，請在以下位置查看TESTNET自述文件："
   },
   "blockchain": {
     "BlockId": "區塊編號",
@@ -401,7 +410,7 @@
     "ParagrahThree": "",
     "ParagrahTwo": "在TESTNET模式下，獲得的任何神經元標記僅用於測試目的，不得在生產的“ MainNet”網絡中使用。在TESTNET模式下獲得的令牌也可能隨時丟失或重置，恕不另行通知。",
     "Warning": "該節點和錢包當前處於單獨網絡上的TestNet模式。",
-    "Period": "此TESTNET版本的有效期至2020年8月18日。"
+    "Period": "此TESTNET版本的有效期至2020年10月9日。"
   },
   "wallet": {
     "User": "用戶",

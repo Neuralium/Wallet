@@ -55,28 +55,32 @@
     "VerificationModeSelection": "Selezione della modalità di verifica",
     "DefaultHelpText": "Qui è necessario selezionare un metodo di verifica tra le opzioni disponibili. Ogni metodo ha i suoi vantaggi e inconvenienti. Scegli quello più adatto a te.",
     "TESTNETHelpText": "In TESTNET, la verifica può essere ignorata per creare immediatamente un account.",
-    "AppointmentsHelpText": "Inizierai il processo di verifica dell'appuntamento Neuralium. Questo processo può durare molti giorni e dovrai essere presente per il tuo appuntamento quando la data è confermata. Vantaggi: anonimo.",
+    "AppointmentsHelpText": "Inizierai il processo di verifica dell'appuntamento di Neuralium. Questo processo può durare molti giorni e dovrai essere presente all'appuntamento quando la data e l'ora saranno confermate. Vantaggi: anonimo.",
     "POWHelpText": "Dovrai eseguire una prova di lavoro della CPU costosa in termini di tempo. Una volta completato, il tuo account sarà in grado di estrarre il 1 ° e il 2 ° livello come Server."
   },
   "appointments": {
     "Title": "Verifica appuntamento",
-    "IntroductionText": "Il flusso di lavoro degli appuntamenti è progettato per verificare gli utenti previsti, mantenendo al contempo la stragrande maggioranza delle inondazioni dal sistema.",
+    "IntroductionText": "Il flusso di lavoro degli appuntamenti è progettato per verificare e consentire agli utenti onesti, mantenendo la stragrande maggioranza dei flooder fuori dal sistema.",
     "Begin": "Inizio",
     "Continue": "Continua",
-    "RequestAppointmentText": "Per iniziare il processo, si prega di richiedere un appuntamento esplicitamente. Verrà effettuata una richiesta di appuntamento e una conferma dovrebbe essere ricevuta in futuro.",
-    "PreferredRegion": "Seleziona la tua regione preferita",
+    "RequestAppointmentText": "Per iniziare il processo, si prega di fare una richiesta di appuntamento. Verrà effettuata una richiesta di appuntamento e una conferma dovrebbe essere ricevuta in futuro. Questo processo può richiedere da pochi minuti a molte ore.",
+    "PreferredRegion": "Seleziona la tua regione mondiale preferita",
     "Orient": "Oriente",
+    "Central": "Centrale",
     "Occident": "Occidente",
+    "OccidentHelp": "La parte occidentale del mondo, questa regione copre soprattutto le Americhe",
+    "CentralHelp": "La parte centrale del mondo, questa regione copre soprattutto l'Europa, l'Africa e il Medio Oriente",
+    "OrientHelp": "La parte orientale del mondo, questa regione copre in particolare Cina, India, Australia e l'intera Asia",
     "RequestAppointmentButton": "Invia una richiesta di appuntamento",
     "RequestCompleted": "Richiesta di appuntamento inviata con successo",
     "RequestConfirmed": "La richiesta di appuntamento è stata confermata",
-    "VerificationRequestSent": "Richiesta di verifica appuntamento inviata correttamente",
-    "VerificationRequestCompleted": "La richiesta di verifica dell'appuntamento è stata confermata.",
-    "VerificationRequestRejected": "La richiesta di verifica dell'appuntamento è stata respinta.",
+    "VerificationRequestSent": "Richiesta di verifica dell'appuntamento inviata con successo.",
+    "VerificationRequestCompleted": "La tua richiesta di verifica dell'appuntamento è stata confermata.",
+    "VerificationRequestRejected": "La tua richiesta di verifica dell'appuntamento è stata rifiutata.",
     "AppointmentContextCached": "Il contesto dell'appuntamento è stato ricevuto.",
     "TimeBeforeAppointment": "Tempo rimanente prima dell'appuntamento",
     "RequestFailed": "Richiesta di appuntamento non riuscita",
-    "AppointmentRequestedText": "Il tuo appuntamento è stato richiesto. Dobbiamo ora attendere la conferma.",
+    "AppointmentRequestedText": "È stato richiesto il tuo appuntamento. Una conferma verrà ricevuta entro pochi minuti o poche ore.",
     "AppointmentRequestedTimestamp": "Richiedi il timestamp",
     "AppointmentConfirmedText": "La tua richiesta di appuntamento è stata confermata e la data e l'ora dell'appuntamento sono ora impostate. Assicurati di partecipare in tempo!",
     "AppointmentTimestampUtc": "Ora dell'appuntamento (UTC)",
@@ -85,20 +89,24 @@
     "Minutes": "Minuti)",
     "Seconds": "In secondo luogo (s)",
     "AppointmentContextReceived": "Contesto dell'appuntamento ricevuto",
-    "AppointmentVerificationRequestedText": "La richiesta di verifica dell'appuntamento è stata inviata. Attendiamo ora la conferma.",
+    "AppointmentVerificationRequestedText": "La richiesta di verifica dell'appuntamento è stata inviata. Una conferma verrà ricevuta entro pochi minuti o poche ore.",
     "AppointmentVerificationCompletedText": "La richiesta di verifica dell'appuntamento è stata confermata. Ora puoi procedere e pubblicare il tuo account sulla blockchain.",
-    "AppointmentVerificationRejectedText": "La richiesta di verifica dell'appuntamento è stata respinta.",
-    "InvalidPuzzleEngineVersion": "Versione del motore puzzle non valida. Si prega di aggiornare la versione del software."
+    "AppointmentVerificationRejectedText": "La richiesta di verifica dell'appuntamento è stata rifiutata. Riprova con una nuova richiesta di appuntamento.",
+    "InvalidPuzzleEngineVersion": "Versione del motore puzzle non valida. Si prega di aggiornare la versione del software.",
+    "PuzzleInstructions": "Istruzioni per il puzzle",
+    "PuzzleClickInstructions": "Fare clic qui per visualizzare le istruzioni"
   },
   "puzzles": {
     "Title": "Puzzle",
-    "TimeBeforeAppointment": "La tua sessione di puzzle inizierà presto. Tempo stimato rimanente prima dell'inizio dell'appuntamento",
+    "TimeBeforeAppointment": "La tua sessione di puzzle inizierà presto, per favore rimani in stand-by. Tempo stimato rimanente prima dell'inizio dell'appuntamento",
     "WaitingForPuzzle": "la sessione di puzzle dovrebbe iniziare in qualsiasi momento adesso. Attualmente in attesa delle istruzioni del puzzle ...",
-    "TimeRemaining": "Tempo rimanente per completare il puzzle",
-    "Next": "Next Puzzle",
+    "TimeRemaining": "Tempo rimanente per completare i puzzle",
+    "Next": "Puzzle completo",
     "Complete": "Sessione completa",
-    "CompletedAndSend": "I tuoi puzzle sono stati completati. Attendere il completamento dell'elaborazione dei risultati.",
-    "PreparingPackage": "Attendere il completamento del processo di appuntamento e inviare i risultati per la verifica."
+    "CompletedAndSend": "I tuoi puzzle sono stati completati con successo. Attendi mentre i risultati vengono elaborati. Questo può richiedere da pochi minuti a poche ore.",
+    "PreparingPackage": "Attendi il completamento del processo di appuntamento, i risultati vengono impacchettati e inviati per la verifica.",
+    "Puzzle": "Puzzle",
+    "Of": "di"
   },
   "pow": {
     "Title": "Ricerca nonce di Proof of Work",
@@ -183,7 +191,8 @@
     "TestMode": "Strumenti TestNet",
     "Version": "Versione di sistema",
     "Yes": "sì",
-    "ServerRunningStop": "Il server del nodo Neuralium è ancora in esecuzione. Vuoi fermarlo?"
+    "ServerRunningStop": "Il server del nodo Neuralium è ancora in esecuzione. Vuoi fermarlo?",
+    "AppointmentTestWarning": "Si prega di notare che questo TESTNET ha lo scopo di testare specificamente il nuovo sistema di appuntamenti. Il sistema di appuntamenti è progettato per fermare frodi e spammer comprimendo le nuove creazioni di account in un ristretto lasso di tempo. Il primo passo è fare una richiesta di appuntamento per il prossimo appuntamento disponibile e essere presenti alla data e all'ora assegnate per eseguire alcuni brevi e semplici puzzle. il completamento del processo di appuntamento può richiedere molte ore o giorni, quindi lunghe attese sono normali. Una volta completato l'intero processo, la tua convalida sarà completata e sarai in grado di pubblicare il tuo account. Per ulteriori informazioni, consultare il file readme di TESTNET all'indirizzo"
   },
   "blockchain": {
     "BlockId": "ID blocco",
@@ -401,7 +410,7 @@
     "ParagrahThree": "",
     "ParagrahTwo": "In modalità TESTNET, tutti i token neurali acquisiti sono solo a scopo di test e non possono essere utilizzati nella rete di produzione 'MainNet'. I token ottenuti in modalità TESTNET possono anche essere persi o ripristinati in qualsiasi momento senza preavviso.",
     "Warning": "Il nodo e il portafoglio sono attualmente in modalità TestNet su una rete separata.",
-    "Period": "Questa build TESTNET è valida fino al 18 agosto 2020."
+    "Period": "Questa build TESTNET è valida fino al 9 ottobre 2020."
   },
   "wallet": {
     "User": "Utente",

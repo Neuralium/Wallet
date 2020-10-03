@@ -55,28 +55,32 @@
     "VerificationModeSelection": "Doğrulama modu seçimi",
     "DefaultHelpText": "Burada mevcut seçenekler arasından bir doğrulama yöntemi seçmelisiniz. Her yöntemin avantajları ve sakıncaları vardır. Lütfen sizin için doğru olanı seçin.",
     "TESTNETHelpText": "TESTNET'te, doğrulama hemen bir hesap oluşturmak için atlanabilir.",
-    "AppointmentsHelpText": "Neuralium randevu doğrulama sürecine başlayacaksınız. Bu süreç günlerce sürebilir ve tarih onaylandığında randevunuza hazır olmanız gerekecektir. Avantajlar: anonim.",
+    "AppointmentsHelpText": "Neuralium randevu doğrulama sürecine başlayacaksınız. Bu süreç günlerce sürebilir ve tarih ve saat onaylandığında randevunuza hazır olmanız gerekecektir. Avantajlar: anonim.",
     "POWHelpText": "Zaman pahalı bir CPU çalışma kanıtı yürütmeniz gerekecek. Tamamlandığında, hesabınız 1. ve 2. katmanlar için bir Sunucu olarak madencilik yapabilecektir."
   },
   "appointments": {
     "Title": "Randevu Doğrulama",
-    "IntroductionText": "Randevu iş akışı, taşkınların büyük çoğunluğunu sistemden uzak tutarken hedeflenen kullanıcıları doğrulamak için tasarlanmıştır.",
+    "IntroductionText": "Randevu iş akışı, taşkınların büyük çoğunluğunu sistemden uzak tutarken dürüst kullanıcıları doğrulamak ve izin vermek için tasarlanmıştır.",
     "Begin": "Başla",
     "Continue": "Devam et",
-    "RequestAppointmentText": "Süreci başlatmak için lütfen açıkça randevu talep edin. Bir randevu talebi yapılacak ve ileride bir onay alınacaktır.",
-    "PreferredRegion": "Lütfen tercih ettiğiniz bölgeyi seçin",
+    "RequestAppointmentText": "Süreci başlatmak için lütfen randevu talebinde bulunun. Bir randevu talebi yapılacak ve ileride bir onay alınacaktır. Bu işlem dakikalar veya saatler sürebilir.",
+    "PreferredRegion": "Lütfen tercih ettiğiniz dünya bölgesini seçin",
     "Orient": "Doğu",
+    "Central": "Merkez",
     "Occident": "Batı",
+    "OccidentHelp": "Dünyanın batı kısmı, bu bölge en çok Amerika'yı kapsar",
+    "CentralHelp": "Dünyanın orta kısmı, bu bölge en çok Avrupa, Afrika ve Orta Doğu'yu kapsar",
+    "OrientHelp": "Dünyanın doğu kısmı, bu bölge en çok Çin, Hindistan, Avustralya ve tüm Asya'yı kapsar.",
     "RequestAppointmentButton": "Randevu Talebi Yapın",
     "RequestCompleted": "Randevu isteği başarıyla gönderildi",
     "RequestConfirmed": "Randevu talebi onaylandı",
-    "VerificationRequestSent": "Randevu doğrulama isteği başarıyla gönderildi",
-    "VerificationRequestCompleted": "Randevu doğrulama talebi onaylandı.",
-    "VerificationRequestRejected": "Randevu doğrulama talebi reddedildi.",
+    "VerificationRequestSent": "Randevu doğrulama isteği başarıyla gönderildi.",
+    "VerificationRequestCompleted": "Randevu doğrulama talebiniz onaylandı.",
+    "VerificationRequestRejected": "Randevu doğrulama talebiniz reddedildi.",
     "AppointmentContextCached": "Randevu içeriği alındı.",
     "TimeBeforeAppointment": "Randevuya kalan süre",
     "RequestFailed": "Randevu isteği başarısız oldu",
-    "AppointmentRequestedText": "Randevunuz istendi. Şimdi onay için beklemeliyiz.",
+    "AppointmentRequestedText": "Randevunuz talep edildi. Birkaç dakika ile birkaç saat arasında bir onay alınacaktır.",
     "AppointmentRequestedTimestamp": "Zaman damgası isteyin",
     "AppointmentConfirmedText": "Randevu talebiniz onaylandı ve randevu tarih ve saati artık ayarlandı. Zamanında katıldığınızdan emin olun!",
     "AppointmentTimestampUtc": "Randevu Saati (UTC)",
@@ -85,20 +89,24 @@
     "Minutes": "Dakika (lar)",
     "Seconds": "İkinci (lar)",
     "AppointmentContextReceived": "Randevu Bağlamı Alındı",
-    "AppointmentVerificationRequestedText": "Randevu doğrulama isteği gönderildi. Şimdi onayı bekliyoruz.",
+    "AppointmentVerificationRequestedText": "Randevu doğrulama talebi gönderildi. Birkaç dakika ile birkaç saat arasında bir onay alınacaktır.",
     "AppointmentVerificationCompletedText": "Randevu doğrulama talebi onaylandı. Şimdi devam edebilir ve hesabınızı blok zincirinde yayınlayabilirsiniz.",
-    "AppointmentVerificationRejectedText": "Randevu doğrulama talebi reddedildi.",
-    "InvalidPuzzleEngineVersion": "Geçersiz bulmaca motoru sürümü. Lütfen yazılım sürümünüzü güncelleyin."
+    "AppointmentVerificationRejectedText": "Randevu doğrulama talebi reddedildi. Lütfen yeni bir randevu talebiyle tekrar deneyin.",
+    "InvalidPuzzleEngineVersion": "Geçersiz bulmaca motoru sürümü. Lütfen yazılım sürümünüzü güncelleyin.",
+    "PuzzleInstructions": "Bulmaca Talimatları",
+    "PuzzleClickInstructions": "Buraya tıklayın talimatları görüntüleyin"
   },
   "puzzles": {
     "Title": "Bulmaca",
-    "TimeBeforeAppointment": "Bulmaca oturumunuz yakında başlayacak. Randevunuzun başlamasına kalan tahmini süre",
+    "TimeBeforeAppointment": "Bulmaca oturumunuz yakında başlayacak, lütfen beklemede kalın. Randevunuzun başlamasına kalan tahmini süre",
     "WaitingForPuzzle": "bulmaca oturumu herhangi bir zamanda başlamalıdır. Şu anda yapboz talimatlarını bekliyor ...",
-    "TimeRemaining": "Bulmacayı tamamlamak için kalan süre",
-    "Next": "Sonraki Bulmaca",
+    "TimeRemaining": "Bulmacaları tamamlamak için kalan süre",
+    "Next": "Komple Bulmaca",
     "Complete": "Oturumu Tamamla",
-    "CompletedAndSend": "Bulmacalarınız tamamlandı. Lütfen sonuçlar işlenirken bekleyin.",
-    "PreparingPackage": "Lütfen randevu işlemi tamamlanıp sonuçları doğrulama için gönderene kadar bekleyin."
+    "CompletedAndSend": "Yapbozlarınız başarıyla tamamlandı. Lütfen sonuçlar işlenirken bekleyin. Bu, birkaç dakikadan birkaç saate kadar sürebilir.",
+    "PreparingPackage": "Lütfen randevu işlemi tamamlanana kadar bekleyin, sonuçlar paketlenir ve doğrulama için gönderilir.",
+    "Puzzle": "Bulmaca",
+    "Of": "nın-nin"
   },
   "pow": {
     "Title": "Proof of Work nonce arama",
@@ -183,7 +191,8 @@
     "TestMode": "TestNet Araçları",
     "Version": "Sistem versiyonu",
     "Yes": "Evet",
-    "ServerRunningStop": "Neuralium düğüm sunucusu şu anda çalışıyor. Durdurmak ister misin?"
+    "ServerRunningStop": "Neuralium düğüm sunucusu şu anda çalışıyor. Durdurmak ister misin?",
+    "AppointmentTestWarning": "Lütfen bu TESTNET'in özellikle yeni randevu sistemini test etme amacını taşıdığına dikkat edin. Randevu sistemi, yeni hesap oluşturma işlemlerini dar bir zaman dilimine sıkıştırarak sahtekarlığı ve spam gönderenleri durdurmak için tasarlanmıştır. İlk adım, bir sonraki uygun randevu için randevu talebinde bulunmak ve birkaç kısa ve basit bulmacayı yürütmek için tahsis edilen tarih ve saatte hazır bulunmaktır. randevu sürecinin tamamlanması saatler veya günler sürebilir, bu nedenle uzun beklemeler normaldir. Tüm süreç tamamlandığında, doğrulamanız tamamlanacak ve hesabınızı yayınlayabileceksiniz. Daha fazla bilgi için lütfen şu adresteki TESTNET beni oku"
   },
   "blockchain": {
     "BlockId": "Kimliği engelle",
@@ -401,7 +410,7 @@
     "ParagrahThree": "",
     "ParagrahTwo": "TESTNET modunda, kazanılan herhangi bir neuralium jetonu yalnızca test amaçlıdır ve üretim 'MainNet' ağında kullanılamaz. TESTNET modunda kazanılan jetonlar, önceden haber verilmeksizin herhangi bir zamanda kaybedilebilir veya sıfırlanabilir.",
     "Warning": "Düğüm ve cüzdan şu anda ayrı bir ağda TestNet Modundadır.",
-    "Period": "Bu TESTNET yapısı 18 Ağustos 2020'ye kadar geçerlidir."
+    "Period": "Bu TESTNET yapısı 9 Ekim 2020'ye kadar geçerlidir."
   },
   "wallet": {
     "User": "kullanıcı",

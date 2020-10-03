@@ -55,28 +55,32 @@
     "VerificationModeSelection": "Pemilihan mode verifikasi",
     "DefaultHelpText": "Di sini Anda harus memilih metode verifikasi di antara pilihan yang tersedia. Setiap metode memiliki kelebihan dan ketidaknyamanan. Pilih salah satu yang tepat untuk Anda.",
     "TESTNETHelpText": "Di TESTNET, verifikasi dapat dilewati untuk membuat akun segera.",
-    "AppointmentsHelpText": "Anda akan memulai proses verifikasi pengangkatan Neuralium. Proses ini dapat berlangsung beberapa hari dan Anda harus hadir untuk janji temu Anda ketika tanggalnya dikonfirmasi. Keuntungan: anonim.",
+    "AppointmentsHelpText": "Anda akan memulai proses verifikasi pengangkatan Neuralium. Proses ini dapat berlangsung beberapa hari dan Anda harus hadir untuk janji temu Anda ketika tanggal dan waktu dikonfirmasi. Keuntungan: anonim.",
     "POWHelpText": "Anda harus menjalankan bukti kerja CPU yang mahal. Setelah selesai, akun Anda akan dapat menambang di tingkat 1 dan 2 sebagai Server."
   },
   "appointments": {
     "Title": "Verifikasi Janji Temu",
-    "IntroductionText": "Alur kerja janji temu dirancang untuk memverifikasi pengguna yang dituju sekaligus menjaga sebagian besar pembanjir keluar dari sistem.",
+    "IntroductionText": "Alur kerja janji temu dirancang untuk memverifikasi dan memungkinkan pengguna yang jujur sekaligus menjaga sebagian besar pembanjir keluar dari sistem.",
     "Begin": "Mulai",
     "Continue": "Terus",
-    "RequestAppointmentText": "Untuk memulai proses ini, silakan meminta janji temu secara eksplisit. Permintaan janji temu akan dibuat dan konfirmasi harus diterima di masa mendatang.",
-    "PreferredRegion": "Silakan pilih wilayah pilihan Anda",
+    "RequestAppointmentText": "Untuk memulai proses ini, silakan buat permintaan janji temu. Permintaan janji temu akan dibuat dan konfirmasi harus diterima di masa mendatang. Proses ini dapat memakan waktu beberapa menit hingga berjam-jam.",
+    "PreferredRegion": "Pilih wilayah dunia pilihan Anda",
     "Orient": "Mengorientasikan",
+    "Central": "Pusat",
     "Occident": "Barat",
+    "OccidentHelp": "Di bagian barat dunia, wilayah ini mencakup terutama Amerika",
+    "CentralHelp": "Bagian tengah dunia, wilayah ini mencakup terutama Eropa, Afrika dan Timur Tengah",
+    "OrientHelp": "Di bagian timur dunia, wilayah ini meliputi terutama Cina, India, Australia, dan seluruh Asia",
     "RequestAppointmentButton": "Buat Permintaan Janji Temu",
     "RequestCompleted": "Permintaan janji temu berhasil dikirim",
     "RequestConfirmed": "Permintaan janji temu telah dikonfirmasi",
-    "VerificationRequestSent": "Permintaan verifikasi janji temu berhasil dikirim",
-    "VerificationRequestCompleted": "Permintaan verifikasi janji telah dikonfirmasi.",
-    "VerificationRequestRejected": "Permintaan verifikasi janji temu telah ditolak.",
+    "VerificationRequestSent": "Permintaan verifikasi janji temu berhasil dikirim.",
+    "VerificationRequestCompleted": "Permintaan verifikasi janji temu Anda telah dikonfirmasi.",
+    "VerificationRequestRejected": "Permintaan verifikasi janji temu Anda telah ditolak.",
     "AppointmentContextCached": "Konteks janji telah diterima.",
     "TimeBeforeAppointment": "Sisa waktu sebelum janji temu",
     "RequestFailed": "Permintaan janji temu gagal",
-    "AppointmentRequestedText": "Janji temu Anda telah diminta. Sekarang kita harus menunggu konfirmasi.",
+    "AppointmentRequestedText": "Janji temu Anda telah diminta. Konfirmasi akan diterima dalam beberapa menit hingga beberapa jam.",
     "AppointmentRequestedTimestamp": "Minta stempel waktu",
     "AppointmentConfirmedText": "Permintaan janji temu Anda telah dikonfirmasi dan tanggal serta waktu janji temu sekarang sudah diatur. Pastikan untuk hadir tepat waktu!",
     "AppointmentTimestampUtc": "Waktu Janji Temu (UTC)",
@@ -85,20 +89,24 @@
     "Minutes": "Menit)",
     "Seconds": "Detik",
     "AppointmentContextReceived": "Konteks Pengangkatan Diterima",
-    "AppointmentVerificationRequestedText": "Permintaan verifikasi janji temu telah dikirim. Kami sekarang menunggu konfirmasi.",
+    "AppointmentVerificationRequestedText": "Permintaan verifikasi janji temu telah dikirim. Konfirmasi akan diterima dalam beberapa menit hingga beberapa jam.",
     "AppointmentVerificationCompletedText": "Permintaan verifikasi janji telah dikonfirmasi. Anda sekarang dapat melanjutkan dan menerbitkan akun Anda ke blockchain.",
-    "AppointmentVerificationRejectedText": "Permintaan verifikasi janji temu telah ditolak.",
-    "InvalidPuzzleEngineVersion": "Versi mesin puzzle tidak valid. Harap perbarui versi perangkat lunak Anda."
+    "AppointmentVerificationRejectedText": "Permintaan verifikasi janji temu telah ditolak. Silakan coba lagi dengan permintaan janji temu baru.",
+    "InvalidPuzzleEngineVersion": "Versi mesin puzzle tidak valid. Harap perbarui versi perangkat lunak Anda.",
+    "PuzzleInstructions": "Instruksi Puzzle",
+    "PuzzleClickInstructions": "Klik di sini untuk menampilkan instruksi"
   },
   "puzzles": {
     "Title": "Membingungkan",
-    "TimeBeforeAppointment": "Sesi teka-teki Anda akan segera dimulai. Perkiraan waktu tersisa sebelum dimulainya janji Anda",
+    "TimeBeforeAppointment": "Sesi teka-teki Anda akan segera dimulai, harap tetap siaga. Perkiraan waktu yang tersisa sebelum dimulainya janji Anda",
     "WaitingForPuzzle": "sesi teka-teki harus dimulai kapan saja sekarang. Saat ini menunggu instruksi teka-teki ...",
     "TimeRemaining": "Sisa waktu untuk menyelesaikan puzzle",
-    "Next": "Puzzle Berikutnya",
+    "Next": "Puzzle Lengkap",
     "Complete": "Sesi Lengkap",
-    "CompletedAndSend": "Teka-teki Anda telah selesai. Harap tunggu sementara hasilnya sedang diproses.",
-    "PreparingPackage": "Harap tunggu sementara proses janji temu selesai dan mengirimkan hasilnya untuk verifikasi."
+    "CompletedAndSend": "Teka-teki Anda berhasil diselesaikan. Harap tunggu sementara hasilnya sedang diproses. Ini bisa memakan waktu mulai dari beberapa menit hingga beberapa jam.",
+    "PreparingPackage": "Harap tunggu sementara proses janji temu selesai, hasilnya dikemas dan dikirim untuk verifikasi.",
+    "Puzzle": "Membingungkan",
+    "Of": "dari"
   },
   "pow": {
     "Title": "Proof of Work tanpa pencarian",
@@ -183,7 +191,8 @@
     "TestMode": "Alat TestNet",
     "Version": "Versi sistem",
     "Yes": "Iya",
-    "ServerRunningStop": "Server node Neuralium saat ini masih berjalan. Apakah Anda ingin menghentikannya?"
+    "ServerRunningStop": "Server node Neuralium saat ini masih berjalan. Apakah Anda ingin menghentikannya?",
+    "AppointmentTestWarning": "Harap perhatikan bahwa TESTNET ini dimaksudkan untuk secara khusus menguji sistem janji temu baru. Sistem janji temu dirancang untuk menghentikan penipuan dan spammer dengan menekan pembuatan akun baru ke dalam rentang waktu yang sempit. Langkah pertama adalah membuat permintaan janji temu untuk janji temu berikutnya yang tersedia dan hadir pada tanggal dan waktu yang dialokasikan untuk melaksanakan beberapa teka-teki singkat dan sederhana. proses pengangkatan bisa memakan waktu berjam-jam atau berhari-hari untuk diselesaikan, jadi penantian lama adalah hal yang biasa. Setelah seluruh proses selesai, validasi Anda akan selesai dan Anda akan dapat mempublikasikan akun Anda. Untuk informasi lebih lanjut, silakan lihat readme TESTNET di"
   },
   "blockchain": {
     "BlockId": "Blokir id",
@@ -401,7 +410,7 @@
     "ParagrahThree": "",
     "ParagrahTwo": "Dalam mode TESTNET, token neuralium apa pun yang diperoleh hanya untuk tujuan pengujian dan tidak boleh digunakan dalam jaringan produksi 'MainNet'. Token yang diperoleh dalam mode TESTNET juga dapat hilang atau diatur ulang kapan saja tanpa pemberitahuan sebelumnya.",
     "Warning": "Node dan dompet saat ini berada dalam Mode TestNet di jaringan terpisah.",
-    "Period": "Build TESTNET ini berlaku hingga 18 Agustus 2020."
+    "Period": "Build TESTNET ini berlaku hingga 9 Oktober 2020."
   },
   "wallet": {
     "User": "Pengguna",

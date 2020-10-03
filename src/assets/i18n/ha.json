@@ -55,28 +55,32 @@
     "VerificationModeSelection": "Tabbatar yanayin zaɓi",
     "DefaultHelpText": "Anan dole ne a zaɓi hanyar tantancewa tsakanin zaɓin da ake samu. Kowace hanya tana da fa'ida da rashin damuwa. Da fatan za a zabi wanda yake daidai a gare ku.",
     "TESTNETHelpText": "A cikin TESTNET, ana iya kewayewa da tabbaci don ƙirƙirar lissafi kai tsaye.",
-    "AppointmentsHelpText": "Za ku fara aiwatar da tabbacin tabbatarwar Neuralium. Wannan tsari na iya kasancewa kwanaki da yawa kuma dole ne ya kasance kasancewar kasancewar alƙawarin ku idan aka tabbatar da ranar. Ab Adbuwan amfãni: ba a sani ba.",
+    "AppointmentsHelpText": "Zaka fara aikin tabbatar alƙawarin Neuralium. Wannan aikin na iya ɗaukar kwanaki da yawa kuma lallai ne ya kasance don halartar alƙawarinku lokacin da kwanan wata da lokaci suka tabbata. Abvantbuwan amfãni: m.",
     "POWHelpText": "Dole ne ku zartar da aikin CPU mai tsada lokacin aiki. Da zarar an kammala, asusunka zai sami damar yin nawa a cikin matakin 1 da na 2 a matsayin Server."
   },
   "appointments": {
     "Title": "Tabbatarwa Alkawari",
-    "IntroductionText": "Gudanar da aikin nadin an tsara su ne don tantance masu amfani wadanda aka yi niyya yayin kiyaye yawancin ambaliyar daga tsarin.",
+    "IntroductionText": "An tsara aikin aikin alƙawari don tabbatarwa da ba da izini ga masu amfani da gaskiya yayin kiyaye yawancin ɗumbin ambaliyar daga cikin tsarin.",
     "Begin": "Fara",
     "Continue": "Ci gaba",
-    "RequestAppointmentText": "Domin fara aiwatarwa, da fatan za a nemi alƙawari gaba ɗaya. Bukatar alƙawarin za a yi kuma a sami tabbaci a nan gaba.",
-    "PreferredRegion": "Da fatan zaɓi yankin da kuka fi so",
+    "RequestAppointmentText": "Domin fara aikin, da fatan za a nemi alƙawari. Za'a gabatar da buƙatar alƙawari kuma ya kamata a sami tabbaci a nan gaba. Wannan tsari na iya ɗaukar minti zuwa sa'o'i da yawa.",
+    "PreferredRegion": "Da fatan za a zaɓi yankin duniyar da kuka fi so",
     "Orient": "Gabas",
+    "Central": "Tsakiya",
     "Occident": "Bala'i",
+    "OccidentHelp": "Yammacin duniya, wannan yankin ya fi mamaye Amurka",
+    "CentralHelp": "Yankin tsakiyar duniya, wannan yanki ya fi dacewa musamman Turai, Afirka da Gabas ta Tsakiya",
+    "OrientHelp": "Yankin gabashin duniya, wannan yankin ya fi shafar kasar Sin, Indiya, Ostiraliya da duk yankin Asiya",
     "RequestAppointmentButton": "Yi Neman Apa'ida",
     "RequestCompleted": "Neman alƙawarin nasara an aika da nasara",
     "RequestConfirmed": "An tabbatar da bukatar neman mukami",
-    "VerificationRequestSent": "Neman tabbaci na nadin tabbatar da nasarar an aika shi",
-    "VerificationRequestCompleted": "An tabbatar da bukatar tabbatar da bukatar nadin nasa.",
-    "VerificationRequestRejected": "Neman tabbaci game da neman wa'adin ya ƙi karba.",
+    "VerificationRequestSent": "An aika da nasarar tabbatar da alƙawari",
+    "VerificationRequestCompleted": "An tabbatar da bukatar tabbatarwar nadinku",
+    "VerificationRequestRejected": "An ƙi karɓar buƙatar tabbatarwar nadinku",
     "AppointmentContextCached": "An karɓi mahallin ganawa.",
     "TimeBeforeAppointment": "Lokaci ya rage kafin saduwa",
     "RequestFailed": "Neman mukamai ya kasa",
-    "AppointmentRequestedText": "An sake ganawa da ku alƙawarin ku. Dole ne yanzu mu jira tabbatarwa.",
+    "AppointmentRequestedText": "An nemi alƙawari Tabbatar za a karɓa a cikin minutesan mintoci kaɗan zuwa hoursan awanni.",
     "AppointmentRequestedTimestamp": "Nemi timestamp",
     "AppointmentConfirmedText": "An tabbatar da bukatar naku kuma an sanya ranar da aka tsara da lokaci. Tabbatar halarta cikin lokaci!",
     "AppointmentTimestampUtc": "Lokacin Alƙawura (UTC)",
@@ -85,20 +89,24 @@
     "Minutes": "Minti (s)",
     "Seconds": "Na biyu (s)",
     "AppointmentContextReceived": "Abunda Aka Bayyana Shi",
-    "AppointmentVerificationRequestedText": "An aika da bukatar tabbatar da alƙawarin. Yanzu muna jiran tabbacin.",
+    "AppointmentVerificationRequestedText": "An aika neman tabbatarwa alƙawari Tabbatar za a karɓa a cikin minutesan mintoci kaɗan zuwa hoursan awanni.",
     "AppointmentVerificationCompletedText": "An tabbatar da bukatar tabbatar da bukatar nadin nasa. Yanzu zaku iya ci gaba da buga asusunka a cikin blockchain.",
-    "AppointmentVerificationRejectedText": "Neman tabbaci game da neman wa'adin ya ƙi karba.",
-    "InvalidPuzzleEngineVersion": "Versionaukin injin ɗin wasan bai dace ba. Da fatan za a sabunta sigar kayan aikin ku."
+    "AppointmentVerificationRejectedText": "An ƙi amsar nadin alƙawarin. Da fatan a sake gwadawa tare da neman sabon alƙawari.",
+    "InvalidPuzzleEngineVersion": "Versionaukin injin ɗin wasan bai dace ba. Da fatan za a sabunta sigar kayan aikin ku.",
+    "PuzzleInstructions": "Umarnin wuyar warwarewa",
+    "PuzzleClickInstructions": "Danna nan yi umarnin nuni"
   },
   "puzzles": {
     "Title": "Wasin wasa",
-    "TimeBeforeAppointment": "Taron wasan na wuyar warwarewa zai fara da daɗewa. Kimanin lokacin da ya rage kafin fara alƙawarin ku",
+    "TimeBeforeAppointment": "Zamu fara zamanka na wuyar fahimta, da fatan za a kasance a tsaye. Kimanin lokacin da ya rage kafin fara alƙawarinku",
     "WaitingForPuzzle": "da wuyar warwarewa zaman ya kamata fara kowane lokaci a yanzu. A halin yanzu jiran umarnin wuyar warwarewa ...",
-    "TimeRemaining": "Lokacin saura don kammala wuyar warwarewa",
-    "Next": "Komawa mai zuwa",
+    "TimeRemaining": "Lokaci ya rage don kammala wuyar warwarewa (s)",
+    "Next": "Cikakken wuyar warwarewa",
     "Complete": "Kammalallen zama",
-    "CompletedAndSend": "Wasikun wasikunku an kammala su. Da fatan za a jira yayin aiwatar da sakamakon.",
-    "PreparingPackage": "Da fatan za a jira yayin aiwatar da alƙawarin ya cika kuma ya aika da sakamakon don tantancewa."
+    "CompletedAndSend": "Puwarewar ku (s) an kammala ta cikin nasara. Da fatan za a jira yayin da ake aiwatar da sakamako. Wannan na iya ɗaukar ko'ina daga fewan mintoci kaɗan zuwa hoursan awanni.",
+    "PreparingPackage": "Da fatan za a jira yayin da alƙawarin ya kammala, an tattara sakamakon kuma an aika su don tabbatarwa.",
+    "Puzzle": "Tantance",
+    "Of": "na"
   },
   "pow": {
     "Title": "Tabbacin Aikin Bincike",
@@ -183,7 +191,8 @@
     "TestMode": "Kayan Aiki na TestNet",
     "Version": "Tsarin tsarin",
     "Yes": "Haka ne",
-    "ServerRunningStop": "A halin yanzu uwar garken Neuralium kumburi tana gudana. Kuna so ku dakatar da shi?"
+    "ServerRunningStop": "A halin yanzu uwar garken Neuralium kumburi tana gudana. Kuna so ku dakatar da shi?",
+    "AppointmentTestWarning": "Da fatan za a kula cewa wannan TESTNET an yi niyyar musamman don gwada sabon tsarin alƙawurra. An tsara tsarin alƙawari don dakatar da yaudara da masu ba da izinin gizo ta hanyar matse sabbin abubuwan asusu a cikin gajeren taga na lokaci. Mataki na farko shine yin alƙawarin alƙawari don nadin da ake da shi na gaba kuma ya kasance a ranar da aka ware da lokaci don aiwatar da shortan wassani da sauƙi. aikin alƙawari na iya ɗaukar awanni ko ranaku da yawa don kammalawa, don haka jira mai yawa al'ada ne. Da zarar dukkan aikin ya kammala, tabbatarwar ku za a kammala kuma za ku iya buga asusunka. Don ƙarin bayani, saika duba littafin TESTNET a"
   },
   "blockchain": {
     "BlockId": "Toshe id",
@@ -401,7 +410,7 @@
     "ParagrahThree": "",
     "ParagrahTwo": "A cikin yanayin TESTNET, kowane alamun alamun neuralium da aka samu don dalilai na gwaji ne kawai kuma maiyuwa baza a iya amfani dashi a cikin hanyar samar da cibiyar sadarwar 'MainNet' ba. Alamar da aka samu a yanayin TESTNET na iya rasa ko a sake saita su a kowane lokaci ba tare da sanarwar farko ba.",
     "Warning": "Ramin da walat a halin yanzu suna cikin Yanayin TestNet akan wata hanyar sadarwa daban.",
-    "Period": "Wannan ginin TESTNET yana da inganci har sai Agusta 18th 2020."
+    "Period": "Wannan ginin TESTNET yana aiki har zuwa Oktoba 9th 2020."
   },
   "wallet": {
     "User": "Mai amfani",

@@ -66,9 +66,11 @@
 		"RequestAppointmentText" : "In order to begin the process, please make an appointment request. An appointment request will be made and a confirmation should be received at a future time. This process can take minutes to many hours.",
 		"PreferredRegion" : "Please select your preferred world region",
 		"Orient" : "Orient",
+		"Central" : "Central",
 		"Occident" : "Occident",
 		"OccidentHelp" : "The western part of the world, this region covers most notably the Americas",
-		"OrientHelp" : "The eastern part of the world, this region coveres most notably Europe, Africa and Asia",
+		"CentralHelp" : "The central part of the world, this region covers most notably Europe, Africa and the Middle East",
+		"OrientHelp" : "The eastern part of the world, this region covers most notably China, India, Australia and the whole of Asia",
 		"RequestAppointmentButton" : "Make Appointment Request",
 		"RequestCompleted" : "Appointment request successfully sent",
 		"RequestConfirmed" : "Appointment request has been confirmed",
@@ -90,7 +92,9 @@
 		"AppointmentVerificationRequestedText" : "Appointment verification request has been dispatched. A confirmation will be received within a few minutes to a few hours.",
 		"AppointmentVerificationCompletedText" : "Appointment verification request has been confirmed. You may now proceed and publish your account to the blockchain.",
 		"AppointmentVerificationRejectedText" : "Appointment verification request has been rejected. Please try again with a new appointment request.",
-		"InvalidPuzzleEngineVersion" : "Invalid puzzle engine version. Please update your software version."
+		"InvalidPuzzleEngineVersion" : "Invalid puzzle engine version. Please update your software version.",
+		"PuzzleInstructions" : "Puzzle Instructions",
+		"PuzzleClickInstructions" : "Click here do display instructions"
 	},
 	"puzzles" : {
 		"Title" : "Puzzle",

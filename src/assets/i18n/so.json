@@ -55,28 +55,32 @@
     "VerificationModeSelection": "Xulashada qaabka xulashada",
     "DefaultHelpText": "Halkan waa inaad ku doorataa hab xaqiijin oo ka mid ah xulashooyinka la heli karo. Qaab kastaa wuxuu leeyahay faa'iidooyin iyo dhib la'aan. Fadlan soo xulo midka kugu habboon.",
     "TESTNETHelpText": "Gudaha TESTNET, xaqiijinta waa lagala wareegi karaa si loogu sameeyo koonto isla markiiba.",
-    "AppointmentsHelpText": "Waxaad bilaabi doontaa nidaamka xaqiijinta magacaabista Neuralium. Hawshani waxay socon kartaa maalmo badan waana inaad joogi doontaa ballantaada marka taariikhda la xaqiijiyo. Faa'iidooyinka: magac la'aan",
+    "AppointmentsHelpText": "Waxaad bilaabi doontaa hawsha xaqiijinta ballanta Neuralium. Nidaamkani wuxuu socon karaa maalmo badan waana inaad goob joog u ahaataa ballantaada marka taariikhda iyo waqtiga la xaqiijiyo. Faa'iidooyinka: qarsoodi.",
     "POWHelpText": "Waa inaad ku dhaqaaqdaa waqti caddayn qaali ah oo CPU ah oo shaqada ah. Markii la dhammeeyo, akaawnkaagu wuxuu awood u yeelan doonaa aniga 1-aad iyo 2-aad darajooyin Server ah."
   },
   "appointments": {
     "Title": "Xaqiijinta Ballanka",
-    "IntroductionText": "Qulqulka shaqo ee ballanta waxaa loo habeeyay si loo xaqiijiyo isticmaaleyaasha la damacsan yahay iyadoo laga ilaaliyo inta badan daadadku inay nidaamka ka baxaan.",
+    "IntroductionText": "Nidaamka shaqada ballanta waxaa loogu talagalay in lagu xaqiijiyo loona oggolaado adeegsadayaasha daacadda ah iyadoo inta badan daadadka laga ilaaliyo nidaamka.",
     "Begin": "Bilaab",
     "Continue": "Sii wad",
-    "RequestAppointmentText": "Si aad u bilowdo hawsha, fadlan codso ballan ballantu. Codsi ballan ayaa la sameyn doonaa waana in la xaqiijiyo mustaqbalka.",
-    "PreferredRegion": "Fadlan xulo gobolka aad doorbiday",
+    "RequestAppointmentText": "Si loo bilaabo hawsha, fadlan samee ballan ballan. Codsi ballan ayaa la sameyn doonaa waana in la helaa xaqiijin waqtiga mustaqbalka ah. Nidaamkani wuxuu qaadan karaa daqiiqado ilaa saacado badan.",
+    "PreferredRegion": "Fadlan dooro gobolka aad door bidayso",
     "Orient": "Orient",
+    "Central": "Dhexe",
     "Occident": "Dhacdo",
+    "OccidentHelp": "Qaybta galbeed ee adduunka, gobolkani wuxuu gaar ahaan ka kooban yahay qaaradda Ameerika",
+    "CentralHelp": "Qaybta dhexe ee adduunka, gobolkani wuxuu si gaar ah u daboolaa Yurub, Afrika iyo Bariga Dhexe",
+    "OrientHelp": "Qaybta bariga adduunka, gobolkani wuxuu si gaar ah u daboolaa Shiinaha, Hindiya, Australia iyo Aasiya oo dhan",
     "RequestAppointmentButton": "Samee Codsi Ballan",
     "RequestCompleted": "Codsiga ballanta si guul leh ayaa loo diray",
     "RequestConfirmed": "Codsiga balanta waa la xaqiijiyay",
-    "VerificationRequestSent": "Codsiga balanta balanta si guul ah ayaa loo diray",
-    "VerificationRequestCompleted": "Codsiga xaqiijinta ballanta waa la xaqiijiyay.",
-    "VerificationRequestRejected": "Codsiga balanta balanta waa la diiday.",
+    "VerificationRequestSent": "Codsiga xaqiijinta ballanta ayaa si guul leh loo diray.",
+    "VerificationRequestCompleted": "Codsigaaga xaqiijinta ballanta waa la xaqiijiyay.",
+    "VerificationRequestRejected": "Codsigaaga xaqiijinta ballanta waa la diiday.",
     "AppointmentContextCached": "Macnaha ballanta waa la helay.",
     "TimeBeforeAppointment": "Waqtiga haray ka hor ballanta",
     "RequestFailed": "Codsiga balanta waa la diiday",
-    "AppointmentRequestedText": "Ballantaadii dib ayaa loo soo celiyay. Waa inaan hadda sugno xaqiijinta.",
+    "AppointmentRequestedText": "Balantaada waa la codsaday. Xaqiijin ayaa lagu heli doonaa daqiiqado yar gudahood illaa saacado kooban gudahood.",
     "AppointmentRequestedTimestamp": "Codso timestamp",
     "AppointmentConfirmedText": "Codsigaaga ballanta ayaa la xaqiijiyay oo taariikhda iyo waqtiga ballanka ayaa loo qabtay. Hubso inaad timaado wakhtiga!",
     "AppointmentTimestampUtc": "Waqtiga Ballamada (UTC)",
@@ -85,20 +89,24 @@
     "Minutes": "Daqiiqado (yaasha)",
     "Seconds": "Labaad (s)",
     "AppointmentContextReceived": "Qoraalka Ballan Qabashada",
-    "AppointmentVerificationRequestedText": "Codsiga balanta balanta waa la diray. Waxaan hadda sugeynaa xaqiijinta.",
+    "AppointmentVerificationRequestedText": "Codsiga xaqiijinta ballanta waa ladiray. Xaqiijin ayaa lagu heli doonaa daqiiqado yar gudahood illaa saacado kooban gudahood.",
     "AppointmentVerificationCompletedText": "Codsiga xaqiijinta ballanta waa la xaqiijiyay. Waad usii gudbi kartaa oo aad u daabacdaa akoonkaaga blockchain.",
-    "AppointmentVerificationRejectedText": "Codsiga balanta balanta waa la diiday.",
-    "InvalidPuzzleEngineVersion": "Nooca khaldan ee mashiinka xujooyinka Fadlan cusboonaysii nooca barnaamijkaaga."
+    "AppointmentVerificationRejectedText": "Codsiga xaqiijinta ballanta waa la diiday. Fadlan isku day markale codsi ballan cusub.",
+    "InvalidPuzzleEngineVersion": "Nooca khaldan ee mashiinka xujooyinka Fadlan cusboonaysii nooca barnaamijkaaga.",
+    "PuzzleInstructions": "Tilmaamaha Halxiraalaha",
+    "PuzzleClickInstructions": "Halkan guji samee tilmaamaha muujinta"
   },
   "puzzles": {
     "Title": "Khayaali",
-    "TimeBeforeAppointment": "Fasalkaaga halxiraalaha ayaa bilaaban doona goor dhaw. Waqtiga la qiyaasay inuu harsan yahay ka hor bilaabashada ballantaada",
+    "TimeBeforeAppointment": "Casharkaaga halxiraalaha ah ayaa dhawaan bilaaban doona, fadlan ku joog istaag. Qiyaasta waqtiga haray kahor bilawga ballantaada",
     "WaitingForPuzzle": "casharka halxiraalaha waa inuu bilaabaa waqti kasta hadda. Hada sugaya tilmaamaha halxiraalaha ah ...",
-    "TimeRemaining": "Waqtiga haray si loo dhameystiro halxiraalaha",
-    "Next": "Halxiraalka Xiga",
+    "TimeRemaining": "Waqtiga haray si loo dhammaystiro halxiraalaha",
+    "Next": "Xujo dhammaystiran",
     "Complete": "Kulan buuxa",
-    "CompletedAndSend": "Faylashaada waa la dhammaystiray. Fadlan sug inta natiijooyinka laga shaqeynayo.",
-    "PreparingPackage": "Fadlan sug inta hawsha ballanta ay dhammeyneyso oo u soo dirayso natiijooyinka xaqiijinta."
+    "CompletedAndSend": "Halxiraalahaaga (yada) si guul leh ayaa loo dhammaystiray. Fadlan sug inta natiijada laga shaqeynayo. Tani waxay qaadan kartaa meel kasta oo ka mid ah daqiiqado yar ilaa dhowr saacadood.",
+    "PreparingPackage": "Fadlan sug inta hawsha ballanta ay dhammaystireyso, natiijooyinka waa la soo baakadeeyey oo loo diraa si loo xaqiijiyo.",
+    "Puzzle": "Halxiraalaha",
+    "Of": "ee"
   },
   "pow": {
     "Title": "Caddaynta raadinta shaqo ee aan shaqada ahayn",
@@ -183,7 +191,8 @@
     "TestMode": "Qalabka Tijaabada",
     "Version": "Nooca Nidaamka",
     "Yes": "Haa",
-    "ServerRunningStop": "Shabakada 'Neuralium node server' ayaa wali socota. Miyaad dooneysaa inaad joojiso?"
+    "ServerRunningStop": "Shabakada 'Neuralium node server' ayaa wali socota. Miyaad dooneysaa inaad joojiso?",
+    "AppointmentTestWarning": "Fadlan fiiro gaar ah u yeelo in TESTNETkan loogu tala galay in si gaar ah loogu tijaabiyo nidaamka ballamaha cusub. Nidaamka ballanta waxaa loogu talagalay in lagu joojiyo khayaanada iyo khayaanada iyadoo lagu cidhiidhinayo abuurista koontada daaqad cidhiidhi ah oo wakhtiga ah. Tallaabada ugu horreysa waa in la sameeyo codsi ballanta ballanta xigta ee la heli karo iyo in la joogo taariikhda iyo waqtiga loo qoondeeyay si loo fuliyo xujooyin yar yar oo fudud. hawsha ballanta waxay qaadan kartaa saacado badan ama maalmo si loo dhammaystiro, markaa sugitaannada dhaadheer waa caadi. Marka hawsha oo dhami ay dhammaato, ansaxintaada ayaa la dhammaystirayaa waxaadna awoodi doontaa inaad daabacdo koontadaada. Wixii macluumaad dheeri ah, fadlan kafiiri aqrinta TESTNET"
   },
   "blockchain": {
     "BlockId": "Jooji id",
@@ -401,7 +410,7 @@
     "ParagrahThree": "",
     "ParagrahTwo": "Qaabka 'TESTNET', nooc kasta oo tukumaannada neeralium laga helo waxaa loogu talagalay ujeedo tijaabo ah oo keliya loomana adeegsan karo soosaarka 'MainNet'. Tilmaamaha calaamadaha lagu helo habka TESTNET ayaa sidoo kale laga yaabaa inay lummaan ama dib loo dejiyo wakhti kasta iyadoon ogeysiis hore laga helin.",
     "Warning": "Nambarka iyo boorsada jeebka ayaa hadda ku jira ModNet Mode shabakad gaar ah.",
-    "Period": "Dhismaha TESTNET wuxuu shaqeynayaa ilaa Ogost 18th 2020."
+    "Period": "Dhismaha TESTNET wuxuu ansax yahay ilaa Oktoobar 9th 2020."
   },
   "wallet": {
     "User": "Adeegsi",

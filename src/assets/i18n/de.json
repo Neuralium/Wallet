@@ -55,28 +55,32 @@
     "VerificationModeSelection": "Auswahl des Überprüfungsmodus",
     "DefaultHelpText": "Hier müssen Sie eine Überprüfungsmethode unter den verfügbaren Optionen auswählen. Jede Methode hat ihre Vor- und Nachteile. Bitte wählen Sie die für Sie passende aus.",
     "TESTNETHelpText": "In TESTNET kann die Überprüfung umgangen werden, um sofort ein Konto zu erstellen.",
-    "AppointmentsHelpText": "Sie beginnen mit der Überprüfung des Neuralium-Termins. Dieser Vorgang kann viele Tage dauern und Sie müssen bei Ihrem Termin anwesend sein, wenn das Datum bestätigt wird. Vorteile: anonym.",
+    "AppointmentsHelpText": "Sie beginnen mit der Überprüfung des Neuralium-Termins. Dieser Vorgang kann viele Tage dauern und Sie müssen bei Ihrem Termin anwesend sein, wenn Datum und Uhrzeit bestätigt werden. Vorteile: anonym.",
     "POWHelpText": "Sie müssen einen zeitaufwändigen CPU-Arbeitsnachweis ausführen. Sobald dies abgeschlossen ist, kann Ihr Konto in der 1. und 2. Ebene als Server abgebaut werden."
   },
   "appointments": {
     "Title": "Terminüberprüfung",
-    "IntroductionText": "Der Termin-Workflow dient dazu, die beabsichtigten Benutzer zu überprüfen und gleichzeitig die überwiegende Mehrheit der Floder vom System fernzuhalten.",
+    "IntroductionText": "Der Termin-Workflow wurde entwickelt, um ehrliche Benutzer zu überprüfen und zuzulassen, während die überwiegende Mehrheit der Floder aus dem System herausgehalten wird.",
     "Begin": "Start",
     "Continue": "Fortsetzen",
-    "RequestAppointmentText": "Um den Vorgang zu starten, fordern Sie bitte ausdrücklich einen Termin an. Es wird eine Terminanfrage gestellt und eine Bestätigung sollte zu einem späteren Zeitpunkt eingehen.",
-    "PreferredRegion": "Bitte wählen Sie Ihre bevorzugte Region",
+    "RequestAppointmentText": "Um den Vorgang zu starten, stellen Sie bitte eine Terminanfrage. Es wird eine Terminanfrage gestellt und eine Bestätigung sollte zu einem späteren Zeitpunkt eingehen. Dieser Vorgang kann Minuten bis viele Stunden dauern.",
+    "PreferredRegion": "Bitte wählen Sie Ihre bevorzugte Weltregion",
     "Orient": "Orient",
+    "Central": "Zentral",
     "Occident": "Okzident",
+    "OccidentHelp": "Diese Region, der westliche Teil der Welt, umfasst vor allem Amerika",
+    "CentralHelp": "Diese Region ist der zentrale Teil der Welt und umfasst vor allem Europa, Afrika und den Nahen Osten",
+    "OrientHelp": "Diese Region im Osten der Welt umfasst vor allem China, Indien, Australien und ganz Asien",
     "RequestAppointmentButton": "Terminanfrage stellen",
     "RequestCompleted": "Terminanfrage erfolgreich gesendet",
     "RequestConfirmed": "Terminanfrage wurde bestätigt",
-    "VerificationRequestSent": "Terminüberprüfungsanfrage erfolgreich gesendet",
-    "VerificationRequestCompleted": "Die Anfrage zur Terminüberprüfung wurde bestätigt.",
-    "VerificationRequestRejected": "Antrag auf Terminüberprüfung wurde abgelehnt.",
+    "VerificationRequestSent": "Terminbestätigungsanfrage erfolgreich gesendet.",
+    "VerificationRequestCompleted": "Ihre Anfrage zur Terminüberprüfung wurde bestätigt.",
+    "VerificationRequestRejected": "Ihre Anfrage zur Terminüberprüfung wurde abgelehnt.",
     "AppointmentContextCached": "Terminkontext wurde empfangen.",
     "TimeBeforeAppointment": "Verbleibende Zeit vor dem Termin",
     "RequestFailed": "Terminanfrage fehlgeschlagen",
-    "AppointmentRequestedText": "Ihr Termin wurde angefordert. Wir müssen jetzt auf die Bestätigung warten.",
+    "AppointmentRequestedText": "Ihr Termin wurde angefordert. Eine Bestätigung wird innerhalb weniger Minuten bis zu einigen Stunden eingehen.",
     "AppointmentRequestedTimestamp": "Zeitstempel anfordern",
     "AppointmentConfirmedText": "Ihre Terminanfrage wurde bestätigt und das Datum und die Uhrzeit des Termins sind jetzt festgelegt. Stellen Sie sicher, dass Sie rechtzeitig anwesend sind!",
     "AppointmentTimestampUtc": "Terminzeit (UTC)",
@@ -85,20 +89,24 @@
     "Minutes": "Protokoll)",
     "Seconds": "Zweite (n)",
     "AppointmentContextReceived": "Terminkontext erhalten",
-    "AppointmentVerificationRequestedText": "Die Anfrage zur Terminüberprüfung wurde versandt. Wir warten nun auf die Bestätigung.",
+    "AppointmentVerificationRequestedText": "Die Anfrage zur Terminüberprüfung wurde versandt. Eine Bestätigung wird innerhalb weniger Minuten bis zu einigen Stunden eingehen.",
     "AppointmentVerificationCompletedText": "Die Anfrage zur Terminüberprüfung wurde bestätigt. Sie können jetzt fortfahren und Ihr Konto in der Blockchain veröffentlichen.",
-    "AppointmentVerificationRejectedText": "Antrag auf Terminüberprüfung wurde abgelehnt.",
-    "InvalidPuzzleEngineVersion": "Ungültige Puzzle-Engine-Version. Bitte aktualisieren Sie Ihre Softwareversion."
+    "AppointmentVerificationRejectedText": "Antrag auf Terminüberprüfung wurde abgelehnt. Bitte versuchen Sie es erneut mit einer neuen Terminanfrage.",
+    "InvalidPuzzleEngineVersion": "Ungültige Puzzle-Engine-Version. Bitte aktualisieren Sie Ihre Softwareversion.",
+    "PuzzleInstructions": "Puzzle-Anweisungen",
+    "PuzzleClickInstructions": "Klicken Sie hier, um Anweisungen anzuzeigen"
   },
   "puzzles": {
     "Title": "Puzzle",
-    "TimeBeforeAppointment": "Ihre Puzzlesitzung beginnt bald. Voraussichtliche verbleibende Zeit vor Beginn Ihres Termins",
+    "TimeBeforeAppointment": "Ihre Puzzlesitzung wird bald beginnen, bitte bleiben Sie in Bereitschaft. Voraussichtliche verbleibende Zeit vor Beginn Ihres Termins",
     "WaitingForPuzzle": "Die Puzzlesitzung sollte jetzt jederzeit beginnen. Momentan warten auf die Puzzle-Anweisungen ...",
-    "TimeRemaining": "Verbleibende Zeit, um das Rätsel zu lösen",
-    "Next": "Nächstes Puzzle",
+    "TimeRemaining": "Verbleibende Zeit, um die Rätsel zu lösen",
+    "Next": "Komplettes Puzzle",
     "Complete": "Sitzung abschließen",
-    "CompletedAndSend": "Deine Rätsel sind abgeschlossen. Bitte warten Sie, während die Ergebnisse verarbeitet werden.",
-    "PreparingPackage": "Bitte warten Sie, bis der Terminvorgang abgeschlossen ist, und senden Sie die Ergebnisse zur Überprüfung."
+    "CompletedAndSend": "Ihre Rätsel wurden erfolgreich abgeschlossen. Bitte warten Sie, während die Ergebnisse verarbeitet werden. Dies kann einige Minuten bis einige Stunden dauern.",
+    "PreparingPackage": "Bitte warten Sie, bis der Terminvorgang abgeschlossen ist. Die Ergebnisse werden verpackt und zur Überprüfung versandt.",
+    "Puzzle": "Puzzle",
+    "Of": "von"
   },
   "pow": {
     "Title": "Proof of Work Nonce-Suche",
@@ -183,7 +191,8 @@
     "TestMode": "TestNet-Tools",
     "Version": "Systemversion",
     "Yes": "Ja",
-    "ServerRunningStop": "Der Neuralium-Knotenserver wird derzeit noch ausgeführt. Möchtest du damit aufhören?"
+    "ServerRunningStop": "Der Neuralium-Knotenserver wird derzeit noch ausgeführt. Möchtest du damit aufhören?",
+    "AppointmentTestWarning": "Bitte beachten Sie, dass dieses TESTNET speziell zum Testen des neuen Terminsystems vorgesehen ist. Das Terminsystem soll Betrug und Spammer stoppen, indem neue Kontoerstellungen in einem engen Zeitfenster zusammengefasst werden. Der erste Schritt besteht darin, eine Terminanfrage für den nächsten verfügbaren Termin zu stellen und zum festgelegten Zeitpunkt anwesend zu sein, um einige kurze und einfache Rätsel zu lösen. Der Terminvorgang kann viele Stunden oder Tage dauern, daher sind lange Wartezeiten normal. Sobald der gesamte Vorgang abgeschlossen ist, ist Ihre Validierung abgeschlossen und Sie können Ihr Konto veröffentlichen. Weitere Informationen finden Sie in der TESTNET-Readme-Datei unter"
   },
   "blockchain": {
     "BlockId": "Block id",
@@ -401,7 +410,7 @@
     "ParagrahThree": "",
     "ParagrahTwo": "Im TESTNET-Modus dienen alle gewonnenen Neuralium-Token nur zu Testzwecken und dürfen nicht im produktiven 'MainNet'-Netzwerk verwendet werden. Im TESTNET-Modus erhaltene Token können auch jederzeit ohne vorherige Ankündigung verloren gehen oder zurückgesetzt werden.",
     "Warning": "Der Knoten und die Brieftasche befinden sich derzeit in einem separaten Netzwerk im TestNet-Modus.",
-    "Period": "Dieser TESTNET-Build ist bis zum 18. August 2020 gültig."
+    "Period": "Dieser TESTNET-Build ist bis zum 9. Oktober 2020 gültig."
   },
   "wallet": {
     "User": "Benutzer",

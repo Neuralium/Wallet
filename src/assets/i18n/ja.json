@@ -55,28 +55,32 @@
     "VerificationModeSelection": "検証モードの選択",
     "DefaultHelpText": "ここでは、利用可能な選択肢の中から検証方法を選択する必要があります。それぞれの方法には利点と不便があります。あなたに合ったものを選んでください。",
     "TESTNETHelpText": "TESTNETでは、検証をバイパスしてすぐにアカウントを作成できます。",
-    "AppointmentsHelpText": "Neuraliumの予約確認プロセスを開始します。このプロセスは何日も続く可能性があり、日付が確認されたら予約のために立ち会う必要があります。利点：匿名。",
+    "AppointmentsHelpText": "Neuraliumの予約確認プロセスを開始します。このプロセスは何日も続く場合があり、日時が確認されたときに予約のために立ち会う必要があります。利点：匿名。",
     "POWHelpText": "時間のかかるCPU証明作業を実行する必要があります。完了すると、アカウントはサーバーとして第1層と第2層でマイニングできるようになります。"
   },
   "appointments": {
     "Title": "予約確認",
-    "IntroductionText": "アポイントメントワークフローは、大多数のフラッダーをシステムに入れないようにしながら、対象ユーザーを確認するように設計されています。",
+    "IntroductionText": "アポイントメントワークフローは、大多数のフラッダーをシステムから排除しながら、正直なユーザーを検証して許可するように設計されています。",
     "Begin": "ベギン",
     "Continue": "継続する",
-    "RequestAppointmentText": "プロセスを開始するには、明示的に予約をリクエストしてください。予約リクエストが行われ、確認は後日受信する必要があります。",
-    "PreferredRegion": "ご希望の地域を選択してください",
+    "RequestAppointmentText": "プロセスを開始するには、予約リクエストを行ってください。予約リクエストが行われ、確認は将来受信される必要があります。このプロセスには、数分から数時間かかる場合があります。",
+    "PreferredRegion": "ご希望の世界の地域を選択してください",
     "Orient": "オリエント",
+    "Central": "セントラル",
     "Occident": "西洋",
+    "OccidentHelp": "世界の西部、この地域は特に南北アメリカをカバーしています",
+    "CentralHelp": "世界の中央部であるこの地域は、特にヨーロッパ、アフリカ、中東をカバーしています",
+    "OrientHelp": "世界の東部、この地域は特に中国、インド、オーストラリア、そしてアジア全体をカバーしています",
     "RequestAppointmentButton": "予約リクエストを行う",
     "RequestCompleted": "予約リクエストが正常に送信されました",
     "RequestConfirmed": "予約リクエストが確認されました",
-    "VerificationRequestSent": "予約確認リクエストが送信されました",
+    "VerificationRequestSent": "予約確認リクエストが正常に送信されました。",
     "VerificationRequestCompleted": "予約確認リクエストが確認されました。",
     "VerificationRequestRejected": "予約確認リクエストは拒否されました。",
     "AppointmentContextCached": "予約コンテキストを受け取りました。",
     "TimeBeforeAppointment": "予約までの残り時間",
     "RequestFailed": "予約リクエストに失敗しました",
-    "AppointmentRequestedText": "予約が必要です。確認を待つ必要があります。",
+    "AppointmentRequestedText": "あなたの予約がリクエストされました。確認は数分から数時間以内に届きます。",
     "AppointmentRequestedTimestamp": "リクエストのタイムスタンプ",
     "AppointmentConfirmedText": "予約リクエストが確認され、予約日時が設定されました。時間内に参加してください！",
     "AppointmentTimestampUtc": "予約時間（UTC）",
@@ -85,20 +89,24 @@
     "Minutes": "分",
     "Seconds": "秒",
     "AppointmentContextReceived": "受信した予定のコンテキスト",
-    "AppointmentVerificationRequestedText": "予約確認リクエストが送信されました。確認待ちです。",
+    "AppointmentVerificationRequestedText": "予約確認リクエストが送信されました。確認は数分から数時間以内に届きます。",
     "AppointmentVerificationCompletedText": "予約確認リクエストが確認されました。次に進んで、アカウントをブロックチェーンに公開できます。",
-    "AppointmentVerificationRejectedText": "予約確認リクエストは拒否されました。",
-    "InvalidPuzzleEngineVersion": "パズルエンジンのバージョンが無効です。ソフトウェアのバージョンを更新してください。"
+    "AppointmentVerificationRejectedText": "予約確認リクエストは拒否されました。新しい予約リクエストでもう一度お試しください。",
+    "InvalidPuzzleEngineVersion": "パズルエンジンのバージョンが無効です。ソフトウェアのバージョンを更新してください。",
+    "PuzzleInstructions": "パズルの説明",
+    "PuzzleClickInstructions": "ここをクリックして指示を表示してください"
   },
   "puzzles": {
     "Title": "パズル",
-    "TimeBeforeAppointment": "パズルセッションが間もなく始まります。予約開始までの推定残り時間",
+    "TimeBeforeAppointment": "パズルセッションがまもなく始まりますので、しばらくお待ちください。予約開始までの残り時間",
     "WaitingForPuzzle": "パズルセッションはいつでも開始されます。現在、パズルの指示を待っています...",
-    "TimeRemaining": "パズルを完了するまでの残り時間",
-    "Next": "次のパズル",
+    "TimeRemaining": "パズルを完了するための残り時間",
+    "Next": "完全なパズル",
     "Complete": "完全なセッション",
-    "CompletedAndSend": "パズルが完成しました。結果を処理しています。しばらくお待ちください。",
-    "PreparingPackage": "予約プロセスが完了し、確認のために結果を送信するまでお待ちください。"
+    "CompletedAndSend": "パズルは無事に完成しました。結果が処理されるまでお待ちください。これには、数分から数時間かかる場合があります。",
+    "PreparingPackage": "予約プロセスが完了するまでお待ちください。結果はパッケージ化され、確認のために発送されます。",
+    "Puzzle": "パズル",
+    "Of": "の"
   },
   "pow": {
     "Title": "作業証明ノンス検索",
@@ -183,7 +191,8 @@
     "TestMode": "TestNetツール",
     "Version": "システムバージョン",
     "Yes": "はい",
-    "ServerRunningStop": "Neuraliumノードサーバーは現在も実行中です。やめますか？"
+    "ServerRunningStop": "Neuraliumノードサーバーは現在も実行中です。やめますか？",
+    "AppointmentTestWarning": "このTESTNETは、新しい予約システムを具体的にテストすることを目的としていることに注意してください。予約システムは、新しいアカウントの作成を狭い時間枠に詰め込むことで、詐欺やスパマーを阻止するように設計されています。最初のステップは、次に利用可能なアポイントメントのアポイントメントリクエストを作成し、割り当てられた日時に出席して、いくつかの短くて単純なパズルを実行することです。予約プロセスは完了するまでに数時間または数日かかることがあるため、長い待ち時間が通常です。プロセス全体が完了すると、検証が完了し、アカウントを公開できるようになります。詳細については、次のTESTNETreadmeを参照してください。"
   },
   "blockchain": {
     "BlockId": "ブロックID",
@@ -401,7 +410,7 @@
     "ParagrahThree": "",
     "ParagrahTwo": "TESTNETモードでは、取得されたすべてのニューラルトークンはテスト専用であり、実稼働の「MainNet」ネットワークでは使用できません。 TESTNETモードで取得したトークンは、予告なしにいつでも失われたりリセットされたりする場合があります。",
     "Warning": "ノードとウォレットは現在、別のネットワークでTestNetモードになっています。",
-    "Period": "このTESTNETビルドは2020年8月18日まで有効です。"
+    "Period": "このTESTNETビルドは、2020年10月9日まで有効です。"
   },
   "wallet": {
     "User": "ユーザー",

@@ -55,18 +55,22 @@
     "VerificationModeSelection": "검증 모드 선택",
     "DefaultHelpText": "여기에서 사용 가능한 선택 사항 중에서 확인 방법을 선택해야합니다. 각 방법에는 장점과 불편 함이 있습니다. 당신에게 맞는 것을 선택하십시오.",
     "TESTNETHelpText": "TESTNET에서는 확인을 건너 뛰어 즉시 계정을 만들 수 있습니다.",
-    "AppointmentsHelpText": "Neuralium 약속 확인 프로세스를 시작합니다. 이 과정은 며칠 동안 지속될 수 있으며 날짜가 확인되면 예약을 위해 참석해야합니다. 장점 : 익명.",
+    "AppointmentsHelpText": "Neuralium 약속 확인 프로세스를 시작합니다. 이 과정은 며칠 동안 지속될 수 있으며 날짜와 시간이 확인되면 예약을 위해 참석해야합니다. 장점 : 익명.",
     "POWHelpText": "시간이 많이 걸리는 CPU 작업 증명을 실행해야합니다. 완료되면 귀하의 계정은 1 차 및 2 차 계층에서 서버로 채굴 할 수 있습니다."
   },
   "appointments": {
     "Title": "약속 확인",
-    "IntroductionText": "약속 워크 플로는 의도 한 사용자를 확인하는 동시에 대부분의 플러 더를 시스템에서 차단하도록 설계되었습니다.",
+    "IntroductionText": "약속 워크 플로는 정직한 사용자를 확인하고 허용하는 동시에 대다수의 홍수를 시스템에서 차단하도록 설계되었습니다.",
     "Begin": "시작",
     "Continue": "계속하다",
-    "RequestAppointmentText": "절차를 시작하려면 명시 적으로 약속을 요청하십시오. 예약 요청이 이루어지며 나중에 확인을 받아야합니다.",
-    "PreferredRegion": "선호하는 지역을 선택하세요",
+    "RequestAppointmentText": "절차를 시작하려면 예약을 요청하십시오. 예약 요청이 이루어지며 나중에 확인을 받아야합니다. 이 프로세스는 몇 분에서 몇 시간까지 걸릴 수 있습니다.",
+    "PreferredRegion": "선호하는 세계 지역을 선택하십시오",
     "Orient": "동양",
+    "Central": "본부",
     "Occident": "서양",
+    "OccidentHelp": "세계 서부,이 지역은 가장 주목할만한 미주 지역을 포함합니다.",
+    "CentralHelp": "세계의 중부 지역 인이 지역은 특히 유럽, 아프리카 및 중동을 포함합니다.",
+    "OrientHelp": "세계 동부,이 지역은 특히 중국, 인도, 호주 및 아시아 전체를 포함합니다.",
     "RequestAppointmentButton": "약속 요청하기",
     "RequestCompleted": "약속 요청이 성공적으로 전송되었습니다.",
     "RequestConfirmed": "예약 요청이 확인되었습니다.",
@@ -76,7 +80,7 @@
     "AppointmentContextCached": "약속 컨텍스트가 수신되었습니다.",
     "TimeBeforeAppointment": "예약 전 남은 시간",
     "RequestFailed": "예약 요청 실패",
-    "AppointmentRequestedText": "약속이 요청되었습니다. 이제 확인을 기다려야합니다.",
+    "AppointmentRequestedText": "예약이 요청되었습니다. 확인은 몇 분에서 몇 시간 내에 수신됩니다.",
     "AppointmentRequestedTimestamp": "타임 스탬프 요청",
     "AppointmentConfirmedText": "예약 요청이 확인되었으며 예약 날짜와 시간이 설정되었습니다. 시간에 참석하십시오!",
     "AppointmentTimestampUtc": "약속 시간 (UTC)",
@@ -85,20 +89,24 @@
     "Minutes": "의사록)",
     "Seconds": "초",
     "AppointmentContextReceived": "수신 된 약속 컨텍스트",
-    "AppointmentVerificationRequestedText": "약속 확인 요청이 발송되었습니다. 이제 확인을 기다리고 있습니다.",
+    "AppointmentVerificationRequestedText": "약속 확인 요청이 발송되었습니다. 확인은 몇 분에서 몇 시간 내에 수신됩니다.",
     "AppointmentVerificationCompletedText": "약속 확인 요청이 확인되었습니다. 이제 계속해서 계정을 블록 체인에 게시 할 수 있습니다.",
-    "AppointmentVerificationRejectedText": "약속 확인 요청이 거부되었습니다.",
-    "InvalidPuzzleEngineVersion": "잘못된 퍼즐 엔진 버전입니다. 소프트웨어 버전을 업데이트하십시오."
+    "AppointmentVerificationRejectedText": "약속 확인 요청이 거부되었습니다. 새로운 약속 요청으로 다시 시도하십시오.",
+    "InvalidPuzzleEngineVersion": "잘못된 퍼즐 엔진 버전입니다. 소프트웨어 버전을 업데이트하십시오.",
+    "PuzzleInstructions": "퍼즐 지침",
+    "PuzzleClickInstructions": "여기를 클릭하여 지침을 표시하십시오."
   },
   "puzzles": {
     "Title": "퍼즐",
-    "TimeBeforeAppointment": "퍼즐 세션이 곧 시작됩니다. 예약 시작 전 남은 예상 시간",
+    "TimeBeforeAppointment": "퍼즐 세션이 곧 시작됩니다. 대기하세요. 예약 시작 전 남은 예상 시간",
     "WaitingForPuzzle": "퍼즐 세션은 지금 언제든지 시작해야합니다. 현재 퍼즐 지침을 기다리고 있습니다 ...",
-    "TimeRemaining": "퍼즐 완료까지 남은 시간",
-    "Next": "다음 퍼즐",
+    "TimeRemaining": "퍼즐을 완료하는 데 남은 시간",
+    "Next": "완벽한 퍼즐",
     "Complete": "전체 세션",
-    "CompletedAndSend": "퍼즐이 완료되었습니다. 결과가 처리되는 동안 잠시 기다려주십시오.",
-    "PreparingPackage": "예약 절차가 완료되고 확인을 위해 결과를 보내는 동안 기다려주십시오."
+    "CompletedAndSend": "퍼즐이 성공적으로 완료되었습니다. 결과가 처리되는 동안 잠시 기다려주십시오. 몇 분에서 몇 시간까지 걸릴 수 있습니다.",
+    "PreparingPackage": "예약 절차가 완료되는 동안 기다려주십시오. 결과는 확인을 위해 패키지 및 발송됩니다.",
+    "Puzzle": "퍼즐",
+    "Of": "의"
   },
   "pow": {
     "Title": "작업 증명 임시 검색",
@@ -183,7 +191,8 @@
     "TestMode": "TestNet 도구",
     "Version": "시스템 버전",
     "Yes": "예",
-    "ServerRunningStop": "Neuralium 노드 서버는 현재 여전히 실행 중입니다. 중지 하시겠습니까?"
+    "ServerRunningStop": "Neuralium 노드 서버는 현재 여전히 실행 중입니다. 중지 하시겠습니까?",
+    "AppointmentTestWarning": "이 TESTNET은 새 약속 시스템을 특별히 테스트하기위한 것임을 유의하십시오. 예약 시스템은 새로운 계정 생성을 좁은 기간에 압축하여 사기 및 스팸 발송자를 차단하도록 설계되었습니다. 첫 번째 단계는 사용 가능한 다음 약속에 대한 약속을 요청하고 할당 된 날짜와 시간에 참석하여 몇 가지 짧고 간단한 퍼즐을 실행하는 것입니다. 예약 절차를 완료하는 데 몇 시간 또는 며칠이 걸릴 수 있으므로 긴 대기는 정상입니다. 전체 프로세스가 완료되면 유효성 검사가 완료되고 계정을 게시 할 수 있습니다. 자세한 내용은 TESTNET Readme를 참조하십시오."
   },
   "blockchain": {
     "BlockId": "블록 ID",
@@ -401,7 +410,7 @@
     "ParagrahThree": "",
     "ParagrahTwo": "TESTNET 모드에서 얻은 모든 뉴럴 리움 토큰은 테스트 목적으로 만 사용되며 프로덕션 'MainNet'네트워크에서는 사용할 수 없습니다. TESTNET 모드에서 획득 한 토큰은 사전 통지없이 언제든지 분실되거나 재설정 될 수 있습니다.",
     "Warning": "노드와 지갑은 현재 별도의 네트워크에서 TestNet 모드에 있습니다.",
-    "Period": "이 TESTNET 빌드는 2020 년 8 월 18 일까지 유효합니다."
+    "Period": "이 TESTNET 빌드는 2020 년 10 월 9 일까지 유효합니다."
   },
   "wallet": {
     "User": "사용자",
