@@ -1,0 +1,103 @@
+<div *ngIf="isCurrent">
+  <div class="row">
+    <div  style="flex-grow:1;">
+        <table>
+            <tr>
+              <td><strong>{{ 'account.AccountName' | translate }}</strong></td>
+              <td>{{account.friendlyName}}</td>
+            </tr>
+            <tr>
+              <td><strong>{{ 'account.Type' | translate }}</strong></td>
+              <td>
+                <span *ngIf="account.accountType === 1">{{ 'account.User' | translate }}</span>
+                <span *ngIf="account.accountType === 2">{{ 'account.Server' | translate }}</span>
+                <span *ngIf="account.accountType === 3">{{ 'account.Moderator' | translate }}</span>
+                <span *ngIf="account.accountType === 4">{{ 'account.Joint' | translate }}</span>
+              </td>
+            </tr>
+            <tr *ngIf="account.status !== 3"  >
+              <td><strong>{{ 'account.Hash' | translate }}</strong></td>
+              <td>{{account.AccountHash}}</td>
+            </tr>
+            <!-- <tr>
+              <td><strong>{{ 'account.TrustLevel' | translate }}</strong></td>
+              <td>{{account.trustLevel}}</td>
+            </tr> -->
+            <tr>
+              <td><strong>{{ 'account.Status' | translate }}</strong></td>
+              <td>
+                <span *ngIf="account.status === 4"><span class="text-danger"><i class="fas fa-lock"></i>
+                    {{ 'account.Locked' | translate }}</span></span>
+                <span *ngIf="account.status === 3"><span class="text-success"><i class="fas fa-check"></i>
+                    {{ 'account.Published' | translate }}</span></span>
+                <span *ngIf="account.status === 2"><span class="text-warning"><i class="fas fa-share-square"></i>
+                    {{ 'account.Dispatched' | translate }}</span></span>
+                <span *ngIf="account.status === 1"><span class="text-primary"><i class="far fa-file"></i>
+                    {{ 'account.New' | translate }}</span></span>
+              </td>
+            </tr>
+            <tr>
+              <td><strong>{{ 'account.declarationBlockId' | translate }}</strong></td>
+              <td>{{account.declarationBlockId}}</td>
+            </tr>
+            <tr>
+              <td><strong>{{ 'account.VerrificationType' | translate }}</strong></td>
+              <td>{{correlatedText}}</td>
+            </tr>
+            <tr>
+              <td><strong>{{ 'account.VerificationStatus' | translate }}</strong></td>
+              <td>{{correlatedStatusText}}</td>
+            </tr>
+            <tr>
+              <td><strong>{{ 'account.VerificationExpirationWarning' | translate }}</strong></td>
+              <td>{{account.verificationExpirationWarning | formatDateWithTime}}</td>
+            </tr>
+            <tr>
+              <td><strong>{{ 'account.VerificationExpiration' | translate }}</strong></td>
+              <td>{{account.verificationExpiration | formatDateWithTime}}</td>
+            </tr>
+            <tr>
+              <td><strong>{{ 'account.WalletEncryption' | translate }}</strong></td>
+              <td>
+                <span *ngIf="!account.isEncrypted"><span class="text-danger"><i class="fas fa-lock-open"></i>
+                    {{ 'account.NotEncrypted' | translate }}</span></span>
+                <span *ngIf="account.isEncrypted"><span class="text-success"><i class="fas fa-lock"></i>
+                    {{ 'account.Encrypted' | translate }}</span></span>
+              </td>
+            </tr>
+          </table>
+    </div>
+    <div class="alignCenter" style="flex-grow:1;">
+        <span *ngIf="account.status === 1">
+          <button mat-stroked-button color="primary" [disabled]="!canPublish" (click)="publishAccount(account.accountCode)">{{ 'dashboard.PublishAccount' | translate }}</button>
+        </span>
+    </div>
+  </div>
+  
+</div>
+
+<div *ngIf="!isCurrent">
+  <span *ngIf="account.status === 3">
+    <span class="text-success"><i class="fas fa-lock-open"></i></span>
+    <span class="text-uppercase"> {{account.friendlyName}} {{account.accountId}}</span>
+    <span *ngIf="!account.isActive">
+      <button mat-button (click)="setAccountAsCurrent(account)">{{ 'dashboard.SelectAsCurrent' | translate }}</button>
+    </span>
+  </span>
+  <span *ngIf="account.status === 2">
+    <span class="text-warning"><i class="fas fa-lock"></i></span>
+    <span class="text-uppercase"> {{account.friendlyName}} {{account.accountId}}</span>
+  </span>
+  <span *ngIf="account.status === 1">
+    <span class="text-primary"><i class="fas fa-lock"></i></span>
+    <span class="text-uppercase"> {{account.friendlyName}} {{account.accountId}}</span>
+    <span *ngIf="account.isActive">
+      <button mat-button [disabled]="!canPublish"
+        (click)="publishAccount(account.accountCode)">{{ 'dashboard.PublishAccount' | translate }}</button>
+    </span>
+  </span>
+  <span *ngIf="account.status === 4">
+    <span class="text-danger"><i class="fas fa-lock"></i></span>
+    <span class="text-uppercase"> {{account.friendlyName}} {{account.accountId}}</span>
+  </span>
+</div>

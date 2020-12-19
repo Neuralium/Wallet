@@ -1,0 +1,44 @@
+.rowset{
+    display: flex;
+    flex-direction: column;
+}
+
+.solutionset{
+    display: flex;
+    flex-direction: column;
+}
+
+.solutionitem{
+    flex: 1;
+}
+
+.tableKey{
+    
+}
+
+.occidentMap{
+    width: 300px;
+    height: 150px;
+    background-image: url("../../../assets/img/occident.png");
+    background-size: 300px 150px;
+    color:whitesmoke;
+    margin: auto;
+}
+
+.centralMap{
+    width: 300px;
+    height: 150px;
+    background-image: url("../../../assets/img/central.png");
+    background-size: 300px 150px;
+    color:whitesmoke;
+    margin: auto;
+}
+
+.orientMap{
+    width: 300px;
+    height: 150px;
+    background-image: url("../../../assets/img/orient.png");
+    background-size: 300px 150px;
+    color:whitesmoke;
+    margin: auto;
+}

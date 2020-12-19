@@ -1,0 +1,12 @@
+<h1 mat-dialog-title>{{ 'wallet.LoadingWallet' | translate }}</h1>
+<div mat-dialog-content>
+    <mat-divider></mat-divider>
+    <p class="h4">{{ 'wallet.WalletDoesNotExist' | translate }}</p>
+    <p [innerHTML]="'wallet.PleaseCreateOrCopy' | translate"></p>
+    <div class="row">
+        <button mat-button color="primary" (click)="answerCreateNewWallet()"><i class=""></i>
+            {{ 'wallet.Create' | translate }}</button>
+        <button mat-button color="accent" (click)="cancel()"><i class="fas fa-redo"></i>
+            {{ 'wallet.Reload' | translate }}</button>
+    </div>
+</div>

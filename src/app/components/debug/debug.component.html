@@ -1,0 +1,10 @@
+<mat-divider></mat-divider>
+<div class="alert alert-warning"  *ngIf="showMe">
+<h4>{{ 'app.TestMode' | translate }}</h4>
+<mat-action-list dense> 
+  <div style="display: inline-flex;">
+      <button mat-list-item color="primary" [disabled]="!addNeuraliumsEnabled" (click)="addNeuraliums()"><i class="fas fa-plus"></i> Add Neuraliums</button>
+      <small style="margin: auto;"><app-help-icon [message]="'This button is for testing purposes only. By clicking it, it will add 1000 Neuraliums to your account.'"></app-help-icon></small>
+  </div>    
+</mat-action-list>
+</div>

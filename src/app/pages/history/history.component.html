@@ -1,0 +1,107 @@
+
+    <app-page-title [title]="'history.Title' | translate" [icon]="icon" helpMessage="history.Explain"></app-page-title>
+
+    <mat-divider></mat-divider>
+    <mat-tab-group (selectedTabChange)="tabChanged($event)">
+        <mat-tab>
+                <ng-template mat-tab-label>
+                        {{ 'history.All' | translate }}
+                      </ng-template>
+        </mat-tab>
+        <mat-tab>
+                <ng-template mat-tab-label>
+                        <img src="./assets/img/debit_icon.png" class="img-fluid" />&nbsp; {{ 'history.Sent' | translate }}
+                      </ng-template>
+        </mat-tab>
+        <mat-tab>
+                <ng-template mat-tab-label>
+                        <img src="./assets/img/credit_icon.png" class="img-fluid" />&nbsp; {{ 'history.Received' | translate }}
+                      </ng-template>
+        </mat-tab>
+    </mat-tab-group>
+    <div style="padding: 1em;">
+        <mat-form-field>
+            <input matInput (keyup)="applyFilter($event.target.value)" [placeholder]="'app.Filter' | translate">
+        </mat-form-field>
+
+        <mat-paginator [length]="count" [pageSize]="pageSize" [pageSizeOptions]="[5, 10, 25, 100]"
+            (page)="pageEvent = $event">
+        </mat-paginator>
+
+        <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+            <ng-container matColumnDef="status">
+                <th mat-header-cell *matHeaderCellDef> {{ 'history.Status' | translate }} </th>
+                <td mat-cell *matCellDef="let element">
+                    <span [tooltip]="StatusTooltipContent" content-type="template" placement="top" show-delay="500">
+                        <span *ngIf="element.status==0">
+                            <i class="text-primary fas fa-question-circle"></i>
+                        </span>
+                        <span *ngIf="element.status==2">
+                            <i class="text-success fas fa-check"></i>
+                        </span>
+                        <span *ngIf="element.status==1">
+                            <i class="text-warning fas fa-question-circle"></i>
+                        </span>
+                        <span *ngIf="element.status==3">
+                            <i class="text-danger fas fa-ban"></i>
+                        </span>
+                    </span>
+
+                    <ng-template #StatusTooltipContent>
+                        {{ element.statusName }}
+                    </ng-template>
+                </td>
+            </ng-container>
+
+            <ng-container matColumnDef="local">
+                <th mat-header-cell *matHeaderCellDef> Source </th>
+                <td mat-cell *matCellDef="let element">
+                    <span>
+                        <span *ngIf="element.local">
+                            <img src="assets/img/debit_icon_c.png" class="img-fluid"  />
+                        </span>
+                        <span *ngIf="!element.local">
+                            <img src="assets/img/credit_icon_c.png" class="img-fluid"  />
+                        </span>
+                    </span>
+                </td>
+            </ng-container>
+
+            <ng-container matColumnDef="id">
+                <th mat-header-cell *matHeaderCellDef> Id </th>
+                <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="source">
+                <th mat-header-cell *matHeaderCellDef> {{ 'history.From' | translate }} </th>
+                <td mat-cell *matCellDef="let element"> {{element.source}} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="recipient">
+                <th mat-header-cell *matHeaderCellDef> {{ 'history.To' | translate }} </th>
+                <td mat-cell *matCellDef="let element"> {{element.recipient | limitString:30}} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="version">
+                <th mat-header-cell *matHeaderCellDef> {{ 'history.Object' | translate }} </th>
+                <td mat-cell *matCellDef="let element"> {{element.object}} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="date">
+                <th mat-header-cell *matHeaderCellDef> Date </th>
+                <td mat-cell *matCellDef="let element"> {{element.date | formatDateWithTime}} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="action">
+                <th mat-header-cell *matHeaderCellDef> </th>
+                <td mat-cell *matCellDef="let element"> <button mat-icon-button
+                        (click)="showTransactionDetails(element.id)" [color]="primary">
+                        <mat-icon fontSet="fas" fontIcon="fa-eye"></mat-icon>
+                    </button> </td>
+            </ng-container>
+
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+        </table>
+    </div>

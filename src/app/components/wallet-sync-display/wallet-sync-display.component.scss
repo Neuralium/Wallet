@@ -1,0 +1,31 @@
+.column{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.item{
+    padding-top: 1em;
+    width: 200px;
+}
+
+.row{
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.updateText{
+    color: #008685;
+    text-transform: capitalize;
+    font-weight: bold;
+}
+
+
+.wallet-spinner ::ng-deep .mat-progress-spinner circle, .mat-spinner circle {
+    stroke: #008685 !important;
+}
+
+.wallet-spinner-circle ::ng-deep .mat-icon {
+    color: #008685 !important;
+}

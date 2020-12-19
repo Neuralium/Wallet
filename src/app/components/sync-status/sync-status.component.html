@@ -1,0 +1,34 @@
+<div class="toolbar">
+
+  <div class="item" [tooltip]="ServerConnectionTemplate" content-type="template" placement="top" show-delay="500">
+    <button mat-icon-button (click)="showServerConnectionDialog(true)" [color]="currentServerConnectionStatusColor">
+      <mat-icon style="width:30px" fontSet="fas" fontIcon="fa-server"></mat-icon>
+    </button>
+  </div>
+
+  <div class="item" [tooltip]="PeerCountTooltipContent" content-type="template" placement="top" show-delay="500">
+    <img [src]="peersImage" class="img-fluid" style="width:30px" />
+  </div>
+
+  <div class="item">
+    <app-wallet-sync-display [lightDisplay]="true" #walletSync></app-wallet-sync-display>
+  </div>
+
+  <div class="item">
+    <app-blockchain-sync-display [lightDisplay]="true" #blockchainSync></app-blockchain-sync-display>
+  </div>
+
+</div>
+
+<ng-template #ServerConnectionTemplate>
+  <div *ngIf="serverNotConnected">
+    {{ 'server.NotConnectedToServer' | translate }}
+  </div>
+  <div *ngIf="!serverNotConnected">
+    {{ 'server.ServerRunning' | translate }}
+  </div>
+</ng-template>
+
+<ng-template #PeerCountTooltipContent>
+  {{ 'sync.Peer' | translate }} {{peersCount}}
+</ng-template>

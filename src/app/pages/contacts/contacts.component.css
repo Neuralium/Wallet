@@ -1,0 +1,21 @@
+mat-card{
+    width: 100%;
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .addButton{
+        margin-left: 75px;
+  }
+
+  .filterBox{
+    margin-right: 75px;
+  }
+
+  .contact-frame{
+    margin:15px;
+  }

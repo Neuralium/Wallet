@@ -1,0 +1,6 @@
+<app-page-title [title]="title" [icon]="icon" showNeuraliumsTotal="true"></app-page-title>
+<div class="container-centered">
+    <app-send-neuraliums [neuraliumTotal]="neuraliumTotal" [currentAccountUuId]="currentAccountUuId" (neuraliumsSent)="neuraliumsSent($event)"></app-send-neuraliums>
+
+
+</div>

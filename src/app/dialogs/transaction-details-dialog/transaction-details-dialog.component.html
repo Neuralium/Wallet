@@ -1,0 +1,74 @@
+<h1 mat-dialog-title>Transaction</h1>
+<div mat-dialog-content>
+  <mat-divider></mat-divider>
+  <table>
+    <tr>
+      <td style="width: 130px;"><strong>{{ 'history.Status' | translate }}</strong></td>
+      <td>
+        <span>
+          <span *ngIf="transaction.status==0" class="text-primary">
+            <i class="fas fa-question-circle"></i> {{ transaction.statusName }}
+          </span>
+          <span *ngIf="transaction.status==2" class="text-success">
+            <i class="fas fa-check"></i> {{ transaction.statusName }}
+          </span>
+          <span *ngIf="transaction.status==1" class="text-warning">
+            <i class="fas fa-question-circle"></i> {{ transaction.statusName }}
+          </span>
+          <span *ngIf="transaction.status==3" class="text-danger">
+            <i class="fas fa-ban"></i> {{ transaction.statusName }}
+          </span>
+        </span>
+      </td>
+    </tr>
+    <tr>
+      <td><strong>{{ 'history.TransactionId' | translate }}</strong></td>
+      <td>{{transaction.id}}</td>
+    </tr>
+    <tr>
+      <td><strong>{{ 'history.From' | translate }}</strong></td>
+      <td>{{transaction.source}}</td>
+    </tr>
+    <tr>
+      <td><strong>{{ 'history.To' | translate }}</strong></td>
+      <td>{{transaction.recipient}}</td>
+    </tr>
+    <tr>
+      <td><strong>{{ 'history.Object' | translate }}</strong></td>
+      <td>{{transaction.object}}</td>
+    </tr>
+    <tr>
+      <td><strong>Date</strong></td>
+      <td>{{transaction.date | formatDateWithTime}}</td>
+    </tr>
+    <tr>
+      <td><strong>{{ 'history.Amount' | translate }}</strong></td>
+      <td>{{transaction.amount | formatNeuralium}}</td>
+    </tr>
+    <tr>
+      <td><strong>{{ 'history.Tip' | translate }}</strong></td>
+      <td>{{transaction.tip | formatNeuralium}}</td>
+    </tr>
+    <tr>
+      <td><strong>Note</strong></td>
+      <td>{{transaction.note}}</td>
+    </tr>
+  </table>
+  <div [@.disabled]="disableAnimation">
+    <mat-expansion-panel [expanded]="false">
+      <mat-expansion-panel-header>
+        <strong>{{ 'history.Structure' | translate }}</strong>
+      </mat-expansion-panel-header>
+
+      <ng-template matExpansionPanelContent>
+        <ngx-json-viewer [json]="transaction.details" [expanded]="false"></ngx-json-viewer>
+      </ng-template>
+
+    </mat-expansion-panel>
+  </div>
+  <br />
+</div>
+<div mat-dialog-actions class="row">
+  <button mat-button color="primary" (click)="close()"><i class=""></i>
+    {{ 'app.Close' | translate }}</button>
+</div>

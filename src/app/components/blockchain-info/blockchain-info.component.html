@@ -1,0 +1,148 @@
+<mat-card>
+   <!-- <button (click)="test4()">TEST Begin</button>
+  <button (click)="test()">TEST Appointment</button>
+  <button (click)="test2()">TEST Publish</button>
+  <button (click)="test3()">TEST SMS</button> -->
+  <div style="text-align: right;"><span
+        class="accoutId">{{ 'account.AccountNumber' | translate }}:&nbsp;</span>
+         <span class="accoutIdEntry">{{account.accountId}}</span></div>
+</mat-card>
+<span *ngIf="blockchainInfo.blockInfo">
+  <br />
+  <mat-divider></mat-divider>
+  <br />
+  <mat-card>
+    <mat-card-title>{{ 'dashboard.BlockInfo' | translate }}</mat-card-title>
+    <mat-card-content>
+      <table>
+        <tr>
+          <td style="width: 106px;"><strong>{{ 'blockchain.BlockId' | translate }}</strong></td>
+          <td>{{blockchainInfo.blockInfo.id}}</td>
+        </tr>
+        <tr>
+          <td><strong>{{ 'blockchain.Timestamp' | translate }}</strong></td>
+          <td>{{blockchainInfo.blockInfo.timestamp | formatDateWithTime}}</td>
+        </tr>
+        <tr>
+          <td><strong>{{ 'blockchain.Hash' | translate }}</strong></td>
+          <td class="worldWrap">{{blockchainInfo.blockInfo.hash}}</td>
+        </tr>
+        <tr>
+          <td><strong>{{ 'blockchain.PublicId' | translate }}</strong></td>
+          <td>{{blockchainInfo.blockInfo.publicId}}</td>
+        </tr>
+        <tr *ngIf="showRemainingTime">
+          <td><strong>{{ 'blockchain.NextBlockRemainingTime' | translate }}</strong></td>
+          <td>
+            <div>
+              <mat-progress-bar style="width:100px;" mode="determinate" [value]="remainingTimePercent">
+              </mat-progress-bar><small>{{currentRemainingTime | formatETATime}}</small>
+            </div>
+          </td>
+        </tr>
+      </table>
+    </mat-card-content>
+  </mat-card>
+</span>
+<span *ngIf="blockchainInfo.digestInfo">
+  <br />
+  <mat-divider></mat-divider>
+  <br />
+  <mat-accordion>
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <mat-card-title>{{ 'dashboard.DigestInfo' | translate }}</mat-card-title>
+      </mat-expansion-panel-header>
+
+      <table>
+        <tr>
+          <td><strong>{{ 'blockchain.DigestId' | translate }}</strong></td>
+          <td>{{blockchainInfo.digestInfo.id}}</td>
+        </tr>
+        <tr>
+          <td><strong>{{ 'blockchain.Timestamp' | translate }}</strong></td>
+          <td>{{blockchainInfo.digestInfo.timestamp | formatDateWithTime}}</td>
+        </tr>
+        <tr>
+          <td><strong>{{ 'blockchain.Hash' | translate }}</strong></td>
+          <td class="worldWrap">{{blockchainInfo.digestInfo.hash}}</td>
+        </tr>
+        <tr>
+          <td><strong>{{ 'blockchain.PublicId' | translate }}</strong></td>
+          <td>{{blockchainInfo.digestInfo.publicId}}</td>
+        </tr>
+        <tr>
+          <td><strong>{{ 'blockchain.BlockId' | translate }}</strong></td>
+          <td>{{blockchainInfo.digestInfo.blockId}}</td>
+        </tr>
+      </table>
+    </mat-expansion-panel>
+  </mat-accordion>
+
+</span>
+<!--
+<mat-divider></mat-divider>
+<h3>{{ 'dashboard.ElectionInfo' | translate }}</h3>
+<table>
+  <tr>
+    <td><strong>{{ 'dashboard.Type' | translate }}</strong></td>
+    <td>{{blockchainInfo.electionInfo.type}}</td>
+  </tr>
+  <tr>
+    <td><strong>{{ 'dashboard.Maturity' | translate }}</strong></td>
+    <td>{{blockchainInfo.electionInfo.maturity}}</td>
+  </tr>
+  <tr>
+    <td><strong>{{ 'dashboard.PublicationTimes' | translate }}</strong></td>
+    <td>{{blockchainInfo.electionInfo.publicationTimes}}</td>
+  </tr>
+</table>
+-->
+<br />
+<mat-divider></mat-divider>
+<br />
+<mat-card>
+  <mat-card-title>{{ 'dashboard.System' | translate }}</mat-card-title>
+  <mat-card-content>
+    <table>
+      <tr>
+        <td><strong>{{ 'app.Version' | translate }}</strong></td>
+        <td>{{systemVersion}}</td>
+      </tr>
+      <tr>
+        <td><strong>{{ 'sync.Peer' | translate }}</strong></td>
+        <td>{{peerCount}} total, {{mobilePeerCount}} mobile</td>
+      </tr>
+    </table>
+    <table class="table" *ngIf="peerConnectionDetails.length > 0">
+      <thead>
+        <tr>
+          <th *ngFor="let column of displayedColumns" scope="col">
+          <p *ngIf="column == 'connected'">
+          <mat-button-toggle-group [(ngModel)]="peerConnectionDetailsShowConnected">
+              <mat-button-toggle [value]="true"> connected</mat-button-toggle>
+              <mat-button-toggle [value]="false"> all</mat-button-toggle>
+          </mat-button-toggle-group>
+          </p>
+          <p *ngIf="column == 'type'">
+            <mat-button-toggle-group [(ngModel)]="peerConnectionDetailsShowFullNode">
+                <mat-button-toggle [value]="true"> full nodes</mat-button-toggle>
+                <mat-button-toggle [value]="false"> all</mat-button-toggle>
+            </mat-button-toggle-group>
+          </p>
+          <p *ngIf="!['connected', 'type'].includes(column)">
+          {{column}}
+          </p>
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let data of filterPeerConnectionDetails(peerConnectionDetails)">
+            <td *ngFor="let column of displayedColumns">
+              <div  [ngStyle]="{'color': data.isConnected ? 'green' : 'red'}">{{displayColumn(column, data)}} </div>
+            </td>
+        </tr>
+      </tbody>
+    </table>
+  </mat-card-content>
+</mat-card>

@@ -1,0 +1,12 @@
+<div *ngIf="showMe"  class="alert alert-warning row testnet">
+  <div>{{ 'testMode.Warning' | translate }}</div>&nbsp;&nbsp;
+
+  <button mat-icon-button (click)="showDetails()">
+      <mat-icon style="font-size: 50px;"  color="warn" fontSet="far" fontIcon="fa-question-circle"></mat-icon>
+    </button>
+</div>
+
+<div *ngIf="showMe"  class="alert alert-warning row timeline">
+    <br />
+    <div>{{ 'testMode.Period' | translate }}</div>&nbsp;&nbsp;
+</div>

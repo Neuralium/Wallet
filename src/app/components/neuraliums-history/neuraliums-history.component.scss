@@ -1,0 +1,304 @@
+$primary-color: #673ab7;
+$primary-color-hover: scale-color($primary-color, $lightness: 32%);
+$timeline-color: #c5f7d2;
+$debit-color: #d2ff5a;
+$debit-shadow-color: #b1d84b;
+
+$credit-color: #7fceef;
+$credit-shadow-color: #2383ab;
+
+$mining-color: #48cfae;
+$mining-shadow-color: #379e85;
+
+$ubb-color: #48cfae;
+$ubb-shadow-color: #379e85;
+
+$bar-width: 3px;
+
+.date-with-data {
+  background: orange;
+  border-radius: 100%;
+}
+
+table{
+  width: 100%;
+  padding: 1em;
+}
+
+tr{
+  margin: 0px;
+  border: 0px;
+  padding:0px;
+}
+
+.actionBar {
+  display: flex;
+  justify-content: space-between;
+  flex-grow: 1;
+}
+
+.vertical-background-line{
+  background: linear-gradient(
+    to right,
+    transparent,
+    transparent calc(50% - 0.81px),
+    #c5f7d2 calc(50% - 2px),
+    #c5f7d2 calc(50% + 2px),
+    transparent calc(50% + 0.81px),
+    transparent
+  );
+}
+
+.center-content {
+  display: flex;
+  justify-content: center;
+}
+
+.black-line {
+  background: linear-gradient(
+    to bottom,
+    transparent,
+    transparent calc(50% - 0.81px),
+    grey calc(50% - 1px),
+    grey calc(50% + 1px),
+    transparent calc(50% + 0.81px),
+    transparent
+  );
+  display: flex;
+  align-items: center;
+}
+
+.period-day {
+  font-size: large;
+  font-variant: small-caps;
+  font-weight: bolder;
+  display: flex;
+  padding-left: 1em;
+  padding-right: 1em;
+  justify-content: center;
+  background-color: white;
+  white-space: nowrap;
+}
+
+.period-header {
+  font-size: medium;
+  font-variant: small-caps;
+  font-weight: normal;
+  display: flex;
+  padding-left: 1em;
+  padding-right: 1em;
+  justify-content: center;
+  background-color: white;
+  white-space: nowrap;
+}
+
+.period-total {
+  background-color: $timeline-color;
+  padding: 7px 24px;
+  border-radius: 1em;
+  font-weight: bolder;
+}
+
+.debit {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+}
+
+.credit {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+
+.mining {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+
+.ubb {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+
+
+.dot {
+  width: 15px;
+  height: 15px;
+  border-radius: 100%;
+  position: relative;
+  margin: auto;
+}
+
+.debit td .dot {
+  background-color: $debit-color;
+  box-shadow: 0 0 0 3px scale-color($debit-color, $lightness: 32%);
+}
+
+.credit td .dot {
+  background-color: $credit-color;
+  box-shadow: 0 0 0 3px scale-color($credit-color, $lightness: 32%);
+}
+
+.mining td .dot {
+  background-color: $mining-color;
+  box-shadow: 0 0 0 3px scale-color($mining-color, $lightness: 32%);
+}
+
+.ubb td .dot {
+  background-color: $ubb-color;
+  box-shadow: 0 0 0 3px scale-color($ubb-color, $lightness: 32%);
+}
+
+.content-light {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding: 3px 13px;
+  margin-top: 1em;
+  font-size: smaller;
+}
+
+.vertical-align {
+  display: flex;
+  align-items: center;
+}
+
+.debit .content-light {
+  background-color: $debit-color;
+  box-shadow: 0 0 0 3px $debit-shadow-color;
+  border-radius: 1em 0px 1em 1em;
+}
+
+.credit .content-light {
+  background-color: $credit-color;
+  box-shadow: 0 0 0 3px scale-color($credit-color, $lightness: 32%);
+  border-radius: 0px 1em 1em 1em;
+}
+
+.mining .content-light {
+  background-color: $mining-color;
+  box-shadow: 0 0 0 3px $mining-shadow-color;
+  border-radius: 0px 1em 1em 1em;
+}
+
+.ubb .content-light {
+  background-color: $ubb-color;
+  box-shadow: 0 0 0 3px $ubb-shadow-color;
+  border-radius: 0px 1em 1em 1em;
+}
+
+.debit .content-light .icon {
+  order: 1;
+}
+
+.debit .content-light .time {
+  order: 5;
+}
+
+.debit .content-light .account {
+  order: 2;
+}
+
+.debit .content-light .neuraliums {
+  order: 3;
+}
+
+.debit .content-light .tip {
+  order: 4;
+}
+
+.credit .content-light .icon {
+  order: 5;
+}
+
+.credit .content-light .time {
+  order: 1;
+}
+
+.credit .content-light .account {
+  order: 4;
+}
+
+.credit .content-light .neuraliums {
+  order: 2;
+}
+
+.credit .content-light .tip {
+  order: 3;
+}
+
+.mining .content-light .icon {
+  order: 5;
+}
+
+.mining .content-light .time {
+  order: 1;
+}
+
+.mining .content-light .account {
+  order: 4;
+}
+
+.mining .content-light .neuraliums {
+  order: 2;
+}
+
+.mining .content-light .tip {
+  order: 3;
+}
+
+
+.ubb .content-light .icon {
+  order: 5;
+}
+
+.ubb .content-light .time {
+  order: 1;
+}
+
+.ubb .content-light .account {
+  order: 4;
+}
+
+.ubb .content-light .neuraliums {
+  order: 2;
+}
+
+.ubb .content-light .tip {
+  order: 3;
+}
+
+.content-full {
+  width: 100%;
+  padding: 1em;
+  margin-top: 1em;
+  font-size: smaller;
+}
+
+.debit .content-full {
+  background-color: $debit-color;
+  box-shadow: 0 0 0 3px $debit-shadow-color;
+  border-radius: 1em 0px 1em 1em;
+}
+
+.credit .content-full {
+  background-color: $credit-color;
+  box-shadow: 0 0 0 3px $credit-shadow-color;
+  border-radius: 0px 1em 1em 1em;
+}
+
+.mining .content-full {
+  background-color: $mining-color;
+  box-shadow: 0 0 0 3px $mining-shadow-color;
+  border-radius: 0px 1em 1em 1em;
+}
+
+.ubb .content-full {
+  background-color: $ubb-color;
+  box-shadow: 0 0 0 3px $ubb-shadow-color;
+  border-radius: 0px 1em 1em 1em;
+}

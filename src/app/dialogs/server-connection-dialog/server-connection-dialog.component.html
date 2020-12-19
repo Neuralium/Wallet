@@ -1,0 +1,27 @@
+<h1 mat-dialog-title>
+  <mat-icon fontSet="fas" fontIcon="fa-server"></mat-icon> {{ 'app.ServerConnection' | translate }}
+</h1>
+<div mat-dialog-content>
+  <mat-divider></mat-divider>
+  <div *ngIf="showServerNotConnected">
+    {{ 'server.NotConnectedToServer' | translate }}
+    <span *ngIf="!canStartServer">
+        {{ 'server.CheckingServer' | translate }}
+    </span>
+    <span *ngIf="canStartServer">
+        {{ 'server.NoActiveServer' | translate }}
+      <button mat-button color="primary" (click)="startServer()"><i class=""></i>
+        {{ 'server.StartServer' | translate }}</button>
+    </span>
+    
+  </div>
+  <div *ngIf="!showServerNotConnected">
+    {{ 'server.ServerRunning' | translate }}
+    <button mat-button color="primary" (click)="stopServer()"><i
+        class=""></i> {{ 'server.StopServer' | translate }}</button>
+  </div>
+</div>
+<div mat-dialog-actions class="row">
+  <button mat-button color="primary" (click)="close()"><i class=""></i>
+    {{ 'app.Close' | translate }}</button>
+</div>

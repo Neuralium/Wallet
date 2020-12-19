@@ -1,0 +1,18 @@
+<div class="fill-remaining-space">
+  <div class="item title">
+    <i [class]="icon"></i> {{title}} <small><app-help-icon [message]="helpMessage"></app-help-icon></small>
+</div>
+  <div class="item flex-row">
+      <div class="align-self-center">
+        <app-account-renew-verification></app-account-renew-verification>
+    </div>
+    <div class="align-self-center">
+        <app-account-publication-status></app-account-publication-status>
+    </div>
+    <div *ngIf="showNeuraliumsTotal">
+      <app-neuraliums-total></app-neuraliums-total>
+    </div>
+  </div>
+</div>
+
+<mat-divider></mat-divider>

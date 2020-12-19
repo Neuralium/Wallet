@@ -1,0 +1,46 @@
+{
+  "productName": "angular-electron",
+  "directories": {
+    "output": "release/"
+  },
+    "files": [
+        "**/*",
+        "!**/*.ts",
+        "!*.code-workspace",
+        "!LICENSE.md",
+        "!package.json",
+        "!package-lock.json",
+        "!src/",
+        "!e2e/",
+        "!hooks/",
+        "!angular.json",
+        "!_config.yml",
+        "!karma.conf.js",
+        "!tsconfig.json",
+        "!tslint.json"
+    ],
+  "win": {
+    "icon": "icon1024x1024.png",
+    "artifactName": "${productName}-windows.${ext}",
+    "target": [
+      "dir"
+    ],
+    "extraFiles" : [{"from": "/var/tmp/neuralium/builds/win-x64", "to" : "neuralium", "filter": ["**/*"]}]
+  },
+  "mac": {
+    "icon": "icon1024x1024.png",
+    "artifactName": "${productName}-macos.${ext}",
+    "target": [
+      "dir"
+    ],
+    "extraFiles" : [{"from": "/var/tmp/neuralium/builds/osx-x64", "to" : "neuralium", "filter": ["**/*"]}]
+  },
+  "linux": {
+    "icon": "icon1024x1024.png",
+    "artifactName": "${productName}-linux.${ext}",
+    "target": [
+      "dir"
+    ],
+    "extraFiles" : [{"from": "/var/tmp/neuralium/builds/linux-x64", "to" : "neuralium", "filter": ["**/*"]}]
+  }
+}

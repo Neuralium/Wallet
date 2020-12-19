@@ -1,0 +1,18 @@
+<div style="display:flex;"><h1 mat-dialog-title>Contact</h1> <small><app-help-icon [message]="'contact.AddContactExplanation' | translate"></app-help-icon></small>
+</div>
+<div mat-dialog-content>
+  <mat-divider></mat-divider>
+  <mat-divider></mat-divider>
+  <mat-form-field>
+    <span matPrefix><i class="fas fa-id-badge"></i>&nbsp;</span>
+    <input matInput [(ngModel)]="contact.id" placeholder="Id">
+  </mat-form-field>
+  <mat-form-field>
+    <span matPrefix><i class="fas fa-user"></i>&nbsp;</span>
+    <input matInput [(ngModel)]="contact.friendlyName" placeholder="Name">
+  </mat-form-field>
+</div>
+<div mat-dialog-actions class="row">
+  <button mat-button color="primary" (click)="save()"><i class="fas fa-check"></i> Save</button>
+  <button mat-button color="warn" (click)="cancel()"><i class="fas fa-ban"></i> Cancel</button>
+</div>

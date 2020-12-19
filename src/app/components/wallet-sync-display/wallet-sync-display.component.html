@@ -1,0 +1,58 @@
+<div *ngIf="lightDisplay">
+
+    <div *ngIf="!isSyncing" >
+        <div *ngIf="currentStatus !== unknownStatus" [tooltip]="TooltipContent" content-type="template" placement="top" show-delay="500" class="blockchain-spinner">
+            <mat-progress-spinner [color]="currentSyncStatusColor" mode="determinate" diameter="30" value="100" strokeWidth="6">
+            </mat-progress-spinner>
+          </div>
+ 
+      <div *ngIf="currentStatus === unknownStatus">
+
+        </div>
+    </div>
+  <div *ngIf="isSyncing" [tooltip]="TooltipContent" content-type="template" placement="top" show-delay="500" class="blockchain-spinner">
+    <mat-progress-spinner mode="determinate" diameter="30" strokeWidth="6"
+      [value]="currentSyncUpdate.percentage * 100"></mat-progress-spinner>
+  </div>
+</div>
+
+<div *ngIf="!lightDisplay" class="item">
+  <div *ngIf="!isSyncing">
+    <div *ngIf="currentStatus !== unknownStatus">
+      <h2 class="row">
+        {{currentSyncStatusPercentage}} {{currentSyncStatusTitle | uppercase}}
+     </h2>
+    </div>
+    <div *ngIf="currentStatus === unknownStatus">
+        <h2 class="row">
+           {{currentSyncStatusTitle | uppercase}}
+         </h2>
+    </div>
+  </div>
+  <div *ngIf="isSyncing" class="column blockchain-spinner">
+    <p>{{ 'sync.Syncing' | translate }}  {{ 'wallet.Wallet' | translate }}... {{percentageAdjusted}}%</p>
+    <p class="updateText">Block {{currentBlockIdAdjusted}} / {{blockHeightAdjusted}}</p>
+    <p>Estimated time remaining:</p>
+    <p>{{currentSyncUpdate.estimatedTimeRemaining}}</p>
+    <div class="blockchain-spinner">
+      <mat-progress-spinner mode="determinate" diameter="75" strokeWidth="6"
+        [value]="currentSyncUpdate.percentage * 100">
+      </mat-progress-spinner>
+    </div>
+  </div>
+</div>
+
+<ng-template #TooltipContent>
+  <div *ngIf="!isSyncing">
+    {{ 'wallet.Wallet' | translate }} {{currentSyncStatusPercentage}}
+  </div>
+  <div *ngIf="isSyncing" class="column">
+    <p>{{ 'sync.Syncing' | translate }}  {{ 'wallet.Wallet' | translate }}... {{percentageAdjusted}}%</p>
+    <p class="updateText">Block {{currentBlockIdAdjusted}} / {{blockHeightAdjusted}}</p>
+    <div class="blockchain-spinner">
+      <mat-progress-spinner mode="determinate" diameter="75" strokeWidth="6"
+        [value]="currentSyncUpdate.percentage * 100">
+      </mat-progress-spinner>
+  </div>
+  </div>
+</ng-template>

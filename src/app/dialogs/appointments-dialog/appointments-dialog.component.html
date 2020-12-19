@@ -1,0 +1,175 @@
+<h1 mat-dialog-title>{{ 'appointments.Title' | translate }}</h1>
+
+<div mat-dialog-content class="column">
+  <mat-divider></mat-divider>
+
+  <div *ngIf="wizzardStep === AppointmentSteps.Begining && wizzardSubStep === 0">
+    <mat-card>
+      <p>
+        {{ 'appointments.IntroductionText' | translate }}
+      </p>
+    </mat-card>
+    <div class="row">
+      <button mat-button color="warn" (click)="cancel()"><i class="fas fa-ban"></i> {{ 'app.Close' | translate }}</button>
+      <button mat-button color="primary" (click)="moveNext()">{{ 'appointments.Begin' | translate }}</button>
+    </div>
+  </div>
+  <div *ngIf="wizzardStep === AppointmentSteps.Begining && wizzardSubStep === 1">
+    <mat-card>
+      <p>
+        {{ 'appointments.RequestAppointmentText' | translate }}
+      </p>
+      <div style="width:100%;">
+        <div style="margin-bottom: 20px;">{{ 'appointments.PreferredRegion' | translate }}:</div>
+        <div style="margin: auto;display: table;">
+          <!-- <mat-select style="width: 100px;" [(value)]="preferredRegion">
+            <mat-option [value]="1">{{ 'appointments.Orient' | translate }}</mat-option>
+            <mat-option [value]="2">{{ 'appointments.Occident' | translate }}</mat-option>
+          </mat-select> -->
+
+          <mat-button-toggle-group name="fontStyle" aria-label="Font Style" [(ngModel)]="preferredRegion" (change)="displayPreferredRegionInfo()">
+            <mat-button-toggle [value]="1"><div style="width:100px">{{ 'appointments.Occident' | translate }}</div></mat-button-toggle>
+            <mat-button-toggle [value]="2"><div style="width:100px">{{ 'appointments.Central' | translate }}</div></mat-button-toggle>
+            <mat-button-toggle [value]="4"><div style="width:100px">{{ 'appointments.Orient' | translate }}</div></mat-button-toggle>
+          </mat-button-toggle-group>
+        </div>
+        <div>
+          <mat-card>
+            <p>{{preferredRegionDetailsText}}</p>
+            <div [ngClass]="[getPreferredRegionClass()]"></div>
+          </mat-card>
+        </div>
+      </div>
+      <div style="width:100%;margin-top: 20px;">
+        <button mat-stroked-button color="primary" style="margin: auto;display: block;"
+          [disabled]="!allowRequestAppointments"
+          (click)="makeAppointmentRequest()">{{ 'appointments.RequestAppointmentButton' | translate }}</button>
+
+      </div>
+
+    </mat-card>
+    <div class="row">
+      <button mat-button color="warn" (click)="cancel()"><i class="fas fa-ban"></i> {{ 'app.Close' | translate }}</button>
+
+    </div>
+  </div>
+  <div *ngIf="wizzardStep === AppointmentSteps.AppointmentRequested">
+    <mat-card>
+      <p>
+        {{ 'appointments.AppointmentRequestedText' | translate }}
+      </p>
+      <table>
+        <tr>
+          <td>
+            <span class="tableKey"> {{ 'appointments.AppointmentRequestedTimestamp' | translate }}:</span>
+          </td>
+          <td></td>
+          <td>{{appointmentDetails.appointmentRequestTimeStamp | formatDateWithTime}}</td>
+        </tr>
+      </table>
+
+    </mat-card>
+    <div class="row">
+      <button mat-button color="warn" (click)="cancel()"><i class="fas fa-ban"></i> {{ 'app.Close' | translate }}</button>
+
+    </div>
+  </div>
+  <div
+    *ngIf="wizzardStep === AppointmentSteps.AppointmentSet || wizzardStep === AppointmentSteps.AppointmentContextCached">
+    <mat-card>
+      <p>
+        {{ 'appointments.AppointmentConfirmedText' | translate }}
+      </p>
+
+      <div>
+        <span style="margin-right: 10px;">{{ 'appointments.TimeBeforeAppointment' | translate }}:</span><span>{{currentRemainingTime}}</span>
+      </div>
+      <hr />
+      <table>
+        <tr>
+          <td>
+            <span class="tableKey"> {{ 'appointments.AppointmentTimestampUtc' | translate }}:</span>
+          </td>
+          <td></td>
+          <td>{{appointmentDetails.AppointmentTime | formatDateWithTime}}</td>
+        </tr>
+        <tr>
+          <td>
+            <span class="tableKey"> {{ 'appointments.AppointmentTimestampLocal' | translate }}:</span>
+          </td>
+          <td></td>
+          <td>{{localAppointmentTime | formatDateWithTime}}</td>
+        </tr>
+        <tr>
+          <td>
+            <span class="tableKey"> {{ 'appointments.AppointmentWindow' | translate }}:</span>
+          </td>
+          <td></td>
+          <td>{{appointmentWindow}} {{ 'appointments.Seconds' | translate }}</td>
+        </tr>
+        <tr>
+          <td>
+            <span class="tableKey"> {{ 'appointments.AppointmentContextReceived' | translate }}:</span>
+          </td>
+          <td></td>
+          <td>
+            <div *ngIf="appointmentContextSet"><i class="fa fa-check" aria-hidden="true"></i></div>
+            <div *ngIf="!appointmentContextSet"><i class="fa fa-times" aria-hidden="true"></i></div>
+          </td>
+        </tr>
+      </table>
+
+    </mat-card>
+    <div class="row">
+      <button mat-button color="warn" (click)="cancel()"><i class="fas fa-ban"></i> {{ 'app.Close' | translate }}</button>
+
+    </div>
+  </div>
+  <div *ngIf="wizzardStep === AppointmentSteps.AppointmentPuzzleCompleted">
+    <mat-card>
+      <p>
+        {{ 'appointments.AppointmentVerificationRequestedText' | translate }}
+      </p>
+      <hr />
+    <div style="padding-bottom: 10px;">{{'appointments.AppointmentVerificationWindow' | translate}}:</div>
+
+    <div>{{'appointments.AppointmentVerificationWindowEnd' | translate}}: {{appointmentVerificationWindow | formatDateWithTime}}</div>
+    <div>{{'appointments.AppointmentVerificationWindowRemaining' | translate}}: {{appointmentVerificationWindowRemaining}}</div>
+
+    </mat-card>
+    <div class="row">
+      <button mat-button color="warn" (click)="cancel()"><i class="fas fa-ban"></i> {{ 'app.Close' | translate }}</button>
+
+    </div>
+  </div>
+  <div *ngIf="wizzardStep === AppointmentSteps.AppointmentCompleted">
+    <mat-card>
+      <div *ngIf="verificationConfirmed && accountPublished === true">
+        <p>
+          {{ 'appointments.AppointmentVerificationCompletedText' | translate }}
+        </p>
+        <p>
+        </p>
+      </div>
+      <div *ngIf="verificationConfirmed && accountPublished === false">
+        <p>
+          {{ 'appointments.AppointmentVerificationCompletedCanPublishText' | translate }}
+        </p>
+        <p>
+          <button mat-stroked-button color="primary" (click)="publishAccount()">{{ 'accountPublication.PublishAccount' | translate }}</button>
+        </p>
+      </div>
+      <div *ngIf="!verificationConfirmed">
+        <p>
+          {{ 'appointments.AppointmentVerificationRejectedText' | translate }}
+        </p>
+      </div>
+
+
+    </mat-card>
+    <div class="row">
+      <button mat-button color="warn" (click)="cancel()"><i class="fas fa-ban"></i> {{ 'app.Close' | translate }}</button>
+
+    </div>
+  </div>
+</div>

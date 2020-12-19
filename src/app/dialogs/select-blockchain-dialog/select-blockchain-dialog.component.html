@@ -1,0 +1,10 @@
+<h1 mat-dialog-title>Select a blockchain</h1>
+<div mat-dialog-content class="button-bar">
+    <mat-divider></mat-divider>
+    <div class="button-bar">
+        <div *ngFor="let blockchain of availableBlockchains">
+            <button mat-button (click)="changeBlockchain(blockchain)"><i [class]="blockchain.icon"></i>
+                {{blockchain.label}}</button>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,30 @@
+<mat-card *ngIf="showNeuraliums">
+    <span [tooltip]="NeuraliumTooltipContent" content-type="template" placement="bottom" show-delay="500">
+        
+        <span *ngIf="hasCredit">&nbsp;<mat-icon   fontSet="far" fontIcon="fa-plus-square"></mat-icon></span>
+        <span *ngIf="hasDebit">&nbsp;<mat-icon   fontSet="far" fontIcon="fa-minus-square"></mat-icon></span>
+        &nbsp;
+        <span class="neuralium-total">{{neuraliumTotal.usable | formatNeuralium}}</span>
+    </span>
+
+    <ng-template #NeuraliumTooltipContent>
+        <p>
+            <strong>{{ 'neuralium.Total' | translate }}</strong> : {{neuraliumTotal.total | formatNeuralium}}
+        </p>
+        <p>
+                <strong>{{ 'neuralium.Debit' | translate }}</strong>    {{neuraliumTotal.debit | formatNeuralium}}<br>
+                <small>({{ 'neuralium.OutcomingNeuraliums' | translate }})</small>
+        </p>
+        <p>
+                <strong>{{ 'neuralium.Credit' | translate }}</strong>   {{neuraliumTotal.credit | formatNeuralium}}<br>
+                <small>({{ 'neuralium.IncomingNeuraliums' | translate }})</small>
+        </p>
+        <p>
+                <strong>{{ 'neuralium.Usable' | translate }}</strong>   {{neuraliumTotal.usable | formatNeuralium}}<br>
+                <small>({{ 'neuralium.Total' | translate }} - {{ 'neuralium.Debit' | translate }})</small>
+        </p>
+        <p *ngIf="showFrozen" >
+            <strong>{{ 'neuralium.Frozen' | translate }}</strong>   {{neuraliumTotal.frozen | formatNeuralium}}
+    </p>
+    </ng-template>
+</mat-card>

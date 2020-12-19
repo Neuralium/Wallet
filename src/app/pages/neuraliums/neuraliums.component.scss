@@ -1,0 +1,66 @@
+  
+  .row {
+    display: flex;
+    flex-direction: row;
+  }
+  
+ .no-wrap{
+  flex-wrap: nowrap;
+ }
+
+  
+
+  .item{
+    margin:1em;
+    flex-grow: 1;
+  }
+
+  .item-large{
+    margin:1em;
+    flex-grow: 2;
+  }
+
+  mat-card-title{
+    font-size: 15px;
+    color: #673ab7;
+  }
+
+  .column {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+  }
+  
+  .column > * {
+    padding-top: 1em;
+    
+  }
+
+  mat-card{
+    margin:1em;
+}
+
+.container-centered{
+  display: flex;
+  justify-content:center;
+}
+
+
+.mat-tab-body-wrapper{
+  flex-grow: 1;
+}
+
+mat-expansion-panel-header{
+  font-size: 15px;
+  color: #673ab7;
+  font-variant: small-caps;
+}
+
+.centerMiningButton{
+  height: 200px;
+  display: flex;
+  align-content: center;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}

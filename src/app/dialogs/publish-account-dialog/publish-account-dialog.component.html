@@ -1,0 +1,76 @@
+<h1 mat-dialog-title>{{ 'accountPublication.PublishAccount' | translate }}</h1>
+<div mat-dialog-content class="column">
+  <mat-divider></mat-divider>
+  <span class="rowset" *ngIf="!isAccountPublicationRunning && !isAccountPublicationEnded">
+    <p>
+      {{ 'accountPublication.AccountPublicationProcessExplanation' | translate }}
+    </p>
+    <!-- <div *ngIf="publicationMode === AccountPublicationModes.Appointment">
+      {{ 'accountPublication.PublicationMethodAppointment' | translate }} 
+    </div>
+    <div *ngIf="publicationMode === AccountPublicationModes.SMS">
+      {{ 'accountPublication.PublicationMethodSMS' | translate }} 
+    </div>
+    <div *ngIf="publicationMode === AccountPublicationModes.Server">
+      {{ 'accountPublication.PublicationMethodServer' | translate }} 
+    </div> -->
+  </span>
+  <span class="rowset" *ngIf="!canPublish">
+    <p>
+      {{ 'accountPublication.NeedPeerToPublish' | translate }}
+    </p>
+  </span>
+  <span class="rowset" *ngIf="!isBlockchainSynced">
+    <p>
+      {{ 'accountPublication.NeedBlockchainSynced' | translate }}
+    </p>
+  </span>
+  <span class="rowset" *ngIf="isAccountPublicationRunning && !isAccountPublicationEnded">
+    <div style="width: 100%;">
+      <div>
+        <mat-progress-spinner style="margin: 19px auto;" diameter="50" mode="indeterminate"></mat-progress-spinner>
+      </div>
+      <div>
+
+        <mat-label><small>{{ 'accountPublication.AccountPublication' | translate }}...
+            {{accountPublicationStepName}}({{accountPublicationStep}} %)</small></mat-label>
+        <mat-progress-bar mode="determinate" [value]="accountPublicationStep"></mat-progress-bar>
+      </div>
+      <div>
+        <strong>{{ 'ths.TimeHardSignatureNonceSearch' | translate }}: {{nonceStep}}</strong>
+      </div>
+    </div>
+
+  </span>
+  <span class="rowset" *ngIf="!isAccountPublicationRunning && isAccountPublicationEnded">
+    <span class="rowset" *ngIf="errorOccured">
+      <p>
+        {{ 'accountPublication.AccountPublicationFailed' | translate }}
+      </p>
+    </span>
+    <span class="rowset" *ngIf="!errorOccured">
+      <p>
+        {{ 'accountPublication.AccountPublicationEnded' | translate }}
+      </p>
+      <!-- <div class="solutionset">
+        <span class="solutionitem">{{'accountPublication.SolutionNonce' | translate}}: {{finalNonce}}</span>
+        <span class="solutionitem">{{'accountPublication.SolutionsHashes' | translate}}:</span>
+        <ul>
+          <li *ngFor="let solution of solutions">{{ solution.toString(16) }}</li>
+        </ul>
+      </div> -->
+      <p>
+        {{ 'accountPublication.WaitingForConfirmation' | translate }}
+      </p>
+      <p>
+        {{ 'accountPublication.CanCloseWindow' | translate }}
+      </p>
+    </span>
+  </span>
+  <button *ngIf="!isAccountPublicationRunning && !isAccountPublicationEnded && canPublish && isBlockchainSynced"
+    mat-button color="primary" (click)="startPublishAccount()"><i class=""></i>
+    {{ 'accountPublication.StartAccountPublication' | translate }}</button>
+  <button *ngIf="showCloseButton" mat-button color="primary" (click)="close()"><i class=""></i>
+    {{ 'accountPublication.CloseAccountPublication' | translate }}</button>
+  <p>{{message}}</p>
+</div>

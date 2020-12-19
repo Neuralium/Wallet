@@ -1,0 +1,14 @@
+<mat-paginator [length]="miningEventsList.length" [pageSize]="pageSize" [pageSizeOptions]="pageSizeOptions"
+  [showFirstLastButtons]="true" (page)="setPage($event)" #Paginator>
+</mat-paginator>
+
+<mat-card>
+  <!-- <mat-card-title>{{ 'dashboard.BlockInfo' | translate }}</mat-card-title> -->
+  <mat-card-content>
+    <div class="line-element" *ngFor="let miningEvent of miningEventsList  | slice:sliceStart:sliceEnd">
+      <span class="">
+        <span class="timestamp">{{miningEvent.timestamp | formatDateWithTime : 'DATETIME_SHORT_WITH_SECONDS'}}</span>&nbsp;:&nbsp;<span class="message">{{miningEvent.eventName}}</span>
+      </span>
+    </div>
+  </mat-card-content>
+</mat-card>

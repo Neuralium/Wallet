@@ -1,0 +1,72 @@
+<app-page-title [title]="'dashboard.Title' | translate" [icon]="icon" showNeuraliumsTotal="true"
+  helpMessage="dashboard.Explain"></app-page-title>
+
+<mat-divider></mat-divider>
+<mat-tab-group>
+  <mat-tab>
+    <ng-template mat-tab-label>
+      <i class="fas fa-link"></i> Blockchain
+    </ng-template>
+
+    <div class="row item no-wrap">
+      <mat-card class="item">
+        <app-blockchain-info></app-blockchain-info>
+      </mat-card>
+      <div class="column">
+        <mat-card class="item">
+          <mat-card-title>{{ 'sync.BlockchainStatus' | translate }}</mat-card-title>
+          <mat-card-content>
+            <mat-divider></mat-divider>
+            <app-blockchain-sync-display [lightDisplay]="false"></app-blockchain-sync-display>
+          </mat-card-content>
+        </mat-card>
+        <mat-card class="item">
+          <mat-card-title>{{ 'sync.WalletStatus' | translate }}</mat-card-title>
+          <mat-card-content>
+            <mat-divider></mat-divider>
+            <app-wallet-sync-display [lightDisplay]="false"></app-wallet-sync-display>
+          </mat-card-content>
+        </mat-card>
+      </div>
+    </div>
+  </mat-tab>
+
+  <mat-tab>
+    <ng-template mat-tab-label>
+      <i class="fas fa-user-circle"></i> {{ 'dashboard.Accounts' | translate }}
+    </ng-template>
+
+    <div *ngIf="!hasAccount" role="alert" class="alert alert-danger"> {{ 'dashboard.NoAccount' | translate }} </div>
+
+    <mat-card *ngIf="hasCurrentAccount" class="item">
+      <mat-card-title>{{ 'account.CurrentAccount' | translate }} <span
+          class="textHighlight">{{currentAccount.accountId}}</span></mat-card-title>
+      <mat-card-content>
+        <mat-divider></mat-divider>
+        <app-account-details class="item" [account]="currentAccount" [isCurrent]="true"></app-account-details>
+      </mat-card-content>
+    </mat-card>
+
+    <mat-card *ngIf="hasMoreThanOneAccount" class="item">
+      <mat-card-title>{{ 'dashboard.Accounts' | translate }}</mat-card-title>
+      <mat-card-content class="column">
+        <mat-divider></mat-divider>
+        <mat-accordion>
+          <mat-expansion-panel>
+            <mat-expansion-panel-header>
+              <mat-panel-title>
+                {{ 'dashboard.AccountsList' | translate }}
+              </mat-panel-title>
+            </mat-expansion-panel-header>
+            <mat-list *ngIf="hasAccount" class="flex-column">
+              <mat-list-item *ngFor="let account of walletAccounts" style="padding-bottom: 1em">
+                <app-account-details [account]="account" [isCurrent]="false"></app-account-details>
+              </mat-list-item>
+            </mat-list>
+          </mat-expansion-panel>
+        </mat-accordion>
+      </mat-card-content>
+    </mat-card>
+  </mat-tab>
+
+</mat-tab-group>

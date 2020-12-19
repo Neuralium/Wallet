@@ -1,0 +1,44 @@
+<app-page-title [title]="'server.Title' | translate" [icon]="icon" helpMessage="server.Explain"></app-page-title>
+
+<div>
+  <div class="server-commands">
+    <div mat-dialog-content style="float:left;display: flex;">
+      <mat-divider></mat-divider>
+      <div *ngIf="showServerNotConnected" style="margin-left: 10px;">
+        {{ 'server.NotConnectedToServer' | translate }}
+        <button mat-stroked-button color="primary" (click)="startServer()"><i class=""></i>
+          {{ 'server.StartServer' | translate }}</button>
+      </div>
+      <div *ngIf="!showServerNotConnected" style="margin-left: 10px;">
+        {{ 'server.ServerRunning' | translate }}
+        <button mat-stroked-button color="primary" (click)="stopServer()"><i class=""></i>
+          {{ 'server.StopServer' | translate }}</button>
+      </div>
+      <div style="margin-left: 10px;">
+        <button mat-stroked-button color="primary" (click)="toggleConsole()" [disabled]="showServerNotConnected"><i class=""></i>
+          {{ consoleEnabled ? ('server.DisableConsole' | translate) : ('server.EnableConsole' | translate) }}</button>
+      </div>
+    </div>
+    <div style="float:right; display: inline;">
+      <mat-paginator [length]="serverMessages.length" [pageSize]="pageSize" [pageSizeOptions]="pageSizeOptions"
+        [showFirstLastButtons]="true" (page)="setPage($event)" #messagePaginator>
+      </mat-paginator>
+    </div>
+  </div>
+
+  <div class="console console-view" #Console>
+    <div class="console-container">
+      <div class="line-element" *ngFor="let message of serverMessages  | slice:sliceStart:sliceEnd">
+        <span class="line-sub-element console-elements">
+          [<span class="console-timestamp">{{message.timestamp | FormatTimestamp:'YYYY-MM-DD HH:mm:ss'}}</span> - <span
+            class="console-level">{{message.level}}</span>]&nbsp;:&nbsp;<span
+            class="console-message">{{message.message}}</span>&nbsp;&#123;
+          <span class="console-thread">{{message.GetThread().key}}</span>=<span
+            class="console-thread-id">{{message.GetThread().value}}</span>&#125;
+        </span>
+      </div>
+    </div>
+    <div>
+
+    </div>
+  </div>

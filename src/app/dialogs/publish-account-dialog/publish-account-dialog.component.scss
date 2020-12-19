@@ -1,0 +1,13 @@
+.rowset{
+    display: flex;
+    flex-direction: column;
+}
+
+.solutionset{
+    display: flex;
+    flex-direction: column;
+}
+
+.solutionitem{
+    flex: 1;
+}

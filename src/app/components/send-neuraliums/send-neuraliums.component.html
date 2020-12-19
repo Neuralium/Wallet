@@ -1,0 +1,46 @@
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <mat-card class="column">
+
+    <mat-form-field>
+        <mat-select placeholder="Contact" formControlName="contact" name="selectedContact" (selectionChange)="contactChanged($event)">
+            <mat-option *ngFor="let contact of contactList" [value]="contact" >
+                {{contact.friendlyName}}
+            </mat-option>
+        </mat-select>
+    </mat-form-field>
+
+    <mat-form-field *ngIf="!isContactSelected">
+        <span matPrefix><i class="fas fa-user"></i>&nbsp;</span>
+        <input matInput placeholder="Contact Id *" formControlName="accountId" name="selectedContactManual">
+        <mat-hint align="end">&#123;SABCD-123&#125;</mat-hint>
+        <mat-error *ngIf="accountId.invalid">{{getAccountIdErrorMessage()}}</mat-error>
+    </mat-form-field>
+
+    <mat-form-field>
+        <span matPrefix><img src="assets/img/neuralium_icon.png" class="img-fluid" width="18px" />&nbsp;</span>
+        <input matInput placeholder="Neuraliums" formControlName="neuraliums" name="neuraliums" type="number" required>
+        <mat-error *ngIf="neuraliums.invalid">{{getNeuraliumErrorMessage()}}</mat-error>
+    </mat-form-field>
+
+    <mat-form-field>
+        <span matPrefix><img src="assets/img/tips_icon.png" class="img-fluid" width="18px" />&nbsp;</span>
+        <input matInput placeholder="Tip" formControlName="tip" name="tip" type="number">
+        <mat-error *ngIf="tip.invalid">{{getTipErrorMessage()}}</mat-error>
+    </mat-form-field>
+
+    <mat-form-field>
+        <span matPrefix><i class="fas fa-align-justify"></i>&nbsp;</span>
+        <textarea matInput rows="4" maxlength="140" placeholder="Internal memo" formControlName="note" name="note"></textarea>
+        <mat-hint align="end">{{ 'send.NotesDescription' | translate}}</mat-hint>
+    </mat-form-field>
+
+    <mat-card-actions>
+        <span *ngIf="!canSendTransaction">
+                {{ 'send.CantSend' | translate }}
+        </span>
+        <div *ngIf="canSendTransaction"  class="button-bar">
+            <button mat-raised-button  color="accent" style="width: 100%;" [disabled]="!form.valid || sendDisabled" type="submit"><i class="fas fa-sign-out-alt"></i>{{ 'send.Send' | translate }}</button>
+        </div>
+    </mat-card-actions>
+    </mat-card>
+</form>

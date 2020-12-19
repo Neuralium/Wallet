@@ -1,0 +1,24 @@
+<h1 mat-dialog-title>{{ 'app.About' | translate }}</h1>
+<div mat-dialog-content>
+  <mat-divider></mat-divider>
+  <p>
+  <img _ngcontent-c0="" class="fit-image" src="assets/img/neuralium-logo.png">
+  <p>
+    <p>
+      &copy; {{Year}} Neuralium inc.  {{ 'about.AllRightsReserved' | translate }}
+     </p>
+    <p>
+      {{ 'about.SoftwareVersion' | translate }}: {{ softwareVersion }}
+     </p>
+  <p>
+    <a href="https://www.neuralium.com" target="_blank">https://www.neuralium.com</a> 
+    </p>
+  <p>
+     {{ 'about.LicenseAgreement' | translate }}
+     <a href="https://www.neuralium.com/legal/sla " target="_blank">https://www.neuralium.com/legal/sla</a> 
+     </p>
+</div>
+<div mat-dialog-actions class="row">
+  <button mat-button color="primary" (click)="close()"><i class=""></i>
+    {{ 'app.Close' | translate }}</button>
+</div>

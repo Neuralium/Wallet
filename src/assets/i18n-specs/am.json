@@ -1,0 +1,2734 @@
+{
+  "Entries": [
+    {
+      "Key": "about.AllRightsReserved",
+      "MatchingTranslation": "All Rights Reserved",
+      "Locked": false,
+      "TimeAdded": "2020-07-31T23:34:42.2225128Z",
+      "LastUpdate": "2020-07-31T23:34:42.3064088Z"
+    },
+    {
+      "Key": "about.LicenseAgreement",
+      "MatchingTranslation": "By using this software, you agree to the terms of the Neuralium software license agreement. You can view the latest version of the software license agreement at:",
+      "Locked": false,
+      "TimeAdded": "2020-07-31T23:34:42.3064217Z",
+      "LastUpdate": "2020-07-31T23:34:42.3879797Z"
+    },
+    {
+      "Key": "account.AccountName",
+      "MatchingTranslation": "Account name",
+      "Locked": false,
+      "TimeAdded": "2020-07-31T23:34:42.3879998Z",
+      "LastUpdate": "2020-07-31T23:34:42.4603898Z"
+    },
+    {
+      "Key": "account.AccountNumber",
+      "MatchingTranslation": "Account Id",
+      "Locked": false,
+      "TimeAdded": "2020-07-31T23:34:42.4604022Z",
+      "LastUpdate": "2020-07-31T23:34:42.537545Z"
+    },
+    {
+      "Key": "account.AccountStatus",
+      "MatchingTranslation": "Account status",
+      "Locked": false,
+      "TimeAdded": "2020-07-31T23:34:42.5375579Z",
+      "LastUpdate": "2020-07-31T23:34:42.6102649Z"
+    },
+    {
+      "Key": "account.CurrentAccount",
+      "MatchingTranslation": "Active mining account",
+      "Locked": false,
+      "TimeAdded": "2020-07-31T23:34:42.6102768Z",
+      "LastUpdate": "2020-07-31T23:34:42.6928961Z"
+    },
+    {
+      "Key": "account.declarationBlockId",
+      "MatchingTranslation": "Declaration Block Id",
+      "Locked": false,
+      "TimeAdded": "2020-07-31T23:34:42.6929086Z",
+      "LastUpdate": "2020-07-31T23:34:42.7653502Z"
+    },
+    {
+      "Key": "account.Dispatched",
+      "MatchingTranslation": "Dispatched",
+      "Locked": false,
+      "TimeAdded": "2020-07-31T23:34:42.7653631Z",
+      "LastUpdate": "2020-07-31T23:34:42.8501581Z"
+    },
+    {
+      "Key": "account.WalletEncryption",
+      "MatchingTranslation": "Encryption",
+      "Locked": false,
+      "TimeAdded": "2020-07-31T23:34:42.8501707Z",
+      "LastUpdate": "2020-07-31T23:34:42.926639Z"
+    },
+    {
+      "Key": "account.friendlyNameForYourAccount",
+      "MatchingTranslation": "a friendly name for your account",
+      "Locked": false,
+      "TimeAdded": "2020-07-31T23:34:42.9266514Z",
+      "LastUpdate": "2020-07-31T23:34:42.9982173Z"
+    },
+    {
+      "Key": "account.Hash",
+      "MatchingTranslation": "Hash",
+      "Locked": false,
+      "TimeAdded": "2020-07-31T23:34:42.9982346Z",
+      "LastUpdate": "2020-07-31T23:34:43.0721003Z"
+    },
+    {
+      "Key": "account.Joint",
+      "MatchingTranslation": "Joint",
+      "Locked": false,
+      "TimeAdded": "2020-07-31T23:34:43.0721136Z",
+      "LastUpdate": "2020-07-31T23:34:43.1524786Z"
+    },
+    {
+      "Key": "account.User",
+      "MatchingTranslation": "User",
+      "Locked": false,
+      "TimeAdded": "2020-07-31T23:34:43.1524916Z",
+      "LastUpdate": "2020-07-31T23:34:43.2542425Z"
+    },
+    {
+      "Key": "account.Server",
+      "MatchingTranslation": "Server",
+      "Locked": false,
+      "TimeAdded": "2020-07-31T23:34:43.2542603Z",
+      "LastUpdate": "2020-07-31T23:34:43.3354815Z"
+    },
+    {
+      "Key": "account.Locked",
+      "MatchingTranslation": "Locked",
+      "Locked": false,
+      "TimeAdded": "2020-07-31T23:34:43.3355013Z",
+      "LastUpdate": "2020-07-31T23:34:43.4120809Z"
+    },
+    {
+      "Key": "account.New",
+      "MatchingTranslation": "New",
+      "Locked": false,
+      "TimeAdded": "2020-07-31T23:34:43.4120998Z",
+      "LastUpdate": "2020-07-31T23:34:43.4875517Z"
+    },
+    {
+      "Key": "account.NoAccount",
+      "MatchingTranslation": "No account",
+      "Locked": false,
+      "TimeAdded": "2020-07-31T23:34:43.4875663Z",
+      "LastUpdate": "2020-07-31T23:34:43.5709708Z"
+    },
+    {
+      "Key": "account.NotEncrypted",
+      "MatchingTranslation": "Not Encrypted",
+      "Locked": false,
+      "TimeAdded": "2020-07-31T23:34:43.5709842Z",
+      "LastUpdate": "2020-07-31T23:34:43.6561868Z"
+    },
+    {
+      "Key": "account.Encrypted",
+      "MatchingTranslation": "Encrypted",
+      "Locked": false,
+      "TimeAdded": "2020-07-31T23:34:43.656201Z",
+      "LastUpdate": "2020-07-31T23:34:43.7345069Z"
+    },
+    {
+      "Key": "account.PleaseImportOrCreateWalletAccount",
+      "MatchingTranslation": "Please import or create a wallet account",
+      "Locked": false,
+      "TimeAdded": "2020-07-31T23:34:43.7345215Z",
+      "LastUpdate": "2020-07-31T23:34:43.8148044Z"
+    },
+    {
+      "Key": "account.PublishAccountAutomatically",
+      "MatchingTranslation": "publish account automatically",
+      "Locked": false,
+      "TimeAdded": "2020-07-31T23:34:43.814819Z",
+      "LastUpdate": "2020-07-31T23:34:43.8870456Z"
+    },
+    {
+      "Key": "account.Published",
+      "MatchingTranslation": "Published",
+      "Locked": false,
+      "TimeAdded": "2020-07-31T23:34:43.8870604Z",
+      "LastUpdate": "2020-07-31T23:34:43.9773362Z"
+    },
+    {
+      "Key": "account.Standard",
+      "MatchingTranslation": "Standard",
+      "Locked": false,
+      "TimeAdded": "2020-07-31T23:34:43.977351Z",
+      "LastUpdate": "2020-07-31T23:34:44.0481638Z"
+    },
+    {
+      "Key": "account.Status",
+      "MatchingTranslation": "Status",
+      "Locked": false,
+      "TimeAdded": "2020-07-31T23:34:44.0481795Z",
+      "LastUpdate": "2020-07-31T23:34:44.1267891Z"
+    },
+    {
+      "Key": "account.TrustLevel",
+      "MatchingTranslation": "Trust Level",
+      "Locked": false,
+      "TimeAdded": "2020-07-31T23:34:44.1268047Z",
+      "LastUpdate": "2020-07-31T23:34:44.1979927Z"
+    },
+    {
+      "Key": "account.Type",
+      "MatchingTranslation": "Type",
+      "Locked": false,
+      "TimeAdded": "2020-07-31T23:34:44.1980077Z",
+      "LastUpdate": "2020-07-31T23:34:44.2724244Z"
+    },
+    {
+      "Key": "account.StandardType",
+      "MatchingTranslation": "Standard Account Type",
+      "Locked": false,
+      "TimeAdded": "2020-07-31T23:34:44.2724478Z",
+      "LastUpdate": "2020-07-31T23:34:44.3568774Z"
+    },
+    {
+      "Key": "account.AccountCorrelated",
+      "MatchingTranslation": "Account Correlated",
+      "Locked": false,
+      "TimeAdded": "2020-07-31T23:34:44.3569013Z",
+      "LastUpdate": "2020-07-31T23:34:44.4272235Z"
+    },
+    {
+      "Key": "account.NotCorrelated",
+      "MatchingTranslation": "Not Correlated",
+      "Locked": false,
+      "TimeAdded": "2020-07-31T23:34:44.4272394Z",
+      "LastUpdate": "2020-07-31T23:34:44.5041275Z"
+    },
+    {
+      "Key": "account.PhoneVerified",
+      "MatchingTranslation": "Phone Verified",
+      "Locked": false,
+      "TimeAdded": "2020-07-31T23:34:44.504143Z",
+      "LastUpdate": "2020-07-31T23:34:44.5864425Z"
+    },
+    {
+      "Key": "account.EmailVerified",
+      "MatchingTranslation": "Email Verified",
+      "Locked": false,
+      "TimeAdded": "2020-07-31T23:34:44.5864576Z",
+      "LastUpdate": "2020-07-31T23:34:44.6589817Z"
+    },
+    {
+      "Key": "account.GateVerified",
+      "MatchingTranslation": "Gate Verified",
+      "Locked": false,
+      "TimeAdded": "2020-07-31T23:34:44.6589966Z",
+      "LastUpdate": "2020-07-31T23:34:44.7308327Z"
+    },
+    {
+      "Key": "account.KYCVerified",
+      "MatchingTranslation": "Identity Verified",
+      "Locked": false,
+      "TimeAdded": "2020-07-31T23:34:44.7308479Z",
+      "LastUpdate": "2020-07-31T23:34:44.8113002Z"
+    },
+    {
+      "Key": "verifyAccount.Title",
+      "MatchingTranslation": "Account Verification",
+      "Locked": false,
+      "TimeAdded": "2020-07-31T23:34:44.8113289Z",
+      "LastUpdate": "2020-07-31T23:34:44.8838027Z"
+    },
+    {
+      "Key": "verifyAccount.Begin",
+      "MatchingTranslation": "Begin",
+      "Locked": false,
+      "TimeAdded": "2020-07-31T23:34:44.8838181Z",
+      "LastUpdate": "2020-07-31T23:34:44.9647737Z"
+    },
+    {
+      "Key": "verifyAccount.Continue",
+      "MatchingTranslation": "Continue",
+      "Locked": false,
+      "TimeAdded": "2020-07-31T23:34:44.9647895Z",
+      "LastUpdate": "2020-07-31T23:34:45.0358266Z"
+    },
+    {
+      "Key": "verifyAccount.Introduction",
+      "MatchingTranslation": "Introduction",
+      "Locked": false,
+      "TimeAdded": "2020-07-31T23:34:45.0358424Z",
+      "LastUpdate": "2020-07-31T23:34:45.1058321Z"
+    },
+    {
+      "Key": "verifyAccount.IntroductionText",
+      "MatchingTranslation": "In order to prevent abuse, the account creation process must go through some form of verification. Depending on where you are, different options are available.",
+      "Locked": false,
+      "TimeAdded": "2020-07-31T23:34:45.1058513Z",
+      "LastUpdate": "2020-07-31T23:34:45.1914282Z"
+    },
+    {
+      "Key": "verifyAccount.EnterData",
+      "MatchingTranslation": "Enter Information",
+      "Locked": false,
+      "TimeAdded": "2020-07-31T23:34:45.1914449Z",
+      "LastUpdate": "2020-07-31T23:34:45.2639426Z"
+    },
+    {
+      "Key": "verifyAccount.EnterConfirmationCode",
+      "MatchingTranslation": "Confirmation Code",
+      "Locked": false,
+      "TimeAdded": "2020-07-31T23:34:45.2639652Z",
+      "LastUpdate": "2020-07-31T23:34:45.3562642Z"
+    },
+    {
+      "Key": "verifyAccount.TimeRemaining",
+      "MatchingTranslation": "Time Remaining",
+      "Locked": false,
+      "TimeAdded": "2020-07-31T23:34:45.3562807Z",
+      "LastUpdate": "2020-07-31T23:34:45.439019Z"
+    },
+    {
+      "Key": "verifyAccount.VerificationResults",
+      "MatchingTranslation": "Verification Results",
+      "Locked": false,
+      "TimeAdded": "2020-07-31T23:34:45.4390364Z",
+      "LastUpdate": "2020-07-31T23:34:45.5148936Z"
+    },
+    {
+      "Key": "verifyAccount.ResultsSuccess",
+      "MatchingTranslation": "The verification was a success! your account Id is now verified by phone.",
+      "Locked": false,
+      "TimeAdded": "2020-07-31T23:34:45.5149187Z",
+      "LastUpdate": "2020-07-31T23:34:45.6008655Z"
+    },
+    {
+      "Key": "verifyAccount.ResultsFailure",
+      "MatchingTranslation": "The verification was a failure. You can try again in 24 hours.",
+      "Locked": false,
+      "TimeAdded": "2020-07-31T23:34:45.6008829Z",
+      "LastUpdate": "2020-07-31T23:34:45.6716053Z"
+    },
+    {
+      "Key": "verifyAccount.BypassVerification",
+      "MatchingTranslation": "TESTNET",
+      "Locked": false,
+      "TimeAdded": "2020-07-31T23:34:45.671622Z",
+      "LastUpdate": "2020-07-31T23:34:45.7606381Z"
+    },
+    {
+      "Key": "verifyAccount.SMS",
+      "MatchingTranslation": "SMS",
+      "Locked": false,
+      "TimeAdded": "2020-07-31T23:34:45.7606554Z",
+      "LastUpdate": "2020-07-31T23:34:45.8323596Z"
+    },
+    {
+      "Key": "verifyAccount.Appointments",
+      "MatchingTranslation": "Appointment",
+      "Locked": false,
+      "TimeAdded": "2020-07-31T23:34:45.8323768Z",
+      "LastUpdate": "2020-07-31T23:34:45.9107672Z"
+    },
+    {
+      "Key": "verifyAccount.THS",
+      "MatchingTranslation": "Time Hard Signature",
+      "Locked": false,
+      "TimeAdded": "2020-07-31T23:34:45.9107847Z",
+      "LastUpdate": "2020-07-31T23:34:45.9816536Z"
+    },
+    {
+      "Key": "verifyAccount.VerificationModeSelection",
+      "MatchingTranslation": "Verification mode selection",
+      "Locked": false,
+      "TimeAdded": "2020-07-31T23:34:45.981671Z",
+      "LastUpdate": "2020-07-31T23:34:46.0579802Z"
+    },
+    {
+      "Key": "verifyAccount.DefaultHelpText",
+      "MatchingTranslation": "Here you must select a verification method among the available choices. Each method has it's advantages and inconvenients. Please pick the one that is right for you.",
+      "Locked": false,
+      "TimeAdded": "2020-07-31T23:34:46.0579983Z",
+      "LastUpdate": "2020-07-31T23:34:46.1407787Z"
+    },
+    {
+      "Key": "verifyAccount.TESTNETHelpText",
+      "MatchingTranslation": "In TESTNET, the verification can be bypassed to create an account immediately.",
+      "Locked": false,
+      "TimeAdded": "2020-07-31T23:34:46.1407961Z",
+      "LastUpdate": "2020-07-31T23:34:46.213617Z"
+    },
+    {
+      "Key": "verifyAccount.AppointmentsHelpText",
+      "MatchingTranslation": "You will begin the Neuralium appointment verification process. This process may last many days and you will have to be present for your appointment when the date is confirmed. Advantages: anonymous.",
+      "Locked": false,
+      "TimeAdded": "2020-07-31T23:34:46.2136358Z",
+      "LastUpdate": "2020-07-31T23:34:46.2935806Z"
+    },
+    {
+      "Key": "verifyAccount.THSHelpText",
+      "MatchingTranslation": "You will have to execute a time expensive CPU time hard signature. Once it is completed, your account will be able to mine in the 1st and 2nd tiers as a Server.",
+      "Locked": false,
+      "TimeAdded": "2020-07-31T23:34:46.2936103Z",
+      "LastUpdate": "2020-07-31T23:34:46.3675984Z"
+    },
+    {
+      "Key": "appointments.Title",
+      "MatchingTranslation": "Appointment Verification",
+      "Locked": false,
+      "TimeAdded": "2020-07-31T23:34:46.3676573Z",
+      "LastUpdate": "2020-07-31T23:34:46.4500102Z"
+    },
+    {
+      "Key": "appointments.IntroductionText",
+      "MatchingTranslation": "The appointment workflow is designed to verify intended users while keeping the vast majority of flooders out of the system.",
+      "Locked": false,
+      "TimeAdded": "2020-07-31T23:34:46.4500285Z",
+      "LastUpdate": "2020-07-31T23:34:46.52247Z"
+    },
+    {
+      "Key": "appointments.Begin",
+      "MatchingTranslation": "Begin",
+      "Locked": false,
+      "TimeAdded": "2020-07-31T23:34:46.5224897Z",
+      "LastUpdate": "2020-07-31T23:34:46.5956106Z"
+    },
+    {
+      "Key": "appointments.Continue",
+      "MatchingTranslation": "Continue",
+      "Locked": false,
+      "TimeAdded": "2020-07-31T23:34:46.5956437Z",
+      "LastUpdate": "2020-07-31T23:34:46.6823203Z"
+    },
+    {
+      "Key": "appointments.RequestAppointmentText",
+      "MatchingTranslation": "In order to begin the process, please request an appointment explicitely. An appointment request will be made and a confirmation should be received at a future time.",
+      "Locked": false,
+      "TimeAdded": "2020-07-31T23:34:46.6823397Z",
+      "LastUpdate": "2020-07-31T23:34:46.7568466Z"
+    },
+    {
+      "Key": "appointments.PreferredRegion",
+      "MatchingTranslation": "Please select your preferred region",
+      "Locked": false,
+      "TimeAdded": "2020-07-31T23:34:46.7568771Z",
+      "LastUpdate": "2020-07-31T23:34:46.8304198Z"
+    },
+    {
+      "Key": "appointments.Orient",
+      "MatchingTranslation": "Orient",
+      "Locked": false,
+      "TimeAdded": "2020-07-31T23:34:46.830438Z",
+      "LastUpdate": "2020-07-31T23:34:46.9081524Z"
+    },
+    {
+      "Key": "appointments.Occident",
+      "MatchingTranslation": "Occident",
+      "Locked": false,
+      "TimeAdded": "2020-07-31T23:34:46.9081713Z",
+      "LastUpdate": "2020-07-31T23:34:46.9860308Z"
+    },
+    {
+      "Key": "appointments.RequestAppointmentButton",
+      "MatchingTranslation": "Make Appointment Request",
+      "Locked": false,
+      "TimeAdded": "2020-07-31T23:34:46.9860509Z",
+      "LastUpdate": "2020-07-31T23:34:47.0634243Z"
+    },
+    {
+      "Key": "appointments.RequestCompleted",
+      "MatchingTranslation": "Appointment request successfully sent",
+      "Locked": false,
+      "TimeAdded": "2020-07-31T23:34:47.0634435Z",
+      "LastUpdate": "2020-07-31T23:34:47.138776Z"
+    },
+    {
+      "Key": "appointments.RequestConfirmed",
+      "MatchingTranslation": "Appointment request has been confirmed",
+      "Locked": false,
+      "TimeAdded": "2020-07-31T23:34:47.138794Z",
+      "LastUpdate": "2020-07-31T23:34:47.2139383Z"
+    },
+    {
+      "Key": "appointments.VerificationRequestSent",
+      "MatchingTranslation": "Appointment verification request successfully sent",
+      "Locked": false,
+      "TimeAdded": "2020-07-31T23:34:47.2139569Z",
+      "LastUpdate": "2020-07-31T23:34:47.2951016Z"
+    },
+    {
+      "Key": "appointments.VerificationRequestCompleted",
+      "MatchingTranslation": "Appointment verification request has been confirmed.",
+      "Locked": false,
+      "TimeAdded": "2020-07-31T23:34:47.2951205Z",
+      "LastUpdate": "2020-07-31T23:34:47.3672141Z"
+    },
+    {
+      "Key": "appointments.VerificationRequestRejected",
+      "MatchingTranslation": "Appointment verification request has been rejected.",
+      "Locked": false,
+      "TimeAdded": "2020-07-31T23:34:47.3672344Z",
+      "LastUpdate": "2020-07-31T23:34:47.4431897Z"
+    },
+    {
+      "Key": "appointments.AppointmentContextCached",
+      "MatchingTranslation": "Appointment context has been received.",
+      "Locked": false,
+      "TimeAdded": "2020-07-31T23:34:47.4432094Z",
+      "LastUpdate": "2020-07-31T23:34:47.5165203Z"
+    },
+    {
+      "Key": "appointments.TimeBeforeAppointment",
+      "MatchingTranslation": "Time remaining before appointment",
+      "Locked": false,
+      "TimeAdded": "2020-07-31T23:34:47.5165397Z",
+      "LastUpdate": "2020-07-31T23:34:47.5933248Z"
+    },
+    {
+      "Key": "appointments.RequestFailed",
+      "MatchingTranslation": "Appointment request failed",
+      "Locked": false,
+      "TimeAdded": "2020-07-31T23:34:47.5933448Z",
+      "LastUpdate": "2020-07-31T23:34:47.6681317Z"
+    },
+    {
+      "Key": "appointments.AppointmentRequestedText",
+      "MatchingTranslation": "You appointment has been reqested. We must now wait for the confirmation.",
+      "Locked": false,
+      "TimeAdded": "2020-07-31T23:34:47.6681557Z",
+      "LastUpdate": "2020-07-31T23:34:47.7504413Z"
+    },
+    {
+      "Key": "appointments.AppointmentRequestedTimestamp",
+      "MatchingTranslation": "Request timestamp",
+      "Locked": false,
+      "TimeAdded": "2020-07-31T23:34:47.7504635Z",
+      "LastUpdate": "2020-07-31T23:34:47.82192Z"
+    },
+    {
+      "Key": "appointments.AppointmentConfirmedText",
+      "MatchingTranslation": "Your appointment request has been confirmed and the appointment date and time is now set. Make sure to attend in time!",
+      "Locked": false,
+      "TimeAdded": "2020-07-31T23:34:47.8219398Z",
+      "LastUpdate": "2020-07-31T23:34:47.8949854Z"
+    },
+    {
+      "Key": "appointments.AppointmentTimestampUtc",
+      "MatchingTranslation": "Appointment Time (UTC)",
+      "Locked": false,
+      "TimeAdded": "2020-07-31T23:34:47.8950056Z",
+      "LastUpdate": "2020-07-31T23:34:47.9675083Z"
+    },
+    {
+      "Key": "appointments.AppointmentTimestampLocal",
+      "MatchingTranslation": "Appointment Time (Local Time)",
+      "Locked": false,
+      "TimeAdded": "2020-07-31T23:34:47.9675401Z",
+      "LastUpdate": "2020-07-31T23:34:48.0580484Z"
+    },
+    {
+      "Key": "appointments.AppointmentWindow",
+      "MatchingTranslation": "Appointment Window",
+      "Locked": false,
+      "TimeAdded": "2020-07-31T23:34:48.0580702Z",
+      "LastUpdate": "2020-07-31T23:34:48.1264921Z"
+    },
+    {
+      "Key": "appointments.Minutes",
+      "MatchingTranslation": "Minute(s)",
+      "Locked": false,
+      "TimeAdded": "2020-07-31T23:34:48.1265122Z",
+      "LastUpdate": "2020-07-31T23:34:48.2018696Z"
+    },
+    {
+      "Key": "appointments.Seconds",
+      "MatchingTranslation": "Second(s)",
+      "Locked": false,
+      "TimeAdded": "2020-07-31T23:34:48.2019013Z",
+      "LastUpdate": "2020-07-31T23:34:48.2814425Z"
+    },
+    {
+      "Key": "appointments.AppointmentContextReceived",
+      "MatchingTranslation": "Appointment Context Received",
+      "Locked": false,
+      "TimeAdded": "2020-07-31T23:34:48.2814623Z",
+      "LastUpdate": "2020-07-31T23:34:48.3688528Z"
+    },
+    {
+      "Key": "appointments.AppointmentVerificationRequestedText",
+      "MatchingTranslation": "Appointment verification request has been dispatched. We now await the confirmation.",
+      "Locked": false,
+      "TimeAdded": "2020-07-31T23:34:48.3688885Z",
+      "LastUpdate": "2020-07-31T23:34:48.4512124Z"
+    },
+    {
+      "Key": "appointments.AppointmentVerificationCompletedText",
+      "MatchingTranslation": "Appointment verification request has been confirmed.",
+      "Locked": false,
+      "TimeAdded": "2020-07-31T23:34:48.451233Z",
+      "LastUpdate": "2020-07-31T23:34:48.5284859Z"
+    },
+    {
+      "Key": "appointments.AppointmentVerificationRejectedText",
+      "MatchingTranslation": "Appointment verification request has been rejected.",
+      "Locked": false,
+      "TimeAdded": "2020-07-31T23:34:48.5285193Z",
+      "LastUpdate": "2020-07-31T23:34:48.5987845Z"
+    },
+    {
+      "Key": "appointments.InvalidPuzzleEngineVersion",
+      "MatchingTranslation": "Invalid puzzle engine version. Please update your software version.",
+      "Locked": false,
+      "TimeAdded": "2020-07-31T23:34:48.5988051Z",
+      "LastUpdate": "2020-07-31T23:34:48.6727663Z"
+    },
+    {
+      "Key": "puzzles.Title",
+      "MatchingTranslation": "Puzzle",
+      "Locked": false,
+      "TimeAdded": "2020-07-31T23:34:48.672975Z",
+      "LastUpdate": "2020-07-31T23:34:48.7631978Z"
+    },
+    {
+      "Key": "puzzles.TimeBeforeAppointment",
+      "MatchingTranslation": "Your puzzle session will begin soon. Estimated time remaining before the begining of your appointment",
+      "Locked": false,
+      "TimeAdded": "2020-07-31T23:34:48.7632191Z",
+      "LastUpdate": "2020-07-31T23:34:48.8367314Z"
+    },
+    {
+      "Key": "puzzles.WaitingForPuzzle",
+      "MatchingTranslation": "the puzzle session should start any time now. Currently awaiting for the puzzle instructions...",
+      "Locked": false,
+      "TimeAdded": "2020-07-31T23:34:48.8367522Z",
+      "LastUpdate": "2020-07-31T23:34:48.9055404Z"
+    },
+    {
+      "Key": "puzzles.TimeRemaining",
+      "MatchingTranslation": "Time remaining to complete puzzle",
+      "Locked": false,
+      "TimeAdded": "2020-07-31T23:34:48.9055613Z",
+      "LastUpdate": "2020-07-31T23:34:48.9812325Z"
+    },
+    {
+      "Key": "puzzles.Next",
+      "MatchingTranslation": "Next Puzzle",
+      "Locked": false,
+      "TimeAdded": "2020-07-31T23:34:48.981254Z",
+      "LastUpdate": "2020-07-31T23:34:49.0591267Z"
+    },
+    {
+      "Key": "puzzles.Complete",
+      "MatchingTranslation": "Complete Session",
+      "Locked": false,
+      "TimeAdded": "2020-07-31T23:34:49.0591515Z",
+      "LastUpdate": "2020-07-31T23:34:49.1386159Z"
+    },
+    {
+      "Key": "puzzles.CompletedAndSend",
+      "MatchingTranslation": "Your puzzles have been completed. Please wait while the results are being processed.",
+      "Locked": false,
+      "TimeAdded": "2020-07-31T23:34:49.1386377Z",
+      "LastUpdate": "2020-07-31T23:34:49.2110009Z"
+    },
+    {
+      "Key": "puzzles.PreparingPackage",
+      "MatchingTranslation": "Please wait while the appointment process completes and sends the results for verification.",
+      "Locked": false,
+      "TimeAdded": "2020-07-31T23:34:49.2110378Z",
+      "LastUpdate": "2020-07-31T23:34:49.295374Z"
+    },
+    {
+      "Key": "ths.Title",
+      "MatchingTranslation": "Time Hard Signature nonce search",
+      "Locked": false,
+      "TimeAdded": "2020-07-31T23:34:49.2953974Z",
+      "LastUpdate": "2020-07-31T23:34:49.3688803Z"
+    },
+    {
+      "Key": "ths.Introduction",
+      "MatchingTranslation": "Preparing to search for a secret nonce value",
+      "Locked": false,
+      "TimeAdded": "2020-07-31T23:34:49.3689026Z",
+      "LastUpdate": "2020-07-31T23:34:49.4571296Z"
+    },
+    {
+      "Key": "ths.TimeHardSignatureNonceSearch",
+      "MatchingTranslation": "Current nonce value",
+      "Locked": false,
+      "TimeAdded": "2020-07-31T23:34:49.4571578Z",
+      "LastUpdate": "2020-07-31T23:34:49.529377Z"
+    },
+    {
+      "Key": "ths.Nonce",
+      "MatchingTranslation": "Nonce",
+      "Locked": false,
+      "TimeAdded": "2020-07-31T23:34:49.5294067Z",
+      "LastUpdate": "2020-07-31T23:34:49.6106857Z"
+    },
+    {
+      "Key": "ths.Solution",
+      "MatchingTranslation": "Solution",
+      "Locked": false,
+      "TimeAdded": "2020-07-31T23:34:49.6107243Z",
+      "LastUpdate": "2020-07-31T23:34:49.6864205Z"
+    },
+    {
+      "Key": "ths.SolutionFound",
+      "MatchingTranslation": "THS Solution has been found.",
+      "Locked": false,
+      "TimeAdded": "2020-07-31T23:34:49.6864623Z",
+      "LastUpdate": "2020-07-31T23:34:49.766331Z"
+    },
+    {
+      "Key": "sms.Title",
+      "MatchingTranslation": "SMS Verification",
+      "Locked": false,
+      "TimeAdded": "2020-07-31T23:34:49.7663549Z",
+      "LastUpdate": "2020-07-31T23:34:49.8550934Z"
+    },
+    {
+      "Key": "sms.ConfirmationCodeHint",
+      "MatchingTranslation": "A confirmation code you may have obtained from an appointment process.",
+      "Locked": false,
+      "TimeAdded": "2020-07-31T23:34:49.8551157Z",
+      "LastUpdate": "2020-07-31T23:34:49.9274817Z"
+    },
+    {
+      "Key": "sms.PhoneNumberHint",
+      "MatchingTranslation": "A phone number where you can receive an SMS message.",
+      "Locked": false,
+      "TimeAdded": "2020-07-31T23:34:49.9275043Z",
+      "LastUpdate": "2020-07-31T23:34:50.0333528Z"
+    },
+    {
+      "Key": "sms.SmsCodeHint",
+      "MatchingTranslation": "The confirmation code that you have received by SMS message.",
+      "Locked": false,
+      "TimeAdded": "2020-07-31T23:34:50.0333745Z",
+      "LastUpdate": "2020-07-31T23:34:50.1164527Z"
+    },
+    {
+      "Key": "sms.Begin",
+      "MatchingTranslation": "Begin",
+      "Locked": false,
+      "TimeAdded": "2020-07-31T23:34:50.1164778Z",
+      "LastUpdate": "2020-07-31T23:34:50.2183726Z"
+    },
+    {
+      "Key": "sms.Continue",
+      "MatchingTranslation": "Continue",
+      "Locked": false,
+      "TimeAdded": "2020-07-31T23:34:50.2183974Z",
+      "LastUpdate": "2020-07-31T23:34:50.3385638Z"
+    },
+    {
+      "Key": "sms.Previous",
+      "MatchingTranslation": "Previous",
+      "Locked": false,
+      "TimeAdded": "2020-07-31T23:34:50.3385862Z",
+      "LastUpdate": "2020-07-31T23:34:50.413352Z"
+    },
+    {
+      "Key": "sms.IntroductionText",
+      "MatchingTranslation": "Here we will verify your account by using a valid phone number.",
+      "Locked": false,
+      "TimeAdded": "2020-07-31T23:34:50.4133755Z",
+      "LastUpdate": "2020-07-31T23:34:50.484367Z"
+    },
+    {
+      "Key": "sms.InvalidChineseConfiguration",
+      "MatchingTranslation": "In China, because of the complexity of sending SMS, a valid Confirmation Code must be obtained first.",
+      "Locked": false,
+      "TimeAdded": "2020-07-31T23:34:50.4843904Z",
+      "LastUpdate": "2020-07-31T23:34:50.5641568Z"
+    },
+    {
+      "Key": "sms.SMS",
+      "MatchingTranslation": "SMS",
+      "Locked": false,
+      "TimeAdded": "2020-07-31T23:34:50.5641816Z",
+      "LastUpdate": "2020-07-31T23:34:50.6652953Z"
+    },
+    {
+      "Key": "sms.InvalidPhoneFormat",
+      "MatchingTranslation": "Invalid phone number format",
+      "Locked": false,
+      "TimeAdded": "2020-07-31T23:34:50.6653189Z",
+      "LastUpdate": "2020-07-31T23:34:50.7494887Z"
+    },
+    {
+      "Key": "sms.InvalidConfirmationCodeFormat",
+      "MatchingTranslation": "Invalid confirmation code format",
+      "Locked": false,
+      "TimeAdded": "2020-07-31T23:34:50.7495122Z",
+      "LastUpdate": "2020-07-31T23:34:50.8223974Z"
+    },
+    {
+      "Key": "sms.InvalidSMSCode",
+      "MatchingTranslation": "Invalid SMS code format",
+      "Locked": false,
+      "TimeAdded": "2020-07-31T23:34:50.8224216Z",
+      "LastUpdate": "2020-07-31T23:34:50.8942411Z"
+    },
+    {
+      "Key": "sms.EnterConfirmationCode",
+      "MatchingTranslation": "Confirmation Code",
+      "Locked": false,
+      "TimeAdded": "2020-07-31T23:34:50.8942642Z",
+      "LastUpdate": "2020-07-31T23:34:50.9663385Z"
+    },
+    {
+      "Key": "sms.PhoneNumber",
+      "MatchingTranslation": "Phone Number to Verify",
+      "Locked": false,
+      "TimeAdded": "2020-07-31T23:34:50.9663619Z",
+      "LastUpdate": "2020-07-31T23:34:51.0434562Z"
+    },
+    {
+      "Key": "sms.ConfirmationCode",
+      "MatchingTranslation": "Confirmation Code",
+      "Locked": false,
+      "TimeAdded": "2020-07-31T23:34:51.0435164Z",
+      "LastUpdate": "2020-07-31T23:34:51.1290891Z"
+    },
+    {
+      "Key": "sms.SmsCode",
+      "MatchingTranslation": "SMS Confirmation Code",
+      "Locked": false,
+      "TimeAdded": "2020-07-31T23:34:51.1291128Z",
+      "LastUpdate": "2020-07-31T23:34:51.2079331Z"
+    },
+    {
+      "Key": "sms.VerificationResults",
+      "MatchingTranslation": "Verification Results",
+      "Locked": false,
+      "TimeAdded": "2020-07-31T23:34:51.207957Z",
+      "LastUpdate": "2020-07-31T23:34:51.2839737Z"
+    },
+    {
+      "Key": "sms.ResultsSuccess",
+      "MatchingTranslation": "The verification was a success! your account Id is now verified by phone.",
+      "Locked": false,
+      "TimeAdded": "2020-07-31T23:34:51.2840089Z",
+      "LastUpdate": "2020-07-31T23:34:51.3524959Z"
+    },
+    {
+      "Key": "sms.ResultsFailure",
+      "MatchingTranslation": "The verification was a failure. You can try again in 24 hours.",
+      "Locked": false,
+      "TimeAdded": "2020-07-31T23:34:51.3525197Z",
+      "LastUpdate": "2020-07-31T23:34:51.4377443Z"
+    },
+    {
+      "Key": "sms.EnsurePhoneNumber",
+      "MatchingTranslation": "Continue verification for phone number",
+      "Locked": false,
+      "TimeAdded": "2020-07-31T23:34:51.4377629Z",
+      "LastUpdate": "2020-07-31T23:34:51.5158646Z"
+    },
+    {
+      "Key": "sms.EnsureConfirmationCode",
+      "MatchingTranslation": "Selected confirmation code",
+      "Locked": false,
+      "TimeAdded": "2020-07-31T23:34:51.5158839Z",
+      "LastUpdate": "2020-07-31T23:34:51.5894966Z"
+    },
+    {
+      "Key": "sms.NoConfirmationCode",
+      "MatchingTranslation": "No confirmation code set",
+      "Locked": false,
+      "TimeAdded": "2020-07-31T23:34:51.5895157Z",
+      "LastUpdate": "2020-07-31T23:34:51.667789Z"
+    },
+    {
+      "Key": "accountPublication.PublicationMethodAppointment",
+      "MatchingTranslation": "Appointment publication method",
+      "Locked": false,
+      "TimeAdded": "2020-07-31T23:34:51.6678105Z",
+      "LastUpdate": "2020-07-31T23:34:51.8022238Z"
+    },
+    {
+      "Key": "accountPublication.PublicationMethodSMS",
+      "MatchingTranslation": "SMS publication method",
+      "Locked": false,
+      "TimeAdded": "2020-07-31T23:34:51.8022442Z",
+      "LastUpdate": "2020-07-31T23:34:51.8794296Z"
+    },
+    {
+      "Key": "accountPublication.PublicationMethodServer",
+      "MatchingTranslation": "Server publication method",
+      "Locked": false,
+      "TimeAdded": "2020-07-31T23:34:51.8794627Z",
+      "LastUpdate": "2020-07-31T23:34:51.9858516Z"
+    },
+    {
+      "Key": "accountPublication.AccountPublication",
+      "MatchingTranslation": "Account publication",
+      "Locked": false,
+      "TimeAdded": "2020-07-31T23:34:51.9858711Z",
+      "LastUpdate": "2020-07-31T23:34:52.0563834Z"
+    },
+    {
+      "Key": "accountPublication.AccountPublicationEnded",
+      "MatchingTranslation": "Account publication is complete.",
+      "Locked": false,
+      "TimeAdded": "2020-07-31T23:34:52.056403Z",
+      "LastUpdate": "2020-07-31T23:34:52.1321037Z"
+    },
+    {
+      "Key": "accountPublication.AccountPublicationProcessExplanation",
+      "MatchingTranslation": "Before any operations can be performed on the blockchain, your account must be presented publicly to others. Your account will be confirmed, and will be ready to operate once it is confirmed in a block.",
+      "Locked": false,
+      "TimeAdded": "2020-07-31T23:34:52.1321242Z",
+      "LastUpdate": "2020-07-31T23:34:52.2143401Z"
+    },
+    {
+      "Key": "accountPublication.AccountPublicationProcessRuningExplanation",
+      "MatchingTranslation": "",
+      "Locked": false,
+      "TimeAdded": "2020-07-31T23:34:52.2143598Z",
+      "LastUpdate": "2020-07-31T23:34:52.2144734Z"
+    },
+    {
+      "Key": "accountPublication.AccountPublicationFailed",
+      "MatchingTranslation": "An error occured while publishing the account. Publication failed.",
+      "Locked": false,
+      "TimeAdded": "2020-07-31T23:34:52.2144848Z",
+      "LastUpdate": "2020-07-31T23:34:52.2884544Z"
+    },
+    {
+      "Key": "accountPublication.CanCloseWindow",
+      "MatchingTranslation": "You can now safely close this window while you wait for the confirmation to arrive.",
+      "Locked": false,
+      "TimeAdded": "2020-07-31T23:34:52.288475Z",
+      "LastUpdate": "2020-07-31T23:34:52.3683918Z"
+    },
+    {
+      "Key": "accountPublication.CloseAccountPublication",
+      "MatchingTranslation": "Close",
+      "Locked": false,
+      "TimeAdded": "2020-07-31T23:34:52.3684144Z",
+      "LastUpdate": "2020-07-31T23:34:52.4489058Z"
+    },
+    {
+      "Key": "accountPublication.NeedBlockchainSynced",
+      "MatchingTranslation": "Blockchain needs to be synchronized in order to publish account.",
+      "Locked": false,
+      "TimeAdded": "2020-07-31T23:34:52.4489274Z",
+      "LastUpdate": "2020-07-31T23:34:52.5174144Z"
+    },
+    {
+      "Key": "accountPublication.NeedPeerToPublish",
+      "MatchingTranslation": "Not enough peer connected in order to start publishing account.",
+      "Locked": false,
+      "TimeAdded": "2020-07-31T23:34:52.5174352Z",
+      "LastUpdate": "2020-07-31T23:34:52.5920648Z"
+    },
+    {
+      "Key": "accountPublication.PublishAccount",
+      "MatchingTranslation": "Publish account",
+      "Locked": false,
+      "TimeAdded": "2020-07-31T23:34:52.5920853Z",
+      "LastUpdate": "2020-07-31T23:34:52.6673915Z"
+    },
+    {
+      "Key": "accountPublication.StartAccountPublication",
+      "MatchingTranslation": "Publish account",
+      "Locked": false,
+      "TimeAdded": "2020-07-31T23:34:52.6674121Z",
+      "LastUpdate": "2020-07-31T23:34:52.7406787Z"
+    },
+    {
+      "Key": "accountPublication.WaitingForConfirmation",
+      "MatchingTranslation": "Waiting for confirmation in a subsequent block.",
+      "Locked": false,
+      "TimeAdded": "2020-07-31T23:34:52.7406997Z",
+      "LastUpdate": "2020-07-31T23:34:52.8160512Z"
+    },
+    {
+      "Key": "accountPublication.CannotPublishAccount",
+      "MatchingTranslation": "Impossible to publish account",
+      "Locked": false,
+      "TimeAdded": "2020-07-31T23:34:52.8160734Z",
+      "LastUpdate": "2020-07-31T23:34:52.8955855Z"
+    },
+    {
+      "Key": "app.About",
+      "MatchingTranslation": "About...",
+      "Locked": false,
+      "TimeAdded": "2020-07-31T23:34:52.8956254Z",
+      "LastUpdate": "2020-07-31T23:34:52.9750844Z"
+    },
+    {
+      "Key": "app.Cancel",
+      "MatchingTranslation": "Cancel",
+      "Locked": false,
+      "TimeAdded": "2020-07-31T23:34:52.9751052Z",
+      "LastUpdate": "2020-07-31T23:34:53.0515594Z"
+    },
+    {
+      "Key": "app.Close",
+      "MatchingTranslation": "Close",
+      "Locked": false,
+      "TimeAdded": "2020-07-31T23:34:53.0515809Z",
+      "LastUpdate": "2020-07-31T23:34:53.1263204Z"
+    },
+    {
+      "Key": "app.Confirm",
+      "MatchingTranslation": "",
+      "Locked": false,
+      "TimeAdded": "2020-07-31T23:34:53.1263415Z",
+      "LastUpdate": "2020-07-31T23:34:53.1264447Z"
+    },
+    {
+      "Key": "app.ConfirmPassphrase",
+      "MatchingTranslation": "Confirm Phassphrase",
+      "Locked": false,
+      "TimeAdded": "2020-07-31T23:34:53.1264575Z",
+      "LastUpdate": "2020-07-31T23:34:53.2064138Z"
+    },
+    {
+      "Key": "app.Create",
+      "MatchingTranslation": "Create",
+      "Locked": false,
+      "TimeAdded": "2020-07-31T23:34:53.2064356Z",
+      "LastUpdate": "2020-07-31T23:34:53.2825256Z"
+    },
+    {
+      "Key": "app.Delete",
+      "MatchingTranslation": "Delete",
+      "Locked": false,
+      "TimeAdded": "2020-07-31T23:34:53.2825599Z",
+      "LastUpdate": "2020-07-31T23:34:53.3557371Z"
+    },
+    {
+      "Key": "app.Edit",
+      "MatchingTranslation": "Edit",
+      "Locked": false,
+      "TimeAdded": "2020-07-31T23:34:53.3557593Z",
+      "LastUpdate": "2020-07-31T23:34:53.4294533Z"
+    },
+    {
+      "Key": "app.Events",
+      "MatchingTranslation": "Events",
+      "Locked": false,
+      "TimeAdded": "2020-07-31T23:34:53.429476Z",
+      "LastUpdate": "2020-07-31T23:34:53.525647Z"
+    },
+    {
+      "Key": "app.Filter",
+      "MatchingTranslation": "Filter",
+      "Locked": false,
+      "TimeAdded": "2020-07-31T23:34:53.525669Z",
+      "LastUpdate": "2020-07-31T23:34:53.619158Z"
+    },
+    {
+      "Key": "app.Help",
+      "MatchingTranslation": "Help",
+      "Locked": false,
+      "TimeAdded": "2020-07-31T23:34:53.6191811Z",
+      "LastUpdate": "2020-07-31T23:34:53.6932104Z"
+    },
+    {
+      "Key": "app.LicenseAcceptance",
+      "MatchingTranslation": "License acceptance",
+      "Locked": false,
+      "TimeAdded": "2020-07-31T23:34:53.693233Z",
+      "LastUpdate": "2020-07-31T23:34:53.7639784Z"
+    },
+    {
+      "Key": "app.No",
+      "MatchingTranslation": "No",
+      "Locked": false,
+      "TimeAdded": "2020-07-31T23:34:53.7640016Z",
+      "LastUpdate": "2020-07-31T23:34:53.8473465Z"
+    },
+    {
+      "Key": "app.Passphrase",
+      "MatchingTranslation": "Passphrase",
+      "Locked": false,
+      "TimeAdded": "2020-07-31T23:34:53.8473681Z",
+      "LastUpdate": "2020-07-31T23:34:53.9205393Z"
+    },
+    {
+      "Key": "app.PassphraseAreNotTheSame",
+      "MatchingTranslation": "Phassphrases are not the same",
+      "Locked": false,
+      "TimeAdded": "2020-07-31T23:34:53.9205625Z",
+      "LastUpdate": "2020-07-31T23:34:53.9986173Z"
+    },
+    {
+      "Key": "app.PassphraseRequired",
+      "MatchingTranslation": "Passphrase required",
+      "Locked": false,
+      "TimeAdded": "2020-07-31T23:34:53.9986404Z",
+      "LastUpdate": "2020-07-31T23:34:54.0773022Z"
+    },
+    {
+      "Key": "app.PleaseEnterYourPassphrase",
+      "MatchingTranslation": "Please enter your Phassphrase",
+      "Locked": false,
+      "TimeAdded": "2020-07-31T23:34:54.0773267Z",
+      "LastUpdate": "2020-07-31T23:34:54.1633612Z"
+    },
+    {
+      "Key": "app.PleaseEnterYourPassphraseAgain",
+      "MatchingTranslation": "Please enter your Phassphrase again",
+      "Locked": false,
+      "TimeAdded": "2020-07-31T23:34:54.1633846Z",
+      "LastUpdate": "2020-07-31T23:34:54.2586342Z"
+    },
+    {
+      "Key": "app.PleaseEnterYourPassphraseLastAttempt",
+      "MatchingTranslation": "Please enter your Phassphrase last attempt",
+      "Locked": false,
+      "TimeAdded": "2020-07-31T23:34:54.258658Z",
+      "LastUpdate": "2020-07-31T23:34:54.3520004Z"
+    },
+    {
+      "Key": "app.PleaseCopyYourKeyFile",
+      "MatchingTranslation": "Please copy your keyfile into your wallet.",
+      "Locked": false,
+      "TimeAdded": "2020-07-31T23:34:54.3520239Z",
+      "LastUpdate": "2020-07-31T23:34:54.4365906Z"
+    },
+    {
+      "Key": "app.Quit",
+      "MatchingTranslation": "Quit",
+      "Locked": false,
+      "TimeAdded": "2020-07-31T23:34:54.436614Z",
+      "LastUpdate": "2020-07-31T23:34:54.5196781Z"
+    },
+    {
+      "Key": "app.Refresh",
+      "MatchingTranslation": "Refresh",
+      "Locked": false,
+      "TimeAdded": "2020-07-31T23:34:54.5197021Z",
+      "LastUpdate": "2020-07-31T23:34:54.5913431Z"
+    },
+    {
+      "Key": "app.Save",
+      "MatchingTranslation": "Save",
+      "Locked": false,
+      "TimeAdded": "2020-07-31T23:34:54.5913678Z",
+      "LastUpdate": "2020-07-31T23:34:54.6630458Z"
+    },
+    {
+      "Key": "app.ServerConnection",
+      "MatchingTranslation": "Server Connection",
+      "Locked": false,
+      "TimeAdded": "2020-07-31T23:34:54.6630698Z",
+      "LastUpdate": "2020-07-31T23:34:54.7509176Z"
+    },
+    {
+      "Key": "app.ShowPasswords",
+      "MatchingTranslation": "Show Phassphrases",
+      "Locked": false,
+      "TimeAdded": "2020-07-31T23:34:54.7509433Z",
+      "LastUpdate": "2020-07-31T23:34:54.8458102Z"
+    },
+    {
+      "Key": "app.Sla",
+      "MatchingTranslation": "Software License Agreement",
+      "Locked": false,
+      "TimeAdded": "2020-07-31T23:34:54.8458447Z",
+      "LastUpdate": "2020-07-31T23:34:54.9305703Z"
+    },
+    {
+      "Key": "app.TermsOfServiceCheck",
+      "MatchingTranslation": "Check here to indicate that you have read and agree to the terms of service.",
+      "Locked": false,
+      "TimeAdded": "2020-07-31T23:34:54.9305939Z",
+      "LastUpdate": "2020-07-31T23:34:55.0308138Z"
+    },
+    {
+      "Key": "app.TermsOfServiceClick",
+      "MatchingTranslation": "By clicking Yes and/or by using this software you agree to the terms of service",
+      "Locked": false,
+      "TimeAdded": "2020-07-31T23:34:55.0308381Z",
+      "LastUpdate": "2020-07-31T23:34:55.1290536Z"
+    },
+    {
+      "Key": "app.TestMode",
+      "MatchingTranslation": "TestNet Tools",
+      "Locked": false,
+      "TimeAdded": "2020-07-31T23:34:55.1290802Z",
+      "LastUpdate": "2020-07-31T23:34:55.1989853Z"
+    },
+    {
+      "Key": "app.Version",
+      "MatchingTranslation": "System version",
+      "Locked": false,
+      "TimeAdded": "2020-07-31T23:34:55.1990112Z",
+      "LastUpdate": "2020-07-31T23:34:55.2800151Z"
+    },
+    {
+      "Key": "app.Yes",
+      "MatchingTranslation": "Yes",
+      "Locked": false,
+      "TimeAdded": "2020-07-31T23:34:55.2800566Z",
+      "LastUpdate": "2020-07-31T23:34:55.358355Z"
+    },
+    {
+      "Key": "app.ServerRunningStop",
+      "MatchingTranslation": "The Neuralium node server is currently still running. Do you wish to stop it?",
+      "Locked": false,
+      "TimeAdded": "2020-07-31T23:34:55.3583823Z",
+      "LastUpdate": "2020-07-31T23:34:55.4367636Z"
+    },
+    {
+      "Key": "blockchain.BlockId",
+      "MatchingTranslation": "Block id",
+      "Locked": false,
+      "TimeAdded": "2020-07-31T23:34:55.4367923Z",
+      "LastUpdate": "2020-07-31T23:34:55.5222908Z"
+    },
+    {
+      "Key": "blockchain.DigestId",
+      "MatchingTranslation": "Digest id",
+      "Locked": false,
+      "TimeAdded": "2020-07-31T23:34:55.5223158Z",
+      "LastUpdate": "2020-07-31T23:34:55.5979903Z"
+    },
+    {
+      "Key": "blockchain.Hash",
+      "MatchingTranslation": "Block Hash",
+      "Locked": false,
+      "TimeAdded": "2020-07-31T23:34:55.5980157Z",
+      "LastUpdate": "2020-07-31T23:34:55.6728825Z"
+    },
+    {
+      "Key": "blockchain.NextBlockRemainingTime",
+      "MatchingTranslation": "ETA Next Block",
+      "Locked": false,
+      "TimeAdded": "2020-07-31T23:34:55.6729068Z",
+      "LastUpdate": "2020-07-31T23:34:55.747192Z"
+    },
+    {
+      "Key": "blockchain.PublicId",
+      "MatchingTranslation": "Public Block id",
+      "Locked": false,
+      "TimeAdded": "2020-07-31T23:34:55.7472309Z",
+      "LastUpdate": "2020-07-31T23:34:55.8263236Z"
+    },
+    {
+      "Key": "blockchain.Timestamp",
+      "MatchingTranslation": "Timestamp",
+      "Locked": false,
+      "TimeAdded": "2020-07-31T23:34:55.8263494Z",
+      "LastUpdate": "2020-07-31T23:34:55.9030344Z"
+    },
+    {
+      "Key": "contact.AddContact",
+      "MatchingTranslation": "Add contact",
+      "Locked": false,
+      "TimeAdded": "2020-07-31T23:34:55.9030618Z",
+      "LastUpdate": "2020-07-31T23:34:55.9748258Z"
+    },
+    {
+      "Key": "contact.AddContactExplanation",
+      "MatchingTranslation": "Add a contact by entering their account ID and user name.",
+      "Locked": false,
+      "TimeAdded": "2020-07-31T23:34:55.9748522Z",
+      "LastUpdate": "2020-07-31T23:34:56.0471689Z"
+    },
+    {
+      "Key": "contact.AlreadyExists",
+      "MatchingTranslation": "Contact {{name}} already exists with that ID {{{id}}}",
+      "Locked": false,
+      "TimeAdded": "2020-07-31T23:34:56.0471944Z",
+      "LastUpdate": "2020-07-31T23:34:56.1185998Z"
+    },
+    {
+      "Key": "contact.PleaseConfirmDeletionOfContact",
+      "MatchingTranslation": "Please confirm deletion of contact",
+      "Locked": false,
+      "TimeAdded": "2020-07-31T23:34:56.1186261Z",
+      "LastUpdate": "2020-07-31T23:34:56.1978833Z"
+    },
+    {
+      "Key": "contact.Success",
+      "MatchingTranslation": "Contact saved",
+      "Locked": false,
+      "TimeAdded": "2020-07-31T23:34:56.1979095Z",
+      "LastUpdate": "2020-07-31T23:34:56.2815023Z"
+    },
+    {
+      "Key": "contact.Title",
+      "MatchingTranslation": "Contacts",
+      "Locked": false,
+      "TimeAdded": "2020-07-31T23:34:56.2815295Z",
+      "LastUpdate": "2020-07-31T23:34:56.3634478Z"
+    },
+    {
+      "Key": "contact.Explain",
+      "MatchingTranslation": "Your friends and their account numbers for quick access.",
+      "Locked": false,
+      "TimeAdded": "2020-07-31T23:34:56.3634745Z",
+      "LastUpdate": "2020-07-31T23:34:56.4418587Z"
+    },
+    {
+      "Key": "dashboard.Accounts",
+      "MatchingTranslation": "Accounts",
+      "Locked": false,
+      "TimeAdded": "2020-07-31T23:34:56.4418889Z",
+      "LastUpdate": "2020-07-31T23:34:56.5237056Z"
+    },
+    {
+      "Key": "dashboard.AccountsList",
+      "MatchingTranslation": "Accounts list",
+      "Locked": false,
+      "TimeAdded": "2020-07-31T23:34:56.5237323Z",
+      "LastUpdate": "2020-07-31T23:34:56.5996032Z"
+    },
+    {
+      "Key": "dashboard.BlockInfo",
+      "MatchingTranslation": "Block Information",
+      "Locked": false,
+      "TimeAdded": "2020-07-31T23:34:56.5996292Z",
+      "LastUpdate": "2020-07-31T23:34:56.686276Z"
+    },
+    {
+      "Key": "dashboard.DigestInfo",
+      "MatchingTranslation": "Digest Information",
+      "Locked": false,
+      "TimeAdded": "2020-07-31T23:34:56.6863024Z",
+      "LastUpdate": "2020-07-31T23:34:56.7779077Z"
+    },
+    {
+      "Key": "dashboard.ElectionInfo",
+      "MatchingTranslation": "Election Information",
+      "Locked": false,
+      "TimeAdded": "2020-07-31T23:34:56.7779509Z",
+      "LastUpdate": "2020-07-31T23:34:56.8511838Z"
+    },
+    {
+      "Key": "dashboard.Maturity",
+      "MatchingTranslation": "Maturity",
+      "Locked": false,
+      "TimeAdded": "2020-07-31T23:34:56.8512107Z",
+      "LastUpdate": "2020-07-31T23:34:56.9282604Z"
+    },
+    {
+      "Key": "dashboard.NoAccount",
+      "MatchingTranslation": "No account",
+      "Locked": false,
+      "TimeAdded": "2020-07-31T23:34:56.9282877Z",
+      "LastUpdate": "2020-07-31T23:34:57.0323197Z"
+    },
+    {
+      "Key": "dashboard.PublicationTimes",
+      "MatchingTranslation": "Publication Time",
+      "Locked": false,
+      "TimeAdded": "2020-07-31T23:34:57.0323464Z",
+      "LastUpdate": "2020-07-31T23:34:57.122899Z"
+    },
+    {
+      "Key": "dashboard.PublishAccount",
+      "MatchingTranslation": "Publish account",
+      "Locked": false,
+      "TimeAdded": "2020-07-31T23:34:57.122925Z",
+      "LastUpdate": "2020-07-31T23:34:57.2019508Z"
+    },
+    {
+      "Key": "dashboard.SelectAsCurrent",
+      "MatchingTranslation": "Select as current",
+      "Locked": false,
+      "TimeAdded": "2020-07-31T23:34:57.2019809Z",
+      "LastUpdate": "2020-07-31T23:34:57.282629Z"
+    },
+    {
+      "Key": "dashboard.System",
+      "MatchingTranslation": "System",
+      "Locked": false,
+      "TimeAdded": "2020-07-31T23:34:57.2826569Z",
+      "LastUpdate": "2020-07-31T23:34:57.3566269Z"
+    },
+    {
+      "Key": "dashboard.Title",
+      "MatchingTranslation": "Dashboard",
+      "Locked": false,
+      "TimeAdded": "2020-07-31T23:34:57.3566536Z",
+      "LastUpdate": "2020-07-31T23:34:57.4297604Z"
+    },
+    {
+      "Key": "dashboard.Type",
+      "MatchingTranslation": "Type",
+      "Locked": false,
+      "TimeAdded": "2020-07-31T23:34:57.429788Z",
+      "LastUpdate": "2020-07-31T23:34:57.509949Z"
+    },
+    {
+      "Key": "dashboard.Explain",
+      "MatchingTranslation": "The main point of view on the blockchain and your account(s).",
+      "Locked": false,
+      "TimeAdded": "2020-07-31T23:34:57.5099758Z",
+      "LastUpdate": "2020-07-31T23:34:57.5825432Z"
+    },
+    {
+      "Key": "error.InformationsNotCorrectPleaseRetry",
+      "MatchingTranslation": "Informations are not correct. Please retry.",
+      "Locked": false,
+      "TimeAdded": "2020-07-31T23:34:57.5825729Z",
+      "LastUpdate": "2020-07-31T23:34:57.6599881Z"
+    },
+    {
+      "Key": "event.NeuraliumMiningBountyAllocated",
+      "MatchingTranslation": "Mining Bounty Allocated",
+      "Locked": false,
+      "TimeAdded": "2020-07-31T23:34:57.6600174Z",
+      "LastUpdate": "2020-07-31T23:34:57.729707Z"
+    },
+    {
+      "Key": "event.MiningElected",
+      "MatchingTranslation": "Mining Candidate",
+      "Locked": false,
+      "TimeAdded": "2020-07-31T23:34:57.7297352Z",
+      "LastUpdate": "2020-07-31T23:34:57.8040237Z"
+    },
+    {
+      "Key": "event.MiningEnded",
+      "MatchingTranslation": "Mining Ended",
+      "Locked": false,
+      "TimeAdded": "2020-07-31T23:34:57.8040513Z",
+      "LastUpdate": "2020-07-31T23:34:57.877367Z"
+    },
+    {
+      "Key": "event.MiningPrimeElected",
+      "MatchingTranslation": "Mining Elected",
+      "Locked": false,
+      "TimeAdded": "2020-07-31T23:34:57.8774075Z",
+      "LastUpdate": "2020-07-31T23:34:57.9928156Z"
+    },
+    {
+      "Key": "event.MiningPrimeElectedMissed",
+      "MatchingTranslation": "We were not elected in election from block: ",
+      "Locked": false,
+      "TimeAdded": "2020-07-31T23:34:57.9928452Z",
+      "LastUpdate": "2020-07-31T23:34:58.1184154Z"
+    },
+    {
+      "Key": "event.MiningStarted",
+      "MatchingTranslation": "Mining Started",
+      "Locked": false,
+      "TimeAdded": "2020-07-31T23:34:58.1184432Z",
+      "LastUpdate": "2020-07-31T23:34:58.1969751Z"
+    },
+    {
+      "Key": "event.MiningStatusChanged",
+      "MatchingTranslation": "Mining Status Changed",
+      "Locked": false,
+      "TimeAdded": "2020-07-31T23:34:58.1970231Z",
+      "LastUpdate": "2020-07-31T23:34:58.27633Z"
+    },
+    {
+      "Key": "history.All",
+      "MatchingTranslation": "All",
+      "Locked": false,
+      "TimeAdded": "2020-07-31T23:34:58.276379Z",
+      "LastUpdate": "2020-07-31T23:34:58.3525673Z"
+    },
+    {
+      "Key": "history.Amount",
+      "MatchingTranslation": "Amount",
+      "Locked": false,
+      "TimeAdded": "2020-07-31T23:34:58.3525968Z",
+      "LastUpdate": "2020-07-31T23:34:58.4249119Z"
+    },
+    {
+      "Key": "history.Details",
+      "MatchingTranslation": "Details",
+      "Locked": false,
+      "TimeAdded": "2020-07-31T23:34:58.4249414Z",
+      "LastUpdate": "2020-07-31T23:34:58.505005Z"
+    },
+    {
+      "Key": "history.From",
+      "MatchingTranslation": "From",
+      "Locked": false,
+      "TimeAdded": "2020-07-31T23:34:58.5050324Z",
+      "LastUpdate": "2020-07-31T23:34:58.5832481Z"
+    },
+    {
+      "Key": "history.Object",
+      "MatchingTranslation": "Object",
+      "Locked": false,
+      "TimeAdded": "2020-07-31T23:34:58.583278Z",
+      "LastUpdate": "2020-07-31T23:34:58.661707Z"
+    },
+    {
+      "Key": "history.Received",
+      "MatchingTranslation": "Received",
+      "Locked": false,
+      "TimeAdded": "2020-07-31T23:34:58.6617351Z",
+      "LastUpdate": "2020-07-31T23:34:58.7685323Z"
+    },
+    {
+      "Key": "history.Sent",
+      "MatchingTranslation": "Sent",
+      "Locked": false,
+      "TimeAdded": "2020-07-31T23:34:58.7685607Z",
+      "LastUpdate": "2020-07-31T23:34:58.842298Z"
+    },
+    {
+      "Key": "history.Status",
+      "MatchingTranslation": "Status",
+      "Locked": false,
+      "TimeAdded": "2020-07-31T23:34:58.8423266Z",
+      "LastUpdate": "2020-07-31T23:34:58.9165331Z"
+    },
+    {
+      "Key": "history.Tip",
+      "MatchingTranslation": "Tip",
+      "Locked": false,
+      "TimeAdded": "2020-07-31T23:34:58.9165624Z",
+      "LastUpdate": "2020-07-31T23:34:58.993768Z"
+    },
+    {
+      "Key": "history.Title",
+      "MatchingTranslation": "Transactions",
+      "Locked": false,
+      "TimeAdded": "2020-07-31T23:34:58.9937972Z",
+      "LastUpdate": "2020-07-31T23:34:59.0804778Z"
+    },
+    {
+      "Key": "history.To",
+      "MatchingTranslation": "To",
+      "Locked": false,
+      "TimeAdded": "2020-07-31T23:34:59.0805072Z",
+      "LastUpdate": "2020-07-31T23:34:59.1658036Z"
+    },
+    {
+      "Key": "history.Explain",
+      "MatchingTranslation": "Your transaction history with technical details about their inner structure",
+      "Locked": false,
+      "TimeAdded": "2020-07-31T23:34:59.1658335Z",
+      "LastUpdate": "2020-07-31T23:34:59.2478018Z"
+    },
+    {
+      "Key": "mining.Mining",
+      "MatchingTranslation": "Mining",
+      "Locked": false,
+      "TimeAdded": "2020-07-31T23:34:59.2478545Z",
+      "LastUpdate": "2020-07-31T23:34:59.3307344Z"
+    },
+    {
+      "Key": "mining.MiningControls",
+      "MatchingTranslation": "Mining Controls",
+      "Locked": false,
+      "TimeAdded": "2020-07-31T23:34:59.3307643Z",
+      "LastUpdate": "2020-07-31T23:34:59.4083043Z"
+    },
+    {
+      "Key": "mining.Start",
+      "MatchingTranslation": "Press to Start Mining",
+      "Locked": false,
+      "TimeAdded": "2020-07-31T23:34:59.408334Z",
+      "LastUpdate": "2020-07-31T23:34:59.4968969Z"
+    },
+    {
+      "Key": "mining.Stop",
+      "MatchingTranslation": "Press to Stop Mining",
+      "Locked": false,
+      "TimeAdded": "2020-07-31T23:34:59.496927Z",
+      "LastUpdate": "2020-07-31T23:34:59.5740585Z"
+    },
+    {
+      "Key": "mining.Events",
+      "MatchingTranslation": "Mining Events",
+      "Locked": false,
+      "TimeAdded": "2020-07-31T23:34:59.5740887Z",
+      "LastUpdate": "2020-07-31T23:34:59.7178981Z"
+    },
+    {
+      "Key": "mining.CurrentlyMining",
+      "MatchingTranslation": "Currently Mining",
+      "Locked": false,
+      "TimeAdded": "2020-07-31T23:34:59.717928Z",
+      "LastUpdate": "2020-07-31T23:34:59.7947326Z"
+    },
+    {
+      "Key": "mining.NotCurrentlyMining",
+      "MatchingTranslation": "Not Currently Mining",
+      "Locked": false,
+      "TimeAdded": "2020-07-31T23:34:59.794764Z",
+      "LastUpdate": "2020-07-31T23:34:59.8795647Z"
+    },
+    {
+      "Key": "mining.InformationPanel",
+      "MatchingTranslation": "Mining Information Panel",
+      "Locked": false,
+      "TimeAdded": "2020-07-31T23:34:59.8795956Z",
+      "LastUpdate": "2020-07-31T23:34:59.9886153Z"
+    },
+    {
+      "Key": "mining.ExplainInfoPanel",
+      "MatchingTranslation": "Various useful infomation adn statistics about your mining sessions",
+      "Locked": false,
+      "TimeAdded": "2020-07-31T23:34:59.9886478Z",
+      "LastUpdate": "2020-07-31T23:35:00.0714554Z"
+    },
+    {
+      "Key": "mining.Explain",
+      "MatchingTranslation": "Here you can put your computer to work by making it perform mathematical puzzles to unlock new Neuraliums.",
+      "Locked": false,
+      "TimeAdded": "2020-07-31T23:35:00.0714874Z",
+      "LastUpdate": "2020-07-31T23:35:00.1499886Z"
+    },
+    {
+      "Key": "mining.Miningportalert",
+      "MatchingTranslation": "Note: In order to mine, your TCP port should be connectible by other nodes on the p2p. Sharing is the proper etiquette on a p2p. If you wish to mine in the second and first mining tiers, the port MUST be connectible otherwise the node will never successfully mine any block. Please ensure you open your firewall and enable port forwarding.",
+      "Locked": false,
+      "TimeAdded": "2020-07-31T23:35:00.1500184Z",
+      "LastUpdate": "2020-07-31T23:35:00.221575Z"
+    },
+    {
+      "Key": "mining.PortConnectable",
+      "MatchingTranslation": "Port 33888 is connectable.",
+      "Locked": false,
+      "TimeAdded": "2020-07-31T23:35:00.2216064Z",
+      "LastUpdate": "2020-07-31T23:35:00.2982221Z"
+    },
+    {
+      "Key": "mining.PortNotConnectable",
+      "MatchingTranslation": "Port 33888 is not connectable.",
+      "Locked": false,
+      "TimeAdded": "2020-07-31T23:35:00.2982535Z",
+      "LastUpdate": "2020-07-31T23:35:00.3723291Z"
+    },
+    {
+      "Key": "mining.Options",
+      "MatchingTranslation": "Mining Options",
+      "Locked": false,
+      "TimeAdded": "2020-07-31T23:35:00.3723603Z",
+      "LastUpdate": "2020-07-31T23:35:00.4535662Z"
+    },
+    {
+      "Key": "mining.OptionTrxSelectionStrategy",
+      "MatchingTranslation": "Transaction Selection Strategy",
+      "Locked": false,
+      "TimeAdded": "2020-07-31T23:35:00.4535978Z",
+      "LastUpdate": "2020-07-31T23:35:00.5294759Z"
+    },
+    {
+      "Key": "mining.HighestTipStrategy",
+      "MatchingTranslation": "Highest Tip",
+      "Locked": false,
+      "TimeAdded": "2020-07-31T23:35:00.5295072Z",
+      "LastUpdate": "2020-07-31T23:35:00.6055231Z"
+    },
+    {
+      "Key": "mining.CreationTimeStrategy",
+      "MatchingTranslation": "Creation Time",
+      "Locked": false,
+      "TimeAdded": "2020-07-31T23:35:00.6055546Z",
+      "LastUpdate": "2020-07-31T23:35:00.6834795Z"
+    },
+    {
+      "Key": "mining.TransactionTypeStrategy",
+      "MatchingTranslation": "Transaction Type",
+      "Locked": false,
+      "TimeAdded": "2020-07-31T23:35:00.683513Z",
+      "LastUpdate": "2020-07-31T23:35:00.7607829Z"
+    },
+    {
+      "Key": "mining.TransactionSizeStrategy",
+      "MatchingTranslation": "Transaction Size",
+      "Locked": false,
+      "TimeAdded": "2020-07-31T23:35:00.7608143Z",
+      "LastUpdate": "2020-07-31T23:35:00.8299689Z"
+    },
+    {
+      "Key": "mining.RandomStrategy",
+      "MatchingTranslation": "Random",
+      "Locked": false,
+      "TimeAdded": "2020-07-31T23:35:00.8300013Z",
+      "LastUpdate": "2020-07-31T23:35:00.9070151Z"
+    },
+    {
+      "Key": "mining.OlderToNewer",
+      "MatchingTranslation": "Older to Newer",
+      "Locked": false,
+      "TimeAdded": "2020-07-31T23:35:00.9070468Z",
+      "LastUpdate": "2020-07-31T23:35:01.0196167Z"
+    },
+    {
+      "Key": "mining.NewerToOlder",
+      "MatchingTranslation": "Newer to Older",
+      "Locked": false,
+      "TimeAdded": "2020-07-31T23:35:01.0196484Z",
+      "LastUpdate": "2020-07-31T23:35:01.0958568Z"
+    },
+    {
+      "Key": "mining.Random",
+      "MatchingTranslation": "Random",
+      "Locked": false,
+      "TimeAdded": "2020-07-31T23:35:01.095888Z",
+      "LastUpdate": "2020-07-31T23:35:01.1671307Z"
+    },
+    {
+      "Key": "mining.MostToLess",
+      "MatchingTranslation": "Most to Less",
+      "Locked": false,
+      "TimeAdded": "2020-07-31T23:35:01.1671671Z",
+      "LastUpdate": "2020-07-31T23:35:01.2481795Z"
+    },
+    {
+      "Key": "mining.LessToMost",
+      "MatchingTranslation": "Less to Most",
+      "Locked": false,
+      "TimeAdded": "2020-07-31T23:35:01.2482408Z",
+      "LastUpdate": "2020-07-31T23:35:01.3385077Z"
+    },
+    {
+      "Key": "mining.LargerToSmaller",
+      "MatchingTranslation": "Larger to Smaller",
+      "Locked": false,
+      "TimeAdded": "2020-07-31T23:35:01.3385401Z",
+      "LastUpdate": "2020-07-31T23:35:01.4241684Z"
+    },
+    {
+      "Key": "mining.SmallerToLarger",
+      "MatchingTranslation": "Smaller to Larger",
+      "Locked": false,
+      "TimeAdded": "2020-07-31T23:35:01.4242042Z",
+      "LastUpdate": "2020-07-31T23:35:01.5000507Z"
+    },
+    {
+      "Key": "mining.FirstTier",
+      "MatchingTranslation": "Mining in the 1st tier",
+      "Locked": false,
+      "TimeAdded": "2020-07-31T23:35:01.500083Z",
+      "LastUpdate": "2020-07-31T23:35:01.5785797Z"
+    },
+    {
+      "Key": "mining.SecondTier",
+      "MatchingTranslation": "Mining in the 2nd tier",
+      "Locked": false,
+      "TimeAdded": "2020-07-31T23:35:01.5786048Z",
+      "LastUpdate": "2020-07-31T23:35:01.6473983Z"
+    },
+    {
+      "Key": "mining.ThirdTier",
+      "MatchingTranslation": "Mining in the 3rd tier",
+      "Locked": false,
+      "TimeAdded": "2020-07-31T23:35:01.6474245Z",
+      "LastUpdate": "2020-07-31T23:35:01.7352677Z"
+    },
+    {
+      "Key": "mining.FourthTier",
+      "MatchingTranslation": "Mining in the 4th tier",
+      "Locked": false,
+      "TimeAdded": "2020-07-31T23:35:01.7352933Z",
+      "LastUpdate": "2020-07-31T23:35:01.8114347Z"
+    },
+    {
+      "Key": "mining.NotMining",
+      "MatchingTranslation": "Not mining",
+      "Locked": false,
+      "TimeAdded": "2020-07-31T23:35:01.8114603Z",
+      "LastUpdate": "2020-07-31T23:35:01.8959601Z"
+    },
+    {
+      "Key": "mining.BlocksElected",
+      "MatchingTranslation": "Blocks Elected",
+      "Locked": false,
+      "TimeAdded": "2020-07-31T23:35:01.895986Z",
+      "LastUpdate": "2020-07-31T23:35:01.9682535Z"
+    },
+    {
+      "Key": "mining.BlocksProcessed",
+      "MatchingTranslation": "Blocks Processed",
+      "Locked": false,
+      "TimeAdded": "2020-07-31T23:35:01.9682811Z",
+      "LastUpdate": "2020-07-31T23:35:02.0506795Z"
+    },
+    {
+      "Key": "mining.LastBlockElected",
+      "MatchingTranslation": "Last Elected Block Id",
+      "Locked": false,
+      "TimeAdded": "2020-07-31T23:35:02.0507065Z",
+      "LastUpdate": "2020-07-31T23:35:02.1293918Z"
+    },
+    {
+      "Key": "mining.PercentElected",
+      "MatchingTranslation": "Percent Elected",
+      "Locked": false,
+      "TimeAdded": "2020-07-31T23:35:02.1294184Z",
+      "LastUpdate": "2020-07-31T23:35:02.2212575Z"
+    },
+    {
+      "Key": "mining.AverageBountyPerBlock",
+      "MatchingTranslation": "Average Bounty per Block",
+      "Locked": false,
+      "TimeAdded": "2020-07-31T23:35:02.2212843Z",
+      "LastUpdate": "2020-07-31T23:35:02.2923965Z"
+    },
+    {
+      "Key": "mining.CurrentDifficulty",
+      "MatchingTranslation": "Current Difficulty",
+      "Locked": false,
+      "TimeAdded": "2020-07-31T23:35:02.2924239Z",
+      "LastUpdate": "2020-07-31T23:35:02.3810636Z"
+    },
+    {
+      "Key": "mining.Statistics",
+      "MatchingTranslation": "Statistics",
+      "Locked": false,
+      "TimeAdded": "2020-07-31T23:35:02.381092Z",
+      "LastUpdate": "2020-07-31T23:35:02.4507191Z"
+    },
+    {
+      "Key": "mining.StatisticsSession",
+      "MatchingTranslation": "Current Session",
+      "Locked": false,
+      "TimeAdded": "2020-07-31T23:35:02.4507466Z",
+      "LastUpdate": "2020-07-31T23:35:02.5232902Z"
+    },
+    {
+      "Key": "mining.StatisticsSessionDescription",
+      "MatchingTranslation": "Statistics in the current mining session",
+      "Locked": false,
+      "TimeAdded": "2020-07-31T23:35:02.5233172Z",
+      "LastUpdate": "2020-07-31T23:35:02.5938795Z"
+    },
+    {
+      "Key": "mining.StatisticsAggregate",
+      "MatchingTranslation": "Aggregate Since Inception",
+      "Locked": false,
+      "TimeAdded": "2020-07-31T23:35:02.5939076Z",
+      "LastUpdate": "2020-07-31T23:35:02.6819537Z"
+    },
+    {
+      "Key": "mining.StatisticsAggregateDescription",
+      "MatchingTranslation": "Statistics since wallet creation",
+      "Locked": false,
+      "TimeAdded": "2020-07-31T23:35:02.6819817Z",
+      "LastUpdate": "2020-07-31T23:35:02.7869172Z"
+    },
+    {
+      "Key": "mining.MiningSessions",
+      "MatchingTranslation": "Total Mining Sessions",
+      "Locked": false,
+      "TimeAdded": "2020-07-31T23:35:02.7869441Z",
+      "LastUpdate": "2020-07-31T23:35:02.8652689Z"
+    },
+    {
+      "Key": "mining.RefreshStatistics",
+      "MatchingTranslation": "Refresh",
+      "Locked": false,
+      "TimeAdded": "2020-07-31T23:35:02.8652967Z",
+      "LastUpdate": "2020-07-31T23:35:02.9622822Z"
+    },
+    {
+      "Key": "mining.StartBlock",
+      "MatchingTranslation": "Block Started",
+      "Locked": false,
+      "TimeAdded": "2020-07-31T23:35:02.9623106Z",
+      "LastUpdate": "2020-07-31T23:35:03.0360775Z"
+    },
+    {
+      "Key": "mining.StateTime",
+      "MatchingTranslation": "Time Started",
+      "Locked": false,
+      "TimeAdded": "2020-07-31T23:35:03.0361044Z",
+      "LastUpdate": "2020-07-31T23:35:03.1144887Z"
+    },
+    {
+      "Key": "mining.Advanced",
+      "MatchingTranslation": "Advanced Options",
+      "Locked": false,
+      "TimeAdded": "2020-07-31T23:35:03.1145163Z",
+      "LastUpdate": "2020-07-31T23:35:03.1932356Z"
+    },
+    {
+      "Key": "mining.ClearCachedCredentials",
+      "MatchingTranslation": "Clear Cached Credentials",
+      "Locked": false,
+      "TimeAdded": "2020-07-31T23:35:03.1932648Z",
+      "LastUpdate": "2020-07-31T23:35:03.264095Z"
+    },
+    {
+      "Key": "mining.ConfirmClearCachedCredentials",
+      "MatchingTranslation": "Should the cached mining credentials be cleared? (this can affect performance negatively and is not recommended)",
+      "Locked": false,
+      "TimeAdded": "2020-07-31T23:35:03.2641484Z",
+      "LastUpdate": "2020-07-31T23:35:03.34384Z"
+    },
+    {
+      "Key": "mining.CachedCredentialsCleared",
+      "MatchingTranslation": "Cached credentials successfully cleared",
+      "Locked": false,
+      "TimeAdded": "2020-07-31T23:35:03.3438677Z",
+      "LastUpdate": "2020-07-31T23:35:03.4212121Z"
+    },
+    {
+      "Key": "mining.CachedCredentialsFailed",
+      "MatchingTranslation": "Cached credentials clearing failed",
+      "Locked": false,
+      "TimeAdded": "2020-07-31T23:35:03.4212404Z",
+      "LastUpdate": "2020-07-31T23:35:03.4924288Z"
+    },
+    {
+      "Key": "mining.TotalBounties",
+      "MatchingTranslation": "Total Bounties",
+      "Locked": false,
+      "TimeAdded": "2020-07-31T23:35:03.4924585Z",
+      "LastUpdate": "2020-07-31T23:35:03.5754439Z"
+    },
+    {
+      "Key": "mining.TotalTips",
+      "MatchingTranslation": "Total Tips",
+      "Locked": false,
+      "TimeAdded": "2020-07-31T23:35:03.5754906Z",
+      "LastUpdate": "2020-07-31T23:35:03.6476674Z"
+    },
+    {
+      "Key": "mining.Protocol",
+      "MatchingTranslation": "Mining Protocol",
+      "Locked": false,
+      "TimeAdded": "2020-07-31T23:35:03.6476952Z",
+      "LastUpdate": "2020-07-31T23:35:03.7257925Z"
+    },
+    {
+      "Key": "mining.MiningTier",
+      "MatchingTranslation": "Desired Mining Tier",
+      "Locked": false,
+      "TimeAdded": "2020-07-31T23:35:03.7258204Z",
+      "LastUpdate": "2020-07-31T23:35:03.8015062Z"
+    },
+    {
+      "Key": "mining.1stTier",
+      "MatchingTranslation": "1st",
+      "Locked": false,
+      "TimeAdded": "2020-07-31T23:35:03.8015361Z",
+      "LastUpdate": "2020-07-31T23:35:03.8803984Z"
+    },
+    {
+      "Key": "mining.2ndTier",
+      "MatchingTranslation": "2nd",
+      "Locked": false,
+      "TimeAdded": "2020-07-31T23:35:03.8804309Z",
+      "LastUpdate": "2020-07-31T23:35:03.966266Z"
+    },
+    {
+      "Key": "mining.3rdTier",
+      "MatchingTranslation": "3rd",
+      "Locked": false,
+      "TimeAdded": "2020-07-31T23:35:03.9663141Z",
+      "LastUpdate": "2020-07-31T23:35:04.0497694Z"
+    },
+    {
+      "Key": "mining.4thTier",
+      "MatchingTranslation": "4th",
+      "Locked": false,
+      "TimeAdded": "2020-07-31T23:35:04.0497991Z",
+      "LastUpdate": "2020-07-31T23:35:04.1401976Z"
+    },
+    {
+      "Key": "mining.AutoTier",
+      "MatchingTranslation": "Auto",
+      "Locked": false,
+      "TimeAdded": "2020-07-31T23:35:04.1402284Z",
+      "LastUpdate": "2020-07-31T23:35:04.2093138Z"
+    },
+    {
+      "Key": "mining.PortNotConnectableCantMine",
+      "MatchingTranslation": "In order to mine in the 1st or 2nd tiers, your p2p port must be connectable. Cannot enable mining as is. If you cannot open the port, then configure mining to operate in the 3rd tier.",
+      "Locked": false,
+      "TimeAdded": "2020-07-31T23:35:04.2093441Z",
+      "LastUpdate": "2020-07-31T23:35:04.3174669Z"
+    },
+    {
+      "Key": "mining.VerifyAccount",
+      "MatchingTranslation": "Verify your Account",
+      "Locked": false,
+      "TimeAdded": "2020-07-31T23:35:04.3174965Z",
+      "LastUpdate": "2020-07-31T23:35:04.3903879Z"
+    },
+    {
+      "Key": "neuralium.Credit",
+      "MatchingTranslation": "Credit",
+      "Locked": false,
+      "TimeAdded": "2020-07-31T23:35:04.3904181Z",
+      "LastUpdate": "2020-07-31T23:35:04.4673947Z"
+    },
+    {
+      "Key": "neuralium.Debit",
+      "MatchingTranslation": "Debit",
+      "Locked": false,
+      "TimeAdded": "2020-07-31T23:35:04.467426Z",
+      "LastUpdate": "2020-07-31T23:35:04.5500172Z"
+    },
+    {
+      "Key": "neuralium.Frozen",
+      "MatchingTranslation": "Frozen",
+      "Locked": false,
+      "TimeAdded": "2020-07-31T23:35:04.5500476Z",
+      "LastUpdate": "2020-07-31T23:35:04.6249896Z"
+    },
+    {
+      "Key": "neuralium.Timeline",
+      "MatchingTranslation": "Timeline",
+      "Locked": false,
+      "TimeAdded": "2020-07-31T23:35:04.6250193Z",
+      "LastUpdate": "2020-07-31T23:35:04.7090177Z"
+    },
+    {
+      "Key": "neuralium.IncomingNeuraliums",
+      "MatchingTranslation": "Incoming Neuraliums",
+      "Locked": false,
+      "TimeAdded": "2020-07-31T23:35:04.7090491Z",
+      "LastUpdate": "2020-07-31T23:35:04.7772528Z"
+    },
+    {
+      "Key": "neuralium.NextPeriod",
+      "MatchingTranslation": "Following Day",
+      "Locked": false,
+      "TimeAdded": "2020-07-31T23:35:04.7772837Z",
+      "LastUpdate": "2020-07-31T23:35:04.8620464Z"
+    },
+    {
+      "Key": "neuralium.NoTransaction",
+      "MatchingTranslation": "No transaction found for this timeline item.",
+      "Locked": false,
+      "TimeAdded": "2020-07-31T23:35:04.8620765Z",
+      "LastUpdate": "2020-07-31T23:35:04.9355268Z"
+    },
+    {
+      "Key": "neuralium.OutcomingNeuraliums",
+      "MatchingTranslation": "Outcoming Neuraliums",
+      "Locked": false,
+      "TimeAdded": "2020-07-31T23:35:04.9355774Z",
+      "LastUpdate": "2020-07-31T23:35:05.0307339Z"
+    },
+    {
+      "Key": "neuralium.PreviousPeriod",
+      "MatchingTranslation": "Previous Day",
+      "Locked": false,
+      "TimeAdded": "2020-07-31T23:35:05.0307631Z",
+      "LastUpdate": "2020-07-31T23:35:05.1082022Z"
+    },
+    {
+      "Key": "neuralium.Title",
+      "MatchingTranslation": "Neuraliums",
+      "Locked": false,
+      "TimeAdded": "2020-07-31T23:35:05.1082488Z",
+      "LastUpdate": "2020-07-31T23:35:05.184455Z"
+    },
+    {
+      "Key": "neuralium.Total",
+      "MatchingTranslation": "Total",
+      "Locked": false,
+      "TimeAdded": "2020-07-31T23:35:05.1844846Z",
+      "LastUpdate": "2020-07-31T23:35:05.2614327Z"
+    },
+    {
+      "Key": "neuralium.Usable",
+      "MatchingTranslation": "Usable",
+      "Locked": false,
+      "TimeAdded": "2020-07-31T23:35:05.2614627Z",
+      "LastUpdate": "2020-07-31T23:35:05.3350959Z"
+    },
+    {
+      "Key": "neuralium.Explain",
+      "MatchingTranslation": "Everything related to your Neuraliums in your accounts",
+      "Locked": false,
+      "TimeAdded": "2020-07-31T23:35:05.335128Z",
+      "LastUpdate": "2020-07-31T23:35:05.4065124Z"
+    },
+    {
+      "Key": "send.BlockchainDoesNotAllowSend",
+      "MatchingTranslation": "Blockchain does not allow Send",
+      "Locked": false,
+      "TimeAdded": "2020-07-31T23:35:05.4065464Z",
+      "LastUpdate": "2020-07-31T23:35:05.4774289Z"
+    },
+    {
+      "Key": "send.CantSend",
+      "MatchingTranslation": "Can't send transaction. Not enough peer connected.",
+      "Locked": false,
+      "TimeAdded": "2020-07-31T23:35:05.4774596Z",
+      "LastUpdate": "2020-07-31T23:35:05.5523716Z"
+    },
+    {
+      "Key": "send.InputContactIdManually",
+      "MatchingTranslation": "Input contact id manually",
+      "Locked": false,
+      "TimeAdded": "2020-07-31T23:35:05.5524022Z",
+      "LastUpdate": "2020-07-31T23:35:05.624742Z"
+    },
+    {
+      "Key": "send.NoAccountOrAccountNotActiveOrNotPublished",
+      "MatchingTranslation": "No account, account not active or not published",
+      "Locked": false,
+      "TimeAdded": "2020-07-31T23:35:05.6247718Z",
+      "LastUpdate": "2020-07-31T23:35:05.6973768Z"
+    },
+    {
+      "Key": "send.NotEnoughNeuraliums",
+      "MatchingTranslation": "Not enough Neuraliums to fulfill the transaction",
+      "Locked": false,
+      "TimeAdded": "2020-07-31T23:35:05.6974083Z",
+      "LastUpdate": "2020-07-31T23:35:05.7852163Z"
+    },
+    {
+      "Key": "send.PleaseChooseContactInTheListOrInputContactId",
+      "MatchingTranslation": "Please choose contact from the list or input contact id",
+      "Locked": false,
+      "TimeAdded": "2020-07-31T23:35:05.7852477Z",
+      "LastUpdate": "2020-07-31T23:35:05.8565887Z"
+    },
+    {
+      "Key": "send.PleaseConfirmSending",
+      "MatchingTranslation": "Please confirm sending",
+      "Locked": false,
+      "TimeAdded": "2020-07-31T23:35:05.8566202Z",
+      "LastUpdate": "2020-07-31T23:35:05.930851Z"
+    },
+    {
+      "Key": "send.PleaseInputNeuraliumAmount",
+      "MatchingTranslation": "Please input correct Neuralium amount",
+      "Locked": false,
+      "TimeAdded": "2020-07-31T23:35:05.9308828Z",
+      "LastUpdate": "2020-07-31T23:35:06.0043726Z"
+    },
+    {
+      "Key": "send.Send",
+      "MatchingTranslation": "Send",
+      "Locked": false,
+      "TimeAdded": "2020-07-31T23:35:06.0044035Z",
+      "LastUpdate": "2020-07-31T23:35:06.0806989Z"
+    },
+    {
+      "Key": "send.SendingSuccess",
+      "MatchingTranslation": "Neuraliums sent",
+      "Locked": false,
+      "TimeAdded": "2020-07-31T23:35:06.0807302Z",
+      "LastUpdate": "2020-07-31T23:35:06.1511842Z"
+    },
+    {
+      "Key": "send.SendingValueConfirmation",
+      "MatchingTranslation": "{{neuraliums}} neuraliums to account {{id}}",
+      "Locked": false,
+      "TimeAdded": "2020-07-31T23:35:06.1512163Z",
+      "LastUpdate": "2020-07-31T23:35:06.2233517Z"
+    },
+    {
+      "Key": "send.SendingValueConfirmationWithName",
+      "MatchingTranslation": "{{neuraliums}} neuraliums to {{name}} (account {{id}})",
+      "Locked": false,
+      "TimeAdded": "2020-07-31T23:35:06.223384Z",
+      "LastUpdate": "2020-07-31T23:35:06.3617426Z"
+    },
+    {
+      "Key": "send.Title",
+      "MatchingTranslation": "Send",
+      "Locked": false,
+      "TimeAdded": "2020-07-31T23:35:06.361774Z",
+      "LastUpdate": "2020-07-31T23:35:06.4467602Z"
+    },
+    {
+      "Key": "send.WrongFees",
+      "MatchingTranslation": "Tip value is not valid",
+      "Locked": false,
+      "TimeAdded": "2020-07-31T23:35:06.4467932Z",
+      "LastUpdate": "2020-07-31T23:35:06.5188295Z"
+    },
+    {
+      "Key": "send.TransactionError",
+      "MatchingTranslation": "Error occured sending transaction. Error codes: ",
+      "Locked": false,
+      "TimeAdded": "2020-07-31T23:35:06.5188799Z",
+      "LastUpdate": "2020-07-31T23:35:06.5986325Z"
+    },
+    {
+      "Key": "send.PresentationAccountId",
+      "MatchingTranslation": "Cannot send tokens to a presentation account Id",
+      "Locked": false,
+      "TimeAdded": "2020-07-31T23:35:06.5986631Z",
+      "LastUpdate": "2020-07-31T23:35:06.6728659Z"
+    },
+    {
+      "Key": "send.InvalidAccountId",
+      "MatchingTranslation": "Invalid account Id format",
+      "Locked": false,
+      "TimeAdded": "2020-07-31T23:35:06.6728983Z",
+      "LastUpdate": "2020-07-31T23:35:06.7522104Z"
+    },
+    {
+      "Key": "send.NotesDescription",
+      "MatchingTranslation": "An optional note that will be kept in your personal records only.",
+      "Locked": false,
+      "TimeAdded": "2020-07-31T23:35:06.7522457Z",
+      "LastUpdate": "2020-07-31T23:35:06.8850177Z"
+    },
+    {
+      "Key": "server.CheckingServer",
+      "MatchingTranslation": "Please wait while we verify if an active server exists...",
+      "Locked": false,
+      "TimeAdded": "2020-07-31T23:35:06.8850536Z",
+      "LastUpdate": "2020-07-31T23:35:06.9916039Z"
+    },
+    {
+      "Key": "server.NoActiveServer",
+      "MatchingTranslation": "No running server found.",
+      "Locked": false,
+      "TimeAdded": "2020-07-31T23:35:06.9916358Z",
+      "LastUpdate": "2020-07-31T23:35:07.0932547Z"
+    },
+    {
+      "Key": "server.NotConnectedToServer",
+      "MatchingTranslation": "Server not connected.",
+      "Locked": false,
+      "TimeAdded": "2020-07-31T23:35:07.0932865Z",
+      "LastUpdate": "2020-07-31T23:35:07.1761854Z"
+    },
+    {
+      "Key": "server.SearchForServerPath",
+      "MatchingTranslation": "Search for server path",
+      "Locked": false,
+      "TimeAdded": "2020-07-31T23:35:07.1762178Z",
+      "LastUpdate": "2020-07-31T23:35:07.2495752Z"
+    },
+    {
+      "Key": "server.ServerRunning",
+      "MatchingTranslation": "Server running",
+      "Locked": false,
+      "TimeAdded": "2020-07-31T23:35:07.2496123Z",
+      "LastUpdate": "2020-07-31T23:35:07.3168849Z"
+    },
+    {
+      "Key": "server.ServerShutdownCompleted",
+      "MatchingTranslation": "Server shutdown completed",
+      "Locked": false,
+      "TimeAdded": "2020-07-31T23:35:07.3169174Z",
+      "LastUpdate": "2020-07-31T23:35:07.3854602Z"
+    },
+    {
+      "Key": "server.ServerShutdownStarted",
+      "MatchingTranslation": "Server shutdown started",
+      "Locked": false,
+      "TimeAdded": "2020-07-31T23:35:07.3854926Z",
+      "LastUpdate": "2020-07-31T23:35:07.4555221Z"
+    },
+    {
+      "Key": "server.StartServer",
+      "MatchingTranslation": "Start server",
+      "Locked": false,
+      "TimeAdded": "2020-07-31T23:35:07.4555538Z",
+      "LastUpdate": "2020-07-31T23:35:07.5713228Z"
+    },
+    {
+      "Key": "server.StartingServer",
+      "MatchingTranslation": "Server is starting...",
+      "Locked": false,
+      "TimeAdded": "2020-07-31T23:35:07.5713578Z",
+      "LastUpdate": "2020-07-31T23:35:07.6435267Z"
+    },
+    {
+      "Key": "server.StartingServerShutdown",
+      "MatchingTranslation": "Starting server shutdown",
+      "Locked": false,
+      "TimeAdded": "2020-07-31T23:35:07.6435602Z",
+      "LastUpdate": "2020-07-31T23:35:07.726889Z"
+    },
+    {
+      "Key": "server.ExternallyStarted",
+      "MatchingTranslation": "Can not stop an externally started server",
+      "Locked": false,
+      "TimeAdded": "2020-07-31T23:35:07.7269238Z",
+      "LastUpdate": "2020-07-31T23:35:07.8082064Z"
+    },
+    {
+      "Key": "server.StopServer",
+      "MatchingTranslation": "Stop server",
+      "Locked": false,
+      "TimeAdded": "2020-07-31T23:35:07.808241Z",
+      "LastUpdate": "2020-07-31T23:35:07.8828234Z"
+    },
+    {
+      "Key": "server.FailedToStartServer",
+      "MatchingTranslation": "Failed to start server",
+      "Locked": false,
+      "TimeAdded": "2020-07-31T23:35:07.8828589Z",
+      "LastUpdate": "2020-07-31T23:35:07.9808696Z"
+    },
+    {
+      "Key": "server.Title",
+      "MatchingTranslation": "Server",
+      "Locked": false,
+      "TimeAdded": "2020-07-31T23:35:07.980904Z",
+      "LastUpdate": "2020-07-31T23:35:08.0570718Z"
+    },
+    {
+      "Key": "server.Explain",
+      "MatchingTranslation": "A window for advanced users which allows to manage the Neuralium node server.",
+      "Locked": false,
+      "TimeAdded": "2020-07-31T23:35:08.0571052Z",
+      "LastUpdate": "2020-07-31T23:35:08.1613486Z"
+    },
+    {
+      "Key": "server.EnableConsole",
+      "MatchingTranslation": "Enable console",
+      "Locked": false,
+      "TimeAdded": "2020-07-31T23:35:08.1614146Z",
+      "LastUpdate": "2020-07-31T23:35:08.2417765Z"
+    },
+    {
+      "Key": "server.DisableConsole",
+      "MatchingTranslation": "Disable console",
+      "Locked": false,
+      "TimeAdded": "2020-07-31T23:35:08.2418115Z",
+      "LastUpdate": "2020-07-31T23:35:08.3396897Z"
+    },
+    {
+      "Key": "settings.SettingsSaved",
+      "MatchingTranslation": "Settings Saved",
+      "Locked": false,
+      "TimeAdded": "2020-07-31T23:35:08.3397252Z",
+      "LastUpdate": "2020-07-31T23:35:08.4352946Z"
+    },
+    {
+      "Key": "settings.Title",
+      "MatchingTranslation": "Settings",
+      "Locked": false,
+      "TimeAdded": "2020-07-31T23:35:08.4353292Z",
+      "LastUpdate": "2020-07-31T23:35:08.5123088Z"
+    },
+    {
+      "Key": "settings.Explain",
+      "MatchingTranslation": "Various options you can configure to finetune your wallet.",
+      "Locked": false,
+      "TimeAdded": "2020-07-31T23:35:08.512343Z",
+      "LastUpdate": "2020-07-31T23:35:08.5936057Z"
+    },
+    {
+      "Key": "tools.Title",
+      "MatchingTranslation": "Tools",
+      "Locked": false,
+      "TimeAdded": "2020-07-31T23:35:08.5936439Z",
+      "LastUpdate": "2020-07-31T23:35:08.6731638Z"
+    },
+    {
+      "Key": "tools.Explain",
+      "MatchingTranslation": "Useful tools to help improve your Neuralium experience.",
+      "Locked": false,
+      "TimeAdded": "2020-07-31T23:35:08.6731996Z",
+      "LastUpdate": "2020-07-31T23:35:08.7498333Z"
+    },
+    {
+      "Key": "tools.BlockExplorer",
+      "MatchingTranslation": "Block Explorer",
+      "Locked": false,
+      "TimeAdded": "2020-07-31T23:35:08.7498681Z",
+      "LastUpdate": "2020-07-31T23:35:08.8462018Z"
+    },
+    {
+      "Key": "tools.ApiExplorer",
+      "MatchingTranslation": "API Explorer",
+      "Locked": false,
+      "TimeAdded": "2020-07-31T23:35:08.8462365Z",
+      "LastUpdate": "2020-07-31T23:35:08.916782Z"
+    },
+    {
+      "Key": "tools.PortMapping",
+      "MatchingTranslation": "Port Mapping",
+      "Locked": false,
+      "TimeAdded": "2020-07-31T23:35:08.916817Z",
+      "LastUpdate": "2020-07-31T23:35:08.9981954Z"
+    },
+    {
+      "Key": "blockexplorer.Search",
+      "MatchingTranslation": "search",
+      "Locked": false,
+      "TimeAdded": "2020-07-31T23:35:08.9982326Z",
+      "LastUpdate": "2020-07-31T23:35:09.0734056Z"
+    },
+    {
+      "Key": "apiexplorer.Run",
+      "MatchingTranslation": "Run",
+      "Locked": false,
+      "TimeAdded": "2020-07-31T23:35:09.0734464Z",
+      "LastUpdate": "2020-07-31T23:35:09.164528Z"
+    },
+    {
+      "Key": "sync.BlockchainStatus",
+      "MatchingTranslation": "Blockchain Status",
+      "Locked": false,
+      "TimeAdded": "2020-07-31T23:35:09.1645684Z",
+      "LastUpdate": "2020-07-31T23:35:09.2634401Z"
+    },
+    {
+      "Key": "sync.NotSynced",
+      "MatchingTranslation": "Not synced",
+      "Locked": false,
+      "TimeAdded": "2020-07-31T23:35:09.2635046Z",
+      "LastUpdate": "2020-07-31T23:35:09.3367412Z"
+    },
+    {
+      "Key": "sync.Peer",
+      "MatchingTranslation": "Peer(s)",
+      "Locked": false,
+      "TimeAdded": "2020-07-31T23:35:09.3367766Z",
+      "LastUpdate": "2020-07-31T23:35:09.4262811Z"
+    },
+    {
+      "Key": "sync.Unknown",
+      "MatchingTranslation": "Unknown",
+      "Locked": false,
+      "TimeAdded": "2020-07-31T23:35:09.4263165Z",
+      "LastUpdate": "2020-07-31T23:35:09.5099241Z"
+    },
+    {
+      "Key": "sync.Synced",
+      "MatchingTranslation": "Synced",
+      "Locked": false,
+      "TimeAdded": "2020-07-31T23:35:09.5099589Z",
+      "LastUpdate": "2020-07-31T23:35:09.5882748Z"
+    },
+    {
+      "Key": "sync.Syncing",
+      "MatchingTranslation": "Syncing",
+      "Locked": false,
+      "TimeAdded": "2020-07-31T23:35:09.5883109Z",
+      "LastUpdate": "2020-07-31T23:35:09.667895Z"
+    },
+    {
+      "Key": "sync.WalletStatus",
+      "MatchingTranslation": "Wallet Status",
+      "Locked": false,
+      "TimeAdded": "2020-07-31T23:35:09.6679302Z",
+      "LastUpdate": "2020-07-31T23:35:09.7687108Z"
+    },
+    {
+      "Key": "testMode.ParagrahOne",
+      "MatchingTranslation": "You are currently in TESTNET mode. The testnet version is meant for experimentation with new features that may or may not work as intended. You may report any bugs, problems or suggestions you may have on our dedicated solutions.",
+      "Locked": false,
+      "TimeAdded": "2020-07-31T23:35:09.7687498Z",
+      "LastUpdate": "2020-07-31T23:35:09.8739092Z"
+    },
+    {
+      "Key": "testMode.ParagrahThree",
+      "MatchingTranslation": "",
+      "Locked": false,
+      "TimeAdded": "2020-07-31T23:35:09.8739457Z",
+      "LastUpdate": "2020-07-31T23:35:09.8740522Z"
+    },
+    {
+      "Key": "testMode.ParagrahTwo",
+      "MatchingTranslation": "In TESTNET mode, any neuralium tokens gained are for testing purposes only and may not be used in the production 'MainNet' network. Tokens gained in TESTNET mode may also be lost or reset at any time without prior notice.",
+      "Locked": false,
+      "TimeAdded": "2020-07-31T23:35:09.8740714Z",
+      "LastUpdate": "2020-07-31T23:35:09.9793261Z"
+    },
+    {
+      "Key": "testMode.Warning",
+      "MatchingTranslation": "The node and the wallet are currently in TestNet Mode on a separate network.",
+      "Locked": false,
+      "TimeAdded": "2020-07-31T23:35:09.9793635Z",
+      "LastUpdate": "2020-07-31T23:35:10.0924908Z"
+    },
+    {
+      "Key": "testMode.Period",
+      "MatchingTranslation": "This TESTNET build is valid until May 29th 2020.",
+      "Locked": false,
+      "TimeAdded": "2020-07-31T23:35:10.0925285Z",
+      "LastUpdate": "2020-07-31T23:35:10.1835954Z"
+    },
+    {
+      "Key": "wallet.User",
+      "MatchingTranslation": "User",
+      "Locked": false,
+      "TimeAdded": "2020-07-31T23:35:10.1836351Z",
+      "LastUpdate": "2020-07-31T23:35:10.2669468Z"
+    },
+    {
+      "Key": "wallet.Server",
+      "MatchingTranslation": "Server",
+      "Locked": false,
+      "TimeAdded": "2020-07-31T23:35:10.2670189Z",
+      "LastUpdate": "2020-07-31T23:35:10.3509589Z"
+    },
+    {
+      "Key": "wallet.WalletType",
+      "MatchingTranslation": "Wallet Type",
+      "Locked": false,
+      "TimeAdded": "2020-07-31T23:35:10.3509954Z",
+      "LastUpdate": "2020-07-31T23:35:10.423079Z"
+    },
+    {
+      "Key": "wallet.AccountCreation",
+      "MatchingTranslation": "Account creation",
+      "Locked": false,
+      "TimeAdded": "2020-07-31T23:35:10.4231165Z",
+      "LastUpdate": "2020-07-31T23:35:10.5091055Z"
+    },
+    {
+      "Key": "wallet.BackupKeyPassphrase",
+      "MatchingTranslation": "Super Key Phassphrase",
+      "Locked": false,
+      "TimeAdded": "2020-07-31T23:35:10.5091427Z",
+      "LastUpdate": "2020-07-31T23:35:10.5890448Z"
+    },
+    {
+      "Key": "wallet.ChangeKeyPassphrase",
+      "MatchingTranslation": "Change Key Phassphrase",
+      "Locked": false,
+      "TimeAdded": "2020-07-31T23:35:10.5890828Z",
+      "LastUpdate": "2020-07-31T23:35:10.6650055Z"
+    },
+    {
+      "Key": "wallet.ValidatorVerificationKeyPassphrase",
+      "MatchingTranslation": "Validator Validation Key Phassphrase",
+      "Locked": false,
+      "TimeAdded": "2020-07-31T23:35:10.6650438Z",
+      "LastUpdate": "2020-07-31T23:35:10.7519997Z"
+    },
+    {
+      "Key": "wallet.ValidatorSecretKeyPassphrase",
+      "MatchingTranslation": "Validator Secret Key Phassphrase",
+      "Locked": false,
+      "TimeAdded": "2020-07-31T23:35:10.7520367Z",
+      "LastUpdate": "2020-07-31T23:35:10.8233341Z"
+    },
+    {
+      "Key": "wallet.MessageKeyPassphrase",
+      "MatchingTranslation": "Message Key Phassphrase",
+      "Locked": false,
+      "TimeAdded": "2020-07-31T23:35:10.8233716Z",
+      "LastUpdate": "2020-07-31T23:35:10.8973132Z"
+    },
+    {
+      "Key": "wallet.Create",
+      "MatchingTranslation": "Create",
+      "Locked": false,
+      "TimeAdded": "2020-07-31T23:35:10.8973512Z",
+      "LastUpdate": "2020-07-31T23:35:10.9674875Z"
+    },
+    {
+      "Key": "wallet.CreateWallet",
+      "MatchingTranslation": "Create a wallet",
+      "Locked": false,
+      "TimeAdded": "2020-07-31T23:35:10.9675268Z",
+      "LastUpdate": "2020-07-31T23:35:11.0523996Z"
+    },
+    {
+      "Key": "wallet.EncryptKeys",
+      "MatchingTranslation": "Encrypt keys",
+      "Locked": false,
+      "TimeAdded": "2020-07-31T23:35:11.052438Z",
+      "LastUpdate": "2020-07-31T23:35:11.1250038Z"
+    },
+    {
+      "Key": "wallet.EncryptWallet",
+      "MatchingTranslation": "Encrypt wallet",
+      "Locked": false,
+      "TimeAdded": "2020-07-31T23:35:11.1250422Z",
+      "LastUpdate": "2020-07-31T23:35:11.2027605Z"
+    },
+    {
+      "Key": "wallet.KeyCreation",
+      "MatchingTranslation": "Generating keyset",
+      "Locked": false,
+      "TimeAdded": "2020-07-31T23:35:11.2028017Z",
+      "LastUpdate": "2020-07-31T23:35:11.2798193Z"
+    },
+    {
+      "Key": "wallet.KeyCreationProgress",
+      "MatchingTranslation": "Key generation progress",
+      "Locked": false,
+      "TimeAdded": "2020-07-31T23:35:11.2798572Z",
+      "LastUpdate": "2020-07-31T23:35:11.3602314Z"
+    },
+    {
+      "Key": "wallet.LoadingWallet",
+      "MatchingTranslation": "Loading Wallet",
+      "Locked": false,
+      "TimeAdded": "2020-07-31T23:35:11.3602707Z",
+      "LastUpdate": "2020-07-31T23:35:11.4637127Z"
+    },
+    {
+      "Key": "wallet.OnePassphraseForEachKey",
+      "MatchingTranslation": "Unique passphrase per key",
+      "Locked": false,
+      "TimeAdded": "2020-07-31T23:35:11.4637512Z",
+      "LastUpdate": "2020-07-31T23:35:11.5665361Z"
+    },
+    {
+      "Key": "wallet.PassphraseForEncryptionOfAllKeys",
+      "MatchingTranslation": "a Phassphrase for encryption of all keys",
+      "Locked": false,
+      "TimeAdded": "2020-07-31T23:35:11.5665853Z",
+      "LastUpdate": "2020-07-31T23:35:11.6474427Z"
+    },
+    {
+      "Key": "wallet.PassphraseForEncryptionOfValidatorSecretKey",
+      "MatchingTranslation": "a Phassphrase for encryption of Super Key",
+      "Locked": false,
+      "TimeAdded": "2020-07-31T23:35:11.6474819Z",
+      "LastUpdate": "2020-07-31T23:35:11.7298421Z"
+    },
+    {
+      "Key": "wallet.PassphraseForEncryptionOfValidatorVerificationKey",
+      "MatchingTranslation": "a Phassphrase for encryption of Super Key",
+      "Locked": false,
+      "TimeAdded": "2020-07-31T23:35:11.7298746Z",
+      "LastUpdate": "2020-07-31T23:35:11.8263121Z"
+    },
+    {
+      "Key": "wallet.PassphraseForEncryptionOfBackupKey",
+      "MatchingTranslation": "a Phassphrase for encryption of Super Key",
+      "Locked": false,
+      "TimeAdded": "2020-07-31T23:35:11.8263454Z",
+      "LastUpdate": "2020-07-31T23:35:11.9226142Z"
+    },
+    {
+      "Key": "wallet.PassphraseForEncryptionOfChangeKey",
+      "MatchingTranslation": "a Phassphrase for encryption of Change Key",
+      "Locked": false,
+      "TimeAdded": "2020-07-31T23:35:11.9226474Z",
+      "LastUpdate": "2020-07-31T23:35:11.9982724Z"
+    },
+    {
+      "Key": "wallet.PassphraseForEncryptionOfMessageKey",
+      "MatchingTranslation": "a Phassphrase for encryption of Message Key",
+      "Locked": false,
+      "TimeAdded": "2020-07-31T23:35:11.9983049Z",
+      "LastUpdate": "2020-07-31T23:35:12.0744542Z"
+    },
+    {
+      "Key": "wallet.PassphraseForEncryptionOfTransactionKey",
+      "MatchingTranslation": "a Phassphrase for encryption of Transaction Key",
+      "Locked": false,
+      "TimeAdded": "2020-07-31T23:35:12.0744869Z",
+      "LastUpdate": "2020-07-31T23:35:12.1533266Z"
+    },
+    {
+      "Key": "wallet.PassphraseForKeys",
+      "MatchingTranslation": "Phassphrase for keys",
+      "Locked": false,
+      "TimeAdded": "2020-07-31T23:35:12.1533607Z",
+      "LastUpdate": "2020-07-31T23:35:12.2352685Z"
+    },
+    {
+      "Key": "wallet.PassphraseForWalletEncryption",
+      "MatchingTranslation": "enter a Phassphrase",
+      "Locked": false,
+      "TimeAdded": "2020-07-31T23:35:12.2353013Z",
+      "LastUpdate": "2020-07-31T23:35:12.3111109Z"
+    },
+    {
+      "Key": "wallet.PleaseCreateOrCopy",
+      "MatchingTranslation": "Create a new wallet or upload an existing one.",
+      "Locked": false,
+      "TimeAdded": "2020-07-31T23:35:12.3111444Z",
+      "LastUpdate": "2020-07-31T23:35:12.3884696Z"
+    },
+    {
+      "Key": "wallet.Reload",
+      "MatchingTranslation": "Reload",
+      "Locked": false,
+      "TimeAdded": "2020-07-31T23:35:12.3885024Z",
+      "LastUpdate": "2020-07-31T23:35:12.4656918Z"
+    },
+    {
+      "Key": "wallet.TransactionKeyPassphrase",
+      "MatchingTranslation": "Transaction Key Phassphrase",
+      "Locked": false,
+      "TimeAdded": "2020-07-31T23:35:12.4657247Z",
+      "LastUpdate": "2020-07-31T23:35:12.5634079Z"
+    },
+    {
+      "Key": "wallet.Wallet",
+      "MatchingTranslation": "Wallet",
+      "Locked": false,
+      "TimeAdded": "2020-07-31T23:35:12.5634409Z",
+      "LastUpdate": "2020-07-31T23:35:12.6371182Z"
+    },
+    {
+      "Key": "wallet.WalletCreated",
+      "MatchingTranslation": "Wallet Created",
+      "Locked": false,
+      "TimeAdded": "2020-07-31T23:35:12.6371595Z",
+      "LastUpdate": "2020-07-31T23:35:12.7374094Z"
+    },
+    {
+      "Key": "wallet.WalletCreation",
+      "MatchingTranslation": "Wallet creation",
+      "Locked": false,
+      "TimeAdded": "2020-07-31T23:35:12.7374433Z",
+      "LastUpdate": "2020-07-31T23:35:12.8108924Z"
+    },
+    {
+      "Key": "wallet.WalletDoesNotExist",
+      "MatchingTranslation": "Wallet does not exist",
+      "Locked": false,
+      "TimeAdded": "2020-07-31T23:35:12.8109525Z",
+      "LastUpdate": "2020-07-31T23:35:12.8942912Z"
+    },
+    {
+      "Key": "wallet.WalletWaitMessage",
+      "MatchingTranslation": "We are now creating your account and security keys. This may take multiple minutes. Thank you for your patience.",
+      "Locked": false,
+      "TimeAdded": "2020-07-31T23:35:12.8943258Z",
+      "LastUpdate": "2020-07-31T23:35:12.9674115Z"
+    },
+    {
+      "Key": "wallet.WalletLoaded",
+      "MatchingTranslation": "Wallet has been successfully loaded.",
+      "Locked": false,
+      "TimeAdded": "2020-07-31T23:35:12.9674456Z",
+      "LastUpdate": "2020-07-31T23:35:13.0426205Z"
+    },
+    {
+      "Key": "wallet.WalletLoadFailed",
+      "MatchingTranslation": "Failed to load wallet.",
+      "Locked": false,
+      "TimeAdded": "2020-07-31T23:35:13.0426553Z",
+      "LastUpdate": "2020-07-31T23:35:13.1180353Z"
+    },
+    {
+      "Key": "wallet.PhassphraseTooShort",
+      "MatchingTranslation": "Passphrase is too short.",
+      "Locked": false,
+      "TimeAdded": "2020-07-31T23:35:13.1180688Z",
+      "LastUpdate": "2020-07-31T23:35:13.2068741Z"
+    },
+    {
+      "Key": "wallet.PhassphraseDifferent",
+      "MatchingTranslation": "Passphrases are different.",
+      "Locked": false,
+      "TimeAdded": "2020-07-31T23:35:13.2069094Z",
+      "LastUpdate": "2020-07-31T23:35:13.2796529Z"
+    },
+    {
+      "Key": "wallet.Close",
+      "MatchingTranslation": "Close",
+      "Locked": false,
+      "TimeAdded": "2020-07-31T23:35:13.2796879Z",
+      "LastUpdate": "2020-07-31T23:35:13.3637415Z"
+    },
+    {
+      "Key": "wallet.Congratulations",
+      "MatchingTranslation": "Congratulations!",
+      "Locked": false,
+      "TimeAdded": "2020-07-31T23:35:13.3637753Z",
+      "LastUpdate": "2020-07-31T23:35:13.4490253Z"
+    },
+    {
+      "Key": "wallet.Completed",
+      "MatchingTranslation": "Your wallet has been succesfully created. Now as next step, we strongly recommend that you do a safety backup of your entire wallet folder. We also strongly recommend that you physically remove the super key from your account folder and store it safely on a drive outside of your computer.",
+      "Locked": false,
+      "TimeAdded": "2020-07-31T23:35:13.4490613Z",
+      "LastUpdate": "2020-07-31T23:35:13.5673973Z"
+    },
+    {
+      "Key": "wallet.WalletPath",
+      "MatchingTranslation": "You can locate your new wallet in the following path",
+      "Locked": false,
+      "TimeAdded": "2020-07-31T23:35:13.5674322Z",
+      "LastUpdate": "2020-07-31T23:35:13.661563Z"
+    }
+  ]
+}

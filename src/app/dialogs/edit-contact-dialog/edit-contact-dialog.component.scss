@@ -1,0 +1,14 @@
+mat-form-field{
+    width: 100%;
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+  }
+  
+  .row > * {
+    padding: 1em;
+    
+  }

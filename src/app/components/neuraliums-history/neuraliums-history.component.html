@@ -1,0 +1,133 @@
+<div>
+    <div class="actionBar">
+        <div>
+            <mat-form-field appearance="fill">
+                <mat-label>Choose a date</mat-label>
+                <input matInput [matDatepicker]="picker" [value]="startDate" [min]="minDate" [max]="maxDate" (dateInput)="addEvent('input', $event)" (dateChange)="addEvent('change', $event)">
+                <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                <mat-datepicker [dateClass]="dateClass" #picker></mat-datepicker>
+              </mat-form-field>
+        </div>
+
+        <div style="float:right; display: inline;" *ngIf="hasPeriod">
+            <mat-paginator [length]="this.period.entries.length" [pageSize]="pageSize"
+                [pageSizeOptions]="pageSizeOptions" [showFirstLastButtons]="true" (page)="setPage($event)"
+                #messagePaginator>
+            </mat-paginator>
+        </div>
+    </div>
+    <div style="padding: 1em;background-image: linear-gradient(to right, #faffed 50%, #f3fcff 50%);">
+        <table *ngIf="hasPeriod">
+            <tr>
+                <td colspan="3" style="padding-bottom:1em;">
+                    <table>
+                        <td style="padding: 0; width: 49%;">
+                            <div class="center-content black-line">
+                                <span class="period-header">{{'history.Sent' | translate}}</span>
+                            </div>
+                        </td>
+                        <td style="padding: 0; width: 2%;">
+                            <div class="center-content black-line">
+                                <span class="period-day">{{period.day | formatTimelineDate}}</span>
+                            </div>
+                        </td>
+                        <td style="padding: 0; width: 49%;">
+                            <div class="center-content black-line">
+                                <span class="period-header">{{'history.Received' | translate}}</span>
+                            </div>
+                        </td>
+                    </table>
+
+                </td>
+            </tr>
+            <tr>
+                <td colspan="3">
+                    <div class="center-content">
+                        <span class="period-total vertical-align">
+                            <img src="./assets/img/neuralium_icon-col.png" class="img-fluid" />{{period.endingTotal |
+                            formatNeuralium}}
+                        </span>
+                    </div>
+                </td>
+            </tr>
+            <tr *ngFor="let item of period.entries  | slice:sliceStart:sliceEnd"
+                [ngClass]="{ 'debit': isDebit(item), 'credit': isCredit(item), 'mining': isMining(item), 'ubb': isUbb(item)}">
+
+                <td *ngIf="isUbb(item) || isMining(item) || isCredit(item)" style="width:45%;"></td>
+                <td *ngIf="isUbb(item) || isMining(item) || isCredit(item)" style="width:10%;"
+                    class="center-content vertical-background-line">
+                    <div class="dot"></div>
+                </td>
+
+                <td style="width:45%;margin-bottom:5px;">
+                    <div [@sizeChange]="item.lightState" class="content-light vertical-align"
+                        (click)="showTransaction(item)">
+                        <div class="icon">
+
+                            <img *ngIf="isDebit(item)" src="./assets/img/debit_icon_c.png" class="img-fluid" />
+                            <img *ngIf="isCredit(item)" src="./assets/img/credit_icon_c.png" class="img-fluid" />
+                            <img *ngIf="isMining(item)" src="./assets/img/mine_icon_s.png" class="img-fluid" />
+                            <img *ngIf="isUbb(item)" src="./assets/img/leftmenu-neuralium.png" class="img-fluid" />
+
+                        </div>
+                        <div class="time">{{item.timestamp | formatTimelineTime2}}</div>
+                        <div class="account" *ngIf="isDebit(item) || isCredit(item)">
+                            <span *ngIf="isDebit(item)">{{item.recipientAccountIds | formatAccountNumber}}
+                                {{getAccountNames(item.recipientAccountIds)}}</span>
+                            <span *ngIf="isCredit(item)">{{item.senderAccountId | formatAccountNumber}}
+                                {{getAccountName(item.senderAccountId)}}</span>
+                        </div>
+                        <div class="neuraliums vertical-align"><img src="./assets/img/neuralium_icon-col.png"
+                                class="img-fluid" />{{item.amount | formatNeuralium}}</div>
+                        <div class="tip vertical-align"><img src="./assets/img/tips_icon.png"
+                                class="img-fluid" />{{item.tips | formatNeuralium}}</div>
+                    </div>
+
+                    <div [@sizeChange]="item.detailsState" class="content-full" (click)="hideTransaction(item)">
+                        <table *ngIf="item.showTransaction">
+                            <tr>
+                                <td><strong>Transaction ID :</strong></td>
+                                <td colspan="4">{{item.transaction.id}}</td>
+                                <td style="width: 30px;" rowspan="6">
+                                    <div class="icon">
+                                        <img *ngIf="isDebit(item)" src="./assets/img/debit_icon_c.png"
+                                            class="img-fluid" />
+                                        <img *ngIf="isCredit(item)" src="./assets/img/credit_icon_c.png"
+                                            class="img-fluid" />
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><strong>Sent To :</strong></td>
+                                <td>{{item.transaction.recipient | formatAccountNumber}}</td>
+                                <td><strong>Amount :</strong></td>
+                                <td>{{item.transaction.amount | formatNeuralium}}</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Datetime :</strong></td>
+                                <td>{{item.transaction.date | formatDateWithTime}}</td>
+                                <td><strong>Tips :</strong></td>
+                                <td>{{item.transaction.tip | formatNeuralium}}</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Total :</strong></td>
+                                <td colspan="4">{{item.transaction.total | formatNeuralium}}</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Note :</strong></td>
+                                <td colspan="4">{{item.transaction.note }}</td>
+                            </tr>
+                        </table>
+                    </div>
+                </td>
+
+                <td *ngIf="isDebit(item)" style="width:10%;" class="center-content vertical-background-line">
+                    <div class="dot"></div>
+                </td>
+                <td *ngIf="isDebit(item)" style="width:45%;"></td>
+
+            </tr>
+        </table>
+
+    </div>
+</div>

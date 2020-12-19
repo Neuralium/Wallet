@@ -1,0 +1,61 @@
+<mat-accordion class="example-headers-align" multi>
+
+    <mat-expansion-panel expanded="true">
+        
+        <mat-expansion-panel-header>
+            <mat-panel-title>
+                Status
+            </mat-panel-title>
+            <mat-panel-description>
+                Port mapping status
+            </mat-panel-description>
+        </mat-expansion-panel-header>
+
+        <mat-list class="status-section">
+            <mat-expansion-panel expanded="false">
+                <mat-expansion-panel-header>
+                    <mat-panel-title>
+                        Port mapping API
+                    </mat-panel-title>
+                    <mat-panel-description>
+                        Configure your port mapping mode
+                    </mat-panel-description>
+                </mat-expansion-panel-header>
+                <mat-checkbox class="example-margin" [(ngModel)]="status.useUPnP">Use UPnP</mat-checkbox>
+                <mat-checkbox class="example-margin" [(ngModel)]="status.usePmP">Use PmP</mat-checkbox>
+                <mat-form-field>
+                    <mat-label>NatDevices</mat-label>
+                    <mat-select [(value)]="status.deviceIndex">
+                        <mat-option *ngFor="let natDeviceName of status.discoveredDevicesNames; let i = index;" [value]="i">{{i}}</mat-option>
+                    </mat-select>
+                </mat-form-field>
+                <mat-list-item style="height: auto; margin: 50px 50px">
+                    <mat-label style="width: 50%;">Selected nat device</mat-label>
+                    <mat-label style="width: 50%; height: auto;">{{status?.discoveredDevicesNames?.length > 0 ? status.discoveredDevicesNames[status.deviceIndex] : "no nat device found"}}</mat-label>
+                </mat-list-item>
+                <button (click)="configure(status.useUPnP, status.usePmP, status.deviceIndex)" [disabled]="busy">Apply</button>
+                <mat-divider></mat-divider>
+            </mat-expansion-panel>
+            
+            <mat-expansion-panel expanded="true">
+                <mat-expansion-panel-header>
+                    <mat-panel-title>
+                        Port Mappings
+                    </mat-panel-title>
+                </mat-expansion-panel-header>
+            <table mat-table [dataSource]="status.portMappings" class="mat-elevation-z8">
+                <ng-container [matColumnDef]="column" *ngFor="let column of displayedColumns">
+                  <th mat-header-cell *matHeaderCellDef> {{column}} </th>
+                  <td mat-cell *matCellDef="let element"> {{element[column]}} </td>
+                </ng-container>
+                <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+            </table>
+            <mat-divider></mat-divider>
+            </mat-expansion-panel>
+        </mat-list>
+    </mat-expansion-panel>
+
+</mat-accordion>
+
+

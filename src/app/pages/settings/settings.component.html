@@ -1,0 +1,49 @@
+<app-page-title [title]="'settings.Title' | translate" [icon]="icon" helpMessage="settings.Explain"></app-page-title>
+
+<mat-card class="column">
+        <mat-form-field>
+            <span matPrefix><i class="fas fa-globe"></i>&nbsp;</span>
+            <mat-select placeholder="Language" [(ngModel)]="selectedLanguage" name="selectedLanguage">
+                <mat-option *ngFor="let language of languages" [value]="language.code">
+                    {{language.language}}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+        <mat-form-field>
+            <span matPrefix><i class="fas fa-hdd"></i>&nbsp;</span>
+            <input matInput placeholder="Server Path" [(ngModel)]="serverPath" name="serverPath" readonly>
+            <button matSuffix mat-icon-button (click)="searchServerPath()">
+                <mat-icon fontSet="fas" fontIcon="fa-search">
+                    </mat-icon>
+            </button>
+            <span matSuffix>
+                <button mat-icon-button (click)="refreshSetting('serverPath')" [color]="primary">
+                    <mat-icon fontSet="fas" fontIcon="fa-redo"></mat-icon>
+                  </button>
+            </span>
+        </mat-form-field>
+        <mat-form-field>
+            <span matPrefix><i class="fas fa-server"></i>&nbsp;</span>
+            <input matInput placeholder="Server RPC Port" [(ngModel)]="serverPort" name="serverPort">
+            <span matSuffix>
+                <button mat-icon-button (click)="refreshSetting('serverPort')" [color]="primary">
+                    <mat-icon fontSet="fas" fontIcon="fa-redo"></mat-icon>
+                  </button>
+            </span>
+        </mat-form-field>
+        <mat-form-field>
+            <span matPrefix><i class="fas fa-server"></i>&nbsp;</span>
+            <mat-select placeholder="Mining Logging Level" [(ngModel)]="miningLogLevel" name="miningLogLevel">
+                <mat-option [value]="1">Basic</mat-option>
+                <mat-option [value]="2">Advanced</mat-option>
+              </mat-select>
+            <span matSuffix>
+                <button mat-icon-button (click)="refreshSetting('miningLogLevel')" [color]="primary">
+                    <mat-icon fontSet="fas" fontIcon="fa-redo"></mat-icon>
+                  </button>
+            </span>
+        </mat-form-field>
+        <button mat-raised-button (click)="saveSettings()"><i class=""></i>
+            {{ 'app.Save' | translate }}</button>
+    </mat-card>
+   

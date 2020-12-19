@@ -1,0 +1,27 @@
+.title{
+    color:#008685;
+    font-size: 26px;
+    font-weight: bolder;
+}
+
+.item{
+    flex-grow: 1;
+}
+
+.align-self-center{
+    align-self:center;
+}
+
+.flex-row{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+
+.fill-remaining-space {
+         display: flex;
+         flex-direction: row;
+         justify-content: space-between;
+         padding: 1em;
+         align-items: center;
+  }

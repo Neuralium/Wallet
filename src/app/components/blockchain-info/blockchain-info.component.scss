@@ -1,0 +1,41 @@
+table{
+    margin-bottom: 1em;
+}
+
+.worldWrap{
+  font-family: "Courier New", Courier, monospace;
+    -ms-word-break: break-all;
+    word-break: break-all;
+
+ /* Non standard for WebKit */
+    word-break: break-word;
+
+-webkit-hyphens: auto;
+-moz-hyphens: auto;
+    hyphens: auto;
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+  }
+
+  mat-card-title{
+    font-size: 15px;
+    color: #673ab7;
+    font-variant: small-caps;
+  }
+
+  .accoutId{
+    color:#008685;
+    font-size: 12pt;
+    font-weight: bold;
+  }
+
+  .accoutIdEntry{
+    color:#00689F;
+    font-size: 16pt;
+    font-weight: bold;
+  }
+
+  mat-checkbox ::ng-deep .mat-checkbox-inner-container {width: 10px;height: 10px; margin-left: 0px; margin-right: 0px;}

@@ -1,0 +1,34 @@
+.column {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .row {
+    display: flex;
+    flex-direction: row;
+  }
+  
+ .no-wrap{
+  flex-wrap: nowrap;
+ }
+
+ 
+
+  .item{
+    margin:1em;
+    flex-grow: 1;
+  }
+
+  .sync-item{
+    height: 200px;
+  }
+
+  .item-large{
+    margin:1em;
+    flex-grow: 2;
+  }
+
+  mat-card-title{
+    font-size: 15px;
+    color: #673ab7;
+  }

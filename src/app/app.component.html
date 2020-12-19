@@ -1,0 +1,52 @@
+<div class="main mat-typography app-header">
+    <div class="header">
+        <a routerLink="" class="header-align">
+            <img [src]="logoPath" class="fit-image logo-image">
+         
+        </a>
+    </div>
+    <div class="content">
+        <div class="content-side">
+            <div class="menu">
+                <main-menu (currentBlockchainClicked)="showChangeBlockchainWindow()"></main-menu>
+                <mat-divider></mat-divider>
+                <app-debug></app-debug>
+            </div>
+            <div class="footer">
+                <app-sync-status></app-sync-status>
+            </div>
+        </div>
+        <div class="content-main">
+                <app-test-mode-message></app-test-mode-message>
+            <router-outlet></router-outlet>
+        </div>
+    </div>
+</div>
+<!--
+<app-test-mode-message></app-test-mode-message>
+                <router-outlet></router-outlet>
+
+<span class="mat-typography">
+    <a routerLink="" class="header-align">
+        <img src="assets/img/Neuralium Logo.png" class="fit-image logo-image" >
+        <img src="assets/img/bg-top.svg" class="fit-image">
+    </a>
+
+
+    <mat-sidenav-container>
+        <mat-sidenav mode="side" opened>
+            <main-menu (currentBlockchainClicked)="showChangeBlockchainWindow()"></main-menu>
+            <mat-divider></mat-divider>
+            <app-debug></app-debug>
+            <app-sync-status style="position:absolute;width: 100%;bottom: 25px;height: 50px;"></app-sync-status>
+        </mat-sidenav>
+        <mat-sidenav-content>
+            <div  class="main-content">
+                <app-test-mode-message></app-test-mode-message>
+                <router-outlet></router-outlet>
+            </div>
+        </mat-sidenav-content>
+    </mat-sidenav-container>
+</span>
+
+-->
