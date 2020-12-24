@@ -22,6 +22,7 @@ import { MatTableDataSource } from '@angular/material/table';
 class Solution {
   nonce: number = 0;
   solution: number = 0;
+  index:number = 0;
 }
 
 class THSBegin {
@@ -88,7 +89,14 @@ export class THSDialogComponent implements OnInit, OnDestroy {
       this.thsIteration.nonce = nonce;
       this.totalNonce = this.thsIteration.nonce;
     }
+
   }
+
+  pageSize = 5;
+  totalMessageCount = 0;
+  pageSizeOptions: number[] = [5];
+  sliceStart = 0;
+  sliceEnd: number = this.pageSize;
 
   displayedColumns: string[] = ['nonce', 'solution'];
 
@@ -188,6 +196,7 @@ export class THSDialogComponent implements OnInit, OnDestroy {
           this.thsIteration.nonce = event.message.nonce;
           this.currentNonce = this.thsIteration.nonce;
           this.totalNonce = this.totalPreviousRounds + this.thsIteration.nonce;
+          this.benchmarkSpeedRatio = event.message.benchmarkSpeedRatio;
 
           this.thsIteration.elapsed = Duration.fromObject({seconds : event.message.elapsed});
           this.thsIteration.estimatedIterationTime = Duration.fromObject({seconds : event.message.estimatedIterationTime});
@@ -219,19 +228,18 @@ export class THSDialogComponent implements OnInit, OnDestroy {
     this.unsubscribe$.complete();
   }
 
-
-  get solutionsDatasource() {
-
-    let tableDataSource = new MatTableDataSource(this.workingSolutions);
-
-    return tableDataSource;
-  }
-
   get solutionFound(): boolean {
     if (this.thsSolution && this.thsSolution.solutions.length !== 0) {
       return true;
     }
     return false;
+  }
+
+
+  setPage(event) {
+
+    this.sliceStart = event.pageIndex * event.pageSize;
+    this.sliceEnd = this.sliceStart + event.pageSize;
   }
 
   startTimer() {

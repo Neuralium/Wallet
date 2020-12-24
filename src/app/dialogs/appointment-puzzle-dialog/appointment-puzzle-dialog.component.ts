@@ -99,7 +99,8 @@ export class AppointmentPuzzleDialogComponent implements OnInit, OnDestroy {
           this.puzzleEndTime = this.puzzleStartTime.plus(this.puzzleDuration);
           this.updateRemainingTime();
         }
-      } else {
+      } 
+      else {
 
       }
 
@@ -108,7 +109,11 @@ export class AppointmentPuzzleDialogComponent implements OnInit, OnDestroy {
     } else if (this.appointmentsService.puzzleStatus === PuzzleStatus.PostProcess) {
 
       this.step = 3;
-    } else {
+    } else if (this.appointmentsService.puzzleStatus === PuzzleStatus.Failed) {
+      this.notificationService.showError('Appointment failed');
+      this.dialogRef.close();
+    }
+     else {
 
       this.dialogRef.close();
     }

@@ -1,6 +1,25 @@
-.table-solutions {
+.solutions-table {
   width: 100%;
 }
+
+.solutions-table th, .solutions-table td  {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+.solutions-table tr:nth-child(even){background-color: #f2f2f2;}
+
+.solutions-table tr:hover {background-color: #ddd;}
+
+.solutions-table th {
+  background-color: #e9ffb3;
+}
+
+
+.solutions-table td {
+  width: 100%;
+}
+
 
 .column {
     display: flex;

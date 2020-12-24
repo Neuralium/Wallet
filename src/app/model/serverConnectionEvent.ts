@@ -116,9 +116,10 @@ AppointmentContextCached = 172,
 AppointmentPuzzlePreparation = 173,
 AppointmentPuzzleBegin = 174,
 AppointmentPuzzleCompleted = 175,
-AppointmentVerificationRequestCompleted = 176,
-AppointmentVerificationCompleted = 177,
-InvalidPuzzleEngineVersion = 178,
+AppointmentPuzzleFailed = 176,
+AppointmentVerificationRequestCompleted = 177,
+AppointmentVerificationCompleted = 178,
+InvalidPuzzleEngineVersion = 179,
 
 
 

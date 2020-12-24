@@ -15,6 +15,7 @@ import { PublishAccountDialogComponent } from '../..//dialogs/publish-account-di
 import { AppointmentsDialogComponent } from '../..//dialogs/appointments-dialog/appointments-dialog.component';
 import { SMSDialogComponent } from '../..//dialogs/sms-dialog/sms-dialog.component';
 import { VerifyAccountDialogComponent } from '../..//dialogs/verify-account-dialog/verify-account-dialog.component';
+import { THSDialogComponent } from '../..//dialogs/THS-dialog/THS-dialog.component';
 
 import { AppointmentPuzzleDialogComponent } from '../..//dialogs/appointment-puzzle-dialog/appointment-puzzle-dialog.component';
 import {PeerConnectionDetails} from '../../model/peer-connection-details';
@@ -157,8 +158,7 @@ export class BlockchainInfoComponent implements OnInit, OnDestroy {
   }
 
   test3() {
-    this.appointmentsService.puzzleStatus = PuzzleStatus.Preparation;
-    const dialogRef = this.dialog.open(AppointmentPuzzleDialogComponent, {
+    const dialogRef = this.dialog.open(THSDialogComponent, {
       width: '700px'
     });
   }

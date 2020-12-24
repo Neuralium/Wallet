@@ -52,20 +52,34 @@
     <hr />
   </div>
   <div>
-    <div style="font-weight: bold;">{{ 'ths.SolutionsFound' | translate }}</div>
+    <div>
+      <table>
+        <tr>
+          <td style="width: 40%;">
+            <div style="font-weight: bold;margin-left: 30px;">{{ 'ths.SolutionsFound' | translate }}</div>
+          </td>
+          <td>
+            <div style="float:right; display: inline;">
+              <mat-paginator [length]="workingSolutions.length" [pageSize]="pageSize" [pageSizeOptions]="pageSizeOptions"
+                [showFirstLastButtons]="true" (page)="setPage($event)" #messagePaginator>
+              </mat-paginator>
+            </div>
+          </td>
+        </tr>
+      </table>
+      
+      
+    </div>
     <div style="padding-top: 15px;padding-bottom: 15px;">
-      <table mat-table [dataSource]="solutionsDatasource" class="mat-elevation-z8 table-solutions">
-        <ng-container matColumnDef="nonce">
-          <th mat-header-cell *matHeaderCellDef> {{ 'ths.Nonce' | translate }} </th>
-          <td mat-cell *matCellDef="let entry"> {{entry.nonce}} </td>
-        </ng-container>
-        <ng-container matColumnDef="solution">
-          <th mat-header-cell *matHeaderCellDef> {{ 'ths.Solution' | translate }} </th>
-          <td mat-cell *matCellDef="let entry"> {{entry.solution}} </td>
-        </ng-container>
-
-        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+      <table class="solutions-table">
+        <tr>
+          <th style="width: 50%;">{{ 'ths.Nonce' | translate }}</th>
+          <th style="width: 50%;">{{ 'ths.Solution' | translate}}</th>
+        </tr>
+        <tr *ngFor="let entry of workingSolutions | slice:sliceStart:sliceEnd">
+          <td style="width: 50%;">{{entry.nonce}}</td>
+          <td style="width: 50%;">{{entry.solution}}</td>
+        </tr>
       </table>
     </div>
   </div>

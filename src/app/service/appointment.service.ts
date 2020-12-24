@@ -18,7 +18,8 @@ export enum PuzzleStatus {
     None = 0,
     Preparation = 1,
     Execution = 2,
-    PostProcess = 3
+    PostProcess = 3,
+    Failed = 4
 }
 
 export interface IPuzzleDetails {
@@ -210,6 +211,11 @@ export class AppointmentsService {
                     case EventTypes.AppointmentPuzzleCompleted:
                         this.triggerAppointmentEventOccured(event);
                         this.puzzleStatus = PuzzleStatus.PostProcess;
+                        this.triggerPuzzleStatusChanged();
+                        break;
+                    case EventTypes.AppointmentPuzzleFailed:
+                        this.triggerAppointmentEventOccured(event);
+                        this.puzzleStatus = PuzzleStatus.Failed;
                         this.triggerPuzzleStatusChanged();
                         break;
                     case EventTypes.AppointmentVerificationRequestCompleted:

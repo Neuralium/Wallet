@@ -135,6 +135,11 @@ export class ServerService implements OnInit, OnDestroy {
             callExit();
             return;
           }
+          else if(input.includes('[EXPIRED MAINNET]')){
+            alert('The node has expired. Please download a more recent version at https://www.neuralium.com.');
+            callExit();
+            return;
+          }
           if(input.includes('Current software version')){
             checksCompleted = true;
           }
@@ -168,12 +173,12 @@ export class ServerService implements OnInit, OnDestroy {
       let resolved: boolean = false;
       let timeout: any = null;
 
-      if (!this.childProcess) {
+      // if (!this.childProcess) {
 
-        this.notificationService.showWarn(this.translateService.instant('server.ExternallyStarted'));
-        resolve(true);
-        return;
-      }
+      //   this.notificationService.showWarn(this.translateService.instant('server.ExternallyStarted'));
+      //   resolve(true);
+      //   return;
+      // }
 
       let killMethod = () => {
 
