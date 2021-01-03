@@ -25,6 +25,7 @@
     "PleaseImportOrCreateWalletAccount": "Bitte importieren oder erstellen Sie ein Brieftaschenkonto",
     "PublishAccountAutomatically": "Konto automatisch veröffentlichen",
     "Published": "Veröffentlicht",
+    "Publishing": "Veröffentlichen",
     "Standard": "Standard",
     "Status": "Status",
     "TrustLevel": "Vertrauens Stufe",
@@ -129,6 +130,7 @@
   "ths": {
     "Title": "Zeitharte Signaturerstellung",
     "Introduction": "Vorbereitung auf die Suche nach einem geheimen Nonce-Wert",
+    "CurrentNoncesValue": "Aktuelle Nonces",
     "CurrentNonceValue": "Aktuelle Nonce",
     "CurrentRoundValue": "Aktuelle Runde",
     "CurrentElapsedTime": "Aktuelle verstrichene Zeit",
@@ -136,12 +138,13 @@
     "Solution": "Lösung",
     "SolutionsFound": "THS-Lösungen gefunden",
     "TargetTimespan": "Benchmark-Ziel",
-    "TargetNonce": "Ziel Nonce",
+    "TargetNonce": "Minimales Nonce-Ziel",
     "CurrentNonceTotal": "Aktuelle Nonce-Summe",
     "TimeHardSignatureNonceSearch": "Time Hard Signature Nonce-Suche",
     "EstimatedIterationTime": "Geschätzte Iterationszeit",
     "EstimatedRemainingTime": "Geschätzte verbleibende Zeit",
-    "BenchmarkSpeedRatio": "Benchmark-Geschwindigkeitsverhältnis"
+    "BenchmarkSpeedRatio": "Benchmark-Geschwindigkeitsverhältnis",
+    "Dashboard": "Instrumententafel"
   },
   "sms": {
     "Title": "SMS-Bestätigung",

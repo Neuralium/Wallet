@@ -25,6 +25,7 @@
     "PleaseImportOrCreateWalletAccount": "कृपया एक बटुआ खाता आयात करें या बनाएं",
     "PublishAccountAutomatically": "खाता स्वचालित रूप से प्रकाशित करें",
     "Published": "प्रकाशित",
+    "Publishing": "प्रकाशित करना",
     "Standard": "मानक",
     "Status": "स्थिति",
     "TrustLevel": "विश्वास स्तर",
@@ -129,6 +130,7 @@
   "ths": {
     "Title": "टाइम हार्ड सिग्नेचर जनरेशन",
     "Introduction": "एक गुप्त गैर मूल्य के लिए खोज करने की तैयारी",
+    "CurrentNoncesValue": "वर्तमान गैर",
     "CurrentNonceValue": "वर्तमान गैर",
     "CurrentRoundValue": "वर्तमान दौर",
     "CurrentElapsedTime": "वर्तमान बीता हुआ समय",
@@ -136,12 +138,13 @@
     "Solution": "उपाय",
     "SolutionsFound": "THS समाधान मिला",
     "TargetTimespan": "बेंचमार्क लक्ष्य",
-    "TargetNonce": "लक्ष्य लक्ष्य",
+    "TargetNonce": "न्यूनतम नॉन टारगेट",
     "CurrentNonceTotal": "वर्तमान गैर-कुल",
     "TimeHardSignatureNonceSearch": "टाइम हार्ड सिग्नेचर नॉन सर्च",
     "EstimatedIterationTime": "अनुमानित Iteration Time",
     "EstimatedRemainingTime": "अनुमानित शेष समय",
-    "BenchmarkSpeedRatio": "बेंचमार्क स्पीड अनुपात"
+    "BenchmarkSpeedRatio": "बेंचमार्क स्पीड अनुपात",
+    "Dashboard": "डैशबोर्ड"
   },
   "sms": {
     "Title": "एसएमएस सत्यापन",

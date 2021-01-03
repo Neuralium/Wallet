@@ -25,6 +25,7 @@
     "PleaseImportOrCreateWalletAccount": "ウォレットアカウントをインポートまたは作成してください",
     "PublishAccountAutomatically": "アカウントを自動的に公開する",
     "Published": "公開済み",
+    "Publishing": "出版",
     "Standard": "標準",
     "Status": "状態",
     "TrustLevel": "信頼レベル",
@@ -129,6 +130,7 @@
   "ths": {
     "Title": "タイムハード署名の生成",
     "Introduction": "秘密のナンス値を検索する準備",
+    "CurrentNoncesValue": "現在のナンス",
     "CurrentNonceValue": "現在のナンス",
     "CurrentRoundValue": "現在のラウンド",
     "CurrentElapsedTime": "現在の経過時間",
@@ -136,12 +138,13 @@
     "Solution": "解決",
     "SolutionsFound": "THSソリューションが見つかりました",
     "TargetTimespan": "ベンチマークターゲット",
-    "TargetNonce": "ターゲットノンス",
+    "TargetNonce": "最小ノンスターゲット",
     "CurrentNonceTotal": "現在のノンス合計",
     "TimeHardSignatureNonceSearch": "タイムハードシグネチャーナンス検索",
     "EstimatedIterationTime": "推定反復時間",
     "EstimatedRemainingTime": "推定残り時間",
-    "BenchmarkSpeedRatio": "ベンチマーク速度比"
+    "BenchmarkSpeedRatio": "ベンチマーク速度比",
+    "Dashboard": "ダッシュボード"
   },
   "sms": {
     "Title": "SMS検証",

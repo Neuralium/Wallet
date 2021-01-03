@@ -25,6 +25,7 @@
     "PleaseImportOrCreateWalletAccount": "אנא ייבא או צור חשבון ארנק",
     "PublishAccountAutomatically": "פרסם חשבון באופן אוטומטי",
     "Published": "יצא לאור",
+    "Publishing": "הוֹצָאָה לְאוֹר",
     "Standard": "תֶקֶן",
     "Status": "סטָטוּס",
     "TrustLevel": "רמת האמון",
@@ -129,6 +130,7 @@
   "ths": {
     "Title": "דור קשה של חתימה",
     "Introduction": "מתכונן לחיפוש אחר ערך לא סודי",
+    "CurrentNoncesValue": "כוחות נוכחיים",
     "CurrentNonceValue": "Nonce הנוכחי",
     "CurrentRoundValue": "סיבוב נוכחי",
     "CurrentElapsedTime": "הזמן שחלף הנוכחי",
@@ -136,12 +138,13 @@
     "Solution": "פִּתָרוֹן",
     "SolutionsFound": "פתרונות THS נמצאו",
     "TargetTimespan": "יעד אמת מידה",
-    "TargetNonce": "כוון לנונס",
+    "TargetNonce": "יעד ללא מינימום",
     "CurrentNonceTotal": "סך הכל Nonce הנוכחי",
     "TimeHardSignatureNonceSearch": "זמן ללא חתימה על זמן חתימה",
     "EstimatedIterationTime": "זמן איטרציה משוער",
     "EstimatedRemainingTime": "זמן שנותר משוער",
-    "BenchmarkSpeedRatio": "יחס מהירות מדד"
+    "BenchmarkSpeedRatio": "יחס מהירות מדד",
+    "Dashboard": "לוּחַ מַחווָנִים"
   },
   "sms": {
     "Title": "אימות SMS",

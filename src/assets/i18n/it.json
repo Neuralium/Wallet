@@ -25,6 +25,7 @@
     "PleaseImportOrCreateWalletAccount": "Si prega di importare o creare un account di portafoglio",
     "PublishAccountAutomatically": "pubblica automaticamente l'account",
     "Published": "Pubblicato",
+    "Publishing": "Pubblicazione",
     "Standard": "Standard",
     "Status": "Stato",
     "TrustLevel": "Livello di fiducia",
@@ -129,6 +130,7 @@
   "ths": {
     "Title": "Generazione dell'indicazione del tempo",
     "Introduction": "Preparazione alla ricerca di un valore nonce segreto",
+    "CurrentNoncesValue": "Nonci attuali",
     "CurrentNonceValue": "Nonce attuale",
     "CurrentRoundValue": "Round in corso",
     "CurrentElapsedTime": "Tempo trascorso corrente",
@@ -136,12 +138,13 @@
     "Solution": "Soluzione",
     "SolutionsFound": "Soluzioni THS trovate",
     "TargetTimespan": "Target di riferimento",
-    "TargetNonce": "Target Nonce",
+    "TargetNonce": "Target minimo di Nonce",
     "CurrentNonceTotal": "Current Nonce Total",
     "TimeHardSignatureNonceSearch": "Ricerca nonce Time Hard Signature",
     "EstimatedIterationTime": "Tempo di iterazione stimato",
     "EstimatedRemainingTime": "Tempo rimanente stimato",
-    "BenchmarkSpeedRatio": "Rapporto di velocità di riferimento"
+    "BenchmarkSpeedRatio": "Rapporto di velocità di riferimento",
+    "Dashboard": "Pannello di controllo"
   },
   "sms": {
     "Title": "Verifica SMS",

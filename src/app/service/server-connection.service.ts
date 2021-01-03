@@ -1216,9 +1216,9 @@ getMessages(): Array<ServerMessage> {
     const cnx = this.connection;
     const action = 'THSIteration';
 
-    this.registerConnectionEvent(action, (chainType: number, nonce:number, elapsed:number, estimatedIterationTime:number, estimatedRemainingTime:number, benchmarkSpeedRatio:number) => {
-      this.logEvent(action + ' - event', { 'chainType': chainType, 'nonce' : nonce, 'elapsed' : elapsed , 'estimatedIterationTime' : estimatedIterationTime, 'estimatedRemainingTime' : estimatedRemainingTime, 'benchmarkSpeedRatio' : benchmarkSpeedRatio});
-      this.propagateEvent(chainType, EventTypes.THSIteration, ResponseResult.Success, chainType,{'chainType': chainType, 'nonce' : nonce, 'elapsed' : elapsed, 'estimatedIterationTime' : estimatedIterationTime, 'estimatedRemainingTime' : estimatedRemainingTime, 'benchmarkSpeedRatio' : benchmarkSpeedRatio});
+    this.registerConnectionEvent(action, (chainType: number, nonces:number, elapsed:number, estimatedIterationTime:number, estimatedRemainingTime:number, benchmarkSpeedRatio:number) => {
+      this.logEvent(action + ' - event', { 'chainType': chainType, 'nonces' : nonces, 'elapsed' : elapsed , 'estimatedIterationTime' : estimatedIterationTime, 'estimatedRemainingTime' : estimatedRemainingTime, 'benchmarkSpeedRatio' : benchmarkSpeedRatio});
+      this.propagateEvent(chainType, EventTypes.THSIteration, ResponseResult.Success, chainType,{'chainType': chainType, 'nonces' : nonces, 'elapsed' : elapsed, 'estimatedIterationTime' : estimatedIterationTime, 'estimatedRemainingTime' : estimatedRemainingTime, 'benchmarkSpeedRatio' : benchmarkSpeedRatio});
     });
   }
 

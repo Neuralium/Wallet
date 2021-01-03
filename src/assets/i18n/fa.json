@@ -25,6 +25,7 @@
     "PleaseImportOrCreateWalletAccount": "لطفاً یک حساب کیف پول وارد کنید یا ایجاد کنید",
     "PublishAccountAutomatically": "انتشار خودکار حساب",
     "Published": "منتشر شده",
+    "Publishing": "انتشارات",
     "Standard": "استاندارد",
     "Status": "وضعیت",
     "TrustLevel": "سطح اعتماد",
@@ -129,6 +130,7 @@
   "ths": {
     "Title": "زمان تولید امضای سخت",
     "Introduction": "آماده شدن برای جستجوی یک مقدار غیر مخفی مخفی",
+    "CurrentNoncesValue": "غیر فعلی",
     "CurrentNonceValue": "غیر فعلی",
     "CurrentRoundValue": "دور فعلی",
     "CurrentElapsedTime": "زمان گذشته",
@@ -136,12 +138,13 @@
     "Solution": "راه حل",
     "SolutionsFound": "راه حل های THS پیدا شد",
     "TargetTimespan": "هدف معیار",
-    "TargetNonce": "هدف Nonce",
+    "TargetNonce": "حداقل هدف غیررسمی",
     "CurrentNonceTotal": "غیر فعلی مجموع",
     "TimeHardSignatureNonceSearch": "جستجوی غیر رسمی زمان سخت",
     "EstimatedIterationTime": "زمان تکرار تخمینی",
     "EstimatedRemainingTime": "زمان باقیمانده تخمین زده شده",
-    "BenchmarkSpeedRatio": "نسبت معیار سرعت"
+    "BenchmarkSpeedRatio": "نسبت معیار سرعت",
+    "Dashboard": "داشبورد"
   },
   "sms": {
     "Title": "تأیید پیام کوتاه",

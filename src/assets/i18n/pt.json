@@ -25,6 +25,7 @@
     "PleaseImportOrCreateWalletAccount": "Por favor, importe ou crie uma conta carteira",
     "PublishAccountAutomatically": "publicar conta automaticamente",
     "Published": "Publicados",
+    "Publishing": "Publicação",
     "Standard": "Padrão",
     "Status": "Status",
     "TrustLevel": "Nível de confiança",
@@ -129,6 +130,7 @@
   "ths": {
     "Title": "Time Hard Signature Generation",
     "Introduction": "Preparando para pesquisar por um valor secreto de nonce",
+    "CurrentNoncesValue": "Nonces atuais",
     "CurrentNonceValue": "Nonce atual",
     "CurrentRoundValue": "Rodada atual",
     "CurrentElapsedTime": "Tempo Decorrido Atual",
@@ -136,12 +138,13 @@
     "Solution": "Solução",
     "SolutionsFound": "Soluções THS encontradas",
     "TargetTimespan": "Alvo de referência",
-    "TargetNonce": "Target Nonce",
+    "TargetNonce": "Alvo Nonce Mínimo",
     "CurrentNonceTotal": "Total Nonce Atual",
     "TimeHardSignatureNonceSearch": "Time Hard Signature nonce search",
     "EstimatedIterationTime": "Tempo estimado de iteração",
     "EstimatedRemainingTime": "Tempo restante estimado",
-    "BenchmarkSpeedRatio": "Taxa de velocidade de referência"
+    "BenchmarkSpeedRatio": "Taxa de velocidade de referência",
+    "Dashboard": "painel de controle"
   },
   "sms": {
     "Title": "Verificação de SMS",

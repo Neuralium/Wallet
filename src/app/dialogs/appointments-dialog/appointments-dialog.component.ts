@@ -12,6 +12,7 @@ import {  WalletAccountAppointment, AppointmentStatus } from '../..//model/walle
 import { AppointmentsService } from '../..//service/appointment.service';
 import { AppointmentPuzzleDialogComponent } from '../appointment-puzzle-dialog/appointment-puzzle-dialog.component';
 import { PublishAccountDialogComponent } from '../..//dialogs/publish-account-dialog/publish-account-dialog.component';
+import { AppConfig } from '../../../environments/environment';
 
 
 import { SyncStatus } from '../..//model/syncProcess';
@@ -36,6 +37,7 @@ enum AppointmentsRegions {
 	Central  = 1 << 1, // 2
 	Orient   = 1 << 2  // 4
 }
+
 
 
 @Component({
@@ -73,6 +75,7 @@ export class AppointmentsDialogComponent implements OnInit, OnDestroy {
   occidentHelpText: string = '';
   centralHelpText: string = '';
   orientHelpText: string = '';
+  hideTestRegion:boolean = true;
 
   ngOnInit() {
 
@@ -88,6 +91,8 @@ export class AppointmentsDialogComponent implements OnInit, OnDestroy {
     this.appointmentsService.onAppointmentEventOccured.add(this.appointmentEventOccured);
 
     this.displayPreferredRegionInfo();
+
+    this.hideTestRegion = AppConfig.production && !AppConfig.productiontest;
   }
 
   appointementStatusChanged(status:AppointmentStatus){

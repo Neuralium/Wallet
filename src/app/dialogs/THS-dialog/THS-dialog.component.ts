@@ -22,7 +22,7 @@ import { MatTableDataSource } from '@angular/material/table';
 class Solution {
   nonce: number = 0;
   solution: number = 0;
-  index:number = 0;
+  index: number = 0;
 }
 
 class THSBegin {
@@ -31,7 +31,7 @@ class THSBegin {
 
   startingNonce: number = 1;
   startingTotalNonce: number = 1;
-  startingRound : number = 1;
+  startingRound: number = 1;
 
   targetTotalDuration: Duration;
   estimatedIterationTime: Duration;
@@ -49,7 +49,7 @@ class THSRound {
 class THSIteration {
 
   chainType: number = 0;
-  nonce: number = 1;
+  nonces: Array<number> = [];
   elapsed: Duration;
   estimatedIterationTime: Duration;
   estimatedRemainingTime: Duration;
@@ -83,13 +83,16 @@ export class THSDialogComponent implements OnInit, OnDestroy {
     private syncStatusService: SyncStatusService,
     public dialogRef: MatDialogRef<THSDialogComponent>,
     private changeDetector: ChangeDetectorRef,
-    @Optional() @Inject(MAT_DIALOG_DATA) public nonce: number) {
+    @Optional() @Inject(MAT_DIALOG_DATA) public nonce: number, @Inject(MAT_DIALOG_DATA) public begining: any) {
 
     if (nonce && nonce !== 0) {
-      this.thsIteration.nonce = nonce;
-      this.totalNonce = this.thsIteration.nonce;
+      this.thsIteration.nonces = [nonce];
+      this.totalNonce = this.thsIteration.nonces[0];
     }
 
+    if (begining) {
+      this.setBegining(begining);
+    }
   }
 
   pageSize = 5;
@@ -101,19 +104,21 @@ export class THSDialogComponent implements OnInit, OnDestroy {
   displayedColumns: string[] = ['nonce', 'solution'];
 
   totalNonce: number = 0;
-  totalPreviousRounds :number  = 0;
+  totalPreviousRounds: number = 0;
   workingSolutions: Array<Solution> = [];
   thsBegin: THSBegin = new THSBegin();
   thsRound: THSRound = new THSRound();
   thsIteration: THSIteration = new THSIteration();
   thsSolution: THSSolution = new THSSolution();
   currentRound: number = 1;
-  currentNonce:number = 1;
-  targetNonce:number = 1;
-  targetTotalDuration:Duration;
-  estimatedIterationTime:Duration;
-  estimatedRemainingTime:Duration;
-  benchmarkSpeedRatio:number = 1;
+  currentNonces: Array<number> = [];
+  currentNoncesStr:string = '[]';
+  singleNonce:boolean = false;
+  targetNonce: number = 1;
+  targetTotalDuration: Duration;
+  estimatedIterationTime: Duration;
+  estimatedRemainingTime: Duration;
+  benchmarkSpeedRatio: number = 1;
 
   thsBeginSet: BehaviorSubject<THSBegin | null> = new BehaviorSubject<THSBegin | null>(null);
   thsRoundSet: BehaviorSubject<THSRound | null> = new BehaviorSubject<THSRound | null>(null);
@@ -122,9 +127,73 @@ export class THSDialogComponent implements OnInit, OnDestroy {
 
   private unsubscribe$ = new Subject<void>();
 
+  beginSet: boolean = false;
+  public setBegining(message: any) {
+    if (!this.beginSet) {
+      this.beginSet = true;
+      this.thsBegin = new THSBegin();
+
+      this.thsBegin.difficulty = message.difficulty;
+      this.thsBegin.targetNonce = message.targetNonce;
+
+
+      this.thsBegin.startingNonce = message.startingNonce;
+      this.thsBegin.startingTotalNonce = message.startingTotalNonce;
+      this.thsBegin.startingRound = message.startingRound;
+
+      this.thsBegin.solutions = message.solutions;
+      this.thsBegin.nonces = message.nonces;
+
+      for (let i = 0; i < this.thsBegin.solutions.length; i++) {
+
+        const entry: Solution = new Solution();
+        entry.nonce = this.thsBegin.nonces[i];
+        entry.solution = this.thsBegin.solutions[i];
+        this.workingSolutions.push(entry);
+      }
+
+      this.targetNonce = this.thsBegin.targetNonce;
+
+      this.currentNonces = [this.thsBegin.startingNonce];
+      this.joinNonces();
+      this.totalPreviousRounds = this.thsBegin.startingTotalNonce - this.thsBegin.startingNonce;
+      this.totalNonce = this.thsBegin.startingTotalNonce;
+      this.currentRound = this.thsBegin.startingRound;
+
+      this.thsBegin.targetTotalDuration = Duration.fromObject({ seconds: message.targetTotalDuration });
+      this.targetTotalDuration = Duration.fromObject({ seconds: message.targetTotalDuration });;
+      this.thsBegin.estimatedIterationTime = Duration.fromObject({ seconds: message.estimatedIterationTime });
+      this.estimatedIterationTime = Duration.fromObject({ seconds: message.estimatedIterationTime });
+      this.thsBegin.estimatedRemainingTime = Duration.fromObject({ seconds: message.estimatedRemainingTime });
+      this.estimatedRemainingTime = Duration.fromObject({ seconds: message.estimatedRemainingTime });
+
+
+      this.thsBeginSet.next(this.thsBegin);
+    }
+  }
+
+  joinNonces(){
+
+    const filteredNonces = this.currentNonces.filter(nonce => {
+      return nonce != 0;
+    });
+    this.singleNonce = filteredNonces.length <= 1;
+  
+   
+    if(this.singleNonce){
+      
+      if(filteredNonces.length === 0){
+        return '';
+      }
+      this.currentNoncesStr = filteredNonces[0].toString();
+    }
+    else{
+      this.currentNoncesStr = '[' + filteredNonces.join() + ']';
+    }
+  }
   ngOnInit() {
     this.serverConnectionService.eventNotifier.pipe(takeUntil(this.unsubscribe$)).subscribe(event => {
-      
+
       if (!event.isNeuralium) {
         return;
       }
@@ -132,92 +201,59 @@ export class THSDialogComponent implements OnInit, OnDestroy {
       switch (event.eventType) {
         case EventTypes.THSBegin:
           this._ngZone.run(() => {
-            this.thsBegin = new THSBegin();
+            this.setBegining(event.message);
 
-          this.thsBegin.difficulty = event.message.difficulty;
-          this.thsBegin.targetNonce = event.message.targetNonce;
-
-
-          this.thsBegin.startingNonce = event.message.startingNonce;
-          this.thsBegin.startingTotalNonce = event.message.startingTotalNonce;
-          this.thsBegin.startingRound = event.message.startingRound;
-
-          this.thsBegin.solutions = event.message.solutions;
-          this.thsBegin.nonces = event.message.nonces;
-
-          for(let i = 0; i < this.thsBegin.solutions.length; i++){
-
-            const entry: Solution = new Solution();
-            entry.nonce = this.thsBegin.nonces[i];
-            entry.solution = this.thsBegin.solutions[i];
-            this.workingSolutions.push(entry);
-          }
-
-          this.targetNonce = this.thsBegin.targetNonce;
-          
-          this.currentNonce = this.thsBegin.startingNonce;
-          this.totalPreviousRounds = this.thsBegin.startingTotalNonce - this.currentNonce;
-          this.totalNonce = this.thsBegin.startingTotalNonce;
-          this.currentRound = this.thsBegin.startingRound;
-
-          this.thsBegin.targetTotalDuration = Duration.fromObject({seconds : event.message.targetTotalDuration});
-          this.targetTotalDuration = Duration.fromObject({seconds : event.message.targetTotalDuration});;
-          this.thsBegin.estimatedIterationTime = Duration.fromObject({seconds : event.message.estimatedIterationTime});
-          this.estimatedIterationTime = Duration.fromObject({seconds : event.message.estimatedIterationTime});
-          this.thsBegin.estimatedRemainingTime = Duration.fromObject({seconds : event.message.estimatedRemainingTime});
-          this.estimatedRemainingTime = Duration.fromObject({seconds : event.message.estimatedRemainingTime});
-
-
-          this.thsBeginSet.next(this.thsBegin);
           });
 
-          
+
           break;
         case EventTypes.THSRound:
           this._ngZone.run(() => {
             this.thsRound = <THSRound>event.message;
-          this.currentRound += 1;
-          this.currentNonce = 1;
+            this.currentRound += 1;
+            this.currentNonces = [1];
+            this.joinNonces();
 
-          const entry: Solution = new Solution();
-          entry.nonce = this.thsRound.lastNonce;
-          entry.solution = this.thsRound.lastSolution;
-          this.totalNonce = this.thsRound.totalNonce;
-          this.totalPreviousRounds = this.totalNonce;
+            const entry: Solution = new Solution();
+            entry.nonce = this.thsRound.lastNonce;
+            entry.solution = this.thsRound.lastSolution;
+            this.totalNonce = this.thsRound.totalNonce;
+            this.totalPreviousRounds = this.totalNonce;
 
-          this.workingSolutions.push(entry);
-          this.thsRoundSet.next(this.thsRound);
+            this.workingSolutions.push(entry);
+            this.thsRoundSet.next(this.thsRound);
           });
-          
+
           break;
         case EventTypes.THSIteration:
           this._ngZone.run(() => {
             this.thsIteration = new THSIteration();
-          this.thsIteration.nonce = event.message.nonce;
-          this.currentNonce = this.thsIteration.nonce;
-          this.totalNonce = this.totalPreviousRounds + this.thsIteration.nonce;
-          this.benchmarkSpeedRatio = event.message.benchmarkSpeedRatio;
+            this.thsIteration.nonces = event.message.nonces;
+            this.currentNonces = this.thsIteration.nonces;
+            this.joinNonces();
+            this.totalNonce = this.totalPreviousRounds + this.thsIteration.nonces[0];
+            this.benchmarkSpeedRatio = +event.message.benchmarkSpeedRatio.toFixed(5);
 
-          this.thsIteration.elapsed = Duration.fromObject({seconds : event.message.elapsed});
-          this.thsIteration.estimatedIterationTime = Duration.fromObject({seconds : event.message.estimatedIterationTime});
-          this.estimatedIterationTime = Duration.fromObject({seconds : event.message.estimatedIterationTime});
-          this.thsIteration.estimatedRemainingTime = Duration.fromObject({seconds : event.message.estimatedRemainingTime});
-          this.estimatedRemainingTime = Duration.fromObject({seconds : event.message.estimatedRemainingTime});
-          this.thsIteration.benchmarkSpeedRatio = event.message.benchmarkSpeedRatio;
+            this.thsIteration.elapsed = Duration.fromObject({ seconds: event.message.elapsed });
+            this.thsIteration.estimatedIterationTime = Duration.fromObject({ seconds: event.message.estimatedIterationTime });
+            this.estimatedIterationTime = Duration.fromObject({ seconds: event.message.estimatedIterationTime });
+            this.thsIteration.estimatedRemainingTime = Duration.fromObject({ seconds: event.message.estimatedRemainingTime });
+            this.estimatedRemainingTime = Duration.fromObject({ seconds: event.message.estimatedRemainingTime });
+            this.thsIteration.benchmarkSpeedRatio = event.message.benchmarkSpeedRatio;
 
-          this.thsIterationSet.next(this.thsIteration);
+            this.thsIterationSet.next(this.thsIteration);
           });
 
-          
+
           break;
         case EventTypes.THSSolution:
           this._ngZone.run(() => {
             this.thsSolution = <THSSolution>event.message;
-          this.thsSolutionSet.next(this.thsSolution);
-          this.startTimer();
+            this.thsSolutionSet.next(this.thsSolution);
+            this.startTimer();
           });
 
-          
+
           break;
       }
     });

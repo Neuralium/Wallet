@@ -25,6 +25,7 @@
     "PleaseImportOrCreateWalletAccount": "지갑 계정을 가져 오거나 생성하십시오",
     "PublishAccountAutomatically": "자동으로 계정 게시",
     "Published": "게시 됨",
+    "Publishing": "출판",
     "Standard": "표준",
     "Status": "상태",
     "TrustLevel": "신뢰 수준",
@@ -129,6 +130,7 @@
   "ths": {
     "Title": "타임 하드 서명 생성",
     "Introduction": "비밀 임시 값 검색 준비",
+    "CurrentNoncesValue": "현재 논스",
     "CurrentNonceValue": "현재 임시 값",
     "CurrentRoundValue": "현재 라운드",
     "CurrentElapsedTime": "현재 경과 시간",
@@ -136,12 +138,13 @@
     "Solution": "해결책",
     "SolutionsFound": "THS 솔루션 발견",
     "TargetTimespan": "벤치 마크 대상",
-    "TargetNonce": "Nonce 타겟",
+    "TargetNonce": "최소 Nonce 대상",
     "CurrentNonceTotal": "현재 Nonce 합계",
     "TimeHardSignatureNonceSearch": "타임 하드 서명 임시 검색",
     "EstimatedIterationTime": "예상 반복 시간",
     "EstimatedRemainingTime": "예상 남은 시간",
-    "BenchmarkSpeedRatio": "벤치 마크 속도 비율"
+    "BenchmarkSpeedRatio": "벤치 마크 속도 비율",
+    "Dashboard": "계기반"
   },
   "sms": {
     "Title": "SMS 확인",

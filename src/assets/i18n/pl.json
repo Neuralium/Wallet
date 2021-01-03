@@ -25,6 +25,7 @@
     "PleaseImportOrCreateWalletAccount": "Zaimportuj lub utwórz konto portfela",
     "PublishAccountAutomatically": "opublikuj konto automatycznie",
     "Published": "Opublikowany",
+    "Publishing": "Wydawniczy",
     "Standard": "Standard",
     "Status": "Status",
     "TrustLevel": "Poziom zaufania",
@@ -129,6 +130,7 @@
   "ths": {
     "Title": "Generowanie sygnatur czasowych",
     "Introduction": "Przygotowanie do poszukiwania tajnej wartości jednorazowej",
+    "CurrentNoncesValue": "Aktualne nonce",
     "CurrentNonceValue": "Obecna liczba jednorazowa",
     "CurrentRoundValue": "Obecna runda",
     "CurrentElapsedTime": "Aktualny czas, który upłynął",
@@ -136,12 +138,13 @@
     "Solution": "Rozwiązanie",
     "SolutionsFound": "Znaleziono rozwiązania THS",
     "TargetTimespan": "Benchmark Target",
-    "TargetNonce": "Target Nonce",
+    "TargetNonce": "Minimalny cel jednorazowy",
     "CurrentNonceTotal": "Bieżąca suma jednorazowa",
     "TimeHardSignatureNonceSearch": "Wyszukiwanie bez podpisu czasowego",
     "EstimatedIterationTime": "Szacowany czas iteracji",
     "EstimatedRemainingTime": "Szacowany pozostały czas",
-    "BenchmarkSpeedRatio": "Wzorcowy współczynnik prędkości"
+    "BenchmarkSpeedRatio": "Wzorcowy współczynnik prędkości",
+    "Dashboard": "Deska rozdzielcza"
   },
   "sms": {
     "Title": "Weryfikacja SMS",

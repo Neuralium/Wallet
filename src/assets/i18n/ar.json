@@ -25,6 +25,7 @@
     "PleaseImportOrCreateWalletAccount": "الرجاء استيراد أو إنشاء حساب محفظة",
     "PublishAccountAutomatically": "نشر الحساب تلقائيا",
     "Published": "نشرت",
+    "Publishing": "نشر",
     "Standard": "اساسي",
     "Status": "الحالة",
     "TrustLevel": "مستوى الثقة",
@@ -129,6 +130,7 @@
   "ths": {
     "Title": "توليد الوقت الصعب التوقيع",
     "Introduction": "التحضير للبحث عن قيمة غير قيمة سرية",
+    "CurrentNoncesValue": "الأرقام الحالية",
     "CurrentNonceValue": "nonce الحالي",
     "CurrentRoundValue": "الجولة الحالية",
     "CurrentElapsedTime": "الوقت المنقضي الحالي",
@@ -136,12 +138,13 @@
     "Solution": "المحلول",
     "SolutionsFound": "تم العثور على حلول THS",
     "TargetTimespan": "الهدف المعياري",
-    "TargetNonce": "الهدف Nonce",
+    "TargetNonce": "الحد الأدنى من الهدف غير الأساسي",
     "CurrentNonceTotal": "إجمالي nonce الحالي",
     "TimeHardSignatureNonceSearch": "الوقت الصعب التوقيع بحث nonce",
     "EstimatedIterationTime": "الوقت المقدر للتكرار",
     "EstimatedRemainingTime": "الوقت المتبقي المقدر",
-    "BenchmarkSpeedRatio": "نسبة السرعة المعيارية"
+    "BenchmarkSpeedRatio": "نسبة السرعة المعيارية",
+    "Dashboard": "لوحة القيادة"
   },
   "sms": {
     "Title": "التحقق من الرسائل القصيرة",

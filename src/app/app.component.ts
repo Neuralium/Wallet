@@ -1,6 +1,6 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { BlockChain, NO_BLOCKCHAIN } from './model/blockchain';
-import { MatDialog } from '@angular/material/dialog';
+import { MatDialog, MatDialogRef } from '@angular/material/dialog';
 import { ConfirmDialogComponent } from './dialogs/confirm-dialog/confirm-dialog.component';
 import { Observable } from 'rxjs';
 import { BlockchainService } from './service/blockchain.service';
@@ -50,7 +50,7 @@ export class AppComponent implements OnInit, OnDestroy {
   puzzleWindowOpen:boolean = false;
   thsWindowOpen:boolean = false;
   eventsRegistered: boolean = false;
-
+  thsDialogRef : MatDialogRef<THSDialogComponent, any>;
   logoPath = '';
   constructor(
     private electronService: ElectronService,
@@ -89,17 +89,22 @@ export class AppComponent implements OnInit, OnDestroy {
     });
   }
 
-  showTHS(nonce:number){
+  showTHS(nonce:number, message:any){
     if(!this.thsWindowOpen){
       this.thsWindowOpen = true;
-      const dialogRef = this.dialog.open(THSDialogComponent, {
-        width: '600px',
+      this.thsDialogRef = this.dialog.open(THSDialogComponent, {
+        width: '950px',
         data: nonce
       });
 
-      dialogRef.afterClosed().subscribe(() => {
+      
+      this.thsDialogRef.afterClosed().subscribe(() => {
         this.thsWindowOpen = false;
       });
+    }
+
+    if(message && this.thsDialogRef){
+      this.thsDialogRef.componentInstance.setBegining(message);
     }
   }
 
@@ -143,16 +148,16 @@ export class AppComponent implements OnInit, OnDestroy {
 
           switch (event.eventType) {
               case EventTypes.THSTrigger:
-                this.showTHS(0);
+                this.showTHS(0, null);
                 break;
               case EventTypes.THSBegin:
-                this.showTHS(0);
+                this.showTHS(0, event.message);
                 break;
                 case EventTypes.THSRound:
-                  this.showTHS(0);
+                  this.showTHS(0, null);
                   break;
               case EventTypes.THSIteration:
-                this.showTHS(event.message.nonce);
+                this.showTHS(event.message.nonce, null);
                 break;
               case EventTypes.THSSolution:
                 // do nothing, its finished anyways

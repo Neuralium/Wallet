@@ -25,6 +25,7 @@
     "PleaseImportOrCreateWalletAccount": "Моля, импортирайте или създайте акаунт в портфейла",
     "PublishAccountAutomatically": "публикувайте акаунта автоматично",
     "Published": "Публикуван",
+    "Publishing": "Издателска дейност",
     "Standard": "стандарт",
     "Status": "Статус",
     "TrustLevel": "Ниво на доверие",
@@ -129,6 +130,7 @@
   "ths": {
     "Title": "Генериране на твърд подпис във времето",
     "Introduction": "Подготовка за търсене на тайна nonce стойност",
+    "CurrentNoncesValue": "Текущи нонси",
     "CurrentNonceValue": "Текущ nonce",
     "CurrentRoundValue": "Текущ кръг",
     "CurrentElapsedTime": "Текущо изминало време",
@@ -136,12 +138,13 @@
     "Solution": "Решение",
     "SolutionsFound": "Намерени са THS решения",
     "TargetTimespan": "Бенчмарк цел",
-    "TargetNonce": "Целеви Nonce",
+    "TargetNonce": "Минимална нецелева цел",
     "CurrentNonceTotal": "Текущо общо nonce",
     "TimeHardSignatureNonceSearch": "Time Hard Signature nonce search",
     "EstimatedIterationTime": "Очаквано време на итерация",
     "EstimatedRemainingTime": "Очаквано оставащо време",
-    "BenchmarkSpeedRatio": "Бенчмарк съотношение на скоростта"
+    "BenchmarkSpeedRatio": "Бенчмарк съотношение на скоростта",
+    "Dashboard": "Табло"
   },
   "sms": {
     "Title": "Проверка чрез SMS",

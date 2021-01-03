@@ -110,12 +110,16 @@ export class AppointmentPuzzleDialogComponent implements OnInit, OnDestroy {
 
       this.step = 3;
     } else if (this.appointmentsService.puzzleStatus === PuzzleStatus.Failed) {
-      this.notificationService.showError('Appointment failed');
-      this.dialogRef.close();
+      if(this.dialogRef){
+        this.notificationService.showError('Appointment failed');
+        this.dialogRef.close();
+        this.dialogRef = null;
+      }
     }
      else {
-
-      this.dialogRef.close();
+      if(this.dialogRef){
+        this.dialogRef.close();
+      }
     }
   }
 

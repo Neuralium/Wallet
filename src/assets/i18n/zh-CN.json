@@ -25,6 +25,7 @@
     "PleaseImportOrCreateWalletAccount": "请导入或创建一个钱包帐户",
     "PublishAccountAutomatically": "自动发布帐户",
     "Published": "已发表",
+    "Publishing": "出版",
     "Standard": "标准",
     "Status": "状态",
     "TrustLevel": "信任等级",
@@ -129,6 +130,7 @@
   "ths": {
     "Title": "时间硬签名生成",
     "Introduction": "准备搜索秘密随机数值",
+    "CurrentNoncesValue": "当前随机数",
     "CurrentNonceValue": "现时现时",
     "CurrentRoundValue": "本轮",
     "CurrentElapsedTime": "当前经过时间",
@@ -136,12 +138,13 @@
     "Solution": "解",
     "SolutionsFound": "找到THS解决方案",
     "TargetTimespan": "基准目标",
-    "TargetNonce": "目标随机数",
+    "TargetNonce": "最低随机数目标",
     "CurrentNonceTotal": "当前总计",
     "TimeHardSignatureNonceSearch": "时间硬签名随机数搜索",
     "EstimatedIterationTime": "估计迭代时间",
     "EstimatedRemainingTime": "估计剩余时间",
-    "BenchmarkSpeedRatio": "基准速比"
+    "BenchmarkSpeedRatio": "基准速比",
+    "Dashboard": "仪表板"
   },
   "sms": {
     "Title": "短信验证",

@@ -25,6 +25,7 @@
     "PleaseImportOrCreateWalletAccount": "Пожалуйста, импортируйте или создайте учетную запись кошелька",
     "PublishAccountAutomatically": "опубликовать аккаунт автоматически",
     "Published": "опубликованный",
+    "Publishing": "Издательский",
     "Standard": "стандарт",
     "Status": "Положение дел",
     "TrustLevel": "Уровень доверия",
@@ -129,6 +130,7 @@
   "ths": {
     "Title": "Генерация подписи Time Hard",
     "Introduction": "Подготовка к поиску секретного значения nonce",
+    "CurrentNoncesValue": "Текущие одноразовые номера",
     "CurrentNonceValue": "Текущий одноразовый номер",
     "CurrentRoundValue": "Текущий раунд",
     "CurrentElapsedTime": "Текущее прошедшее время",
@@ -136,12 +138,13 @@
     "Solution": "Решение",
     "SolutionsFound": "THS Решения найдены",
     "TargetTimespan": "Контрольная цель",
-    "TargetNonce": "Целевой одноразовый номер",
+    "TargetNonce": "Минимальный целевой одноразовый номер",
     "CurrentNonceTotal": "Текущий одноразовый всего",
     "TimeHardSignatureNonceSearch": "Time Hard Signature nonce search",
     "EstimatedIterationTime": "Расчетное время итерации",
     "EstimatedRemainingTime": "Расчетное оставшееся время",
-    "BenchmarkSpeedRatio": "Контрольный коэффициент скорости"
+    "BenchmarkSpeedRatio": "Контрольный коэффициент скорости",
+    "Dashboard": "Приборная доска"
   },
   "sms": {
     "Title": "SMS подтверждение",

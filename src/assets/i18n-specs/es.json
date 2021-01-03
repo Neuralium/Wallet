@@ -2963,10 +2963,10 @@
     },
     {
       "Key": "ths.TargetNonce",
-      "MatchingTranslation": "Target Nonce",
+      "MatchingTranslation": "Minimum Nonce Target",
       "Locked": false,
       "TimeAdded": "2020-12-17T16:48:23.3449932Z",
-      "LastUpdate": "2020-12-17T16:48:23.5373068Z"
+      "LastUpdate": "2021-01-03T16:56:46.1018292Z"
     },
     {
       "Key": "ths.CurrentNonceTotal",
@@ -3086,6 +3086,27 @@
       "Locked": false,
       "TimeAdded": "2020-12-17T16:48:27.0231549Z",
       "LastUpdate": "2020-12-17T16:48:27.2245593Z"
+    },
+    {
+      "Key": "account.Publishing",
+      "MatchingTranslation": "Publishing",
+      "Locked": false,
+      "TimeAdded": "2020-12-24T14:41:49.8462993Z",
+      "LastUpdate": "2020-12-24T14:41:49.957738Z"
+    },
+    {
+      "Key": "ths.CurrentNoncesValue",
+      "MatchingTranslation": "Current nonces",
+      "Locked": false,
+      "TimeAdded": "2021-01-03T16:56:45.4783305Z",
+      "LastUpdate": "2021-01-03T16:56:45.6481136Z"
+    },
+    {
+      "Key": "ths.Dashboard",
+      "MatchingTranslation": "Dashboard",
+      "Locked": false,
+      "TimeAdded": "2021-01-03T16:56:46.1019594Z",
+      "LastUpdate": "2021-01-03T16:56:46.2825503Z"
     }
   ]
 }

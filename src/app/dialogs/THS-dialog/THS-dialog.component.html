@@ -9,80 +9,83 @@
 <div *ngIf="!solutionFound && thsIteration.nonce !== 0">
   <div>
     <mat-progress-spinner style="margin: 19px auto;" diameter="50" mode="indeterminate"></mat-progress-spinner>
-  </div>
-  <div>
-    <table style="height:300px;overflow:auto;margin: 0px 30px 10px 30px;">
-      <tr>
-        <td style="font-weight: bold;">{{ 'ths.TargetTimespan' | translate }}</td>
-        <td>{{targetTotalDuration | formatETATime: false}}</td>
-      </tr>
-      <tr>
-        <td style="font-weight: bold;">{{ 'ths.TargetNonce' | translate }}</td>
-        <td>{{targetNonce}}</td>
-      </tr>
-      <tr>
-        <td style="font-weight: bold;">{{ 'ths.EstimatedIterationTime' | translate }}</td>
-        <td>{{estimatedIterationTime | formatETATime: false}}</td>
-      </tr>
-      <tr>
-        <td style="font-weight: bold;">{{ 'ths.EstimatedRemainingTime' | translate }}</td>
-        <td>{{estimatedRemainingTime | formatETATime: false}}</td>
-      </tr>
-      <tr>
-        <td style="font-weight: bold;">{{ 'ths.BenchmarkSpeedRatio' | translate }}</td>
-        <td>{{benchmarkSpeedRatio}}</td>
-      </tr>
-      <tr>
-        <td style="font-weight: bold;">{{ 'ths.CurrentRoundValue' | translate }}</td>
-        <td>{{currentRound}}</td>
-      </tr>
-      <tr>
-        <td style="font-weight: bold;">{{ 'ths.CurrentNonceValue' | translate }}</td>
-        <td>{{currentNonce}}</td>
-      </tr>
-      <tr>
-        <td style="font-weight: bold;">{{ 'ths.CurrentNonceTotal' | translate }}</td>
-        <td>{{totalNonce}}</td>
-      </tr>
-      <tr>
-        <td style="font-weight: bold;">{{ 'ths.CurrentElapsedTime' | translate }}</td>
-        <td>{{thsIteration.elapsed | formatETATime}}</td>
-      </tr>
-    </table>
-    <hr />
-  </div>
-  <div>
-    <div>
-      <table>
-        <tr>
-          <td style="width: 40%;">
-            <div style="font-weight: bold;margin-left: 30px;">{{ 'ths.SolutionsFound' | translate }}</div>
-          </td>
-          <td>
-            <div style="float:right; display: inline;">
-              <mat-paginator [length]="workingSolutions.length" [pageSize]="pageSize" [pageSizeOptions]="pageSizeOptions"
-                [showFirstLastButtons]="true" (page)="setPage($event)" #messagePaginator>
-              </mat-paginator>
-            </div>
-          </td>
-        </tr>
-      </table>
-      
-      
-    </div>
-    <div style="padding-top: 15px;padding-bottom: 15px;">
-      <table class="solutions-table">
-        <tr>
-          <th style="width: 50%;">{{ 'ths.Nonce' | translate }}</th>
-          <th style="width: 50%;">{{ 'ths.Solution' | translate}}</th>
-        </tr>
-        <tr *ngFor="let entry of workingSolutions | slice:sliceStart:sliceEnd">
-          <td style="width: 50%;">{{entry.nonce}}</td>
-          <td style="width: 50%;">{{entry.solution}}</td>
-        </tr>
-      </table>
-    </div>
-  </div>
+  </div> 
+  <table style="width: 100%;">
+    <tr style="background-color: #dadada; margin: auto; text-align: center;border: solid 1px #7b7b7b;">
+      <th>
+        {{ 'ths.Dashboard' | translate }}
+      </th>
+      <th>{{ 'ths.SolutionsFound' | translate }}</th>
+    </tr>
+    <tr>
+      <td>
+        <div>
+          <table style="height:300px;overflow:auto;margin: 0px 30px 10px 30px;">
+            <tr>
+              <td style="font-weight: bold;">{{ 'ths.TargetTimespan' | translate }}</td>
+              <td>{{targetTotalDuration | formatETATime: false}}</td>
+            </tr>
+            <tr>
+              <td style="font-weight: bold;">{{ 'ths.TargetNonce' | translate }}</td>
+              <td>{{targetNonce}}</td>
+            </tr>
+            <tr>
+              <td style="font-weight: bold;">{{ 'ths.EstimatedIterationTime' | translate }}</td>
+              <td>{{estimatedIterationTime | formatETATime: false}}</td>
+            </tr>
+            <tr>
+              <td style="font-weight: bold;">{{ 'ths.EstimatedRemainingTime' | translate }}</td>
+              <td>{{estimatedRemainingTime | formatETATime: false}}</td>
+            </tr>
+            <tr>
+              <td style="font-weight: bold;">{{ 'ths.BenchmarkSpeedRatio' | translate }}</td>
+              <td>{{benchmarkSpeedRatio}}</td>
+            </tr>
+            <tr>
+              <td style="font-weight: bold;">{{ 'ths.CurrentRoundValue' | translate }}</td>
+              <td>{{currentRound}}</td>
+            </tr>
+            <tr>
+              <td style="font-weight: bold;">{{ (singleNonce?'ths.CurrentNonceValue':'ths.CurrentNoncesValue') | translate }}</td>
+              <td>{{currentNoncesStr}}</td>
+            </tr>
+            <tr>
+              <td style="font-weight: bold;">{{ 'ths.CurrentNonceTotal' | translate }}</td>
+              <td>{{totalNonce}}</td>
+            </tr>
+            <tr>
+              <td style="font-weight: bold;">{{ 'ths.CurrentElapsedTime' | translate }}</td>
+              <td>{{thsIteration.elapsed | formatETATime}}</td>
+            </tr>
+          </table>
+        </div>
+      </td>
+      <td style="height: 0;">
+        <div style="height: 100%;">
+          <div>
+              <div style="float:right; display: inline;">
+                <mat-paginator [length]="workingSolutions.length" [pageSize]="pageSize" [pageSizeOptions]="pageSizeOptions"
+                  [showFirstLastButtons]="true" (page)="setPage($event)" #messagePaginator>
+                </mat-paginator>
+              </div>
+          </div>
+          <div style="padding-top: 15px;padding-bottom: 15px;">
+            <table class="solutions-table">
+              <tr>
+                <th style="width: 50%;">{{ 'ths.Nonce' | translate }}</th>
+                <th style="width: 50%;">{{ 'ths.Solution' | translate}}</th>
+              </tr>
+              <tr *ngFor="let entry of workingSolutions | slice:sliceStart:sliceEnd">
+                <td style="width: 50%;">{{entry.nonce}}</td>
+                <td style="width: 50%;">{{entry.solution}}</td>
+              </tr>
+            </table>
+          </div>
+        </div>
+      </td>
+    </tr>
+  </table>
+
 </div>
 <div *ngIf="solutionFound">
 

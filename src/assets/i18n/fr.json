@@ -25,6 +25,7 @@
     "PleaseImportOrCreateWalletAccount": "Merci d'importer ou de créer un compte",
     "PublishAccountAutomatically": "Publier automatiquement le compte",
     "Published": "Publié",
+    "Publishing": "Édition",
     "Standard": "Standard",
     "Status": "Statut",
     "TrustLevel": "Niveau de confiance",
@@ -129,6 +130,7 @@
   "ths": {
     "Title": "Génération de signature temporelle",
     "Introduction": "Se préparer à rechercher une valeur secrète nonce",
+    "CurrentNoncesValue": "Nonces courants",
     "CurrentNonceValue": "Nonce actuel",
     "CurrentRoundValue": "Tour en cours",
     "CurrentElapsedTime": "Temps écoulé actuel",
@@ -136,12 +138,13 @@
     "Solution": "Solution",
     "SolutionsFound": "Solutions THS trouvées",
     "TargetTimespan": "Cible de référence",
-    "TargetNonce": "Nonce cible",
+    "TargetNonce": "Cible minimale de nonce",
     "CurrentNonceTotal": "Total nonce actuel",
     "TimeHardSignatureNonceSearch": "Recherche nonce par signature temporelle",
     "EstimatedIterationTime": "Temps d'itération estimé",
     "EstimatedRemainingTime": "Temps restant estimé",
-    "BenchmarkSpeedRatio": "Rapport de vitesse de référence"
+    "BenchmarkSpeedRatio": "Rapport de vitesse de référence",
+    "Dashboard": "Tableau de bord"
   },
   "sms": {
     "Title": "Vérification par SMS",

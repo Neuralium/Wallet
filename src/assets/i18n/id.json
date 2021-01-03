@@ -25,6 +25,7 @@
     "PleaseImportOrCreateWalletAccount": "Silakan impor atau buat akun dompet",
     "PublishAccountAutomatically": "publikasikan akun secara otomatis",
     "Published": "Diterbitkan",
+    "Publishing": "Penerbitan",
     "Standard": "Standar",
     "Status": "Status",
     "TrustLevel": "Tingkat kepercayaan",
@@ -129,6 +130,7 @@
   "ths": {
     "Title": "Pembuatan Tanda Tangan Sulit",
     "Introduction": "Bersiap untuk mencari nilai nonce rahasia",
+    "CurrentNoncesValue": "Nonce saat ini",
     "CurrentNonceValue": "Nonce saat ini",
     "CurrentRoundValue": "Putaran saat ini",
     "CurrentElapsedTime": "Waktu Berlalu Saat Ini",
@@ -136,12 +138,13 @@
     "Solution": "Larutan",
     "SolutionsFound": "Solusi THS ditemukan",
     "TargetTimespan": "Target Tolok Ukur",
-    "TargetNonce": "Sasaran Nonce",
+    "TargetNonce": "Target Nonce Minimum",
     "CurrentNonceTotal": "Total Nonce Saat Ini",
     "TimeHardSignatureNonceSearch": "Time Hard Signature nonce search",
     "EstimatedIterationTime": "Perkiraan Waktu Iterasi",
     "EstimatedRemainingTime": "Perkiraan Sisa Waktu",
-    "BenchmarkSpeedRatio": "Rasio Kecepatan Tolok Ukur"
+    "BenchmarkSpeedRatio": "Rasio Kecepatan Tolok Ukur",
+    "Dashboard": "Dasbor"
   },
   "sms": {
     "Title": "Verifikasi SMS",

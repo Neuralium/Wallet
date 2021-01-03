@@ -25,6 +25,7 @@
     "PleaseImportOrCreateWalletAccount": "Будь ласка, імпортуйте або створіть обліковий запис гаманця",
     "PublishAccountAutomatically": "публікувати обліковий запис автоматично",
     "Published": "Опубліковано",
+    "Publishing": "Видавнича справа",
     "Standard": "Стандартний",
     "Status": "Статус",
     "TrustLevel": "Рівень довіри",
@@ -129,6 +130,7 @@
   "ths": {
     "Title": "Генерація жорсткого підпису під час",
     "Introduction": "Підготовка до пошуку таємного значення без поняття",
+    "CurrentNoncesValue": "Поточні нонси",
     "CurrentNonceValue": "Поточний нонс",
     "CurrentRoundValue": "Поточний раунд",
     "CurrentElapsedTime": "Поточний минулий час",
@@ -136,12 +138,13 @@
     "Solution": "Рішення",
     "SolutionsFound": "THS Solutions знайдено",
     "TargetTimespan": "Еталонна ціль",
-    "TargetNonce": "Цільова Nonce",
+    "TargetNonce": "Мінімальна ціль Nonce",
     "CurrentNonceTotal": "Поточний Nonce Total",
     "TimeHardSignatureNonceSearch": "Time Hard Signature nonce search",
     "EstimatedIterationTime": "Розрахунковий час ітерації",
     "EstimatedRemainingTime": "Приблизний залишковий час",
-    "BenchmarkSpeedRatio": "Порівняльний коефіцієнт швидкості"
+    "BenchmarkSpeedRatio": "Порівняльний коефіцієнт швидкості",
+    "Dashboard": "Панель приладів"
   },
   "sms": {
     "Title": "Підтвердження SMS",

@@ -354,29 +354,76 @@ export class AppointmentsService {
 
             // humanize
             let format = '';
-
+            let added:boolean = false;
             const days = Math.floor(delta.days);
-
             if (days > 0) {
-                format += days + ' day(s) ';
+                format += days + ' day';
+                if(days > 1){
+                    format += 's ';
+                }
+                else{
+                    format += ' ';
+                }
+                added = true;
             }
 
             const hours = Math.floor(delta.hours);
 
             if (hours > 0) {
-                format += hours + ' hour(s) ';
+                if(added){
+                    format += ' ';
+                }
+                format += hours + ' hour';
+                if(hours > 1){
+                    format += 's ';
+                }
+                else{
+                    format += ' ';
+                }
+                added = true;
             }
 
             const minutes = Math.floor(delta.minutes);
 
             if (minutes > 0) {
-                format += minutes + ' minute(s) ';
+                if(added){
+                    format += ' ';
+                }
+                format += minutes + ' minute';
+                if(minutes > 1){
+                    format += 's ';
+                }
+                else{
+                    format += ' ';
+                }
+                added = true;
             }
 
             const seconds = Math.floor(delta.seconds);
 
             if (seconds > 0) {
-                format += seconds + ' second(s) ';
+                if(added){
+                    format += ' ';
+                }
+                format += seconds + ' second';
+                if(seconds > 1){
+                    format += 's ';
+                }
+                else{
+                    format += ' ';
+                }
+                added = true;
+            }
+
+            if(seconds == 0 && format === ''){
+                const milliseconds = Math.floor(delta.milliseconds);
+
+                if (milliseconds > 0) {
+                    if(added){
+                        format += ' ';
+                    }
+                    format += 'less than a second';
+                }
             }
 
             return format;
@@ -393,7 +440,7 @@ export class AppointmentsService {
                 return null;
             }
 
-            const now = DateTime.local();
+            const now = DateTime.utc();
 
             const time = this.localAppointmentTime.toUTC();
 

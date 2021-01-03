@@ -25,6 +25,7 @@
     "PleaseImportOrCreateWalletAccount": "請導入或創建一個錢包帳戶",
     "PublishAccountAutomatically": "自動發布帳戶",
     "Published": "已發表",
+    "Publishing": "出版",
     "Standard": "標準",
     "Status": "狀態",
     "TrustLevel": "信任等級",
@@ -129,6 +130,7 @@
   "ths": {
     "Title": "時間硬簽名生成",
     "Introduction": "準備搜索秘密隨機數值",
+    "CurrentNoncesValue": "當前隨機數",
     "CurrentNonceValue": "現時現時",
     "CurrentRoundValue": "本輪",
     "CurrentElapsedTime": "當前經過時間",
@@ -136,12 +138,13 @@
     "Solution": "解",
     "SolutionsFound": "找到THS解決方案",
     "TargetTimespan": "基準目標",
-    "TargetNonce": "目標隨機數",
+    "TargetNonce": "最低隨機數目標",
     "CurrentNonceTotal": "當前總計",
     "TimeHardSignatureNonceSearch": "時間硬簽名隨機數搜索",
     "EstimatedIterationTime": "估計迭代時間",
     "EstimatedRemainingTime": "估計剩餘時間",
-    "BenchmarkSpeedRatio": "基準速比"
+    "BenchmarkSpeedRatio": "基準速比",
+    "Dashboard": "儀表板"
   },
   "sms": {
     "Title": "短信驗證",

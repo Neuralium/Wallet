@@ -25,6 +25,7 @@
     "PleaseImportOrCreateWalletAccount": "Lütfen bir cüzdan hesabı içe aktarın veya oluşturun",
     "PublishAccountAutomatically": "hesabı otomatik olarak yayınla",
     "Published": "Yayınlanan",
+    "Publishing": "Yayıncılık",
     "Standard": "Standart",
     "Status": "durum",
     "TrustLevel": "Güven seviyesi",
@@ -129,6 +130,7 @@
   "ths": {
     "Title": "Zor Zaman İmza Oluşturma",
     "Introduction": "Gizli bir nonce değeri aramaya hazırlanıyor",
+    "CurrentNoncesValue": "Mevcut olmayanlar",
     "CurrentNonceValue": "Güncel nonce",
     "CurrentRoundValue": "Güncel tur",
     "CurrentElapsedTime": "Geçerli Geçen Zaman",
@@ -136,12 +138,13 @@
     "Solution": "Çözüm",
     "SolutionsFound": "THS Çözümleri bulundu",
     "TargetTimespan": "Karşılaştırma Hedefi",
-    "TargetNonce": "Hedef Nonce",
+    "TargetNonce": "Minimum Nonce Hedef",
     "CurrentNonceTotal": "Mevcut Nonce Toplamı",
     "TimeHardSignatureNonceSearch": "Time Hard Signature nonce arama",
     "EstimatedIterationTime": "Tahmini Yineleme Süresi",
     "EstimatedRemainingTime": "Tahmini Kalan Süre",
-    "BenchmarkSpeedRatio": "Karşılaştırmalı Hız Oranı"
+    "BenchmarkSpeedRatio": "Karşılaştırmalı Hız Oranı",
+    "Dashboard": "Gösterge Paneli"
   },
   "sms": {
     "Title": "SMS Doğrulaması",

@@ -25,6 +25,7 @@
     "PleaseImportOrCreateWalletAccount": "Vui lòng nhập hoặc tạo tài khoản ví",
     "PublishAccountAutomatically": "xuất bản tài khoản tự động",
     "Published": "Được phát hành",
+    "Publishing": "Xuất bản",
     "Standard": "Tiêu chuẩn",
     "Status": "Trạng thái",
     "TrustLevel": "Mức độ tin cậy",
@@ -129,6 +130,7 @@
   "ths": {
     "Title": "Time Hard Signature Generation",
     "Introduction": "Chuẩn bị tìm kiếm giá trị nonce bí mật",
+    "CurrentNoncesValue": "Hiện tại",
     "CurrentNonceValue": "Nonce hiện tại",
     "CurrentRoundValue": "Vòng hiện tại",
     "CurrentElapsedTime": "Thời gian đã trôi qua hiện tại",
@@ -136,12 +138,13 @@
     "Solution": "Giải pháp",
     "SolutionsFound": "Đã tìm thấy Giải pháp THS",
     "TargetTimespan": "Mục tiêu điểm chuẩn",
-    "TargetNonce": "Mục tiêu Nonce",
+    "TargetNonce": "Mục tiêu Nonce tối thiểu",
     "CurrentNonceTotal": "Tổng số Nonce hiện tại",
     "TimeHardSignatureNonceSearch": "Time Hard Signature nonce search",
     "EstimatedIterationTime": "Thời gian lặp lại ước tính",
     "EstimatedRemainingTime": "Thời gian còn lại ước tính",
-    "BenchmarkSpeedRatio": "Tỷ lệ tốc độ điểm chuẩn"
+    "BenchmarkSpeedRatio": "Tỷ lệ tốc độ điểm chuẩn",
+    "Dashboard": "bảng điều khiển"
   },
   "sms": {
     "Title": "Xác minh SMS",

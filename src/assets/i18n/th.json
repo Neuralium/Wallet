@@ -25,6 +25,7 @@
     "PleaseImportOrCreateWalletAccount": "โปรดนำเข้าหรือสร้างบัญชีกระเป๋าเงิน",
     "PublishAccountAutomatically": "เผยแพร่บัญชีโดยอัตโนมัติ",
     "Published": "การตีพิมพ์",
+    "Publishing": "การเผยแพร่",
     "Standard": "มาตรฐาน",
     "Status": "สถานะ",
     "TrustLevel": "ระดับความน่าเชื่อถือ",
@@ -129,6 +130,7 @@
   "ths": {
     "Title": "Time Hard Signature Generation",
     "Introduction": "กำลังเตรียมค้นหาค่า nonce ลับ",
+    "CurrentNoncesValue": "nonces ปัจจุบัน",
     "CurrentNonceValue": "nonce ปัจจุบัน",
     "CurrentRoundValue": "รอบปัจจุบัน",
     "CurrentElapsedTime": "เวลาที่ผ่านไปปัจจุบัน",
@@ -136,12 +138,13 @@
     "Solution": "สารละลาย",
     "SolutionsFound": "พบโซลูชั่น THS",
     "TargetTimespan": "เป้าหมายมาตรฐาน",
-    "TargetNonce": "เป้าหมาย Nonce",
+    "TargetNonce": "เป้าหมายที่ไม่ใช่ขั้นต่ำ",
     "CurrentNonceTotal": "ยอดรวม Nonce ปัจจุบัน",
     "TimeHardSignatureNonceSearch": "Time Hard Signature ค้นหา nonce",
     "EstimatedIterationTime": "เวลาการทำซ้ำโดยประมาณ",
     "EstimatedRemainingTime": "เวลาที่เหลืออยู่โดยประมาณ",
-    "BenchmarkSpeedRatio": "อัตราส่วนความเร็วมาตรฐาน"
+    "BenchmarkSpeedRatio": "อัตราส่วนความเร็วมาตรฐาน",
+    "Dashboard": "แผงควบคุม"
   },
   "sms": {
     "Title": "การยืนยันทาง SMS",

@@ -159,7 +159,7 @@ export class BlockchainInfoComponent implements OnInit, OnDestroy {
 
   test3() {
     const dialogRef = this.dialog.open(THSDialogComponent, {
-      width: '700px'
+      width: '950px'
     });
   }
 

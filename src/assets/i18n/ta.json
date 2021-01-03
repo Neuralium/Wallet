@@ -25,6 +25,7 @@
     "PleaseImportOrCreateWalletAccount": "தயவுசெய்து ஒரு பணப்பை கணக்கை இறக்குமதி செய்யுங்கள் அல்லது உருவாக்கவும்",
     "PublishAccountAutomatically": "கணக்கை தானாக வெளியிடவும்",
     "Published": "வெளியிடப்பட்டது",
+    "Publishing": "வெளியிடுகிறது",
     "Standard": "தரநிலை",
     "Status": "நிலை",
     "TrustLevel": "நம்பிக்கை நிலை",
@@ -129,6 +130,7 @@
   "ths": {
     "Title": "நேரம் கடின கையொப்பம் உருவாக்கம்",
     "Introduction": "ரகசியமான மதிப்பைத் தேடத் தயாராகிறது",
+    "CurrentNoncesValue": "தற்போதைய nonces",
     "CurrentNonceValue": "தற்போதைய nonce",
     "CurrentRoundValue": "தற்போதைய சுற்று",
     "CurrentElapsedTime": "தற்போதைய கழிந்த நேரம்",
@@ -136,12 +138,13 @@
     "Solution": "தீர்வு",
     "SolutionsFound": "THS தீர்வுகள் காணப்பட்டன",
     "TargetTimespan": "பெஞ்ச்மார்க் இலக்கு",
-    "TargetNonce": "இலக்கு நோன்ஸ்",
+    "TargetNonce": "குறைந்தபட்ச நோன்ஸ் இலக்கு",
     "CurrentNonceTotal": "தற்போதைய Nonce மொத்தம்",
     "TimeHardSignatureNonceSearch": "நேரம் கடின கையொப்பம் தேடல்",
     "EstimatedIterationTime": "மதிப்பிடப்பட்ட மறு செய்கை நேரம்",
     "EstimatedRemainingTime": "மதிப்பிடப்பட்ட மீதமுள்ள நேரம்",
-    "BenchmarkSpeedRatio": "பெஞ்ச்மார்க் வேக விகிதம்"
+    "BenchmarkSpeedRatio": "பெஞ்ச்மார்க் வேக விகிதம்",
+    "Dashboard": "டாஷ்போர்டு"
   },
   "sms": {
     "Title": "எஸ்எம்எஸ் சரிபார்ப்பு",
