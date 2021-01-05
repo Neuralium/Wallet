@@ -1,12 +1,12 @@
 <h1 mat-dialog-title>{{ 'ths.Title' | translate }}</h1>
 
-<div *ngIf="!solutionFound && thsIteration.nonce === 0">
+<div *ngIf="!solutionFound && noNonce">
   <p>
     {{ 'ths.Introduction' | translate }}
   </p>
 
 </div>
-<div *ngIf="!solutionFound && thsIteration.nonce !== 0">
+<div *ngIf="!solutionFound && !noNonce">
   <div>
     <mat-progress-spinner style="margin: 19px auto;" diameter="50" mode="indeterminate"></mat-progress-spinner>
   </div> 

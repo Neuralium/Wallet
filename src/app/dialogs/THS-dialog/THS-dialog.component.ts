@@ -172,6 +172,10 @@ export class THSDialogComponent implements OnInit, OnDestroy {
     }
   }
 
+  get noNonce(){
+    return this.thsIteration.nonces.length === 0;
+  }
+
   joinNonces(){
 
     const filteredNonces = this.currentNonces.filter(nonce => {
