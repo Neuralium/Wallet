@@ -1,10 +1,85 @@
 <mat-card style="width:95%;">
 
 
-
   <mat-card style="width:98%">
-    <div style="overflow: auto;">
-      <button mat-stroked-button color="primary" [disabled]="testingPort" (click)="testP2pPort()">{{ 'utilities.TestP2pPort' | translate }}</button>    </div>
+    <mat-card-header>
+      <mat-card-title>{{ 'utilities.TestP2pPort' | translate }}</mat-card-title>
+    </mat-card-header>
+    <mat-card-content style="margin-top: 18px;">
+
+      <div style="display: block;">
+        <p> {{ 'utilities.PortToTest' | translate }}</p>
+        <mat-radio-group aria-label="Select an option" name="serverType" [(ngModel)]="selectedPort"
+          style="display: block;">
+          <span style="margin-left: 12px;display: block;">
+            <mat-radio-button [value]="1">33888 ({{ 'utilities.P2pPort' | translate }})</mat-radio-button>
+          </span>
+          <span style="margin-left: 12px;display: block;">
+            <mat-radio-button [value]="2">32888 ({{ 'utilities.ValidationPort' | translate }})</mat-radio-button>
+          </span>
+          <span style="margin-left: 12px;display: block;">
+            <mat-radio-button [value]="3">80 ({{ 'utilities.ValidationHttpPort' | translate }})</mat-radio-button>
+          </span>
+        </mat-radio-group>
+      </div>
+
+
+      <div>
+        <mat-checkbox [(ngModel)]="callback">{{ 'utilities.TestCallback' | translate }}</mat-checkbox>
+      </div>
+      <div style="overflow: auto;margin-top: 15px;width: 300px;">
+        <div>
+          <div *ngIf="testingPort">
+            <mat-progress-bar style="width:100%;" mode="determinate" [value]="remainingTimePercent">
+            </mat-progress-bar>
+            <div>
+              <small>{{remainingSeconds}}{{ 'utilities.RemainingSeconds' | translate }}</small>
+            </div>
+
+          </div>
+        </div>
+        <button mat-stroked-button color="primary" [disabled]="testingPort"
+          (click)="testP2pPort()">{{'utilities.StartTest' | translate }}</button>
+      </div>
+
+      <div *ngIf="testPerformed">
+        <mat-card>
+          <mat-card-header>
+            <mat-card-title>{{ 'utilities.Results' | translate }}</mat-card-title>
+          </mat-card-header>
+          <mat-card-content>
+            <p>
+              {{ (resultConnected?'utilities.ResultConnectionSuccess':'utilities.ResultConnectionFailed') | translate }}
+            </p>
+            <div *ngIf="callback">
+              <p>
+                {{'utilities.CallbackRequested' | translate }}
+              </p>
+
+              <div *ngIf="resultCallbackAttempted">
+                <p>
+                  {{'utilities.CallbackAttempted' | translate }}
+                </p>
+                <div *ngIf="resultCallbackSucceeded">
+                  <p>
+                    {{'utilities.ResultCallbackSuccess' | translate }}
+                  </p>
+                </div>
+                <div *ngIf="!resultCallbackSucceeded">
+                  <p>
+                    {{'utilities.ResultCallbackFailed' | translate }}
+                  </p>
+                </div>
+              </div>
+              <div *ngIf="!resultCallbackAttempted">
+                {{'utilities.ResultCallbackDidNotHappen' | translate }}
+              </div>
+            </div>
+
+          </mat-card-content>
+        </mat-card>
+      </div>
+    </mat-card-content>
   </mat-card>
 
 </mat-card>

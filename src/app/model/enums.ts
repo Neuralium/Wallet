@@ -11,3 +11,10 @@ export enum OperatingModes{
             Appointment = 2,
             Presenting = 3
 }
+
+export enum TcpTestResult {
+    Failed = 0,
+    Connected = 1 << 0,
+    CallbackAttempted = 1 << 1,
+    CallbackSucceeded = 1 << 2,
+}

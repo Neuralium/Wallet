@@ -105,6 +105,7 @@
     "Seconds": "ਦੂਜਾ",
     "AppointmentContextReceived": "ਨਿਯੁਕਤੀ ਦਾ ਪ੍ਰਸੰਗ ਪ੍ਰਾਪਤ ਹੋਇਆ",
     "AppointmentVerificationRequestedText": "ਤੁਹਾਡੀ ਮੁਲਾਕਾਤ ਦੀ ਤਸਦੀਕ ਬੇਨਤੀ ਭੇਜੀ ਗਈ ਹੈ. ਹੇਠਾਂ ਦਰਸਾਏ ਗਏ ਵੈਰੀਫਿਕੇਸ਼ਨ ਟਾਈਮ ਵਿੰਡੋ ਦੇ ਖਤਮ ਹੋਣ ਦੇ ਬਾਅਦ ਕੁਝ ਮਿੰਟਾਂ ਤੋਂ ਕੁਝ ਘੰਟਿਆਂ ਵਿੱਚ ਇੱਕ ਪੁਸ਼ਟੀਕਰਣ ਪ੍ਰਾਪਤ ਹੋਵੇਗਾ.",
+    "AppointmentVerificationRequestedExpiredResetText": "ਤੁਹਾਡੀ ਮੁਲਾਕਾਤ ਦੀ ਤਸਦੀਕ ਬੇਨਤੀ ਦੀ ਮਿਆਦ ਖਤਮ ਹੋ ਗਈ ਹੈ. ਤੁਸੀਂ ਚਾਹੋ ਤਾਂ ਥੋੜਾ ਲੰਬਾ ਇੰਤਜ਼ਾਰ ਕਰਨਾ ਜਾਰੀ ਰੱਖ ਸਕਦੇ ਹੋ, ਜਾਂ ਤੁਸੀਂ ਮੁਲਾਕਾਤ ਪ੍ਰਕਿਰਿਆ ਨੂੰ ਰੀਸੈਟ ਕਰ ਸਕਦੇ ਹੋ ਅਤੇ ਹੇਠਾਂ ਰੀਸੈਟ ਬਟਨ ਦਬਾ ਕੇ ਅਰੰਭ ਕਰ ਸਕਦੇ ਹੋ.",
     "AppointmentVerificationCompletedText": "ਤੁਹਾਡੀ ਨਿਯੁਕਤੀ ਤਸਦੀਕ ਨਵੀਨੀਕਰਨ ਬੇਨਤੀ ਦੀ ਪੁਸ਼ਟੀ ਕੀਤੀ ਗਈ ਹੈ. ਤੁਸੀਂ ਆਪਣੇ ਪ੍ਰਮਾਣਿਤ ਖਾਤੇ ਦੀ ਵਰਤੋਂ ਉਦੋਂ ਤਕ ਜਾਰੀ ਰੱਖ ਸਕਦੇ ਹੋ ਜਦੋਂ ਤਕ ਦੁਬਾਰਾ ਨਵੀਨੀਕਰਣ ਦਾ ਸਮਾਂ ਨਾ ਆ ਜਾਵੇ.",
     "AppointmentVerificationCompletedCanPublishText": "ਤੁਹਾਡੀ ਨਿਯੁਕਤੀ ਤਸਦੀਕ ਬੇਨਤੀ ਦੀ ਪੁਸ਼ਟੀ ਕੀਤੀ ਗਈ ਹੈ. ਤੁਸੀਂ ਹੁਣ ਅੱਗੇ ਜਾ ਸਕਦੇ ਹੋ ਅਤੇ ਆਪਣੇ ਖਾਤੇ ਨੂੰ ਬਲਾਕਚੈਨ ਵਿੱਚ ਪ੍ਰਕਾਸ਼ਤ ਕਰ ਸਕਦੇ ਹੋ.",
     "AppointmentVerificationRejectedText": "ਤੁਹਾਡੀ ਨਿਯੁਕਤੀ ਤਸਦੀਕ ਬੇਨਤੀ ਨੂੰ ਰੱਦ ਕਰ ਦਿੱਤਾ ਗਿਆ ਹੈ. ਕਿਰਪਾ ਕਰਕੇ ਨਵੀਂ ਮੁਲਾਕਾਤ ਦੀ ਬੇਨਤੀ ਨਾਲ ਦੁਬਾਰਾ ਕੋਸ਼ਿਸ਼ ਕਰੋ.",
@@ -113,7 +114,10 @@
     "AppointmentVerificationWindowRemaining": "ਬਾਕੀ",
     "InvalidPuzzleEngineVersion": "ਅਵੈਧ ਪਹੇਲੀ ਇੰਜਨ ਸੰਸਕਰਣ. ਕਿਰਪਾ ਕਰਕੇ ਆਪਣੇ ਸਾੱਫਟਵੇਅਰ ਦਾ ਸੰਸਕਰਣ ਅਪਡੇਟ ਕਰੋ.",
     "PuzzleInstructions": "ਬੁਝਾਰਤ ਨਿਰਦੇਸ਼",
-    "PuzzleClickInstructions": "ਨਿਰਦੇਸ਼ ਪ੍ਰਦਰਸ਼ਿਤ ਕਰਨ ਲਈ ਇੱਥੇ ਕਲਿੱਕ ਕਰੋ"
+    "PuzzleClickInstructions": "ਨਿਰਦੇਸ਼ ਪ੍ਰਦਰਸ਼ਿਤ ਕਰਨ ਲਈ ਇੱਥੇ ਕਲਿੱਕ ਕਰੋ",
+    "ResetAppointment": "ਮੁਲਾਕਾਤ ਦੁਬਾਰਾ ਸੈੱਟ ਕਰੋ",
+    "SuccessClearAppointment": "ਸਫਲਤਾਪੂਰਵਕ ਮੁਲਾਕਾਤ ਨੂੰ ਸਾਫ ਕੀਤਾ",
+    "FailedClearAppointment": "ਮੁਲਾਕਾਤ ਨੂੰ ਸਾਫ ਕਰਨ ਵਿੱਚ ਅਸਫਲ"
   },
   "puzzles": {
     "Title": "ਬੁਝਾਰਤ",
@@ -418,7 +422,9 @@
   "settings": {
     "SettingsSaved": "ਸੈਟਿੰਗਜ਼ ਸੁਰੱਖਿਅਤ ਕੀਤੀ ਗਈ",
     "Title": "ਸੈਟਿੰਗਜ਼",
-    "Explain": "ਵੱਖੋ ਵੱਖਰੇ ਵਿਕਲਪ ਜੋ ਤੁਸੀਂ ਆਪਣੇ ਬਟੂਏ ਨੂੰ ਅੰਤਮ ਰੂਪ ਦੇਣ ਲਈ ਕੌਂਫਿਗਰ ਕਰ ਸਕਦੇ ਹੋ."
+    "Explain": "ਵੱਖੋ ਵੱਖਰੇ ਵਿਕਲਪ ਜੋ ਤੁਸੀਂ ਆਪਣੇ ਬਟੂਏ ਨੂੰ ਅੰਤਮ ਰੂਪ ਦੇਣ ਲਈ ਕੌਂਫਿਗਰ ਕਰ ਸਕਦੇ ਹੋ.",
+    "LocalServer": "ਸਥਾਨਕ ਸਰਵਰ",
+    "RemoteServer": "ਰਿਮੋਟ ਸਰਵਰ"
   },
   "tools": {
     "Title": "ਸੰਦ",
@@ -435,9 +441,21 @@
     "Run": "ਰਨ"
   },
   "utilities": {
-    "TestP2pPort": "ਪੀਅਰ ਪੋਰਟ ਤੋਂ ਪੀਅਰ ਨੂੰ ਟੈਸਟ ਕਰੋ",
-    "PortSuccess": "ਪੋਰਟ ਕੁਨੈਕਸ਼ਨ ਟੈਸਟ ਸਫਲ ਰਿਹਾ.",
-    "portFailure": "ਪੋਰਟ ਕੁਨੈਕਸ਼ਨ ਟੈਸਟ ਫੇਲ੍ਹ ਹੋਇਆ"
+    "TestP2pPort": "ਪੋਰਟਜ਼ ਨੂੰ ਪੀਅਰ ਕਰਨ ਲਈ ਪੀਅਰ ਦੀ ਜਾਂਚ ਕਰੋ",
+    "PortToTest": "ਟੈਸਟ ਕਰਨ ਲਈ ਪੋਰਟ ਦੀ ਚੋਣ ਕਰੋ ਜੀ",
+    "ValidationPort": "ਨਿਯੁਕਤੀ ਪ੍ਰਮਾਣਿਕਤਾ ਪੋਰਟ",
+    "P2pPort": "ਪੀਅਰ ਟੂ ਪੀਅਰ ਪੋਰਟ",
+    "TestCallback": "ਸਥਾਨਕ ਸਰਵਰ ਪੋਰਟ ਦੀ ਵੀ ਜਾਂਚ ਕਰੋ",
+    "StartTest": "ਟੈਸਟ ਸ਼ੁਰੂ ਕਰੋ",
+    "Results": "ਨਤੀਜੇ",
+    "ResultConnectionSuccess": "ਪੋਰਟ ਕੁਨੈਕਸ਼ਨ ਇੱਕ ਸਫਲਤਾ ਸੀ.",
+    "ResultConnectionFailed": "ਪੋਰਟ ਕੁਨੈਕਸ਼ਨ ਫੇਲ੍ਹ ਹੋਇਆ",
+    "CallbackRequested": "ਸਾਡੇ ਸਰਵਰ ਨਾਲ ਇੱਕ ਕਾ .ਂਟਰ ਕਨੈਕਸ਼ਨ ਦੀ ਬੇਨਤੀ ਕੀਤੀ ਗਈ ਸੀ",
+    "CallbackAttempted": "ਰਿਮੋਟ ਸਰਵਰ ਨੇ ਸਾਡੀ ਸਥਾਨਕ ਪੋਰਟ ਨਾਲ ਜੁੜਨ ਦੀ ਕੋਸ਼ਿਸ਼ ਕੀਤੀ.",
+    "ResultCallbackDidNotHappen": "ਰਿਮੋਟ ਸਰਵਰ ਜਵਾਬ ਨਹੀਂ ਦੇ ਸਕਿਆ.",
+    "ResultCallbackSuccess": "ਸਾਡਾ ਸਰਵਰ ਪੋਰਟ ਕੁਨੈਕਟ ਹੋਣ ਯੋਗ ਸੀ.",
+    "ResultCallbackFailed": "ਸਾਡਾ ਸਰਵਰ ਪੋਰਟ ਕੁਨੈਕਟ ਨਹੀਂ ਸੀ",
+    "RemainingSeconds": " ਇਕ ਹੋਰ ਕੋਸ਼ਿਸ਼ ਸੰਭਵ ਹੈ ਅੱਗੇ ਸਕਿੰਟ."
   },
   "sync": {
     "BlockchainStatus": "ਬਲਾਕਚੇਨ ਸਥਿਤੀ",

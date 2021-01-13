@@ -1,11 +1,12 @@
 export class MenuConfig {
     showDashboard:boolean = true;
-    showSend:boolean = true;
+    showNeuralium:boolean = true;
     showReceive:boolean = true;
     showHistory:boolean = true;
     showTools:boolean = true;
     showContacts:boolean = true;
     showSettings:boolean = true;
+    showServer:boolean = true;
 }
 
 export const Pages = {

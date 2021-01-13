@@ -105,6 +105,7 @@
     "Seconds": "Segundos)",
     "AppointmentContextReceived": "Contexto de cita recibido",
     "AppointmentVerificationRequestedText": "Su solicitud de verificación de cita ha sido enviada. Se recibirá una confirmación entre unos minutos y unas horas después del final de la ventana de tiempo de verificación que se muestra a continuación.",
+    "AppointmentVerificationRequestedExpiredResetText": "Su solicitud de verificación de cita ha caducado. Puede continuar esperando un poco más si lo desea, o puede restablecer el proceso de cita y comenzar de nuevo presionando el botón de restablecimiento a continuación.",
     "AppointmentVerificationCompletedText": "Se ha confirmado su solicitud de renovación de verificación de cita. Puede continuar usando su cuenta verificada hasta que sea el momento de renovarla nuevamente.",
     "AppointmentVerificationCompletedCanPublishText": "Su solicitud de verificación de cita ha sido confirmada. Ahora puede continuar y publicar su cuenta en blockchain.",
     "AppointmentVerificationRejectedText": "Su solicitud de verificación de cita ha sido rechazada. Vuelva a intentarlo con una nueva solicitud de cita.",
@@ -113,7 +114,10 @@
     "AppointmentVerificationWindowRemaining": "Restante",
     "InvalidPuzzleEngineVersion": "Versión de motor de rompecabezas no válida. Por favor actualice su versión de software.",
     "PuzzleInstructions": "Instrucciones de rompecabezas",
-    "PuzzleClickInstructions": "Haga clic aquí para ver las instrucciones"
+    "PuzzleClickInstructions": "Haga clic aquí para ver las instrucciones",
+    "ResetAppointment": "Restablecer cita",
+    "SuccessClearAppointment": "Cita aprobada con éxito",
+    "FailedClearAppointment": "No se pudo borrar la cita"
   },
   "puzzles": {
     "Title": "Rompecabezas",
@@ -418,7 +422,9 @@
   "settings": {
     "SettingsSaved": "Configuración guardada",
     "Title": "Configuración",
-    "Explain": "Varias opciones que puede configurar para afinar su billetera."
+    "Explain": "Varias opciones que puede configurar para afinar su billetera.",
+    "LocalServer": "Servidor local",
+    "RemoteServer": "Servidor remoto"
   },
   "tools": {
     "Title": "Herramientas",
@@ -435,9 +441,21 @@
     "Run": "correr"
   },
   "utilities": {
-    "TestP2pPort": "Prueba de puerto de igual a igual",
-    "PortSuccess": "La prueba de conexión del puerto fue exitosa.",
-    "portFailure": "La prueba de conexión del puerto falló"
+    "TestP2pPort": "Prueba de puertos de igual a igual",
+    "PortToTest": "Seleccione el puerto para probar",
+    "ValidationPort": "Puerto de validación de citas",
+    "P2pPort": "Puerto de igual a igual",
+    "TestCallback": "Pruebe también el puerto del servidor local",
+    "StartTest": "Iniciar prueba",
+    "Results": "Resultados",
+    "ResultConnectionSuccess": "La conexión del puerto fue un éxito.",
+    "ResultConnectionFailed": "La conexión del puerto falló",
+    "CallbackRequested": "Se solicitó una conexión de contador a nuestro servidor",
+    "CallbackAttempted": "El servidor remoto intentó conectarse a nuestro puerto local.",
+    "ResultCallbackDidNotHappen": "El servidor remoto no pudo responder.",
+    "ResultCallbackSuccess": "Nuestro puerto de servidor se podía conectar.",
+    "ResultCallbackFailed": "Nuestro puerto de servidor NO se podía conectar",
+    "RemainingSeconds": " segundos antes de que sea posible otro intento."
   },
   "sync": {
     "BlockchainStatus": "Estado de Blockchain",

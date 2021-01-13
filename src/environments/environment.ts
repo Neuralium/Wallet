@@ -7,5 +7,5 @@ export const AppConfig = {
   devnet:false,
   p2pPort : 0,
   rpcPort : 0,
-  softwareVersion : '1.0.0.0'
+  softwareVersion : '0.0.0.0'
 };

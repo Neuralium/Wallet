@@ -105,6 +105,7 @@
     "Seconds": "Seconde (s)",
     "AppointmentContextReceived": "Contexte de rendez-vous reçu",
     "AppointmentVerificationRequestedText": "Votre demande de vérification de rendez-vous a été envoyée. Une confirmation sera reçue dans quelques minutes à quelques heures après la fin de la fenêtre de temps de vérification affichée ci-dessous.",
+    "AppointmentVerificationRequestedExpiredResetText": "Votre demande de vérification de rendez-vous a expiré. Vous pouvez continuer à attendre un peu plus si vous le souhaitez, ou vous pouvez réinitialiser le processus de rendez-vous et recommencer en appuyant sur le bouton de réinitialisation ci-dessous.",
     "AppointmentVerificationCompletedText": "Votre demande de renouvellement de vérification de rendez-vous a été confirmée. Vous pouvez continuer à utiliser votre compte validé jusqu'à ce qu'il soit temps de le renouveler.",
     "AppointmentVerificationCompletedCanPublishText": "Votre demande de vérification de rendez-vous a été confirmée. Vous pouvez maintenant continuer et publier votre compte sur la blockchain.",
     "AppointmentVerificationRejectedText": "Votre demande de vérification de rendez-vous a été rejetée. Veuillez réessayer avec une nouvelle demande de rendez-vous.",
@@ -113,7 +114,10 @@
     "AppointmentVerificationWindowRemaining": "Restant",
     "InvalidPuzzleEngineVersion": "Version du moteur de puzzle non valide. Veuillez mettre à jour la version de votre logiciel.",
     "PuzzleInstructions": "Instructions de puzzle",
-    "PuzzleClickInstructions": "Cliquez ici pour afficher les instructions"
+    "PuzzleClickInstructions": "Cliquez ici pour afficher les instructions",
+    "ResetAppointment": "Réinitialiser le rendez-vous",
+    "SuccessClearAppointment": "Rendez-vous autorisé avec succès",
+    "FailedClearAppointment": "Échec de la suppression du rendez-vous"
   },
   "puzzles": {
     "Title": "Puzzle",
@@ -418,7 +422,9 @@
   "settings": {
     "SettingsSaved": "Paramètres sauvegardés",
     "Title": "Paramètres",
-    "Explain": "Diverses options que vous pouvez configurer pour ajuster votre portefeuille."
+    "Explain": "Diverses options que vous pouvez configurer pour ajuster votre portefeuille.",
+    "LocalServer": "Serveur local",
+    "RemoteServer": "Serveur distant"
   },
   "tools": {
     "Title": "Outils",
@@ -435,9 +441,21 @@
     "Run": "Courir"
   },
   "utilities": {
-    "TestP2pPort": "Tester le port d'égal à égal",
-    "PortSuccess": "Le test de connexion au port a réussi.",
-    "portFailure": "Le test de connexion au port a échoué"
+    "TestP2pPort": "Tester les ports d'égal à égal",
+    "PortToTest": "Veuillez sélectionner le port à tester",
+    "ValidationPort": "Port de validation de rendez-vous",
+    "P2pPort": "Port d'égal à égal",
+    "TestCallback": "Testez également le port du serveur local",
+    "StartTest": "Démarrer le test",
+    "Results": "Résultats",
+    "ResultConnectionSuccess": "La connexion au port a été un succès.",
+    "ResultConnectionFailed": "La connexion au port a échoué",
+    "CallbackRequested": "Une contre-connexion à notre serveur a été demandée",
+    "CallbackAttempted": "Le serveur distant a tenté de se connecter à notre port local.",
+    "ResultCallbackDidNotHappen": "Le serveur distant n'a pas pu répondre.",
+    "ResultCallbackSuccess": "Notre port serveur était connectable.",
+    "ResultCallbackFailed": "Notre port de serveur n'était PAS connectable",
+    "RemainingSeconds": " secondes avant qu'une autre tentative ne soit possible."
   },
   "sync": {
     "BlockchainStatus": "Statut de la Blockchain",

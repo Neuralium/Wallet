@@ -105,6 +105,7 @@
     "Seconds": "İkinci (lar)",
     "AppointmentContextReceived": "Randevu Bağlamı Alındı",
     "AppointmentVerificationRequestedText": "Randevu doğrulama talebiniz gönderildi. Aşağıda görüntülenen doğrulama süresi penceresinin bitiminden birkaç dakika ila birkaç saat sonra bir onay alınacaktır.",
+    "AppointmentVerificationRequestedExpiredResetText": "Randevu doğrulama talebinizin süresi doldu. Dilerseniz biraz daha beklemeye devam edebilir ya da aşağıdaki sıfırla butonuna basarak randevu sürecini sıfırlayabilir ve baştan başlayabilirsiniz.",
     "AppointmentVerificationCompletedText": "Randevu doğrulama yenileme talebiniz onaylandı. Tekrar yenileme zamanı gelene kadar doğrulanmış hesabınızı kullanmaya devam edebilirsiniz.",
     "AppointmentVerificationCompletedCanPublishText": "Randevu doğrulama talebiniz onaylandı. Şimdi devam edebilir ve hesabınızı blok zincirinde yayınlayabilirsiniz.",
     "AppointmentVerificationRejectedText": "Randevu doğrulama talebiniz reddedildi. Lütfen yeni bir randevu talebiyle tekrar deneyin.",
@@ -113,7 +114,10 @@
     "AppointmentVerificationWindowRemaining": "Kalan",
     "InvalidPuzzleEngineVersion": "Geçersiz bulmaca motoru sürümü. Lütfen yazılım sürümünüzü güncelleyin.",
     "PuzzleInstructions": "Bulmaca Talimatları",
-    "PuzzleClickInstructions": "Buraya tıklayın talimatları görüntüleyin"
+    "PuzzleClickInstructions": "Buraya tıklayın talimatları görüntüleyin",
+    "ResetAppointment": "Randevuyu Sıfırla",
+    "SuccessClearAppointment": "Başarıyla temizlenen randevu",
+    "FailedClearAppointment": "Randevu temizlenemedi"
   },
   "puzzles": {
     "Title": "Bulmaca",
@@ -418,7 +422,9 @@
   "settings": {
     "SettingsSaved": "ayarlar kaydedildi",
     "Title": "Ayarlar",
-    "Explain": "Cüzdanınızda ince ayar yapmak için yapılandırabileceğiniz çeşitli seçenekler."
+    "Explain": "Cüzdanınızda ince ayar yapmak için yapılandırabileceğiniz çeşitli seçenekler.",
+    "LocalServer": "Yerel sunucu",
+    "RemoteServer": "Uzak Sunucu"
   },
   "tools": {
     "Title": "Araçlar",
@@ -435,9 +441,21 @@
     "Run": "Çalıştırmak"
   },
   "utilities": {
-    "TestP2pPort": "Eşler arası Bağlantı Noktasını test edin",
-    "PortSuccess": "Bağlantı noktası bağlantı testi başarılı oldu.",
-    "portFailure": "Bağlantı noktası bağlantı testi başarısız oldu"
+    "TestP2pPort": "Eşler arası Bağlantı Noktalarını test edin",
+    "PortToTest": "Lütfen test edilecek bağlantı noktasını seçin",
+    "ValidationPort": "Randevu Doğrulama Bağlantı Noktası",
+    "P2pPort": "Eşler arası Bağlantı Noktası",
+    "TestCallback": "Yerel sunucu bağlantı noktasını da test edin",
+    "StartTest": "Testi Başlat",
+    "Results": "Sonuçlar",
+    "ResultConnectionSuccess": "Bağlantı noktası bağlantısı başarılı oldu.",
+    "ResultConnectionFailed": "Bağlantı noktası bağlantısı başarısız oldu",
+    "CallbackRequested": "Sunucumuza bir sayaç bağlantısı talep edildi",
+    "CallbackAttempted": "Uzak sunucu, yerel bağlantı noktamıza bağlanmaya çalıştı.",
+    "ResultCallbackDidNotHappen": "Uzak sunucu yanıt veremedi.",
+    "ResultCallbackSuccess": "Sunucu bağlantı noktamız bağlanabilirdi.",
+    "ResultCallbackFailed": "Sunucu bağlantı noktamız bağlanabilir DEĞİL",
+    "RemainingSeconds": " başka bir girişimin mümkün olmasından saniyeler önce."
   },
   "sync": {
     "BlockchainStatus": "Blockchain Durumu",

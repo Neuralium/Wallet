@@ -5,6 +5,7 @@ import { NotificationService } from '../..//service/notification.service';
 import { Router, ActivatedRoute } from '@angular/router';
 import { takeUntil } from 'rxjs/operators';
 import { Subject } from 'rxjs';
+import { ɵBrowserPlatformLocation } from '@angular/common';
 
 
 @Component({
@@ -17,8 +18,10 @@ export class SettingsComponent implements OnInit, AfterViewInit, OnDestroy {
   languages: any;
   selectedLanguage: string;
   serverPath: string;
+  serverIP: string;
   serverPort: number;
   miningLogLevel: number;
+  serverType:number;
 
   public primary: boolean;
   constructor(
@@ -63,11 +66,15 @@ export class SettingsComponent implements OnInit, AfterViewInit, OnDestroy {
     this.serverPath = this.configService.serverPath;
     this.serverPort = this.configService.serverPort;
     this.miningLogLevel = this.configService.miningLogLevel;
+    this.serverIP = this.configService.serverIP;
+    this.serverType = this.configService.serverType;
   }
 
   saveSettings() {
     this.configService.language = this.selectedLanguage;
     this.configService.serverPath = this.serverPath;
+    this.configService.serverIP = this.serverIP;
+    this.configService.serverType = this.serverType;
     this.configService.serverPort = this.serverPort;
     this.configService.miningLogLevel = this.miningLogLevel;
     this.configService.saveSettings();
@@ -85,12 +92,19 @@ export class SettingsComponent implements OnInit, AfterViewInit, OnDestroy {
 
         this.ensureServerPath();
         break;
+      case 'serverIP':
+          this.serverIP = this.configService.defaultSettings.serverIP;
+          break;
       case 'serverPort':
         this.serverPort = this.configService.defaultSettings.serverPort;
         break;
       case 'miningLogLevel':
         this.miningLogLevel = this.configService.defaultSettings.miningLogLevel;
         break;
+      case 'serverType':
+        this.serverType = this.configService.defaultSettings.serverType;
+        break;
+
       default:
         break;
     }
@@ -98,6 +112,9 @@ export class SettingsComponent implements OnInit, AfterViewInit, OnDestroy {
 
   ensureServerPath() {
 
+    if( this.serverType === 1){
+      return;
+    }
     let defaultPath = this.configService.defaultSettings.serverPath;
 
     if (defaultPath) {

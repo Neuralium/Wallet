@@ -23,12 +23,12 @@ export class MainMenuComponent implements OnInit, OnDestroy {
   currentBlockchain: BlockChain;
 
   showDashboard:boolean = false;
-  showSend:boolean = false;
+  showNeuralium:boolean = false;
   showHistory:boolean = false;
   showContacts:boolean = false;
-  showSettings:boolean = false;
   showTools:boolean = false;
-  
+  showSettings:boolean = false;
+  showServer:boolean = false;
 
   constructor(
     private configService:ConfigService,
@@ -40,6 +40,8 @@ export class MainMenuComponent implements OnInit, OnDestroy {
     }
 
   ngOnInit() {
+
+    this.displayMenu(NO_BLOCKCHAIN);
     this.serverConnectionService.isConnectedToServer().pipe(takeUntil(this.unsubscribe$)).subscribe(connected => {
       if (connected !== CONNECTED) {
         // nothing to do
@@ -48,7 +50,7 @@ export class MainMenuComponent implements OnInit, OnDestroy {
         this.blockchainService.getSelectedBlockchain().pipe(takeUntil(this.unsubscribe$)).subscribe(blockchain => {
           this._ngZone.run(() => {
             this.currentBlockchain = blockchain;
-          this.displayMenu(blockchain);
+            this.displayMenu(blockchain);
           });
 
           
@@ -70,22 +72,18 @@ export class MainMenuComponent implements OnInit, OnDestroy {
   }
 
   displayMenu(blockchain: BlockChain) {
-    if (blockchain !== NO_BLOCKCHAIN) {
-      this.showDashboard = blockchain.menuConfig.showDashboard;
-      this.showSend = blockchain.menuConfig.showSend;
-      this.showHistory = blockchain.menuConfig.showHistory;
-      this.showTools = blockchain.menuConfig.showTools;
-      this.showContacts = blockchain.menuConfig.showContacts;
-      this.showSettings = blockchain.menuConfig.showSettings;
-    }
+
+    this.showDashboard = blockchain.menuConfig.showDashboard;
+    this.showNeuralium = blockchain.menuConfig.showNeuralium;
+    this.showHistory = blockchain.menuConfig.showHistory;
+    this.showTools = blockchain.menuConfig.showTools;
+    this.showContacts = blockchain.menuConfig.showContacts;
+    this.showSettings = blockchain.menuConfig.showSettings;
+    this.showServer = blockchain.menuConfig.showServer;
+  
   }
 
   
-
-  
-
-  
-
   showSoftwareLicenseAgreement(){
     setTimeout(() =>
       this.dialog.open(SoftwareLicenseAgreementComponent, {

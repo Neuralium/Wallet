@@ -335,6 +335,22 @@ export class WalletCall extends CommonCall {
     });
   }
 
+  callClearAppointment(chainType: number, accountCode: string) {
+    return new Promise<boolean>((resolve, reject) => {
+
+      this.logEvent('ClearAppointment - call', { 'chainType': chainType, 'accountCode': accountCode });
+      this.serviceConnectionService.invoke<boolean>('ClearAppointment', chainType, accountCode)
+        .then(result => {
+            resolve(result);
+          })
+        .catch(reason => {
+          reject('ClearAppointment error : ' + reason);
+        });
+    });
+  }
+
+  
+
   callQueryAppointmentConfirmationResult(chainType: number, accountCode: string) {
     return new Promise<AccountAppointmentConfirmationResult>((resolve, reject) => {
 

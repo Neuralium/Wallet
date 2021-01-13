@@ -105,6 +105,7 @@
     "Seconds": "Sekundy)",
     "AppointmentContextReceived": "Otrzymano kontekst spotkania",
     "AppointmentVerificationRequestedText": "Twoja prośba o weryfikację spotkania została wysłana. Potwierdzenie zostanie odebrane w ciągu kilku minut do kilku godzin po zakończeniu przedstawionego poniżej okna czasowego weryfikacji.",
+    "AppointmentVerificationRequestedExpiredResetText": "Twoja prośba o weryfikację terminu wygasła. Jeśli chcesz, możesz jeszcze trochę poczekać lub zresetować proces spotkania i zacząć od nowa, naciskając przycisk resetowania poniżej.",
     "AppointmentVerificationCompletedText": "Twoja prośba o odnowienie weryfikacji terminu została potwierdzona. Możesz nadal korzystać ze zweryfikowanego konta do czasu ponownego odnowienia.",
     "AppointmentVerificationCompletedCanPublishText": "Twoja prośba o weryfikację spotkania została potwierdzona. Możesz teraz kontynuować i opublikować swoje konto w łańcuchu bloków.",
     "AppointmentVerificationRejectedText": "Twoja prośba o weryfikację spotkania została odrzucona. Spróbuj ponownie z nową prośbą o spotkanie.",
@@ -113,7 +114,10 @@
     "AppointmentVerificationWindowRemaining": "Pozostały",
     "InvalidPuzzleEngineVersion": "Nieprawidłowa wersja silnika puzzli. Zaktualizuj wersję oprogramowania.",
     "PuzzleInstructions": "Instrukcje łamigłówki",
-    "PuzzleClickInstructions": "Kliknij tutaj, aby wyświetlić instrukcje"
+    "PuzzleClickInstructions": "Kliknij tutaj, aby wyświetlić instrukcje",
+    "ResetAppointment": "Resetuj termin",
+    "SuccessClearAppointment": "Pomyślnie rozliczone spotkanie",
+    "FailedClearAppointment": "Nie udało się wyczyścić terminu"
   },
   "puzzles": {
     "Title": "Puzzle",
@@ -418,7 +422,9 @@
   "settings": {
     "SettingsSaved": "Ustawienia zapisane",
     "Title": "Ustawienia",
-    "Explain": "Różne opcje, które możesz skonfigurować, aby dostosować swój portfel."
+    "Explain": "Różne opcje, które możesz skonfigurować, aby dostosować swój portfel.",
+    "LocalServer": "Serwer lokalny",
+    "RemoteServer": "Zdalny serwer"
   },
   "tools": {
     "Title": "Przybory",
@@ -435,9 +441,21 @@
     "Run": "Biegać"
   },
   "utilities": {
-    "TestP2pPort": "Testuj port peer to peer",
-    "PortSuccess": "Test połączenia portu zakończył się pomyślnie.",
-    "portFailure": "Test połączenia portu nie thsiódł się"
+    "TestP2pPort": "Testuj porty peer to peer",
+    "PortToTest": "Wybierz port do przetestowania",
+    "ValidationPort": "Port weryfikacji terminu",
+    "P2pPort": "Port peer to peer",
+    "TestCallback": "Przetestuj również port serwera lokalnego",
+    "StartTest": "Rozpocznij test",
+    "Results": "Wyniki",
+    "ResultConnectionSuccess": "Połączenie portu zakończyło się sukcesem.",
+    "ResultConnectionFailed": "Połączenie portu nie powiodło się",
+    "CallbackRequested": "Zażądano połączenia licznika z naszym serwerem",
+    "CallbackAttempted": "Serwer zdalny próbował połączyć się z naszym portem lokalnym.",
+    "ResultCallbackDidNotHappen": "Serwer zdalny nie mógł odpowiedzieć.",
+    "ResultCallbackSuccess": "Nasz port serwera można było podłączyć.",
+    "ResultCallbackFailed": "Nasz port serwera NIE był możliwy do podłączenia",
+    "RemainingSeconds": " sekund, zanim możliwa będzie kolejna próba."
   },
   "sync": {
     "BlockchainStatus": "Stan Blockchain",

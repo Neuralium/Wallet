@@ -105,6 +105,7 @@
     "Seconds": "秒",
     "AppointmentContextReceived": "受信した予定のコンテキスト",
     "AppointmentVerificationRequestedText": "予約確認リクエストが送信されました。確認は、以下に表示されている確認時間枠の終了後、数分から数時間以内に受信されます。",
+    "AppointmentVerificationRequestedExpiredResetText": "予約確認リクエストの有効期限が切れています。必要に応じてもう少し待つこともできますが、予約プロセスをリセットして、下のリセットボタンを押して最初からやり直すこともできます。",
     "AppointmentVerificationCompletedText": "予約確認の更新リクエストが確認されました。再度更新するときまで、確認済みのアカウントを引き続き使用できます。",
     "AppointmentVerificationCompletedCanPublishText": "予約確認リクエストが確認されました。これで、アカウントをブロックチェーンに公開できます。",
     "AppointmentVerificationRejectedText": "予約確認リクエストは拒否されました。新しい予約リクエストでもう一度お試しください。",
@@ -113,7 +114,10 @@
     "AppointmentVerificationWindowRemaining": "残り",
     "InvalidPuzzleEngineVersion": "パズルエンジンのバージョンが無効です。ソフトウェアのバージョンを更新してください。",
     "PuzzleInstructions": "パズルの説明",
-    "PuzzleClickInstructions": "ここをクリックして指示を表示してください"
+    "PuzzleClickInstructions": "ここをクリックして指示を表示してください",
+    "ResetAppointment": "予定をリセット",
+    "SuccessClearAppointment": "予定を無事にクリア",
+    "FailedClearAppointment": "予定をクリアできませんでした"
   },
   "puzzles": {
     "Title": "パズル",
@@ -418,7 +422,9 @@
   "settings": {
     "SettingsSaved": "保存された設定",
     "Title": "設定",
-    "Explain": "ウォレットを微調整するために設定できるさまざまなオプション。"
+    "Explain": "ウォレットを微調整するために設定できるさまざまなオプション。",
+    "LocalServer": "ローカルサーバー",
+    "RemoteServer": "リモートサーバー"
   },
   "tools": {
     "Title": "道具",
@@ -436,8 +442,20 @@
   },
   "utilities": {
     "TestP2pPort": "ピアツーピアポートをテストする",
-    "PortSuccess": "ポート接続テストは成功しました。",
-    "portFailure": "ポート接続テストに失敗しました"
+    "PortToTest": "テストするポートを選択してください",
+    "ValidationPort": "予定検証ポート",
+    "P2pPort": "ピアツーピアポート",
+    "TestCallback": "ローカルサーバーポートもテストします",
+    "StartTest": "テストを開始します",
+    "Results": "結果",
+    "ResultConnectionSuccess": "ポート接続は成功しました。",
+    "ResultConnectionFailed": "ポート接続に失敗しました",
+    "CallbackRequested": "サーバーへのカウンター接続が要求されました",
+    "CallbackAttempted": "リモートサーバーがローカルポートに接続しようとしました。",
+    "ResultCallbackDidNotHappen": "リモートサーバーが応答できませんでした。",
+    "ResultCallbackSuccess": "サーバーポートは接続可能でした。",
+    "ResultCallbackFailed": "サーバーポートに接続できませんでした",
+    "RemainingSeconds": " 別の試行が可能になる数秒前。"
   },
   "sync": {
     "BlockchainStatus": "ブロックチェーンの状態",

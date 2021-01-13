@@ -105,6 +105,7 @@
     "Seconds": "In secondo luogo (s)",
     "AppointmentContextReceived": "Contesto dell'appuntamento ricevuto",
     "AppointmentVerificationRequestedText": "La tua richiesta di verifica dell'appuntamento è stata inviata. Verrà ricevuta una conferma entro pochi minuti o poche ore dopo la fine della finestra temporale di verifica visualizzata di seguito.",
+    "AppointmentVerificationRequestedExpiredResetText": "La tua richiesta di verifica dell'appuntamento è scaduta. Puoi continuare ad aspettare un po 'più a lungo se lo desideri, oppure puoi ripristinare il processo di appuntamento e ricominciare da capo premendo il pulsante di ripristino in basso.",
     "AppointmentVerificationCompletedText": "La tua richiesta di rinnovo della verifica dell'appuntamento è stata confermata. Puoi continuare a utilizzare il tuo account verificato fino al momento del rinnovo.",
     "AppointmentVerificationCompletedCanPublishText": "La tua richiesta di verifica dell'appuntamento è stata confermata. Ora puoi procedere e pubblicare il tuo account sulla blockchain.",
     "AppointmentVerificationRejectedText": "La tua richiesta di verifica dell'appuntamento è stata rifiutata. Riprova con una nuova richiesta di appuntamento.",
@@ -113,7 +114,10 @@
     "AppointmentVerificationWindowRemaining": "Residuo",
     "InvalidPuzzleEngineVersion": "Versione del motore puzzle non valida. Si prega di aggiornare la versione del software.",
     "PuzzleInstructions": "Istruzioni per il puzzle",
-    "PuzzleClickInstructions": "Fare clic qui per visualizzare le istruzioni"
+    "PuzzleClickInstructions": "Fare clic qui per visualizzare le istruzioni",
+    "ResetAppointment": "Reimposta appuntamento",
+    "SuccessClearAppointment": "Appuntamento superato con successo",
+    "FailedClearAppointment": "Impossibile cancellare l'appuntamento"
   },
   "puzzles": {
     "Title": "Puzzle",
@@ -418,7 +422,9 @@
   "settings": {
     "SettingsSaved": "impostazioni salvate",
     "Title": "impostazioni",
-    "Explain": "Varie opzioni che puoi configurare per ottimizzare il tuo portafoglio."
+    "Explain": "Varie opzioni che puoi configurare per ottimizzare il tuo portafoglio.",
+    "LocalServer": "Server locale",
+    "RemoteServer": "Server remoto"
   },
   "tools": {
     "Title": "Strumenti",
@@ -435,9 +441,21 @@
     "Run": "Correre"
   },
   "utilities": {
-    "TestP2pPort": "Testare la porta peer to peer",
-    "PortSuccess": "Il test di connessione alla porta è riuscito.",
-    "portFailure": "Il test di connessione alla porta non è riuscito"
+    "TestP2pPort": "Testare le porte peer to peer",
+    "PortToTest": "Seleziona la porta da testare",
+    "ValidationPort": "Porta di convalida dell'appuntamento",
+    "P2pPort": "Porta peer to peer",
+    "TestCallback": "Prova anche la porta del server locale",
+    "StartTest": "Avvia test",
+    "Results": "Risultati",
+    "ResultConnectionSuccess": "La connessione alla porta è stata un successo.",
+    "ResultConnectionFailed": "La connessione alla porta non è riuscita",
+    "CallbackRequested": "È stata richiesta una contro connessione al nostro server",
+    "CallbackAttempted": "Il server remoto ha tentato di connettersi alla nostra porta locale.",
+    "ResultCallbackDidNotHappen": "Il server remoto non ha potuto rispondere.",
+    "ResultCallbackSuccess": "La nostra porta del server era collegabile.",
+    "ResultCallbackFailed": "La nostra porta del server NON era collegabile",
+    "RemainingSeconds": " secondi prima che sia possibile un altro tentativo."
   },
   "sync": {
     "BlockchainStatus": "Stato Blockchain",

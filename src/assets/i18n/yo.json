@@ -105,6 +105,7 @@
     "Seconds": "Keji (s)",
     "AppointmentContextReceived": "Ti gba Ifọrọranṣẹ Ọdun",
     "AppointmentVerificationRequestedText": "Ti firanṣẹ ibere ijẹrisi pade rẹ. Yoo gba ìmúdájú laarin iṣẹju diẹ si awọn wakati diẹ lẹhin opin window akoko ijerisi ti o han ni isalẹ.",
+    "AppointmentVerificationRequestedExpiredResetText": "Ibeere ijerisi ipinnu re ti pari. O le tẹsiwaju lati duro diẹ diẹ ti o ba fẹ, tabi o le tunto ilana ipinnu lati pade ki o bẹrẹ nipasẹ titẹ bọtini atunto ni isalẹ.",
     "AppointmentVerificationCompletedText": "Ibeere isọdọtun ti ijẹrisi ijẹrisi rẹ ti jẹrisi. O le tẹsiwaju lilo akọọlẹ ti a ṣayẹwo rẹ titi di akoko lati tunse.",
     "AppointmentVerificationCompletedCanPublishText": "Ibeere ijerisi ipinnu lati pade rẹ ti fidi rẹ mulẹ. O le ni bayi tẹsiwaju ati gbejade akọọlẹ rẹ si blockchain.",
     "AppointmentVerificationRejectedText": "A ti kọ ibeere ijerisi ipinnu lati pade rẹ. Jọwọ gbiyanju lẹẹkansi pẹlu ibeere ipinnu lati pade tuntun.",
@@ -113,7 +114,10 @@
     "AppointmentVerificationWindowRemaining": "Ti o ku",
     "InvalidPuzzleEngineVersion": "Ẹya ti ko ni nkan adojuru ẹya ẹrọ. Jọwọ mu ẹya sọfitiwia rẹ ṣiṣẹ.",
     "PuzzleInstructions": "Awọn ilana adojuru",
-    "PuzzleClickInstructions": "Tẹ ibi ṣe awọn itọnisọna ifihan"
+    "PuzzleClickInstructions": "Tẹ ibi ṣe awọn itọnisọna ifihan",
+    "ResetAppointment": "Tun ipinnu lati pade",
+    "SuccessClearAppointment": "Ti ṣalaye ipinnu lati pade daradara",
+    "FailedClearAppointment": "Kuna lati ko ipinnu lati pade kuro"
   },
   "puzzles": {
     "Title": "Ohun iruju",
@@ -418,7 +422,9 @@
   "settings": {
     "SettingsSaved": "Awọn Eto Fipamọ",
     "Title": "Ètò",
-    "Explain": "Awọn aṣayan oriṣiriṣi o le tunto lati finetune apamọwọ rẹ."
+    "Explain": "Awọn aṣayan oriṣiriṣi o le tunto lati finetune apamọwọ rẹ.",
+    "LocalServer": "Olupin agbegbe",
+    "RemoteServer": "Olupin latọna jijin"
   },
   "tools": {
     "Title": "Awọn irinṣẹ",
@@ -435,9 +441,21 @@
     "Run": "Ṣiṣe"
   },
   "utilities": {
-    "TestP2pPort": "Idanwo ẹlẹgbẹ si Ẹgbẹ ẹlẹgbẹ",
-    "PortSuccess": "Idanwo ibudo asopọ ibudo jẹ aṣeyọri.",
-    "portFailure": "Idanwo asopọ ibudo naa kuna"
+    "TestP2pPort": "Ẹlẹgbẹ idanwo si awọn Ibudo ẹgbẹ",
+    "PortToTest": "Jọwọ yan ibudo lati ṣe idanwo",
+    "ValidationPort": "Port Wiwulo Ipinnu",
+    "P2pPort": "Ẹlẹgbẹ lati ẹlẹgbẹ Port",
+    "TestCallback": "Ṣe idanwo ibudo olupin agbegbe paapaa",
+    "StartTest": "Bẹrẹ Idanwo",
+    "Results": "Awọn abajade",
+    "ResultConnectionSuccess": "Asopọ ibudo naa jẹ aṣeyọri.",
+    "ResultConnectionFailed": "Asopọ ibudo naa kuna",
+    "CallbackRequested": "Ti beere asopọ kan si olupin wa",
+    "CallbackAttempted": "Olupin latọna jijin gbiyanju lati sopọ si ibudo agbegbe wa.",
+    "ResultCallbackDidNotHappen": "Olupin latọna jijin ko le dahun.",
+    "ResultCallbackSuccess": "Ibudo olupin wa jẹ asopọ.",
+    "ResultCallbackFailed": "Ibudo olupin wa KO ṣe asopọ",
+    "RemainingSeconds": " awọn aaya ṣaaju igbiyanju miiran ṣee ṣe."
   },
   "sync": {
     "BlockchainStatus": "Ipo Blockchain",

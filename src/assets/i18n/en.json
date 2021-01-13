@@ -105,6 +105,7 @@
 		"Seconds" : "Second(s)",
 		"AppointmentContextReceived" : "Appointment Context Received",
 		"AppointmentVerificationRequestedText" : "Your appointment verification request has been dispatched. A confirmation will be received within a few minutes to a few hours after the end of the verification time window displayed below.",
+		"AppointmentVerificationRequestedExpiredResetText" : "Your appointment verification request has expired. You may continue to wait a bit longer if you wish, or you can reset the appointment process and start over by pressing the reset button below.",
 		"AppointmentVerificationCompletedText" : "Your appointment verification renewal request has been confirmed. You may continue using your verified account until it is time to renew again.",
 		"AppointmentVerificationCompletedCanPublishText" : "Your appointment verification request has been confirmed. You may now proceed and publish your account to the blockchain.",
 		"AppointmentVerificationRejectedText" : "Your appointment verification request has been rejected. Please try again with a new appointment request.",
@@ -113,7 +114,10 @@
 		"AppointmentVerificationWindowRemaining" : "Remaining",
 		"InvalidPuzzleEngineVersion" : "Invalid puzzle engine version. Please update your software version.",
 		"PuzzleInstructions" : "Puzzle Instructions",
-		"PuzzleClickInstructions" : "Click here do display instructions"
+		"PuzzleClickInstructions" : "Click here do display instructions",
+		"ResetAppointment" : "Reset Appointment",
+		"SuccessClearAppointment" : "Succesfully cleared appointment",
+		"FailedClearAppointment" : "Failed to clear appointment"
 	},
 	"puzzles" : {
 		"Title" : "Puzzle",
@@ -220,7 +224,8 @@
 		"TermsOfServiceCheck": "Check here to indicate that you have read and agree to the terms of service.",
 		"TermsOfServiceClick": "By clicking Yes and/or by using this software you agree to the terms of service",
 		"TestMode": "TestNet Tools",
-		"Version": "System version",
+		"ReleaseVersion": "Server Release version",
+		"BlockchainVersion": "Server Blockchain version",
 		"Yes": "Yes",
 		"ServerRunningStop" : "The Neuralium node server is currently still running. Do you wish to stop it?",
 		"ImportantWalletUpdate" : "Your wallet has just received an important update such as a key change. It is HIGHLY recommended to take a new full wallet backup now, as older wallet backups may not be fully usable from now on.",
@@ -419,7 +424,9 @@
 	"settings": {
 		"SettingsSaved": "Settings Saved",
 		"Title": "Settings",
-		"Explain": "Various options you can configure to finetune your wallet."
+		"Explain": "Various options you can configure to finetune your wallet.",
+		"LocalServer" : "Local Server",
+		"RemoteServer" : "Remote Server"
 	},
 	"tools": {
 		"Title": "Tools",
@@ -436,9 +443,22 @@
 		"Run" : "Run"
 	},
 	"utilities" : {
-		"TestP2pPort" : "Test peer to peer Port",
-		"PortSuccess" : "The port connection test was successful.",
-		"portFailure" : "The port connection test failed"
+		"TestP2pPort" : "Test peer to peer Ports",
+		"PortToTest" : "Please select the port to test",
+		"ValidationPort" : "Appointment Validation Port",
+		"ValidationHttpPort" : "Appointment Validation Http Backup Port",
+		"P2pPort" : "Peer to peer Port",
+		"TestCallback" : "Test local server port too",
+		"StartTest" : "Start Test",
+		"Results" : "Results",
+		"ResultConnectionSuccess" : "The port connection was a success.",
+		"ResultConnectionFailed" : "The port connection failed",
+		"CallbackRequested" : "A counter connection to our server was requested",
+		"CallbackAttempted" : "The remote server attempted to connect to our local port.",
+		"ResultCallbackDidNotHappen" : "The remote server could not respond.",
+		"ResultCallbackSuccess" : "Our server port was connectable.",
+		"ResultCallbackFailed" : "Our server port was NOT connectable",
+		"RemainingSeconds" : " seconds before another attempt is possible."
 	},
 	"sync": {
 		"BlockchainStatus": "Blockchain Status",

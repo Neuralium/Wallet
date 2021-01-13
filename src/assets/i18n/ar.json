@@ -105,6 +105,7 @@
     "Seconds": "ثانية",
     "AppointmentContextReceived": "تم استلام سياق الموعد",
     "AppointmentVerificationRequestedText": "تم إرسال طلب التحقق من الموعد الخاص بك. سيتم استلام تأكيد في غضون بضع دقائق إلى بضع ساعات بعد انتهاء نافذة وقت التحقق المعروضة أدناه.",
+    "AppointmentVerificationRequestedExpiredResetText": "لقد انتهت صلاحية طلب التحقق من الموعد الخاص بك. يمكنك الاستمرار في الانتظار لفترة أطول قليلاً إذا كنت ترغب في ذلك ، أو يمكنك إعادة تعيين عملية الموعد والبدء من جديد بالضغط على زر إعادة التعيين أدناه.",
     "AppointmentVerificationCompletedText": "تم تأكيد طلب تجديد التحقق من الموعد الخاص بك. يمكنك الاستمرار في استخدام حسابك الذي تم التحقق منه حتى يحين وقت التجديد مرة أخرى.",
     "AppointmentVerificationCompletedCanPublishText": "تم تأكيد طلب التحقق من موعدك. يمكنك الآن المتابعة ونشر حسابك على blockchain.",
     "AppointmentVerificationRejectedText": "تم رفض طلب التحقق من الموعد الخاص بك. يرجى المحاولة مرة أخرى مع طلب موعد جديد.",
@@ -113,7 +114,10 @@
     "AppointmentVerificationWindowRemaining": "المتبقي",
     "InvalidPuzzleEngineVersion": "إصدار محرك لغز غير صالح. يرجى تحديث إصدار البرنامج الخاص بك.",
     "PuzzleInstructions": "تعليمات اللغز",
-    "PuzzleClickInstructions": "انقر هنا لعرض التعليمات"
+    "PuzzleClickInstructions": "انقر هنا لعرض التعليمات",
+    "ResetAppointment": "إعادة تعيين الموعد",
+    "SuccessClearAppointment": "تم مسح الموعد بنجاح",
+    "FailedClearAppointment": "فشل في مسح الموعد"
   },
   "puzzles": {
     "Title": "لغز",
@@ -418,7 +422,9 @@
   "settings": {
     "SettingsSaved": "تم حفظ الإعدادات",
     "Title": "الإعدادات",
-    "Explain": "خيارات متعددة يمكنك تكوينها لمحافظة محفظتك."
+    "Explain": "خيارات متعددة يمكنك تكوينها لمحافظة محفظتك.",
+    "LocalServer": "الملقم المحلي",
+    "RemoteServer": "السيرفر المتحكم"
   },
   "tools": {
     "Title": "أدوات",
@@ -435,9 +441,21 @@
     "Run": "يركض"
   },
   "utilities": {
-    "TestP2pPort": "اختبار منفذ نظير إلى نظير",
-    "PortSuccess": "كان اختبار اتصال المنفذ ناجحًا.",
-    "portFailure": "فشل اختبار اتصال المنفذ"
+    "TestP2pPort": "اختبار المنافذ من نظير إلى نظير",
+    "PortToTest": "الرجاء تحديد المنفذ المراد اختباره",
+    "ValidationPort": "منفذ التحقق من الموعد",
+    "P2pPort": "منفذ نظير إلى نظير",
+    "TestCallback": "اختبار منفذ الخادم المحلي أيضًا",
+    "StartTest": "ابدأ الاختبار",
+    "Results": "النتائج",
+    "ResultConnectionSuccess": "كان اتصال المنفذ ناجحًا.",
+    "ResultConnectionFailed": "فشل اتصال المنفذ",
+    "CallbackRequested": "تم طلب اتصال عداد بخادمنا",
+    "CallbackAttempted": "حاول الخادم البعيد الاتصال بمنفذنا المحلي.",
+    "ResultCallbackDidNotHappen": "تعذر على الخادم البعيد الاستجابة.",
+    "ResultCallbackSuccess": "كان منفذ الخادم الخاص بنا قابلاً للاتصال.",
+    "ResultCallbackFailed": "كان منفذ الخادم الخاص بنا غير قابل للاتصال",
+    "RemainingSeconds": " قبل ثوان من إمكانية محاولة أخرى."
   },
   "sync": {
     "BlockchainStatus": "حالة Blockchain",

@@ -2711,24 +2711,10 @@
     },
     {
       "Key": "utilities.TestP2pPort",
-      "MatchingTranslation": "Test peer to peer Port",
+      "MatchingTranslation": "Test peer to peer Ports",
       "Locked": false,
       "TimeAdded": "2020-08-18T04:42:02.8101884Z",
-      "LastUpdate": "2020-08-18T04:42:02.9871759Z"
-    },
-    {
-      "Key": "utilities.PortSuccess",
-      "MatchingTranslation": "The port connection test was successful.",
-      "Locked": false,
-      "TimeAdded": "2020-08-18T04:42:02.9872768Z",
-      "LastUpdate": "2020-08-18T04:42:03.1191618Z"
-    },
-    {
-      "Key": "utilities.portFailure",
-      "MatchingTranslation": "The port connection test failed",
-      "Locked": false,
-      "TimeAdded": "2020-08-18T04:42:03.1191925Z",
-      "LastUpdate": "2020-08-18T04:42:03.2837524Z"
+      "LastUpdate": "2021-01-11T22:01:58.5780454Z"
     },
     {
       "Key": "appointments.OccidentHelp",
@@ -3107,6 +3093,146 @@
       "Locked": false,
       "TimeAdded": "2021-01-03T16:56:45.2680871Z",
       "LastUpdate": "2021-01-03T16:56:45.4565625Z"
+    },
+    {
+      "Key": "appointments.AppointmentVerificationRequestedExpiredResetText",
+      "MatchingTranslation": "Your appointment verification request has expired. You may continue to wait a bit longer if you wish, or you can reset the appointment process and start over by pressing the reset button below.",
+      "Locked": false,
+      "TimeAdded": "2021-01-11T22:01:57.8302423Z",
+      "LastUpdate": "2021-01-11T22:01:57.9100127Z"
+    },
+    {
+      "Key": "appointments.ResetAppointment",
+      "MatchingTranslation": "Reset Appointment",
+      "Locked": false,
+      "TimeAdded": "2021-01-11T22:01:57.9101253Z",
+      "LastUpdate": "2021-01-11T22:01:57.9951148Z"
+    },
+    {
+      "Key": "appointments.SuccessClearAppointment",
+      "MatchingTranslation": "Succesfully cleared appointment",
+      "Locked": false,
+      "TimeAdded": "2021-01-11T22:01:57.9951469Z",
+      "LastUpdate": "2021-01-11T22:01:58.0823999Z"
+    },
+    {
+      "Key": "appointments.FailedClearAppointment",
+      "MatchingTranslation": "Failed to clear appointment",
+      "Locked": false,
+      "TimeAdded": "2021-01-11T22:01:58.0824312Z",
+      "LastUpdate": "2021-01-11T22:01:58.1684077Z"
+    },
+    {
+      "Key": "settings.LocalServer",
+      "MatchingTranslation": "Local Server",
+      "Locked": false,
+      "TimeAdded": "2021-01-11T22:01:58.1701401Z",
+      "LastUpdate": "2021-01-11T22:01:58.259299Z"
+    },
+    {
+      "Key": "settings.RemoteServer",
+      "MatchingTranslation": "Remote Server",
+      "Locked": false,
+      "TimeAdded": "2021-01-11T22:01:58.2593399Z",
+      "LastUpdate": "2021-01-11T22:01:58.4400729Z"
+    },
+    {
+      "Key": "utilities.PortToTest",
+      "MatchingTranslation": "Please select the port to test",
+      "Locked": false,
+      "TimeAdded": "2021-01-11T22:01:58.578078Z",
+      "LastUpdate": "2021-01-11T22:01:58.7187705Z"
+    },
+    {
+      "Key": "utilities.ValidationPort",
+      "MatchingTranslation": "Appointment Validation Port",
+      "Locked": false,
+      "TimeAdded": "2021-01-11T22:01:58.7188021Z",
+      "LastUpdate": "2021-01-11T22:01:58.8464177Z"
+    },
+    {
+      "Key": "utilities.P2pPort",
+      "MatchingTranslation": "Peer to peer Port",
+      "Locked": false,
+      "TimeAdded": "2021-01-11T22:01:58.8464502Z",
+      "LastUpdate": "2021-01-11T22:01:58.9982724Z"
+    },
+    {
+      "Key": "utilities.TestCallback",
+      "MatchingTranslation": "Test local server port too",
+      "Locked": false,
+      "TimeAdded": "2021-01-11T22:01:58.9983234Z",
+      "LastUpdate": "2021-01-11T22:01:59.1397202Z"
+    },
+    {
+      "Key": "utilities.StartTest",
+      "MatchingTranslation": "Start Test",
+      "Locked": false,
+      "TimeAdded": "2021-01-11T22:01:59.1397627Z",
+      "LastUpdate": "2021-01-11T22:01:59.3137295Z"
+    },
+    {
+      "Key": "utilities.Results",
+      "MatchingTranslation": "Results",
+      "Locked": false,
+      "TimeAdded": "2021-01-11T22:01:59.3137869Z",
+      "LastUpdate": "2021-01-11T22:01:59.395858Z"
+    },
+    {
+      "Key": "utilities.ResultConnectionSuccess",
+      "MatchingTranslation": "The port connection was a success.",
+      "Locked": false,
+      "TimeAdded": "2021-01-11T22:01:59.3959152Z",
+      "LastUpdate": "2021-01-11T22:01:59.5604668Z"
+    },
+    {
+      "Key": "utilities.ResultConnectionFailed",
+      "MatchingTranslation": "The port connection failed",
+      "Locked": false,
+      "TimeAdded": "2021-01-11T22:01:59.5605288Z",
+      "LastUpdate": "2021-01-11T22:01:59.7122695Z"
+    },
+    {
+      "Key": "utilities.CallbackRequested",
+      "MatchingTranslation": "A counter connection to our server was requested",
+      "Locked": false,
+      "TimeAdded": "2021-01-11T22:01:59.7123207Z",
+      "LastUpdate": "2021-01-11T22:01:59.8699128Z"
+    },
+    {
+      "Key": "utilities.CallbackAttempted",
+      "MatchingTranslation": "The remote server attempted to connect to our local port.",
+      "Locked": false,
+      "TimeAdded": "2021-01-11T22:01:59.8699499Z",
+      "LastUpdate": "2021-01-11T22:02:00.0268783Z"
+    },
+    {
+      "Key": "utilities.ResultCallbackDidNotHappen",
+      "MatchingTranslation": "The remote server could not respond.",
+      "Locked": false,
+      "TimeAdded": "2021-01-11T22:02:00.026932Z",
+      "LastUpdate": "2021-01-11T22:02:00.2292548Z"
+    },
+    {
+      "Key": "utilities.ResultCallbackSuccess",
+      "MatchingTranslation": "Our server port was connectable.",
+      "Locked": false,
+      "TimeAdded": "2021-01-11T22:02:00.2293043Z",
+      "LastUpdate": "2021-01-11T22:02:00.4231524Z"
+    },
+    {
+      "Key": "utilities.ResultCallbackFailed",
+      "MatchingTranslation": "Our server port was NOT connectable",
+      "Locked": false,
+      "TimeAdded": "2021-01-11T22:02:00.4231978Z",
+      "LastUpdate": "2021-01-11T22:02:00.5879793Z"
+    },
+    {
+      "Key": "utilities.RemainingSeconds",
+      "MatchingTranslation": " seconds before another attempt is possible.",
+      "Locked": false,
+      "TimeAdded": "2021-01-11T22:02:00.5880378Z",
+      "LastUpdate": "2021-01-11T22:02:00.7585774Z"
     }
   ]
 }

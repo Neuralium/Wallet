@@ -105,6 +105,7 @@
     "Seconds": "دوسرا",
     "AppointmentContextReceived": "تقرری کا سیاق و سباق موصول ہوا",
     "AppointmentVerificationRequestedText": "آپ کی تقرری کی توثیق کی درخواست بھیج دی گئی ہے۔ ذیل میں دکھائے جانے والے توثیقی ٹائم ونڈو کے اختتام کے بعد چند منٹ کے اندر چند گھنٹوں کے اندر ایک تصدیق موصول ہوگی۔",
+    "AppointmentVerificationRequestedExpiredResetText": "آپ کی تقرری کی توثیق کی درخواست کی میعاد ختم ہوگئی ہے۔ اگر آپ چاہیں تو آپ تھوڑا سا انتظار کرنا جاری رکھ سکتے ہیں ، یا آپ تقرری کے عمل کو دوبارہ ترتیب دے سکتے ہیں اور نیچے ری سیٹ والے بٹن کو دباکر شروعات کرسکتے ہیں۔",
     "AppointmentVerificationCompletedText": "آپ کی تقرری کی تصدیق تجدید کی درخواست کی تصدیق ہوگئی ہے۔ آپ اپنے تصدیق شدہ اکاؤنٹ کا استعمال اس وقت تک جاری رکھ سکتے ہیں جب تک کہ اس کی دوبارہ تجدید کا وقت نہ آئے۔",
     "AppointmentVerificationCompletedCanPublishText": "آپ کی تقرری کی توثیق کی درخواست کی تصدیق ہوگئی ہے۔ اب آپ آگے بڑھ سکتے ہیں اور اپنا اکاؤنٹ بلاکچین پر شائع کرسکتے ہیں۔",
     "AppointmentVerificationRejectedText": "آپ کی تقرری کی توثیق کی درخواست مسترد کردی گئی ہے۔ براہ کرم نئی تقرری کی درخواست کے ساتھ دوبارہ کوشش کریں۔",
@@ -113,7 +114,10 @@
     "AppointmentVerificationWindowRemaining": "باقی ہے",
     "InvalidPuzzleEngineVersion": "پہیلی کا انجن کا غلط ورژن۔ براہ کرم اپنا سافٹ ویئر ورژن اپ ڈیٹ کریں۔",
     "PuzzleInstructions": "پہیلی ہدایات",
-    "PuzzleClickInstructions": "ہدایات ڈسپلے کرتے ہیں یہاں کلک کریں"
+    "PuzzleClickInstructions": "ہدایات ڈسپلے کرتے ہیں یہاں کلک کریں",
+    "ResetAppointment": "تقرری کو دوبارہ ترتیب دیں",
+    "SuccessClearAppointment": "کامیابی کے ساتھ ملاقات کو صاف کردیا",
+    "FailedClearAppointment": "ملاقات کو صاف کرنے میں ناکام"
   },
   "puzzles": {
     "Title": "پہیلی",
@@ -418,7 +422,9 @@
   "settings": {
     "SettingsSaved": "ترتیبات محفوظ ہوگئیں",
     "Title": "ترتیبات",
-    "Explain": "اپنے بٹوے کو ٹھیک کرنے کے ل Various مختلف اختیارات جو آپ تشکیل کر سکتے ہیں۔"
+    "Explain": "اپنے بٹوے کو ٹھیک کرنے کے ل Various مختلف اختیارات جو آپ تشکیل کر سکتے ہیں۔",
+    "LocalServer": "لوکل سرور",
+    "RemoteServer": "ریموٹ سرور"
   },
   "tools": {
     "Title": "اوزار",
@@ -435,9 +441,21 @@
     "Run": "رن"
   },
   "utilities": {
-    "TestP2pPort": "پیر پیر سے پیر پیر کو جانچیں",
-    "PortSuccess": "پورٹ کنکشن ٹیسٹ کامیاب رہا۔",
-    "portFailure": "پورٹ کنکشن ٹیسٹ ناکام ہوگیا"
+    "TestP2pPort": "بندرگاہوں کو پیر سے ہم مرتب کریں",
+    "PortToTest": "براہ کرم جانچ کرنے کے لئے پورٹ کا انتخاب کریں",
+    "ValidationPort": "تقرری کی توثیق کا بندرگاہ",
+    "P2pPort": "پیر پیر پیرٹ",
+    "TestCallback": "مقامی سرور پورٹ کی بھی جانچ کریں",
+    "StartTest": "ٹیسٹ شروع کریں",
+    "Results": "نتائج",
+    "ResultConnectionSuccess": "پورٹ کنکشن ایک کامیابی تھی۔",
+    "ResultConnectionFailed": "پورٹ کنکشن ناکام ہوگیا",
+    "CallbackRequested": "ہمارے سرور سے انسداد رابطہ کی درخواست کی گئی تھی",
+    "CallbackAttempted": "ریموٹ سرور نے ہماری مقامی بندرگاہ سے رابطہ قائم کرنے کی کوشش کی۔",
+    "ResultCallbackDidNotHappen": "ریموٹ سرور جواب نہیں دے سکا۔",
+    "ResultCallbackSuccess": "ہمارا سرور پورٹ منسلک تھا۔",
+    "ResultCallbackFailed": "ہمارا سرور پورٹ منسلک نہیں تھا",
+    "RemainingSeconds": " ایک اور کوشش ممکن ہے سیکنڈ پہلے."
   },
   "sync": {
     "BlockchainStatus": "بلاکچین کی حیثیت",

@@ -10,7 +10,8 @@
       </p>
     </mat-card>
     <div class="row">
-      <button mat-button color="warn" (click)="cancel()"><i class="fas fa-ban"></i> {{ 'app.Close' | translate }}</button>
+      <button mat-button color="warn" (click)="cancel()"><i class="fas fa-ban"></i> {{ 'app.Close' | translate
+        }}</button>
       <button mat-button color="primary" (click)="moveNext()">{{ 'appointments.Begin' | translate }}</button>
     </div>
   </div>
@@ -27,11 +28,20 @@
             <mat-option [value]="2">{{ 'appointments.Occident' | translate }}</mat-option>
           </mat-select> -->
 
-          <mat-button-toggle-group name="fontStyle" aria-label="Font Style" [(ngModel)]="preferredRegion" (change)="displayPreferredRegionInfo()">
-            <mat-button-toggle [value]="1"><div style="width:100px">{{ 'appointments.Occident' | translate }}</div></mat-button-toggle>
-            <mat-button-toggle [value]="2"><div style="width:100px">{{ 'appointments.Central' | translate }}</div></mat-button-toggle>
-            <mat-button-toggle [value]="4"><div style="width:100px">{{ 'appointments.Orient' | translate }}</div></mat-button-toggle>
-            <mat-button-toggle [value]="524288" [hidden]="hideTestRegion"><div style="width:100px">TEST</div></mat-button-toggle>
+          <mat-button-toggle-group name="fontStyle" aria-label="Font Style" [(ngModel)]="preferredRegion"
+            (change)="displayPreferredRegionInfo()">
+            <mat-button-toggle [value]="1">
+              <div style="width:100px">{{ 'appointments.Occident' | translate }}</div>
+            </mat-button-toggle>
+            <mat-button-toggle [value]="2">
+              <div style="width:100px">{{ 'appointments.Central' | translate }}</div>
+            </mat-button-toggle>
+            <mat-button-toggle [value]="4">
+              <div style="width:100px">{{ 'appointments.Orient' | translate }}</div>
+            </mat-button-toggle>
+            <mat-button-toggle [value]="524288" [hidden]="hideTestRegion">
+              <div style="width:100px">TEST</div>
+            </mat-button-toggle>
           </mat-button-toggle-group>
         </div>
         <div>
@@ -43,14 +53,15 @@
       </div>
       <div style="width:100%;margin-top: 20px;">
         <button mat-stroked-button color="primary" style="margin: auto;display: block;"
-          [disabled]="!allowRequestAppointments"
-          (click)="makeAppointmentRequest()">{{ 'appointments.RequestAppointmentButton' | translate }}</button>
+          [disabled]="!allowRequestAppointments" (click)="makeAppointmentRequest()">{{
+          'appointments.RequestAppointmentButton' | translate }}</button>
 
       </div>
 
     </mat-card>
     <div class="row">
-      <button mat-button color="warn" (click)="cancel()"><i class="fas fa-ban"></i> {{ 'app.Close' | translate }}</button>
+      <button mat-button color="warn" (click)="cancel()"><i class="fas fa-ban"></i> {{ 'app.Close' | translate
+        }}</button>
 
     </div>
   </div>
@@ -71,7 +82,8 @@
 
     </mat-card>
     <div class="row">
-      <button mat-button color="warn" (click)="cancel()"><i class="fas fa-ban"></i> {{ 'app.Close' | translate }}</button>
+      <button mat-button color="warn" (click)="cancel()"><i class="fas fa-ban"></i> {{ 'app.Close' | translate
+        }}</button>
 
     </div>
   </div>
@@ -83,7 +95,8 @@
       </p>
 
       <div>
-        <span style="margin-right: 10px;">{{ 'appointments.TimeBeforeAppointment' | translate }}:</span><span>{{currentRemainingTime}}</span>
+        <span style="margin-right: 10px;">{{ 'appointments.TimeBeforeAppointment' | translate
+          }}:</span><span>{{currentRemainingTime}}</span>
       </div>
       <hr />
       <table>
@@ -122,24 +135,37 @@
 
     </mat-card>
     <div class="row">
-      <button mat-button color="warn" (click)="cancel()"><i class="fas fa-ban"></i> {{ 'app.Close' | translate }}</button>
+      <button mat-button color="warn" (click)="cancel()"><i class="fas fa-ban"></i> {{ 'app.Close' | translate
+        }}</button>
 
     </div>
   </div>
   <div *ngIf="wizzardStep === AppointmentSteps.AppointmentPuzzleCompleted">
     <mat-card>
-      <p>
-        {{ 'appointments.AppointmentVerificationRequestedText' | translate }}
-      </p>
-      <hr />
-    <div style="padding-bottom: 10px;">{{'appointments.AppointmentVerificationWindow' | translate}}:</div>
+      <div *ngIf="!confimationWindowExpired">
 
-    <div>{{'appointments.AppointmentVerificationWindowEnd' | translate}}: {{appointmentVerificationWindow | formatDateWithTime}}</div>
-    <div>{{'appointments.AppointmentVerificationWindowRemaining' | translate}}: {{appointmentVerificationWindowRemaining}}</div>
+        <p>
+          {{ 'appointments.AppointmentVerificationRequestedText' | translate }}
+        </p>
+        <hr />
+        <div style="padding-bottom: 10px;">{{'appointments.AppointmentVerificationWindow' | translate}}:</div>
 
+        <div>{{'appointments.AppointmentVerificationWindowEnd' | translate}}: {{appointmentVerificationWindow |
+          formatDateWithTime}}</div>
+        <div>{{'appointments.AppointmentVerificationWindowRemaining' | translate}}:
+          {{appointmentVerificationWindowRemaining}}</div>
+      </div>
+      <div *ngIf="confimationWindowExpired">
+        <p>
+          {{ 'appointments.AppointmentVerificationRequestedExpiredResetText' | translate }}
+        </p>
+        <div class="row">
+          <button mat-button color="warn" (click)="resetAppointment()"><i class="fas fa-redo-alt"></i> {{ 'appointments.ResetAppointment' | translate}}</button>
+        </div>
+      </div>
     </mat-card>
     <div class="row">
-      <button mat-button color="warn" (click)="cancel()"><i class="fas fa-ban"></i> {{ 'app.Close' | translate }}</button>
+      <button mat-button color="warn" (click)="cancel()"><i class="fas fa-ban"></i> {{ 'app.Close' | translate}}</button>
 
     </div>
   </div>
@@ -157,7 +183,8 @@
           {{ 'appointments.AppointmentVerificationCompletedCanPublishText' | translate }}
         </p>
         <p>
-          <button mat-stroked-button color="primary" (click)="publishAccount()">{{ 'accountPublication.PublishAccount' | translate }}</button>
+          <button mat-stroked-button color="primary" (click)="publishAccount()">{{ 'accountPublication.PublishAccount' |
+            translate }}</button>
         </p>
       </div>
       <div *ngIf="!verificationConfirmed">
@@ -169,7 +196,8 @@
 
     </mat-card>
     <div class="row">
-      <button mat-button color="warn" (click)="cancel()"><i class="fas fa-ban"></i> {{ 'app.Close' | translate }}</button>
+      <button mat-button color="warn" (click)="cancel()"><i class="fas fa-ban"></i> {{ 'app.Close' | translate
+        }}</button>
 
     </div>
   </div>

@@ -105,6 +105,7 @@
     "Seconds": "שניות)",
     "AppointmentContextReceived": "הקשר לפגישה שהתקבל",
     "AppointmentVerificationRequestedText": "בקשת אימות הפגישה שלך נשלחה. אישור יתקבל תוך מספר דקות עד מספר שעות לאחר סיום חלון זמן האימות המוצג למטה.",
+    "AppointmentVerificationRequestedExpiredResetText": "בקשת אימות הפגישה שלך פגה. אתה יכול להמשיך לחכות עוד קצת אם תרצה בכך, או שתוכל לאפס את תהליך הפגישה ולהתחיל מחדש על ידי לחיצה על כפתור האיפוס למטה.",
     "AppointmentVerificationCompletedText": "בקשת חידוש אימות הפגישה שלך אושרה. תוכל להמשיך להשתמש בחשבונך המאומת עד שהגיע הזמן להתחדש שוב.",
     "AppointmentVerificationCompletedCanPublishText": "בקשת אימות הפגישה שלך אושרה. כעת תוכל להמשיך ולפרסם את חשבונך ל- blockchain.",
     "AppointmentVerificationRejectedText": "בקשת אימות הפגישה שלך נדחתה. נסה שוב עם בקשת פגישה חדשה.",
@@ -113,7 +114,10 @@
     "AppointmentVerificationWindowRemaining": "נוֹתָר",
     "InvalidPuzzleEngineVersion": "גרסת מנוע פאזל לא חוקית. אנא עדכן את גרסת התוכנה שלך.",
     "PuzzleInstructions": "הוראות פאזל",
-    "PuzzleClickInstructions": "לחץ כאן בצע הוראות לתצוגה"
+    "PuzzleClickInstructions": "לחץ כאן בצע הוראות לתצוגה",
+    "ResetAppointment": "אפס פגישה",
+    "SuccessClearAppointment": "פינוי פגישה בהצלחה",
+    "FailedClearAppointment": "ניקוי הפגישה נכשל"
   },
   "puzzles": {
     "Title": "חִידָה",
@@ -418,7 +422,9 @@
   "settings": {
     "SettingsSaved": "הגדרות נשמרו",
     "Title": "הגדרות",
-    "Explain": "אפשרויות שונות שתוכלו להגדיר כדי לכוונן את הארנק מחדש."
+    "Explain": "אפשרויות שונות שתוכלו להגדיר כדי לכוונן את הארנק מחדש.",
+    "LocalServer": "שרת מקומי",
+    "RemoteServer": "שרת מרוחק"
   },
   "tools": {
     "Title": "כלים",
@@ -435,9 +441,21 @@
     "Run": "לָרוּץ"
   },
   "utilities": {
-    "TestP2pPort": "בדוק נמל עמית לעמית",
-    "PortSuccess": "מבחן חיבור הנמל היה מוצלח.",
-    "portFailure": "מבחן חיבור היציאה נכשל"
+    "TestP2pPort": "בדוק נמלי עמית לעמית",
+    "PortToTest": "אנא בחר את היציאה לבדיקה",
+    "ValidationPort": "נמל אימות מינוי",
+    "P2pPort": "עמית לעמית נמל",
+    "TestCallback": "בדוק גם את יציאת השרת המקומית",
+    "StartTest": "התחל בדיקה",
+    "Results": "תוצאות",
+    "ResultConnectionSuccess": "חיבור הנמל נחל הצלחה.",
+    "ResultConnectionFailed": "חיבור היציאה נכשל",
+    "CallbackRequested": "התבקש חיבור נגד לשרת שלנו",
+    "CallbackAttempted": "השרת המרוחק ניסה להתחבר ליציאה המקומית שלנו.",
+    "ResultCallbackDidNotHappen": "השרת המרוחק לא הצליח להגיב.",
+    "ResultCallbackSuccess": "ניתן לחבר את יציאת השרת שלנו.",
+    "ResultCallbackFailed": "לא ניתן היה לחבר את יציאת השרת שלנו",
+    "RemainingSeconds": " שניות לפני שאפשר ניסיון נוסף."
   },
   "sync": {
     "BlockchainStatus": "סטטוס Blockchain",

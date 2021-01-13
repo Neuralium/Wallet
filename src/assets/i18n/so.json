@@ -105,6 +105,7 @@
     "Seconds": "Labaad (s)",
     "AppointmentContextReceived": "Qoraalka Ballan Qabashada",
     "AppointmentVerificationRequestedText": "Codsigaaga xaqiijinta ballanta ayaa la diray. Xaqiijin ayaa laguheli doonaa daqiiqado yar ilaa dhowr saacadood gudahood kadib dhamaadka daaqada waqtiga hubinta ee hoos lagusoo bandhigay.",
+    "AppointmentVerificationRequestedExpiredResetText": "Codsigaaga xaqiijinta ballanta wuu dhacay. Waad sii sugi kartaa wax yar haddii aad rabto, ama waxaad dib u dajin kartaa hawsha ballanta waxaadna dib u bilaabi kartaa adigoo riixaya badhanka dib u dejinta ee hoose.",
     "AppointmentVerificationCompletedText": "Codsigaaga cusboonaysiinta xaqiijinta ballanta waa la xaqiijiyay. Waad sii wadi kartaa adeegsiga koontadaada la xaqiijiyay illaa laga gaarayo waqtiga dib loo cusbooneysiinayo.",
     "AppointmentVerificationCompletedCanPublishText": "Codsigaaga xaqiijinta ballanta waa la xaqiijiyay. Hadda waad sii wadi kartaa oo waxaad ku daabici kartaa koontadaada xannibaadda.",
     "AppointmentVerificationRejectedText": "Codsigaaga xaqiijinta ballanta waa la diiday. Fadlan isku day markale codsi ballan cusub.",
@@ -113,7 +114,10 @@
     "AppointmentVerificationWindowRemaining": "Hadhay",
     "InvalidPuzzleEngineVersion": "Nooca khaldan ee mashiinka xujooyinka Fadlan cusboonaysii nooca barnaamijkaaga.",
     "PuzzleInstructions": "Tilmaamaha Halxiraalaha",
-    "PuzzleClickInstructions": "Halkan guji samee tilmaamaha muujinta"
+    "PuzzleClickInstructions": "Halkan guji samee tilmaamaha muujinta",
+    "ResetAppointment": "Dib u ballamiso",
+    "SuccessClearAppointment": "Ballan kufiican",
+    "FailedClearAppointment": "Waa lagu guuldareystay in la nadiifiyo ballanta"
   },
   "puzzles": {
     "Title": "Khayaali",
@@ -418,7 +422,9 @@
   "settings": {
     "SettingsSaved": "Dejinta ayaa la keydiyay",
     "Title": "Dejinta",
-    "Explain": "Ikhtiyaaraadka kala duwan ee aad iskudaydeyn karto si aad ugu riyaaqdo jeebkaaga."
+    "Explain": "Ikhtiyaaraadka kala duwan ee aad iskudaydeyn karto si aad ugu riyaaqdo jeebkaaga.",
+    "LocalServer": "Server Gudaha",
+    "RemoteServer": "Server fog"
   },
   "tools": {
     "Title": "Qalab",
@@ -435,9 +441,21 @@
     "Run": "Orod"
   },
   "utilities": {
-    "TestP2pPort": "Tijaabi asaaga asxaabta Port",
-    "PortSuccess": "Imtixaankii iskuxirka dekada ayaa lagu guuleystay.",
-    "portFailure": "Imtixaankii isku xirka dekada wuu fashilmay"
+    "TestP2pPort": "Tijaabi asaagga ah dekeddaha asaagga ah",
+    "PortToTest": "Fadlan xulo dekedda si aad u tijaabiso",
+    "ValidationPort": "Dekedda Ansixinta Ballanta",
+    "P2pPort": "Feejignaanta dekedda",
+    "TestCallback": "Tijaabi dekedda adeegga maxalliga ah sidoo kale",
+    "StartTest": "Bilow Imtixaanka",
+    "Results": "Natiijooyinka",
+    "ResultConnectionSuccess": "Xidhiidhkii dekedda ayaa guul ku dhammaaday.",
+    "ResultConnectionFailed": "Xidhiidhkii dekedda ayaa fashilmay",
+    "CallbackRequested": "Xiriirinta ka soo horjeedka adeegeena ayaa la codsaday",
+    "CallbackAttempted": "Server-ka fog wuxuu isku dayay inuu ku xirmo dekedda maxalliga ah.",
+    "ResultCallbackDidNotHappen": "Server-ka fog wuu jawaabi kari waayey.",
+    "ResultCallbackSuccess": "Dakadayada adeegeena waxay ahayd mid isku xirnaan karta.",
+    "ResultCallbackFailed": "Dakadayada adeegeena MA AHA isku xirnaan",
+    "RemainingSeconds": " ilbiriqsiyo ka hor isku day kale oo suurtagal ah."
   },
   "sync": {
     "BlockchainStatus": "Xaaladda Blockchain",

@@ -15,6 +15,8 @@ const app = remote.app;
 class Settings {
   language: string;
   serverPath: string;
+  serverIP: string;
+  serverType: number;
   serverFileName: string;
   serverPort: number;
   miningLogLevel: number;
@@ -129,6 +131,9 @@ export class ConfigService{
     this.defineDefaultSettingIfNecessary('softwareLicenseAgreementShown', this.defaultSettings.softwareLicenseAgreementShown);
     this.defineDefaultSettingIfNecessary('delegateAccount', this.defaultSettings.delegateAccount);
 
+    this.defineDefaultSettingIfNecessary('serverIP', this.defaultSettings.serverIP);
+    this.defineDefaultSettingIfNecessary('serverType', this.defaultSettings.serverType);
+
     this.defineDefaultSettingIfNecessary('serverPath', this.defaultSettings.serverPath);
     if (!this.validateServerPath(this.settings['serverPath'],this.settings.serverFileName)) {
       if (this.defaultServerPathValid) {
@@ -136,7 +141,9 @@ export class ConfigService{
       } else {
         this.settings['serverPath'] = '';
       }
-      alert('The neuralium server path is invalid. Please ensure it is correctly set in the settings panel.');
+      if(this.serverType !== 1){
+        alert('The neuralium server path is invalid. Please ensure it is correctly set in the settings panel.');
+      }
     }
 
     this.saveSettings();
@@ -150,6 +157,8 @@ export class ConfigService{
     settings.language = 'en';
     settings.serverFileName = this.getFileName(platform());
     settings.serverPath = this.getFilePath(platform());
+    settings.serverIP = 'localhost';
+    settings.serverType = 1;
     
     if (this.validateServerPath(settings.serverPath,settings.serverFileName)) {
       this.defaultServerPathValid = true;
@@ -242,10 +251,11 @@ export class ConfigService{
   }
 
   validateServerPath(nodeDirectoryPath: string, exeName:string): string {
+
     // time to test the value
     if (existsSync(nodeDirectoryPath) === false) {
       // this is critical, even the auto path does not work
-      const message: string = `Automatically set server path ${nodeDirectoryPath} does not exist`;
+      const message: string = `Automatically set local server path ${nodeDirectoryPath} does not exist`;
       console.log(message);
       nodeDirectoryPath = '';
     }
@@ -254,7 +264,7 @@ export class ConfigService{
       const fullPath: string = join(nodeDirectoryPath, exeName);
 
       if (existsSync(fullPath) === false) {
-        const message: string = `Automatically set server executable path ${fullPath} does not exist`;
+        const message: string = `Automatically set local server executable path ${fullPath} does not exist`;
         console.log(message);
 
         nodeDirectoryPath = '';
@@ -345,8 +355,29 @@ export class ConfigService{
     return this.settings.serverPath;
   }
 
+  set serverIP(serverIP: string) {
+    this.settings.serverIP = serverIP;
+  }
+
+  get serverIP(): string {
+    return this.settings.serverIP;
+  }
+
+  set serverType(serverType: number) {
+    this.settings.serverType = serverType;
+  }
+
+  get serverType(): number {
+    return this.settings.serverType;
+  }
+
   restoreDefaultServerPath() {
     this.serverPath = this.defaultSettings.serverPath;
+    this.saveSettings();
+  }
+
+  restoreDefaultServerIP() {
+    this.serverIP = this.defaultSettings.serverIP;
     this.saveSettings();
   }
 

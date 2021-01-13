@@ -105,6 +105,7 @@
     "Seconds": "Thứ hai",
     "AppointmentContextReceived": "Bối cảnh cuộc hẹn đã nhận",
     "AppointmentVerificationRequestedText": "Yêu cầu xác minh cuộc hẹn của bạn đã được gửi đi. Xác nhận sẽ được nhận trong vòng vài phút đến vài giờ sau khi kết thúc cửa sổ thời gian xác minh hiển thị bên dưới.",
+    "AppointmentVerificationRequestedExpiredResetText": "Yêu cầu xác minh cuộc hẹn của bạn đã hết hạn. Bạn có thể tiếp tục đợi lâu hơn một chút nếu muốn hoặc bạn có thể đặt lại quy trình cuộc hẹn và bắt đầu lại bằng cách nhấn nút đặt lại bên dưới.",
     "AppointmentVerificationCompletedText": "Yêu cầu gia hạn xác minh cuộc hẹn của bạn đã được xác nhận. Bạn có thể tiếp tục sử dụng tài khoản đã xác minh của mình cho đến khi đến lúc phải gia hạn lại.",
     "AppointmentVerificationCompletedCanPublishText": "Yêu cầu xác minh cuộc hẹn của bạn đã được xác nhận. Bây giờ bạn có thể tiếp tục và xuất bản tài khoản của mình lên blockchain.",
     "AppointmentVerificationRejectedText": "Yêu cầu xác minh cuộc hẹn của bạn đã bị từ chối. Vui lòng thử lại với yêu cầu cuộc hẹn mới.",
@@ -113,7 +114,10 @@
     "AppointmentVerificationWindowRemaining": "Còn lại",
     "InvalidPuzzleEngineVersion": "Phiên bản công cụ giải đố không hợp lệ. Vui lòng cập nhật phiên bản phần mềm của bạn.",
     "PuzzleInstructions": "Hướng dẫn câu đố",
-    "PuzzleClickInstructions": "Bấm vào đây để hiển thị hướng dẫn"
+    "PuzzleClickInstructions": "Bấm vào đây để hiển thị hướng dẫn",
+    "ResetAppointment": "Đặt lại cuộc hẹn",
+    "SuccessClearAppointment": "Đã xóa cuộc hẹn thành công",
+    "FailedClearAppointment": "Không xóa được cuộc hẹn"
   },
   "puzzles": {
     "Title": "Câu đố",
@@ -418,7 +422,9 @@
   "settings": {
     "SettingsSaved": "Đã lưu cài đặt",
     "Title": "Cài đặt",
-    "Explain": "Bạn có thể định cấu hình nhiều tùy chọn khác nhau để kết nối ví tiền của mình."
+    "Explain": "Bạn có thể định cấu hình nhiều tùy chọn khác nhau để kết nối ví tiền của mình.",
+    "LocalServer": "Máy chủ cục bộ",
+    "RemoteServer": "Máy chủ từ xa"
   },
   "tools": {
     "Title": "Công cụ",
@@ -435,9 +441,21 @@
     "Run": "Chạy"
   },
   "utilities": {
-    "TestP2pPort": "Kiểm tra cổng ngang hàng",
-    "PortSuccess": "Kiểm tra kết nối cổng đã thành công.",
-    "portFailure": "Kiểm tra kết nối cổng không thành công"
+    "TestP2pPort": "Kiểm tra các cổng ngang hàng",
+    "PortToTest": "Vui lòng chọn cổng để kiểm tra",
+    "ValidationPort": "Cổng xác thực cuộc hẹn",
+    "P2pPort": "Cổng ngang hàng",
+    "TestCallback": "Kiểm tra cả cổng máy chủ cục bộ",
+    "StartTest": "Bắt đầu kiểm tra",
+    "Results": "Các kết quả",
+    "ResultConnectionSuccess": "Kết nối cổng thành công.",
+    "ResultConnectionFailed": "Kết nối cổng không thành công",
+    "CallbackRequested": "Một kết nối bộ đếm với máy chủ của chúng tôi đã được yêu cầu",
+    "CallbackAttempted": "Máy chủ từ xa đã cố gắng kết nối với cổng cục bộ của chúng tôi.",
+    "ResultCallbackDidNotHappen": "Máy chủ từ xa không thể phản hồi.",
+    "ResultCallbackSuccess": "Cổng máy chủ của chúng tôi có thể kết nối được.",
+    "ResultCallbackFailed": "Cổng máy chủ của chúng tôi KHÔNG thể kết nối được",
+    "RemainingSeconds": " vài giây trước khi có thể thực hiện một nỗ lực khác."
   },
   "sync": {
     "BlockchainStatus": "Trạng thái chuỗi khối",

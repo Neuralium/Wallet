@@ -105,6 +105,7 @@
     "Seconds": "Detik",
     "AppointmentContextReceived": "Konteks Pengangkatan Diterima",
     "AppointmentVerificationRequestedText": "Permintaan verifikasi janji temu Anda telah dikirim. Konfirmasi akan diterima dalam beberapa menit hingga beberapa jam setelah berakhirnya jendela waktu verifikasi yang ditampilkan di bawah.",
+    "AppointmentVerificationRequestedExpiredResetText": "Permintaan verifikasi janji temu Anda telah kedaluwarsa. Anda dapat terus menunggu sedikit lebih lama jika diinginkan, atau Anda dapat mengatur ulang proses janji temu dan memulai kembali dengan menekan tombol setel ulang di bawah.",
     "AppointmentVerificationCompletedText": "Permintaan perpanjangan verifikasi janji temu Anda telah dikonfirmasi. Anda dapat terus menggunakan akun terverifikasi Anda sampai waktunya untuk memperbarui lagi.",
     "AppointmentVerificationCompletedCanPublishText": "Permintaan verifikasi janji temu Anda telah dikonfirmasi. Anda sekarang dapat melanjutkan dan menerbitkan akun Anda ke blockchain.",
     "AppointmentVerificationRejectedText": "Permintaan verifikasi janji temu Anda telah ditolak. Silakan coba lagi dengan permintaan janji temu baru.",
@@ -113,7 +114,10 @@
     "AppointmentVerificationWindowRemaining": "Sisa",
     "InvalidPuzzleEngineVersion": "Versi mesin puzzle tidak valid. Harap perbarui versi perangkat lunak Anda.",
     "PuzzleInstructions": "Instruksi Puzzle",
-    "PuzzleClickInstructions": "Klik di sini untuk menampilkan instruksi"
+    "PuzzleClickInstructions": "Klik di sini untuk menampilkan instruksi",
+    "ResetAppointment": "Atur Ulang Janji Temu",
+    "SuccessClearAppointment": "Berhasil menyelesaikan janji temu",
+    "FailedClearAppointment": "Gagal menghapus janji temu"
   },
   "puzzles": {
     "Title": "Membingungkan",
@@ -418,7 +422,9 @@
   "settings": {
     "SettingsSaved": "Pengaturan Disimpan",
     "Title": "Pengaturan",
-    "Explain": "Berbagai opsi yang dapat Anda konfigurasikan untuk menyempurnakan dompet Anda."
+    "Explain": "Berbagai opsi yang dapat Anda konfigurasikan untuk menyempurnakan dompet Anda.",
+    "LocalServer": "Server Lokal",
+    "RemoteServer": "Server Jarak Jauh"
   },
   "tools": {
     "Title": "Alat",
@@ -436,8 +442,20 @@
   },
   "utilities": {
     "TestP2pPort": "Uji Port peer to peer",
-    "PortSuccess": "Tes koneksi port berhasil.",
-    "portFailure": "Tes koneksi port gagal"
+    "PortToTest": "Pilih port yang akan diuji",
+    "ValidationPort": "Pelabuhan Validasi Pengangkatan",
+    "P2pPort": "Port Peer to peer",
+    "TestCallback": "Uji juga port server lokal",
+    "StartTest": "Mulai Tes",
+    "Results": "Hasil",
+    "ResultConnectionSuccess": "Koneksi port sukses.",
+    "ResultConnectionFailed": "Koneksi port gagal",
+    "CallbackRequested": "Koneksi counter ke server kami diminta",
+    "CallbackAttempted": "Server jarak jauh mencoba untuk terhubung ke port lokal kami.",
+    "ResultCallbackDidNotHappen": "Server jarak jauh tidak dapat merespons.",
+    "ResultCallbackSuccess": "Port server kami dapat dihubungkan.",
+    "ResultCallbackFailed": "Port server kami TIDAK dapat dihubungkan",
+    "RemainingSeconds": " beberapa detik sebelum upaya lain dimungkinkan."
   },
   "sync": {
     "BlockchainStatus": "Status Blockchain",

@@ -41,22 +41,6 @@
               <td>{{account.declarationBlockId}}</td>
             </tr>
             <tr>
-              <td><strong>{{ 'account.VerrificationType' | translate }}</strong></td>
-              <td>{{correlatedText}}</td>
-            </tr>
-            <tr>
-              <td><strong>{{ 'account.VerificationStatus' | translate }}</strong></td>
-              <td>{{correlatedStatusText}}</td>
-            </tr>
-            <tr>
-              <td><strong>{{ 'account.VerificationExpirationWarning' | translate }}</strong></td>
-              <td>{{account.verificationExpirationWarning | formatDateWithTime}}</td>
-            </tr>
-            <tr>
-              <td><strong>{{ 'account.VerificationExpiration' | translate }}</strong></td>
-              <td>{{account.verificationExpiration | formatDateWithTime}}</td>
-            </tr>
-            <tr>
               <td><strong>{{ 'account.WalletEncryption' | translate }}</strong></td>
               <td>
                 <span *ngIf="!account.isEncrypted"><span class="text-danger"><i class="fas fa-lock-open"></i>
@@ -66,6 +50,27 @@
               </td>
             </tr>
           </table>
+
+          <div *ngIf="account.accountType === 1">
+            <table>
+              <tr >
+                <td><strong>{{ 'account.VerrificationType' | translate }}</strong></td>
+                <td>{{correlatedText}}</td>
+              </tr>
+              <tr>
+                <td><strong>{{ 'account.VerificationStatus' | translate }}</strong></td>
+                <td>{{correlatedStatusText}}</td>
+              </tr>
+              <tr>
+                <td><strong>{{ 'account.VerificationExpirationWarning' | translate }}</strong></td>
+                <td>{{account.verificationExpirationWarning | formatDateWithTime}}</td>
+              </tr>
+              <tr>
+                <td><strong>{{ 'account.VerificationExpiration' | translate }}</strong></td>
+                <td>{{account.verificationExpiration | formatDateWithTime}}</td>
+              </tr>
+            </table>
+          </div>
     </div>
     <div class="alignCenter" style="flex-grow:1;">
         <span *ngIf="account.status === 1">

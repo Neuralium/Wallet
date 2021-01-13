@@ -31,13 +31,14 @@ export const NO_BLOCKCHAIN = <BlockChain>{
   label: "No Blockchain",
   enabled: true,
   menuConfig: {
-    showDashboard: false,
-    showSend: false,
+    showDashboard: true,
+    showNeuralium: false,
     showReceive: false,
     showHistory: false,
-    showTools: false,
     showContacts: false,
-    showSettings: false
+    showTools: true,
+    showSettings: true,
+    showServer: true
   }
 }
 
@@ -47,11 +48,12 @@ export const NEURALIUM_BLOCKCHAIN = <BlockChain>{
   icon: "fas fa-bezier-curve",
   menuConfig: {
     showDashboard: true,
-    showSend: true,
+    showNeuralium: true,
     showReceive: true,
     showHistory: true,
-    showTools : true,
     showContacts: true,
-    showSettings: true
+    showTools : true,
+    showSettings: true,
+    showServer: true
   }
 }

@@ -38,25 +38,8 @@ export class ToolsComponent implements OnInit, OnDestroy {
     private neuraliumService: NeuraliumService) { }
 
   ngOnInit() {
-    this.serverConnectionService.isConnectedToServer().pipe(takeUntil(this.unsubscribe$)).subscribe(connected => {
-      this._ngZone.run(() => {
-        if (connected !== CONNECTED) {
-          this.router.navigate(['/dashboard']);
-        } else {
-          try {
-            this.blockchainService.selectedBlockchain.pipe(takeUntil(this.unsubscribe$)).subscribe(blockchain => {
-              this._ngZone.run(() => {
-                this.initialise();
-              });
     
-              
-            });
-          } catch (error) {
-            this.notificationService.showError(error, 'Error');
-          }
-        }
-      });
-    });
+  
   }
 
   private unsubscribe$ = new Subject<void>();

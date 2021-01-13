@@ -230,12 +230,11 @@ export class MiningComponent implements OnInit, OnDestroy {
 
   startMining() {
     if(this.isConnectable === false && (this.miningService.SelectedTier === 1 || this.miningService.SelectedTier === 2)){
-      //TODO: add this to mainnet
-      // this.translateService.get('mining.PortNotConnectableCantMine').subscribe(message => {
-      //   alert(message);
-      // });
+      this.translateService.get('mining.PortNotConnectableCantMine').subscribe(message => {
+        alert(message);
+      });
       
-      // return;
+      return;
     }
     this.disableMiningButton = true;
     this.miningService.startMining(this.miningService.SelectedTier);

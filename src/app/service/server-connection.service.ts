@@ -62,6 +62,7 @@ export class ServerConnectionService {
 
     this.serverPort = this.configService.serverPort;
     this.serverPath = this.configService.serverPath;
+    this.serverIP = this.configService.serverIP;
 
     this.beginConnection();
 
@@ -77,10 +78,22 @@ export class ServerConnectionService {
   get connection(): HubConnection {
     if(!this.cnx){
 
+      let ip :string = '127.0.0.1';
+      if(this.configService.serverType === 2){
+        ip = this.serverIP;
+      }
+      else{
+
+      }
+
+      if(ip === 'localhost'){
+        ip = '127.0.0.1';
+      }
+      
       this.serverPort = this.configService.serverPort;
       this.cnx = new HubConnectionBuilder()
         .configureLogging(LogLevel.None)
-        .withUrl('http://127.0.0.1:' + this.serverPort.toString().trim() + '/signal', {
+        .withUrl('http://' + ip + ':' + this.serverPort.toString().trim() + '/signal', {
           skipNegotiation: true,
           transport: HttpTransportType.WebSockets
         })
@@ -107,6 +120,7 @@ export class ServerConnectionService {
 
   serverPort: number;
   serverPath: string;
+  serverIP: string;
   eventNotifier: Subject<ServerConnectionEvent> = new Subject<ServerConnectionEvent>();
   serverConnection: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
   private isCurrentlyConnected: boolean = false;
@@ -271,9 +285,9 @@ getMessages(): Array<ServerMessage> {
     return service.callServerShutdown();
   }
 
-  callTestP2pPort(): Promise<boolean> {
+  callTestP2pPort(selectedPort:number, callback:boolean) {
     const service = ServerCall.create(this, this.logService);
-    return service.callTestP2pPort();
+    return service.callTestP2pPort(selectedPort, callback);
   }
 
   callCreateNewWallet(chainType: number, wallet: WalletCreation): Promise<number> {
@@ -492,6 +506,11 @@ getMessages(): Array<ServerMessage> {
   callCanPublishAccount(chainType: number, accountCode: string) {
     const service = WalletCall.create(this, this.logService);
     return service.callCanPublishAccount(chainType, accountCode);
+  }
+
+  callClearAppointment(chainType: number, accountCode: string) {
+    const service = WalletCall.create(this, this.logService);
+    return service.callClearAppointment(chainType, accountCode);
   }
 
   callQueryAppointmentConfirmationResult(chainType: number, accountCode: string) {

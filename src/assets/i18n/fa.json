@@ -105,6 +105,7 @@
     "Seconds": "دوم (ها)",
     "AppointmentContextReceived": "متن انتصاب دریافت شد",
     "AppointmentVerificationRequestedText": "درخواست تأیید قرار شما ارسال شده است. در عرض چند دقیقه تا چند ساعت پس از پایان پنجره زمان تأیید که در زیر نشان داده شده است ، تأیید دریافت می شود.",
+    "AppointmentVerificationRequestedExpiredResetText": "درخواست تأیید قرار شما منقضی شده است. در صورت تمایل ممکن است کمی بیشتر منتظر بمانید ، یا می توانید با قرار دادن دکمه تنظیم مجدد در زیر ، مراحل قرار را تنظیم مجدد کنید و از ابتدا شروع کنید.",
     "AppointmentVerificationCompletedText": "درخواست تمدید تأیید قرار شما تأیید شده است. شما می توانید به استفاده از حساب تأیید شده خود ادامه دهید تا زمان نوآوری مجدد فرا برسد.",
     "AppointmentVerificationCompletedCanPublishText": "درخواست تأیید قرار شما تأیید شده است. اکنون می توانید حساب خود را در بلاکچین ادامه دهید و منتشر کنید.",
     "AppointmentVerificationRejectedText": "درخواست تأیید قرار شما رد شده است. لطفاً دوباره با یک درخواست قرار ملاقات دوباره امتحان کنید.",
@@ -113,7 +114,10 @@
     "AppointmentVerificationWindowRemaining": "باقیمانده",
     "InvalidPuzzleEngineVersion": "نسخه موتور پازل نامعتبر است. لطفا نسخه نرم افزار خود را به روز کنید.",
     "PuzzleInstructions": "دستورالعمل های پازل",
-    "PuzzleClickInstructions": "برای انجام دستورالعمل های نمایش ، اینجا را کلیک کنید"
+    "PuzzleClickInstructions": "برای انجام دستورالعمل های نمایش ، اینجا را کلیک کنید",
+    "ResetAppointment": "تنظیم مجدد قرار ملاقات",
+    "SuccessClearAppointment": "قرار ملاقات با موفقیت پاک شد",
+    "FailedClearAppointment": "قرار ملاقات پاک نشد"
   },
   "puzzles": {
     "Title": "پازل",
@@ -418,7 +422,9 @@
   "settings": {
     "SettingsSaved": "تنظیمات ذخیره شد",
     "Title": "تنظیمات",
-    "Explain": "گزینه های مختلفی را می توانید برای نهایی کردن کیف پول خود پیکربندی کنید."
+    "Explain": "گزینه های مختلفی را می توانید برای نهایی کردن کیف پول خود پیکربندی کنید.",
+    "LocalServer": "سرور محلی",
+    "RemoteServer": "سرور از راه دور"
   },
   "tools": {
     "Title": "ابزارها",
@@ -435,9 +441,21 @@
     "Run": "اجرا کن"
   },
   "utilities": {
-    "TestP2pPort": "تست همتا به همتای بندر",
-    "PortSuccess": "تست اتصال درگاه موفقیت آمیز بود.",
-    "portFailure": "تست اتصال درگاه انجام نشد"
+    "TestP2pPort": "از بنادر همتا به همتا تست کنید",
+    "PortToTest": "لطفاً پورت را برای آزمایش انتخاب کنید",
+    "ValidationPort": "انتصاب اعتبار بندر",
+    "P2pPort": "نظیر به نظیر بندر",
+    "TestCallback": "پورت سرور محلی را نیز تست کنید",
+    "StartTest": "شروع آزمون",
+    "Results": "نتایج",
+    "ResultConnectionSuccess": "اتصال بندر موفقیت آمیز بود.",
+    "ResultConnectionFailed": "اتصال پورت قطع شد",
+    "CallbackRequested": "اتصال متقابل به سرور ما درخواست شد",
+    "CallbackAttempted": "سرور راه دور سعی کرد به درگاه محلی ما متصل شود.",
+    "ResultCallbackDidNotHappen": "سرور راه دور نمی تواند پاسخ دهد.",
+    "ResultCallbackSuccess": "پورت سرور ما قابل اتصال بود.",
+    "ResultCallbackFailed": "پورت سرور ما قابل اتصال نبود",
+    "RemainingSeconds": " ثانیه قبل از یک تلاش دیگر امکان پذیر است."
   },
   "sync": {
     "BlockchainStatus": "وضعیت Blockchain",

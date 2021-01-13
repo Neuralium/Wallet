@@ -9,19 +9,41 @@
                 </mat-option>
             </mat-select>
         </mat-form-field>
-        <mat-form-field>
-            <span matPrefix><i class="fas fa-hdd"></i>&nbsp;</span>
-            <input matInput placeholder="Server Path" [(ngModel)]="serverPath" name="serverPath" readonly>
-            <button matSuffix mat-icon-button (click)="searchServerPath()">
-                <mat-icon fontSet="fas" fontIcon="fa-search">
-                    </mat-icon>
-            </button>
-            <span matSuffix>
-                <button mat-icon-button (click)="refreshSetting('serverPath')" [color]="primary">
-                    <mat-icon fontSet="fas" fontIcon="fa-redo"></mat-icon>
-                  </button>
-            </span>
-        </mat-form-field>
+
+        <div>
+            <mat-radio-group aria-label="Select an option" name="serverType" [(ngModel)]="serverType">
+                <span style="margin-left: 12px;"><mat-radio-button [value]="1">{{ 'settings.LocalServer' | translate }}</mat-radio-button></span>
+                <span style="margin-left: 12px;"><mat-radio-button [value]="2">{{ 'settings.RemoteServer' | translate }}</mat-radio-button></span>
+              </mat-radio-group>
+              
+              <div *ngIf="serverType === 1">
+                <mat-form-field>
+                    <span matPrefix><i class="fas fa-hdd"></i>&nbsp;</span>
+                    <input matInput placeholder="Local Server Executable Path" [(ngModel)]="serverPath" name="serverPath" readonly>
+                    <button matSuffix mat-icon-button (click)="searchServerPath()">
+                        <mat-icon fontSet="fas" fontIcon="fa-search">
+                            </mat-icon>
+                    </button>
+                    <span matSuffix>
+                        <button mat-icon-button (click)="refreshSetting('serverPath')" [color]="primary">
+                            <mat-icon fontSet="fas" fontIcon="fa-redo"></mat-icon>
+                          </button>
+                    </span>
+                </mat-form-field>
+              </div>
+              <div *ngIf="serverType === 2">
+                <mat-form-field>
+                    <span matPrefix><i class="fas fa-hdd"></i>&nbsp;</span>
+                    <input matInput placeholder="Remote Server IP" [(ngModel)]="serverIP" name="serverIP">
+                    <span matSuffix>
+                        <button mat-icon-button (click)="refreshSetting('serverIP')" [color]="primary">
+                            <mat-icon fontSet="fas" fontIcon="fa-redo"></mat-icon>
+                          </button>
+                    </span>
+                </mat-form-field>
+              </div>
+        </div>
+       
         <mat-form-field>
             <span matPrefix><i class="fas fa-server"></i>&nbsp;</span>
             <input matInput placeholder="Server RPC Port" [(ngModel)]="serverPort" name="serverPort">

@@ -105,6 +105,7 @@
     "Seconds": "秒",
     "AppointmentContextReceived": "收到預約上下文",
     "AppointmentVerificationRequestedText": "您的約會驗證請求已發送。在下面顯示的驗證時間窗口結束後的幾分鐘到幾小時內，將收到確認。",
+    "AppointmentVerificationRequestedExpiredResetText": "您的約會驗證請求已過期。如果願意，您可以繼續等待更長的時間，或者可以重設約會過程並按下面的重設按鈕重新開始。",
     "AppointmentVerificationCompletedText": "您的約會驗證續訂請求已確認。您可以繼續使用已驗證的帳戶，直到需要再次續訂為止。",
     "AppointmentVerificationCompletedCanPublishText": "您的約會驗證請求已被確認。您現在可以繼續並將您的帳戶發佈到區塊鏈。",
     "AppointmentVerificationRejectedText": "您的約會驗證請求已被拒絕。請使用新的約會請求重試。",
@@ -113,7 +114,10 @@
     "AppointmentVerificationWindowRemaining": "剩餘的",
     "InvalidPuzzleEngineVersion": "無效的拼圖引擎版本。請更新您的軟件版本。",
     "PuzzleInstructions": "拼圖說明",
-    "PuzzleClickInstructions": "點擊這裡做顯示說明"
+    "PuzzleClickInstructions": "點擊這裡做顯示說明",
+    "ResetAppointment": "重置約會",
+    "SuccessClearAppointment": "成功清除約會",
+    "FailedClearAppointment": "無法清除約會"
   },
   "puzzles": {
     "Title": "難題",
@@ -418,7 +422,9 @@
   "settings": {
     "SettingsSaved": "設置已保存",
     "Title": "設定值",
-    "Explain": "您可以配置各種選項來微調您的錢包。"
+    "Explain": "您可以配置各種選項來微調您的錢包。",
+    "LocalServer": "本地服務器",
+    "RemoteServer": "遠端伺服器"
   },
   "tools": {
     "Title": "工具類",
@@ -436,8 +442,20 @@
   },
   "utilities": {
     "TestP2pPort": "測試對等端口",
-    "PortSuccess": "端口連接測試成功。",
-    "portFailure": "端口連接測試失敗"
+    "PortToTest": "請選擇要測試的端口",
+    "ValidationPort": "預約驗證端口",
+    "P2pPort": "對等端口",
+    "TestCallback": "也測試本地服務器端口",
+    "StartTest": "開始測試",
+    "Results": "結果",
+    "ResultConnectionSuccess": "端口連接成功。",
+    "ResultConnectionFailed": "端口連接失敗",
+    "CallbackRequested": "已要求與我們的服務器建立反向連接",
+    "CallbackAttempted": "遠程服務器嘗試連接到我們的本地端口。",
+    "ResultCallbackDidNotHappen": "遠程服務器無法響應。",
+    "ResultCallbackSuccess": "我們的服務器端口是可連接的。",
+    "ResultCallbackFailed": "我們的服務器端口不可連接",
+    "RemainingSeconds": " 再次嘗試前幾秒鐘。"
   },
   "sync": {
     "BlockchainStatus": "區塊鏈狀態",

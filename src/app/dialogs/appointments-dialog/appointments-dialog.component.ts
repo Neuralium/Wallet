@@ -236,6 +236,25 @@ export class AppointmentsDialogComponent implements OnInit, OnDestroy {
     });
   }
 
+  get confimationWindowExpired(){
+    return this.appointmentDetails.AppointmentVerificationTime < DateTime.utc();
+  }
+
+  resetAppointment(){
+    this.walletService.clearAppointment().then(result => {
+
+      this.translateService.get('appointments.SuccessClearAppointment').subscribe((res: string) => {
+        this.allowRequestAppointments = true;
+        this.notificationService.showSuccess(res);
+      });
+    }).catch(error => {
+      this.translateService.get('appointments.FailedClearAppointment').subscribe((res: string) => {
+        this.allowRequestAppointments = true;
+        this.notificationService.showError(res);
+      });
+    });
+  }
+
   publishAccount(){
     const publishDialogRef = this.dialog.open(PublishAccountDialogComponent, {
       width: '700px',

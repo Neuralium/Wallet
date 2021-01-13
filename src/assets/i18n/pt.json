@@ -105,6 +105,7 @@
     "Seconds": "Segundo (s)",
     "AppointmentContextReceived": "Contexto de Compromisso Recebido",
     "AppointmentVerificationRequestedText": "Sua solicitação de verificação de compromisso foi enviada. Uma confirmação será recebida dentro de alguns minutos a algumas horas após o final da janela de tempo de verificação exibida abaixo.",
+    "AppointmentVerificationRequestedExpiredResetText": "Sua solicitação de verificação de agendamento expirou. Você pode continuar a esperar um pouco mais, se desejar, ou pode redefinir o processo de agendamento e reiniciar pressionando o botão Redefinir abaixo.",
     "AppointmentVerificationCompletedText": "Sua solicitação de renovação de verificação de agendamento foi confirmada. Você pode continuar usando sua conta verificada até que seja hora de renovar novamente.",
     "AppointmentVerificationCompletedCanPublishText": "O seu pedido de verificação de nomeação foi confirmado. Agora você pode prosseguir e publicar sua conta no blockchain.",
     "AppointmentVerificationRejectedText": "O seu pedido de verificação de nomeação foi rejeitado. Por favor, tente novamente com um novo pedido de agendamento.",
@@ -113,7 +114,10 @@
     "AppointmentVerificationWindowRemaining": "Remanescente",
     "InvalidPuzzleEngineVersion": "Versão inválida do mecanismo de quebra-cabeça. Atualize a versão do seu software.",
     "PuzzleInstructions": "Instruções de quebra-cabeça",
-    "PuzzleClickInstructions": "Clique aqui para exibir as instruções"
+    "PuzzleClickInstructions": "Clique aqui para exibir as instruções",
+    "ResetAppointment": "Reiniciar Compromisso",
+    "SuccessClearAppointment": "Compromisso cancelado com sucesso",
+    "FailedClearAppointment": "Falha ao limpar compromisso"
   },
   "puzzles": {
     "Title": "Enigma",
@@ -418,7 +422,9 @@
   "settings": {
     "SettingsSaved": "Configurações salvas",
     "Title": "Configurações",
-    "Explain": "Várias opções que você pode configurar para ajustar sua carteira."
+    "Explain": "Várias opções que você pode configurar para ajustar sua carteira.",
+    "LocalServer": "Servidor Local",
+    "RemoteServer": "Servidor remoto"
   },
   "tools": {
     "Title": "Ferramentas",
@@ -435,9 +441,21 @@
     "Run": "Corre"
   },
   "utilities": {
-    "TestP2pPort": "Porta de teste ponto a ponto",
-    "PortSuccess": "O teste de conexão da porta foi bem-sucedido.",
-    "portFailure": "O teste de conexão da porta falhou"
+    "TestP2pPort": "Teste portas ponto a ponto",
+    "PortToTest": "Selecione a porta para testar",
+    "ValidationPort": "Porta de Validação de Compromisso",
+    "P2pPort": "Porta ponto a ponto",
+    "TestCallback": "Teste a porta do servidor local também",
+    "StartTest": "Iniciar teste",
+    "Results": "Resultados",
+    "ResultConnectionSuccess": "A conexão da porta foi um sucesso.",
+    "ResultConnectionFailed": "A conexão da porta falhou",
+    "CallbackRequested": "Foi solicitada uma conexão de contador ao nosso servidor",
+    "CallbackAttempted": "O servidor remoto tentou se conectar à nossa porta local.",
+    "ResultCallbackDidNotHappen": "O servidor remoto não pôde responder.",
+    "ResultCallbackSuccess": "Nossa porta de servidor foi conectável.",
+    "ResultCallbackFailed": "A porta do nosso servidor NÃO foi conectável",
+    "RemainingSeconds": " segundos antes de outra tentativa ser possível."
   },
   "sync": {
     "BlockchainStatus": "Status do Blockchain",

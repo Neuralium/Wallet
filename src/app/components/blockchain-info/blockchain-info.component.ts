@@ -61,7 +61,8 @@ export class BlockchainInfoComponent implements OnInit, OnDestroy {
   peerConnectionDetails: Array<PeerConnectionDetails> = [];
   peerConnectionDetailsShowConnected = true;
   peerConnectionDetailsShowFullNode = true;
-  systemVersion = '';
+  systemReleaseVersion = '';
+  systemBlockchainVersion = '';
   JSON = JSON;
 
   displayedColumns: string[] = ['ip', 'connectable', 'connected', 'type', /*'state', */ 'score', 'latency', 'KB/s (in)', 'KB/s (out)','MB (in)', 'MB (out)'];
@@ -108,10 +109,10 @@ export class BlockchainInfoComponent implements OnInit, OnDestroy {
         this.serverConnection.callQuerySystemVersion().then(version => {
 
           this._ngZone.run(() => {
-            this.systemVersion = version.version;
+            this.systemReleaseVersion = version.releaseVersion;
+            this.systemBlockchainVersion = version.blockchainVersion;
           });
 
-      
         });
       }
     });

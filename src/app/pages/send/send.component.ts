@@ -49,7 +49,7 @@ export class SendComponent implements OnInit, OnDestroy {
           try {
             this.blockchainService.selectedBlockchain.pipe(takeUntil(this.unsubscribe$)).subscribe(blockchain => {
               this._ngZone.run(() => {
-                if (blockchain === NEURALIUM_BLOCKCHAIN && blockchain.menuConfig.showSend) {
+                if (blockchain === NEURALIUM_BLOCKCHAIN && blockchain.menuConfig.showNeuralium) {
                   this.walletService.getCurrentAccount().pipe(takeUntil(this.unsubscribe$)).subscribe(account => {
                     this._ngZone.run(() => {
                       if (account && account !== NO_WALLET_ACCOUNT && account.isActive && account.status === WalletAccountStatus.Published) { //

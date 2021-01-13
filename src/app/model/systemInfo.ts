@@ -1,5 +1,6 @@
 export class SystemInfo{
-    version:string;
+    releaseVersion:string;
+    blockchainVersion:string;
     mode:number;
     consoleEnabled:boolean;
 }

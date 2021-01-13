@@ -105,6 +105,7 @@
     "Seconds": "초",
     "AppointmentContextReceived": "수신 된 약속 컨텍스트",
     "AppointmentVerificationRequestedText": "약속 확인 요청이 발송되었습니다. 아래 표시된 확인 기간이 종료 된 후 몇 분에서 몇 시간 이내에 확인이 수신됩니다.",
+    "AppointmentVerificationRequestedExpiredResetText": "약속 확인 요청이 만료되었습니다. 원하는 경우 조금 더 기다리거나 아래의 재설정 버튼을 눌러 예약 절차를 재설정하고 다시 시작할 수 있습니다.",
     "AppointmentVerificationCompletedText": "약속 확인 갱신 요청이 확인되었습니다. 다시 갱신 할 때까지 확인 된 계정을 계속 사용할 수 있습니다.",
     "AppointmentVerificationCompletedCanPublishText": "약속 확인 요청이 확인되었습니다. 이제 계속해서 계정을 블록 체인에 게시 할 수 있습니다.",
     "AppointmentVerificationRejectedText": "약속 확인 요청이 거부되었습니다. 새로운 약속 요청으로 다시 시도하십시오.",
@@ -113,7 +114,10 @@
     "AppointmentVerificationWindowRemaining": "남은",
     "InvalidPuzzleEngineVersion": "잘못된 퍼즐 엔진 버전입니다. 소프트웨어 버전을 업데이트하십시오.",
     "PuzzleInstructions": "퍼즐 지침",
-    "PuzzleClickInstructions": "여기를 클릭하여 지침을 표시하십시오."
+    "PuzzleClickInstructions": "여기를 클릭하여 지침을 표시하십시오.",
+    "ResetAppointment": "약속 재설정",
+    "SuccessClearAppointment": "성공적으로 지워진 약속",
+    "FailedClearAppointment": "약속을 지우지 못했습니다."
   },
   "puzzles": {
     "Title": "퍼즐",
@@ -418,7 +422,9 @@
   "settings": {
     "SettingsSaved": "설정이 저장되었습니다",
     "Title": "설정",
-    "Explain": "지갑을 미세 조정하기 위해 구성 할 수있는 다양한 옵션."
+    "Explain": "지갑을 미세 조정하기 위해 구성 할 수있는 다양한 옵션.",
+    "LocalServer": "로컬 서버",
+    "RemoteServer": "원격 서버"
   },
   "tools": {
     "Title": "도구",
@@ -436,8 +442,20 @@
   },
   "utilities": {
     "TestP2pPort": "피어 투 피어 포트 테스트",
-    "PortSuccess": "포트 연결 테스트에 성공했습니다.",
-    "portFailure": "포트 연결 테스트에 실패했습니다."
+    "PortToTest": "테스트 할 포트를 선택하십시오",
+    "ValidationPort": "약속 확인 포트",
+    "P2pPort": "피어 투 피어 포트",
+    "TestCallback": "로컬 서버 포트도 테스트",
+    "StartTest": "테스트 시작",
+    "Results": "결과",
+    "ResultConnectionSuccess": "포트 연결이 성공했습니다.",
+    "ResultConnectionFailed": "포트 연결에 실패했습니다.",
+    "CallbackRequested": "서버에 대한 카운터 연결이 요청되었습니다.",
+    "CallbackAttempted": "원격 서버가 로컬 포트에 연결을 시도했습니다.",
+    "ResultCallbackDidNotHappen": "원격 서버가 응답 할 수 없습니다.",
+    "ResultCallbackSuccess": "서버 포트를 연결할 수 있습니다.",
+    "ResultCallbackFailed": "서버 포트를 연결할 수 없습니다.",
+    "RemainingSeconds": " 다른 시도가 가능하기 전에 초."
   },
   "sync": {
     "BlockchainStatus": "블록 체인 상태",

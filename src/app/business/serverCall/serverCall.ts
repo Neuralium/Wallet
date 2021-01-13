@@ -2,6 +2,7 @@ import { CommonCall } from './commonCall';
 import { LogService } from '../..//service/log.service';
 import { ServerConnectionService } from '../..//service/server-connection.service';
 import { SystemInfo } from '../..//model/systemInfo';
+import { TcpTestResult } from '../..//model/enums';
 import { PeerConnectionDetails } from '../../model/peer-connection-details';
 
 
@@ -35,11 +36,11 @@ export class ServerCall extends CommonCall {
           });
       }
 
-      callTestP2pPort(): Promise<boolean> {
-        return new Promise<boolean>((resolve, reject) => {
+      callTestP2pPort(selectedPort:number, callback:boolean): Promise<TcpTestResult> {
+        return new Promise<TcpTestResult>((resolve, reject) => {
 
             this.logEvent('TestP2pPort - call', null);
-            this.serviceConnectionService.invoke<boolean>('TestP2pPort')
+            this.serviceConnectionService.invoke<TcpTestResult>('TestP2pPort', selectedPort, callback)
               .then(
                 response => {
                   this.logEvent('TestP2pPort - response', response);

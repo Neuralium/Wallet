@@ -158,6 +158,15 @@ export class WalletService {
     return this.serverConnectionService.callCanPublishAccount(this.currentBlockchainId, this.currentAccount.accountCode);
   }
 
+  clearAppointment(): Promise<boolean> {
+    if (this.currentBlockchainId === 0) {
+      return new Promise<boolean>((resolve, reject) => {
+        reject(false);
+      });
+    }
+    return this.serverConnectionService.callClearAppointment(this.currentBlockchainId, this.currentAccount.accountCode);
+  }
+
   queryAppointmentConfirmationResult(): Promise<AccountAppointmentConfirmationResult> {
     if (this.currentBlockchainId === 0) {
       return new Promise<AccountAppointmentConfirmationResult>((resolve, reject) => {

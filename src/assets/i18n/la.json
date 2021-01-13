@@ -105,6 +105,7 @@
     "Seconds": "Secundo (s)",
     "AppointmentContextReceived": "Appointment accepistis Context",
     "AppointmentVerificationRequestedText": "Appointment verificationem est petitio tua mittit. Confirmatio recipientur paucis horis post paucis minutis fenestra temporis verificationem infra ostenditur.",
+    "AppointmentVerificationRequestedExpiredResetText": "Appointment verificationem expiratus petitionem tuam. Et licet non vis expectare amet neque initium potest reponi constitutionem instando Reddere processus infra ipsum.",
     "AppointmentVerificationCompletedText": "Quae petitio tua confirmata appointment verificationem irae. Te potest permanere per tempus tuam verified renovare causa est usque adhuc.",
     "AppointmentVerificationCompletedCanPublishText": "Confirmata appointment verificationem est petitio tua. Et nunc procedere Tu blockchain publish in ratione vestra.",
     "AppointmentVerificationRejectedText": "Appointment verificationem est petitio tua est. Aliquam tempus novam petitionem.",
@@ -113,7 +114,10 @@
     "AppointmentVerificationWindowRemaining": "reliquis",
     "InvalidPuzzleEngineVersion": "Aliquam Pompeius engine version. Placere update vestri software version.",
     "PuzzleInstructions": "Institutiones Games",
-    "PuzzleClickInstructions": "Click here ostentationem facere iussus"
+    "PuzzleClickInstructions": "Click here ostentationem facere iussus",
+    "ResetAppointment": "Reddere praeferentias nominatio",
+    "SuccessClearAppointment": "Exhausto nominationis felicius tractaturo",
+    "FailedClearAppointment": "Deficio, ut patet appointment"
   },
   "puzzles": {
     "Title": "Games",
@@ -418,7 +422,9 @@
   "settings": {
     "SettingsSaved": "Servo occasus",
     "Title": "Optiones",
-    "Explain": "Variis options ad configurare potes finetune vestri peram."
+    "Explain": "Variis options ad configurare potes finetune vestri peram.",
+    "LocalServer": "Servo locus",
+    "RemoteServer": "Servo Longinquus"
   },
   "tools": {
     "Title": "Tools",
@@ -435,9 +441,21 @@
     "Run": "Curre"
   },
   "utilities": {
-    "TestP2pPort": "Pari test esse pervideas Portus",
-    "PortSuccess": "Test erat prospere in portum nexu.",
-    "portFailure": "Test defecit in portum nexum"
+    "TestP2pPort": "Pari test ad pari portuum",
+    "PortToTest": "Placere eligere portum ad in test",
+    "ValidationPort": "Validation appointment Portus",
+    "P2pPort": "PAR ad RIMOR Portus",
+    "TestCallback": "Test server portum quoque locorum",
+    "StartTest": "satus Expertus",
+    "Results": "results",
+    "ResultConnectionSuccess": "In portum nexu victoria fuit.",
+    "ResultConnectionFailed": "Defecit in portum nexum",
+    "CallbackRequested": "A servo contra nexu cum rogatus ad",
+    "CallbackAttempted": "Et remotis servo conatus loci ad coniungere ad portum.",
+    "ResultCallbackDidNotHappen": "Respondeo dicendum quod remotis servo non.",
+    "ResultCallbackSuccess": "Portum nostrum servo eram connectable.",
+    "ResultCallbackFailed": "Portum nostrum servo eram non connectable",
+    "RemainingSeconds": " secundis alteram conatus est."
   },
   "sync": {
     "BlockchainStatus": "Status Blockchain",

@@ -105,6 +105,7 @@
     "Seconds": "Zweite (n)",
     "AppointmentContextReceived": "Terminkontext erhalten",
     "AppointmentVerificationRequestedText": "Ihre Anfrage zur Terminüberprüfung wurde versandt. Eine Bestätigung wird innerhalb weniger Minuten bis einige Stunden nach dem Ende des unten angezeigten Überprüfungszeitfensters empfangen.",
+    "AppointmentVerificationRequestedExpiredResetText": "Ihre Anfrage zur Terminüberprüfung ist abgelaufen. Sie können noch etwas länger warten, wenn Sie möchten, oder Sie können den Terminvorgang zurücksetzen und von vorne beginnen, indem Sie die Reset-Taste unten drücken.",
     "AppointmentVerificationCompletedText": "Ihr Antrag auf Erneuerung der Terminbestätigung wurde bestätigt. Sie können Ihr verifiziertes Konto weiter verwenden, bis es erneut verlängert werden muss.",
     "AppointmentVerificationCompletedCanPublishText": "Ihre Anfrage zur Terminüberprüfung wurde bestätigt. Sie können jetzt fortfahren und Ihr Konto in der Blockchain veröffentlichen.",
     "AppointmentVerificationRejectedText": "Ihre Anfrage zur Terminüberprüfung wurde abgelehnt. Bitte versuchen Sie es erneut mit einer neuen Terminanfrage.",
@@ -113,7 +114,10 @@
     "AppointmentVerificationWindowRemaining": "Verbleibend",
     "InvalidPuzzleEngineVersion": "Ungültige Puzzle-Engine-Version. Bitte aktualisieren Sie Ihre Softwareversion.",
     "PuzzleInstructions": "Puzzle-Anweisungen",
-    "PuzzleClickInstructions": "Klicken Sie hier, um Anweisungen anzuzeigen"
+    "PuzzleClickInstructions": "Klicken Sie hier, um Anweisungen anzuzeigen",
+    "ResetAppointment": "Termin zurücksetzen",
+    "SuccessClearAppointment": "Erfolgreich geklärter Termin",
+    "FailedClearAppointment": "Termin konnte nicht geklärt werden"
   },
   "puzzles": {
     "Title": "Puzzle",
@@ -418,7 +422,9 @@
   "settings": {
     "SettingsSaved": "Einstellungen gespeichert",
     "Title": "die Einstellungen",
-    "Explain": "Verschiedene Optionen, die Sie konfigurieren können, um Ihre Brieftasche zu optimieren."
+    "Explain": "Verschiedene Optionen, die Sie konfigurieren können, um Ihre Brieftasche zu optimieren.",
+    "LocalServer": "Lokaler Server",
+    "RemoteServer": "Remote-Server"
   },
   "tools": {
     "Title": "Werkzeuge",
@@ -435,9 +441,21 @@
     "Run": "Lauf"
   },
   "utilities": {
-    "TestP2pPort": "Testen Sie den Peer-to-Peer-Port",
-    "PortSuccess": "Der Portverbindungstest war erfolgreich.",
-    "portFailure": "Der Portverbindungstest ist fehlgeschlagen"
+    "TestP2pPort": "Testen Sie Peer-to-Peer-Ports",
+    "PortToTest": "Bitte wählen Sie den zu testenden Port aus",
+    "ValidationPort": "Terminüberprüfungsport",
+    "P2pPort": "Peer-to-Peer-Port",
+    "TestCallback": "Testen Sie auch den lokalen Server-Port",
+    "StartTest": "Test starten",
+    "Results": "Ergebnisse",
+    "ResultConnectionSuccess": "Die Portverbindung war ein Erfolg.",
+    "ResultConnectionFailed": "Die Portverbindung ist fehlgeschlagen",
+    "CallbackRequested": "Eine Gegenverbindung zu unserem Server wurde angefordert",
+    "CallbackAttempted": "Der Remote-Server hat versucht, eine Verbindung zu unserem lokalen Port herzustellen.",
+    "ResultCallbackDidNotHappen": "Der Remote-Server konnte nicht antworten.",
+    "ResultCallbackSuccess": "Unser Server-Port war verbindbar.",
+    "ResultCallbackFailed": "Unser Server-Port war NICHT verbindbar",
+    "RemainingSeconds": " Sekunden bevor ein weiterer Versuch möglich ist."
   },
   "sync": {
     "BlockchainStatus": "Blockchain-Status",

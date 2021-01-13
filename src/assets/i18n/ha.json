@@ -105,6 +105,7 @@
     "Seconds": "Na biyu (s)",
     "AppointmentContextReceived": "Abunda Aka Bayyana Shi",
     "AppointmentVerificationRequestedText": "An aika da bukatar tabbatarwar alƙawarinku. Za a karɓi tabbaci tsakanin aan mintoci kaɗan zuwa fewan awanni bayan ƙarshen taga lokacin tabbatarwa da aka nuna a ƙasa.",
+    "AppointmentVerificationRequestedExpiredResetText": "Neman tabbatarwar nadinku ya kare. Kuna iya ci gaba da ɗan jira kadan idan kuna so, ko za ku iya sake saita aikin alƙawarin kuma fara farawa ta latsa maɓallin sake saiti a ƙasa.",
     "AppointmentVerificationCompletedText": "An tabbatar da bukatar sabuntawar nadinku Kuna iya ci gaba da amfani da asusunka na asali har zuwa lokacin da za a sake sabuntawa.",
     "AppointmentVerificationCompletedCanPublishText": "An tabbatar da bukatar tabbatarwar nadinku Yanzu zaku iya ci gaba da buga asusunka zuwa ga toshewar.",
     "AppointmentVerificationRejectedText": "An ƙi karɓar buƙatar tabbatarwar nadinku Da fatan a sake gwadawa tare da neman sabon alƙawari.",
@@ -113,7 +114,10 @@
     "AppointmentVerificationWindowRemaining": "Saura",
     "InvalidPuzzleEngineVersion": "Versionaukin injin ɗin wasan bai dace ba. Da fatan za a sabunta sigar kayan aikin ku.",
     "PuzzleInstructions": "Umarnin wuyar warwarewa",
-    "PuzzleClickInstructions": "Danna nan yi umarnin nuni"
+    "PuzzleClickInstructions": "Danna nan yi umarnin nuni",
+    "ResetAppointment": "Sake saita Alkawari",
+    "SuccessClearAppointment": "An tsaftace ganawa",
+    "FailedClearAppointment": "Ba a yi nasarar share alƙawari ba"
   },
   "puzzles": {
     "Title": "Wasin wasa",
@@ -418,7 +422,9 @@
   "settings": {
     "SettingsSaved": "An Adana Saituna",
     "Title": "Saiti",
-    "Explain": "Zaɓuɓɓuka da yawa waɗanda zaka iya saitawa zuwa walat ɗin walat ɗin."
+    "Explain": "Zaɓuɓɓuka da yawa waɗanda zaka iya saitawa zuwa walat ɗin walat ɗin.",
+    "LocalServer": "Sabar Gida",
+    "RemoteServer": "Nesa Server"
   },
   "tools": {
     "Title": "Kayan aiki",
@@ -435,9 +441,21 @@
     "Run": "Gudu"
   },
   "utilities": {
-    "TestP2pPort": "Gwaji peer zuwa Port faranti",
-    "PortSuccess": "Gwajin tashar tashar jiragen ruwa ya yi nasara.",
-    "portFailure": "Jarrabawar tashar tashar jiragen ruwa ta kasa"
+    "TestP2pPort": "Gwajin ɗan'uwana zuwa tashar jiragen ruwa ta tsara",
+    "PortToTest": "Da fatan za a zaɓi tashar jiragen ruwa don gwadawa",
+    "ValidationPort": "Alkawarin Ingantaccen Alkawari",
+    "P2pPort": "Wararre don tsara Port",
+    "TestCallback": "Gwada tashar tashar uwar garke ma",
+    "StartTest": "Fara Gwaji",
+    "Results": "Sakamako",
+    "ResultConnectionSuccess": "Haɗin tashar jirgin ruwa ya yi nasara.",
+    "ResultConnectionFailed": "Haɗin tashar jirgin ruwa ya faskara",
+    "CallbackRequested": "An buƙaci haɗin haɗin kan sabarmu",
+    "CallbackAttempted": "Sabis na nesa yayi ƙoƙari ya haɗi zuwa tasharmu ta gida.",
+    "ResultCallbackDidNotHappen": "Uwar garken nesa ba ta iya amsawa.",
+    "ResultCallbackSuccess": "Tashar sadarwarmu tana da haɗi.",
+    "ResultCallbackFailed": "Tashar tashar sadarwarmu BATA haɗuwa",
+    "RemainingSeconds": " dakika kafin wani yunƙuri ya yiwu."
   },
   "sync": {
     "BlockchainStatus": "Matsayi na Blockchain",
