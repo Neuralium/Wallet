@@ -4,6 +4,10 @@ import { DialogResult } from '../../config/dialog-result';
 import { takeUntil } from 'rxjs/operators';
 import { Subject } from 'rxjs';
 
+export class ConfirmDialogParameter{
+  public message: string;
+  public showCancel:boolean = false;
+}
 
 @Component({
   selector: 'app-confirm-dialog',
@@ -12,12 +16,17 @@ import { Subject } from 'rxjs';
 })
 export class ConfirmDialogComponent implements OnInit, OnDestroy {
   message:string;
+  showCancel:boolean = false;
 
   constructor(
     public dialogRef: MatDialogRef<ConfirmDialogComponent>,
-    @Optional() @Inject(MAT_DIALOG_DATA) public data: string) {
-      this.message = data;
+    @Optional() @Inject(MAT_DIALOG_DATA) public data: ConfirmDialogParameter) {
+      this.message = data.message;
+      this.showCancel = data.showCancel;
+
     }
+
+    
 
   ngOnInit() {
   }
@@ -37,5 +46,9 @@ export class ConfirmDialogComponent implements OnInit, OnDestroy {
 
   no(){
     this.dialogRef.close(DialogResult.No);
+  }
+
+  cancel(){
+    this.dialogRef.close(DialogResult.Cancel);
   }
 }

@@ -14,7 +14,7 @@ import { NEURALIUM_BLOCKCHAIN } from '../..//model/blockchain';
 import { NO_WALLET_ACCOUNT, WalletAccountStatus, WalletAccount } from '../..//model/walletAccount';
 import { TotalNeuralium, NO_NEURALIUM_TOTAL } from '../..//model/total-neuralium';
 import { MiningStatistics } from '../..//model/mining-statistics';
-import { ConfirmDialogComponent } from '../..//dialogs/confirm-dialog/confirm-dialog.component';
+import { ConfirmDialogComponent, ConfirmDialogParameter} from '../..//dialogs/confirm-dialog/confirm-dialog.component';
 import { MatDialog } from '@angular/material/dialog';
 import { takeUntil } from 'rxjs/operators';
 import { Subject } from 'rxjs';
@@ -236,9 +236,13 @@ export class NeuraliumsComponent implements OnInit, OnDestroy {
       return;
     }
     this.translateService.get("mining.ConfirmClearCachedCredentials").subscribe(confirmMessage => {
+
+      const dialogParameters = new ConfirmDialogParameter();
+      dialogParameters.message = confirmMessage;
+
       let dialogRef = this.dialog.open(ConfirmDialogComponent, {
         width: '650px',
-        data: confirmMessage
+        data: dialogParameters
       });
 
       dialogRef.afterClosed().subscribe(dialogResult => {

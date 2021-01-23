@@ -168,6 +168,7 @@ export class WalletCall extends CommonCall {
 
             const Status: AppointmentStatus = account['status'];
             const AppointmentConfirmationId: number | null = account['appointmentConfirmationId'];
+            const AppointmentRequestedRegion: number | null = account['region'];
 
             let appointmentRequestTimeStamp:  DateTime | null = null;
             let AppointmentTime:  DateTime | null = null;
@@ -207,7 +208,7 @@ export class WalletCall extends CommonCall {
 
             const AppointmentWindow: number | null = account['appointmentWindow'];
 
-            const appointment = WalletAccountAppointment.createNew(Status, AppointmentConfirmationId, appointmentRequestTimeStamp, AppointmentTime, AppointmentContextTime, AppointmentVerificationTime, AppointmentConfirmationIdExpiration, AppointmentWindow);
+            const appointment = WalletAccountAppointment.createNew(Status, AppointmentConfirmationId, appointmentRequestTimeStamp, AppointmentTime, AppointmentContextTime, AppointmentVerificationTime, AppointmentConfirmationIdExpiration, AppointmentWindow, AppointmentRequestedRegion);
             resolve(appointment);
           })
         .catch(reason => {

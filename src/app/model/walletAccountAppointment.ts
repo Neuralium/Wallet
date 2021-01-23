@@ -11,7 +11,7 @@ export class WalletAccountAppointment {
     AppointmentVerificationTime:  DateTime | null;
     AppointmentConfirmationIdExpiration:  DateTime | null;
     AppointmentWindow: number | null;
-   
+    AppointmentRequestedRegion: number | null;
 
     static createNew(
         status: AppointmentStatus,
@@ -21,7 +21,8 @@ export class WalletAccountAppointment {
         appointmentContextTime:  DateTime | null,
         appointmentVerificationTime:  DateTime | null,
         appointmentConfirmationIdExpiration:  DateTime | null,
-        appointmentWindow: number | null) {
+        appointmentWindow: number | null,
+        appointmentRequestedRegion: number | null) {
         const newAppointment = new WalletAccountAppointment();
 
         newAppointment.Status = status;
@@ -32,6 +33,7 @@ export class WalletAccountAppointment {
         newAppointment.AppointmentVerificationTime = appointmentVerificationTime;
         newAppointment.AppointmentConfirmationIdExpiration = appointmentConfirmationIdExpiration;
         newAppointment.AppointmentWindow = appointmentWindow;
+        newAppointment.AppointmentRequestedRegion = appointmentRequestedRegion;
         
         return newAppointment;
     }

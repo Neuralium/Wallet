@@ -4,7 +4,7 @@ import { FormGroup, FormControl, Validators, ValidatorFn, AbstractControl, FormB
 import { Contact } from '../..//model/contact';
 import { ContactsService } from '../..//service/contacts.service';
 import { TranslateService } from '@ngx-translate/core';
-import { ConfirmDialogComponent } from '../..//dialogs/confirm-dialog/confirm-dialog.component';
+import { ConfirmDialogComponent, ConfirmDialogParameter } from '../..//dialogs/confirm-dialog/confirm-dialog.component';
 import { DialogResult } from '../..//config/dialog-result';
 import { TotalNeuralium } from '../..//model/total-neuralium';
 import { MatDialog } from '@angular/material/dialog';
@@ -274,9 +274,12 @@ export class SendNeuraliumsComponent implements OnInit, OnDestroy {
     var total = neuraliums + tip;
     this.canSend = false;
     setTimeout(() => {
+
+      const dialogParameters = new ConfirmDialogParameter();
+      dialogParameters.message = confirmMessage;
       let dialogRef = this.dialog.open(ConfirmDialogComponent, {
         width: '650px',
-        data: confirmMessage
+        data: dialogParameters
       });
 
       dialogRef.afterClosed().subscribe(dialogResult => {

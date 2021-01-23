@@ -6,4 +6,5 @@
 <div mat-dialog-actions class="row">
     <button mat-button color="primary" (click)="yes()"><i class="fas fa-check"></i> {{ 'app.Yes' | translate }}</button>
     <button mat-button color="warn" (click)="no()"><i class="fas fa-ban"></i> {{ 'app.No' | translate }}</button>
+    <button mat-button color="warn" (click)="cancel()" [hidden]="!showCancel"><i class="fas fa-ban"></i> {{ 'app.Cancel' | translate }}</button>
 </div>

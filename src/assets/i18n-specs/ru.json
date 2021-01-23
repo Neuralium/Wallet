@@ -442,13 +442,6 @@
       "LastUpdate": "2020-08-18T04:55:39.8331825Z"
     },
     {
-      "Key": "app.Version",
-      "MatchingTranslation": "System version",
-      "Locked": false,
-      "TimeAdded": "2019-11-13T14:46:51.0568765Z",
-      "LastUpdate": "2020-08-18T04:55:40.0286688Z"
-    },
-    {
       "Key": "app.Yes",
       "MatchingTranslation": "Yes",
       "Locked": false,
@@ -3233,6 +3226,34 @@
       "Locked": false,
       "TimeAdded": "2021-01-11T22:02:51.3371536Z",
       "LastUpdate": "2021-01-11T22:02:51.4956328Z"
+    },
+    {
+      "Key": "appointments.PreferredRegionSelected",
+      "MatchingTranslation": "Region Selected",
+      "Locked": false,
+      "TimeAdded": "2021-01-19T15:40:06.0574117Z",
+      "LastUpdate": "2021-01-19T15:40:06.2130276Z"
+    },
+    {
+      "Key": "app.ReleaseVersion",
+      "MatchingTranslation": "Server Release version",
+      "Locked": false,
+      "TimeAdded": "2021-01-19T15:40:06.2144394Z",
+      "LastUpdate": "2021-01-19T15:40:06.3902842Z"
+    },
+    {
+      "Key": "app.BlockchainVersion",
+      "MatchingTranslation": "Server Blockchain version",
+      "Locked": false,
+      "TimeAdded": "2021-01-19T15:40:06.3903204Z",
+      "LastUpdate": "2021-01-19T15:40:06.5745331Z"
+    },
+    {
+      "Key": "utilities.ValidationHttpPort",
+      "MatchingTranslation": "Appointment Validation Http Backup Port",
+      "Locked": false,
+      "TimeAdded": "2021-01-19T15:40:06.5773657Z",
+      "LastUpdate": "2021-01-19T15:40:06.6999529Z"
     }
   ]
 }

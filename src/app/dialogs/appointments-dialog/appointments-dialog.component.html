@@ -78,6 +78,23 @@
           <td></td>
           <td>{{appointmentDetails.appointmentRequestTimeStamp | formatDateWithTime}}</td>
         </tr>
+        <tr>
+          <td>
+            <span class="tableKey"> {{ 'appointments.PreferredRegionSelected' | translate }}:</span>
+          </td>
+          <td></td>
+          <td>
+            <div *ngIf="appointmentDetails.AppointmentRequestedRegion === 1">
+              {{ 'appointments.Occident' | translate }}
+            </div>
+            <div *ngIf="appointmentDetails.AppointmentRequestedRegion === 2">
+              {{ 'appointments.Central' | translate }}
+            </div>
+            <div *ngIf="appointmentDetails.AppointmentRequestedRegion === 4">
+              {{ 'appointments.Orient' | translate }}
+            </div>
+          </td>
+        </tr>
       </table>
 
     </mat-card>
@@ -120,6 +137,23 @@
           </td>
           <td></td>
           <td>{{appointmentWindow}} {{ 'appointments.Seconds' | translate }}</td>
+        </tr>
+        <tr>
+          <td>
+            <span class="tableKey"> {{ 'appointments.PreferredRegionSelected' | translate }}:</span>
+          </td>
+          <td></td>
+          <td>
+            <div *ngIf="appointmentDetails.AppointmentRequestedRegion === 1">
+              {{ 'appointments.Occident' | translate }}
+            </div>
+            <div *ngIf="appointmentDetails.AppointmentRequestedRegion === 2">
+              {{ 'appointments.Central' | translate }}
+            </div>
+            <div *ngIf="appointmentDetails.AppointmentRequestedRegion === 4">
+              {{ 'appointments.Orient' | translate }}
+            </div>
+          </td>
         </tr>
         <tr>
           <td>

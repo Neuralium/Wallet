@@ -2,7 +2,7 @@ import { Component, OnInit, OnDestroy, NgZone } from '@angular/core';
 import { ContactsService } from '../..//service/contacts.service';
 import { Contact } from '../..//model/contact';
 import { MatDialog } from '@angular/material/dialog';
-import { ConfirmDialogComponent } from '../..//dialogs/confirm-dialog/confirm-dialog.component';
+import { ConfirmDialogComponent, ConfirmDialogParameter } from '../..//dialogs/confirm-dialog/confirm-dialog.component';
 import { DialogResult } from '../..//config/dialog-result';
 import { EditContactDialogComponent } from '../..//dialogs/edit-contact-dialog/edit-contact-dialog.component';
 import { TranslateService } from '@ngx-translate/core';
@@ -89,9 +89,13 @@ export class ContactsComponent implements OnInit, OnDestroy {
 
   confirmDeleteContact(contact: Contact) {
     setTimeout(() => {
+
+      const dialogParameters = new ConfirmDialogParameter();
+      dialogParameters.message = this.translateService.instant("contact.PleaseConfirmDeletionOfContact") + " " + contact.friendlyName;
+
       let dialogRef = this.dialog.open(ConfirmDialogComponent, {
         width: '250px',
-        data: this.translateService.instant("contact.PleaseConfirmDeletionOfContact") + " " + contact.friendlyName
+        data: dialogParameters
       });
 
       dialogRef.afterClosed().subscribe(dialogResult => {

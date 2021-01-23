@@ -1,7 +1,7 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { BlockChain, NO_BLOCKCHAIN } from './model/blockchain';
 import { MatDialog, MatDialogRef } from '@angular/material/dialog';
-import { ConfirmDialogComponent } from './dialogs/confirm-dialog/confirm-dialog.component';
+import { ConfirmDialogComponent, ConfirmDialogParameter } from './dialogs/confirm-dialog/confirm-dialog.component';
 import { Observable } from 'rxjs';
 import { BlockchainService } from './service/blockchain.service';
 import { SelectBlockchainDialogComponent } from './dialogs/select-blockchain-dialog/select-blockchain-dialog.component';
@@ -176,9 +176,14 @@ export class AppComponent implements OnInit, OnDestroy {
         this.translateService.get('app.ServerRunningStop').subscribe(stopMessage => {
           if (this.serverConnectionService.IsConnected || this.serverService.IsRunning) {
             setTimeout(() => {
+
+              const dialogParameters = new ConfirmDialogParameter();
+              dialogParameters.message = stopMessage;
+              dialogParameters.showCancel = true;
+
               const dialogRef = this.dialog.open(ConfirmDialogComponent, {
                 width: '500px',
-                data: stopMessage
+                data: dialogParameters
               });
 
               dialogRef.afterClosed().subscribe(dialogResult => {
@@ -223,8 +228,11 @@ export class AppComponent implements OnInit, OnDestroy {
                     event.sender.send('ok-quit');
                   }
                 }
-                else {
+                else if (dialogResult === DialogResult.No) {
                   event.sender.send('ok-quit');
+                }
+                else{
+                  // do nothing
                 }
               });
             });

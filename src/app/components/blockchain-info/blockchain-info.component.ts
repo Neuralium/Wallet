@@ -65,7 +65,7 @@ export class BlockchainInfoComponent implements OnInit, OnDestroy {
   systemBlockchainVersion = '';
   JSON = JSON;
 
-  displayedColumns: string[] = ['ip', 'connectable', 'connected', 'type', /*'state', */ 'score', 'latency', 'KB/s (in)', 'KB/s (out)','MB (in)', 'MB (out)'];
+  displayedColumns: string[] = ['ip', 'connectable', 'connected', 'type', /*'state', */ 'score', 'latency (ms)', 'KB/s (in)', 'KB/s (out)','MB (in)', 'MB (out)'];
 
   private unsubscribe$ = new Subject<void>();
 
@@ -132,7 +132,7 @@ export class BlockchainInfoComponent implements OnInit, OnDestroy {
       case 'ip': return details.ip + ":" + details.port;
       case 'connectable': return details.isConnectable.toString();
       case 'connected': return details.isConnected.toString();
-      case 'latency': return details.stats.latency.toFixed(2); break
+      case 'latency (ms)': return (1000 * details.stats.latency).toFixed(2); break
       case 'score': return details.stats.metric.toExponential(3); break;
       case 'KB/s (in)': return (details.stats.inputKBps).toFixed(3); break;
       case 'KB/s (out)': return (details.stats.outputKBps).toFixed(3); break;
