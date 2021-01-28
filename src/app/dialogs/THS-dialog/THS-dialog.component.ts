@@ -27,10 +27,9 @@ class Solution {
 
 class THSBegin {
   difficulty: number = 1;
-  targetNonce: number = 1;
+  rounds: number = 1;
 
   startingNonce: number = 1;
-  startingTotalNonce: number = 1;
   startingRound: number = 1;
 
   targetTotalDuration: Duration;
@@ -41,7 +40,6 @@ class THSBegin {
 }
 class THSRound {
   round: number = 1;
-  totalNonce: number = 1;
   lastNonce: number = 0;
   lastSolution: number = 0;
 }
@@ -87,7 +85,6 @@ export class THSDialogComponent implements OnInit, OnDestroy {
 
     if (nonce && nonce !== 0) {
       this.thsIteration.nonces = [nonce];
-      this.totalNonce = this.thsIteration.nonces[0];
     }
 
     if (begining) {
@@ -103,8 +100,8 @@ export class THSDialogComponent implements OnInit, OnDestroy {
 
   displayedColumns: string[] = ['nonce', 'solution'];
 
-  totalNonce: number = 0;
-  totalPreviousRounds: number = 0;
+  targetRoundNonce : number = 0;
+  totalRound: number = 0;
   workingSolutions: Array<Solution> = [];
   thsBegin: THSBegin = new THSBegin();
   thsRound: THSRound = new THSRound();
@@ -114,7 +111,6 @@ export class THSDialogComponent implements OnInit, OnDestroy {
   currentNonces: Array<number> = [];
   currentNoncesStr:string = '[]';
   singleNonce:boolean = false;
-  targetNonce: number = 1;
   targetTotalDuration: Duration;
   estimatedIterationTime: Duration;
   estimatedRemainingTime: Duration;
@@ -134,11 +130,11 @@ export class THSDialogComponent implements OnInit, OnDestroy {
       this.thsBegin = new THSBegin();
 
       this.thsBegin.difficulty = message.difficulty;
-      this.thsBegin.targetNonce = message.targetNonce;
 
-
+      this.thsBegin.rounds = message.rounds;
+      this.totalRound = message.rounds;
+      this.targetRoundNonce = message.targetRoundNonce;
       this.thsBegin.startingNonce = message.startingNonce;
-      this.thsBegin.startingTotalNonce = message.startingTotalNonce;
       this.thsBegin.startingRound = message.startingRound;
 
       this.thsBegin.solutions = message.solutions;
@@ -152,12 +148,9 @@ export class THSDialogComponent implements OnInit, OnDestroy {
         this.workingSolutions.push(entry);
       }
 
-      this.targetNonce = this.thsBegin.targetNonce;
 
       this.currentNonces = [this.thsBegin.startingNonce];
       this.joinNonces();
-      this.totalPreviousRounds = this.thsBegin.startingTotalNonce - this.thsBegin.startingNonce;
-      this.totalNonce = this.thsBegin.startingTotalNonce;
       this.currentRound = this.thsBegin.startingRound;
 
       this.thsBegin.targetTotalDuration = Duration.fromObject({ seconds: message.targetTotalDuration });
@@ -221,8 +214,6 @@ export class THSDialogComponent implements OnInit, OnDestroy {
             const entry: Solution = new Solution();
             entry.nonce = this.thsRound.lastNonce;
             entry.solution = this.thsRound.lastSolution;
-            this.totalNonce = this.thsRound.totalNonce;
-            this.totalPreviousRounds = this.totalNonce;
 
             this.workingSolutions.push(entry);
             this.thsRoundSet.next(this.thsRound);
@@ -235,7 +226,6 @@ export class THSDialogComponent implements OnInit, OnDestroy {
             this.thsIteration.nonces = event.message.nonces;
             this.currentNonces = this.thsIteration.nonces;
             this.joinNonces();
-            this.totalNonce = this.totalPreviousRounds + this.thsIteration.nonces[0];
             this.benchmarkSpeedRatio = +event.message.benchmarkSpeedRatio.toFixed(5);
 
             this.thsIteration.elapsed = Duration.fromObject({ seconds: event.message.elapsed });

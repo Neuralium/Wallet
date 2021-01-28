@@ -26,8 +26,12 @@
               <td>{{targetTotalDuration | formatETATime: false}}</td>
             </tr>
             <tr>
-              <td style="font-weight: bold;">{{ 'ths.TargetNonce' | translate }}</td>
-              <td>{{targetNonce}}</td>
+              <td style="font-weight: bold;">{{ 'ths.TargetRoundNonce' | translate }}</td>
+              <td>{{targetRoundNonce}}</td>
+            </tr>
+            <tr>
+              <td style="font-weight: bold;">{{ 'ths.TotalRounds' | translate }}</td>
+              <td>{{totalRound}}</td>
             </tr>
             <tr>
               <td style="font-weight: bold;">{{ 'ths.EstimatedIterationTime' | translate }}</td>
@@ -48,10 +52,6 @@
             <tr>
               <td style="font-weight: bold;">{{ (singleNonce?'ths.CurrentNonceValue':'ths.CurrentNoncesValue') | translate }}</td>
               <td>{{currentNoncesStr}}</td>
-            </tr>
-            <tr>
-              <td style="font-weight: bold;">{{ 'ths.CurrentNonceTotal' | translate }}</td>
-              <td>{{totalNonce}}</td>
             </tr>
             <tr>
               <td style="font-weight: bold;">{{ 'ths.CurrentElapsedTime' | translate }}</td>

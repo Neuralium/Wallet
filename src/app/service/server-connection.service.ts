@@ -1215,9 +1215,9 @@ getMessages(): Array<ServerMessage> {
     const cnx = this.connection;
     const action = 'THSBegin';
 
-    this.registerConnectionEvent(action, (chainType: number, difficulty:number, targetNonce:number, targetTotalDuration:number, estimatedIterationTime:number, estimatedRemainingTime:number, startingNonce:number, startingTotalNonce:number, startingRound:number, nonces:Array<number>, solutions:Array<number>) => {
-      this.logEvent(action + ' - event', { 'chainType': chainType, 'difficulty' : difficulty, 'targetNonce' : targetNonce, 'targetTotalDuration' : targetTotalDuration, 'estimatedIterationTime' : estimatedIterationTime, 'estimatedRemainingTime' : estimatedRemainingTime, 'startingNonce' : startingNonce, 'startingTotalNonce' : startingTotalNonce, 'startingRound' : startingRound,  'nonces' : nonces, 'solutions' : solutions });
-      this.propagateEvent(chainType, EventTypes.THSBegin, ResponseResult.Success, chainType,{'chainType': chainType, 'difficulty' : difficulty, 'targetNonce' : targetNonce, 'targetTotalDuration' : targetTotalDuration, 'estimatedIterationTime' : estimatedIterationTime, 'estimatedRemainingTime' : estimatedRemainingTime,'startingNonce' : startingNonce, 'startingTotalNonce' : startingTotalNonce, 'startingRound' : startingRound,  'nonces' : nonces, 'solutions' : solutions});
+    this.registerConnectionEvent(action, (chainType: number, difficulty:number, rounds:number, targetTotalDuration:number, estimatedIterationTime:number, estimatedRemainingTime:number, startingNonce:number, startingRound:number, targetRoundNonce:number, nonces:Array<number>, solutions:Array<number>) => {
+      this.logEvent(action + ' - event', { 'chainType': chainType, 'difficulty' : difficulty, 'rounds' : rounds, 'targetTotalDuration' : targetTotalDuration, 'estimatedIterationTime' : estimatedIterationTime, 'estimatedRemainingTime' : estimatedRemainingTime, 'startingNonce' : startingNonce, 'startingRound' : startingRound, 'targetRoundNonce': targetRoundNonce,  'nonces' : nonces, 'solutions' : solutions });
+      this.propagateEvent(chainType, EventTypes.THSBegin, ResponseResult.Success, chainType,{'chainType': chainType, 'difficulty' : difficulty, 'rounds' : rounds, 'targetTotalDuration' : targetTotalDuration, 'estimatedIterationTime' : estimatedIterationTime, 'estimatedRemainingTime' : estimatedRemainingTime,'startingNonce' : startingNonce, 'startingRound' : startingRound, 'targetRoundNonce': targetRoundNonce,  'nonces' : nonces, 'solutions' : solutions});
     });
   }
 
