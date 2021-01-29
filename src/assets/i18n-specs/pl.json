@@ -275,10 +275,10 @@
     },
     {
       "Key": "app.ConfirmPassphrase",
-      "MatchingTranslation": "Confirm Phassphrase",
+      "MatchingTranslation": "Confirm Passphrase",
       "Locked": false,
       "TimeAdded": "2019-11-13T14:46:51.1474753Z",
-      "LastUpdate": "2020-08-18T04:53:48.3368012Z"
+      "LastUpdate": "2021-01-28T04:31:02.2061445Z"
     },
     {
       "Key": "app.Create",
@@ -345,10 +345,10 @@
     },
     {
       "Key": "app.PassphraseAreNotTheSame",
-      "MatchingTranslation": "Phassphrases are not the same",
+      "MatchingTranslation": "Passphrases are not the same",
       "Locked": false,
       "TimeAdded": "2019-11-13T14:46:51.1475062Z",
-      "LastUpdate": "2020-08-18T04:53:49.6040164Z"
+      "LastUpdate": "2021-01-28T05:47:14.751638Z"
     },
     {
       "Key": "app.PassphraseRequired",
@@ -359,24 +359,24 @@
     },
     {
       "Key": "app.PleaseEnterYourPassphrase",
-      "MatchingTranslation": "Please enter your Phassphrase",
+      "MatchingTranslation": "Please enter your Passphrase",
       "Locked": false,
       "TimeAdded": "2019-11-13T14:46:51.1475124Z",
-      "LastUpdate": "2020-08-18T04:53:49.9308315Z"
+      "LastUpdate": "2021-01-28T05:47:14.9788159Z"
     },
     {
       "Key": "app.PleaseEnterYourPassphraseAgain",
-      "MatchingTranslation": "Please enter your Phassphrase again",
+      "MatchingTranslation": "Please enter your Passphrase again",
       "Locked": false,
       "TimeAdded": "2019-11-13T14:46:51.1475158Z",
-      "LastUpdate": "2020-08-18T04:53:50.1462357Z"
+      "LastUpdate": "2021-01-28T05:47:15.1849159Z"
     },
     {
       "Key": "app.PleaseEnterYourPassphraseLastAttempt",
-      "MatchingTranslation": "Please enter your Phassphrase last attempt",
+      "MatchingTranslation": "Please enter your Passphrase last attempt",
       "Locked": false,
       "TimeAdded": "2019-11-13T14:46:51.1475193Z",
-      "LastUpdate": "2020-08-18T04:53:50.3041848Z"
+      "LastUpdate": "2021-01-28T05:47:15.3728564Z"
     },
     {
       "Key": "app.Quit",
@@ -408,10 +408,10 @@
     },
     {
       "Key": "app.ShowPasswords",
-      "MatchingTranslation": "Show Phassphrases",
+      "MatchingTranslation": "Show Passphrases",
       "Locked": false,
       "TimeAdded": "2019-11-13T14:46:51.1475365Z",
-      "LastUpdate": "2020-08-18T04:53:51.0674881Z"
+      "LastUpdate": "2021-01-28T05:47:15.5321868Z"
     },
     {
       "Key": "app.Sla",
@@ -1353,24 +1353,24 @@
     },
     {
       "Key": "wallet.BackupKeyPassphrase",
-      "MatchingTranslation": "Super Key Phassphrase",
+      "MatchingTranslation": "Super Key Passphrase",
       "Locked": false,
       "TimeAdded": "2019-11-13T14:46:51.1483274Z",
-      "LastUpdate": "2020-08-18T04:54:18.9386566Z"
+      "LastUpdate": "2021-01-28T05:47:15.6641592Z"
     },
     {
       "Key": "wallet.ChangeKeyPassphrase",
-      "MatchingTranslation": "Change Key Phassphrase",
+      "MatchingTranslation": "Change Key Passphrase",
       "Locked": false,
       "TimeAdded": "2019-11-13T14:46:51.1483348Z",
-      "LastUpdate": "2020-08-18T04:54:19.096668Z"
+      "LastUpdate": "2021-01-28T05:47:15.8549299Z"
     },
     {
       "Key": "wallet.MessageKeyPassphrase",
-      "MatchingTranslation": "Message Key Phassphrase",
+      "MatchingTranslation": "Message Key Passphrase",
       "Locked": false,
       "TimeAdded": "2019-11-13T14:46:51.1483451Z",
-      "LastUpdate": "2020-08-18T04:54:19.6012909Z"
+      "LastUpdate": "2021-01-28T04:31:02.792965Z"
     },
     {
       "Key": "wallet.Create",
@@ -1430,52 +1430,52 @@
     },
     {
       "Key": "wallet.PassphraseForEncryptionOfAllKeys",
-      "MatchingTranslation": "a Phassphrase for encryption of all keys",
+      "MatchingTranslation": "a Passphrase for encryption of all keys",
       "Locked": false,
       "TimeAdded": "2019-11-13T14:46:51.1484216Z",
-      "LastUpdate": "2020-08-18T04:54:20.9933015Z"
+      "LastUpdate": "2021-01-28T04:31:02.9549892Z"
     },
     {
       "Key": "wallet.PassphraseForEncryptionOfBackupKey",
-      "MatchingTranslation": "a Phassphrase for encryption of Super Key",
+      "MatchingTranslation": "a Passphrase for encryption of Super Key",
       "Locked": false,
       "TimeAdded": "2019-11-13T14:46:51.1484296Z",
-      "LastUpdate": "2020-08-18T04:54:21.3530291Z"
+      "LastUpdate": "2021-01-28T04:31:03.3148161Z"
     },
     {
       "Key": "wallet.PassphraseForEncryptionOfChangeKey",
-      "MatchingTranslation": "a Phassphrase for encryption of Change Key",
+      "MatchingTranslation": "a Passphrase for encryption of Change Key",
       "Locked": false,
       "TimeAdded": "2019-11-13T14:46:51.1484374Z",
-      "LastUpdate": "2020-08-18T04:54:21.5220154Z"
+      "LastUpdate": "2021-01-28T04:31:03.4745619Z"
     },
     {
       "Key": "wallet.PassphraseForEncryptionOfMessageKey",
-      "MatchingTranslation": "a Phassphrase for encryption of Message Key",
+      "MatchingTranslation": "a Passphrase for encryption of Message Key",
       "Locked": false,
       "TimeAdded": "2019-11-13T14:46:51.1484452Z",
-      "LastUpdate": "2020-08-18T04:54:21.6882435Z"
+      "LastUpdate": "2021-01-28T04:31:03.6896663Z"
     },
     {
       "Key": "wallet.PassphraseForEncryptionOfTransactionKey",
-      "MatchingTranslation": "a Phassphrase for encryption of Transaction Key",
+      "MatchingTranslation": "a Passphrase for encryption of Transaction Key",
       "Locked": false,
       "TimeAdded": "2019-11-13T14:46:51.1484563Z",
-      "LastUpdate": "2020-08-18T04:54:21.8530475Z"
+      "LastUpdate": "2021-01-28T04:31:03.8579385Z"
     },
     {
       "Key": "wallet.PassphraseForKeys",
-      "MatchingTranslation": "Phassphrase for keys",
+      "MatchingTranslation": "Passphrase for keys",
       "Locked": false,
       "TimeAdded": "2019-11-13T14:46:51.1484646Z",
-      "LastUpdate": "2020-08-18T04:54:22.0112528Z"
+      "LastUpdate": "2021-01-28T04:31:04.0341226Z"
     },
     {
       "Key": "wallet.PassphraseForWalletEncryption",
-      "MatchingTranslation": "enter a Phassphrase",
+      "MatchingTranslation": "enter a Passphrase",
       "Locked": false,
       "TimeAdded": "2019-11-13T14:46:51.1484729Z",
-      "LastUpdate": "2020-08-18T04:54:22.1355627Z"
+      "LastUpdate": "2021-01-28T04:31:04.1671174Z"
     },
     {
       "Key": "wallet.PleaseCreateOrCopy",
@@ -1493,10 +1493,10 @@
     },
     {
       "Key": "wallet.TransactionKeyPassphrase",
-      "MatchingTranslation": "Transaction Key Phassphrase",
+      "MatchingTranslation": "Transaction Key Passphrase",
       "Locked": false,
       "TimeAdded": "2019-11-13T14:46:51.1484992Z",
-      "LastUpdate": "2020-08-18T04:54:22.5179205Z"
+      "LastUpdate": "2021-01-28T04:31:04.3208204Z"
     },
     {
       "Key": "wallet.Wallet",
@@ -2613,31 +2613,31 @@
     },
     {
       "Key": "wallet.ValidatorVerificationKeyPassphrase",
-      "MatchingTranslation": "Validator Validation Key Phassphrase",
+      "MatchingTranslation": "Validator Validation Key Passphrase",
       "Locked": false,
       "TimeAdded": "2020-08-01T00:10:36.0831959Z",
-      "LastUpdate": "2020-08-18T04:54:19.2502603Z"
+      "LastUpdate": "2021-01-28T04:31:02.4153468Z"
     },
     {
       "Key": "wallet.ValidatorSecretKeyPassphrase",
-      "MatchingTranslation": "Validator Secret Key Phassphrase",
+      "MatchingTranslation": "Validator Secret Key Passphrase",
       "Locked": false,
       "TimeAdded": "2020-08-01T00:10:36.1642706Z",
-      "LastUpdate": "2020-08-18T04:54:19.4323258Z"
+      "LastUpdate": "2021-01-28T04:31:02.5825319Z"
     },
     {
       "Key": "wallet.PassphraseForEncryptionOfValidatorSecretKey",
-      "MatchingTranslation": "a Phassphrase for encryption of Super Key",
+      "MatchingTranslation": "a Passphrase for encryption of Super Key",
       "Locked": false,
       "TimeAdded": "2020-08-01T00:10:36.7338379Z",
-      "LastUpdate": "2020-08-18T04:54:21.1556818Z"
+      "LastUpdate": "2021-01-28T04:31:03.1410626Z"
     },
     {
       "Key": "wallet.PassphraseForEncryptionOfValidatorVerificationKey",
-      "MatchingTranslation": "a Phassphrase for encryption of Super Key",
+      "MatchingTranslation": "a Passphrase for encryption of Super Key",
       "Locked": false,
       "TimeAdded": "2020-08-01T00:10:36.8069074Z",
-      "LastUpdate": "2020-08-18T04:54:21.2436728Z"
+      "LastUpdate": "2021-01-28T04:31:03.2324469Z"
     },
     {
       "Key": "wallet.WalletLoaded",
@@ -2652,20 +2652,6 @@
       "Locked": false,
       "TimeAdded": "2020-08-01T00:10:37.5836264Z",
       "LastUpdate": "2020-08-18T04:54:23.5681562Z"
-    },
-    {
-      "Key": "wallet.PhassphraseTooShort",
-      "MatchingTranslation": "Passphrase is too short.",
-      "Locked": false,
-      "TimeAdded": "2020-08-01T00:10:37.6557824Z",
-      "LastUpdate": "2020-08-18T04:54:23.7197121Z"
-    },
-    {
-      "Key": "wallet.PhassphraseDifferent",
-      "MatchingTranslation": "Passphrases are different.",
-      "Locked": false,
-      "TimeAdded": "2020-08-01T00:10:37.7286954Z",
-      "LastUpdate": "2020-08-18T04:54:23.8641682Z"
     },
     {
       "Key": "wallet.Close",
@@ -2939,20 +2925,6 @@
       "Locked": false,
       "TimeAdded": "2020-12-17T16:50:46.0086871Z",
       "LastUpdate": "2020-12-17T16:50:46.2274542Z"
-    },
-    {
-      "Key": "ths.TargetNonce",
-      "MatchingTranslation": "Minimum Nonce Target",
-      "Locked": false,
-      "TimeAdded": "2020-12-17T16:50:46.2274888Z",
-      "LastUpdate": "2021-01-03T16:57:00.9166237Z"
-    },
-    {
-      "Key": "ths.CurrentNonceTotal",
-      "MatchingTranslation": "Current Nonce Total",
-      "Locked": false,
-      "TimeAdded": "2020-12-17T16:50:46.498322Z",
-      "LastUpdate": "2020-12-17T16:50:47.2518257Z"
     },
     {
       "Key": "ths.EstimatedIterationTime",
@@ -3254,6 +3226,34 @@
       "Locked": false,
       "TimeAdded": "2021-01-19T15:40:05.1027789Z",
       "LastUpdate": "2021-01-19T15:40:05.364897Z"
+    },
+    {
+      "Key": "ths.TargetRoundNonce",
+      "MatchingTranslation": "Round Nonce Target",
+      "Locked": false,
+      "TimeAdded": "2021-01-28T04:31:01.7048721Z",
+      "LastUpdate": "2021-01-28T04:31:01.8643536Z"
+    },
+    {
+      "Key": "ths.TotalRounds",
+      "MatchingTranslation": "Total Rounds",
+      "Locked": false,
+      "TimeAdded": "2021-01-28T04:31:01.8643871Z",
+      "LastUpdate": "2021-01-28T04:31:02.0405527Z"
+    },
+    {
+      "Key": "wallet.PassphraseTooShort",
+      "MatchingTranslation": "Passphrase is too short.",
+      "Locked": false,
+      "TimeAdded": "2021-01-28T04:31:04.3210531Z",
+      "LastUpdate": "2021-01-28T04:31:04.4793628Z"
+    },
+    {
+      "Key": "wallet.PassphraseDifferent",
+      "MatchingTranslation": "Passphrases are different.",
+      "Locked": false,
+      "TimeAdded": "2021-01-28T04:31:04.4794005Z",
+      "LastUpdate": "2021-01-28T04:31:04.5957205Z"
     }
   ]
 }

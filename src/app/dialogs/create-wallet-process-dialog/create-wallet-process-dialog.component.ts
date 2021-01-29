@@ -219,7 +219,7 @@ export class CreateWalletProcessDialogComponent implements OnInit, OnDestroy {
 
   validateSource(passphrase: string, key: string) {
     if (passphrase.length < this.MIN_LENGTH) {
-      return { key: { value: key, message: this.translateService.instant('wallet.PhassphraseTooShort') } };
+      return { key: { value: key, message: this.translateService.instant('wallet.PassphraseTooShort') } };
     }
 
     return null;
@@ -228,7 +228,7 @@ export class CreateWalletProcessDialogComponent implements OnInit, OnDestroy {
 
   validateConfirmation(passphrase: string, passphraseConfirmation: string, key: string) {
     if (passphrase !== passphraseConfirmation) {
-      return { key: { value: key, message: this.translateService.instant('wallet.PhassphraseDifferent') } };
+      return { key: { value: key, message: this.translateService.instant('wallet.PassphraseDifferent') } };
     }
 
     return null;
