@@ -459,7 +459,11 @@
 		"ResultCallbackDidNotHappen" : "The remote server could not respond.",
 		"ResultCallbackSuccess" : "Our server port was connectable.",
 		"ResultCallbackFailed" : "Our server port was NOT connectable",
-		"RemainingSeconds" : " seconds before another attempt is possible."
+		"RemainingSeconds" : " seconds before another attempt is possible.",
+		"RescueWallet" : "Wallet Rescue",
+		"AttemptRescue" : "Attempt Wallet Rescue",
+		"rescueSuccess" : "Wallet rescue was a success!",
+		"rescueFailed" : "Wallet rescue failed."
 	},
 	"sync": {
 		"BlockchainStatus": "Blockchain Status",

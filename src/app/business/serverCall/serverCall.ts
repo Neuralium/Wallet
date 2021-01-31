@@ -52,6 +52,23 @@ export class ServerCall extends CommonCall {
           });
       }
 
+      callAttemptWalletRescue(chainType: number): Promise<boolean> {
+        return new Promise<boolean>((resolve, reject) => {
+
+            this.logEvent('AttemptWalletRescue - call', null);
+            this.serviceConnectionService.invoke<boolean>('AttemptWalletRescue', chainType)
+              .then(
+                response => {
+                  this.logEvent('AttemptWalletRescue - response', response);
+                  resolve(response);
+                })
+              .catch(reason => {
+                reject('AttemptWalletRescue error : ' + reason);
+              });
+          });
+      }
+      
+
       callQuerySystemVersion() {
         return new Promise<SystemInfo>((resolve, reject) => {
 

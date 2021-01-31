@@ -14,5 +14,6 @@ export interface PortMappingStatus {
     deviceIndex:number;
     discoveredDevicesNames:Array<string>;
     publicIp:string;
+    privateIp:string;
     portMappings:Array<PortMapping>;
 }

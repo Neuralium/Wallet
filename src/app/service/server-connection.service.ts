@@ -290,6 +290,11 @@ getMessages(): Array<ServerMessage> {
     return service.callTestP2pPort(selectedPort, callback);
   }
 
+  callAttemptWalletRescue(chainType: number) {
+    const service = ServerCall.create(this, this.logService);
+    return service.callAttemptWalletRescue(chainType);
+  }
+  
   callCreateNewWallet(chainType: number, wallet: WalletCreation): Promise<number> {
     const service = WalletCall.create(this, this.logService);
     return service.callCreateNewWallet(chainType, wallet);

@@ -43,6 +43,14 @@
                         Port Mappings
                     </mat-panel-title>
                 </mat-expansion-panel-header>
+                <mat-list-item style="height: auto; margin: 50px 50px">
+                    <mat-label style="width: 15%; height: auto;">Local Network Ip:</mat-label>
+                    <mat-label style="width: auto; height: auto;"> {{status.privateIp}} </mat-label>
+                </mat-list-item>
+                <mat-list-item style="height: auto; margin: 50px 50px">
+                    <mat-label style="width: 15%; height: auto;">Public Network Ip:</mat-label>
+                    <mat-label style="width: auto; height: auto;"> {{status.publicIp}} </mat-label>
+                </mat-list-item>
             <table mat-table [dataSource]="status.portMappings" class="mat-elevation-z8">
                 <ng-container [matColumnDef]="column" *ngFor="let column of displayedColumns">
                   <th mat-header-cell *matHeaderCellDef> {{column}} </th>

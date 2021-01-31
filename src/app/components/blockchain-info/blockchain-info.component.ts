@@ -120,8 +120,10 @@ export class BlockchainInfoComponent implements OnInit, OnDestroy {
   }
 
   filterPeerConnectionDetails(details: PeerConnectionDetails[]): PeerConnectionDetails[] {
-    details.sort((a, b) => (b.stats.metric - a.stats.metric) + 1e6 *((+b.isConnected) - (+a.isConnected))
-          + (+b.isConnectable) - (+a.isConnectable)); // the unary + operator converts its operand into a number.
+    details.sort((a, b) => {
+      return (b.stats?(b.stats.metric - a.stats.metric):0) + 1e6 * ((+b.isConnected) - (+a.isConnected))
+        + (+b.isConnectable) - (+a.isConnectable);
+    }); // the unary + operator converts its operand into a number.
     return details.filter(details => (this.peerConnectionDetailsShowConnected ? details.isConnected : true) 
     && (this.peerConnectionDetailsShowFullNode ? details.type == "FullNode" : true)).slice(0, details.length > 10 ? 10 : details.length);
   }

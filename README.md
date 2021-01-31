@@ -1,6 +1,6 @@
 # Neuralium Desktop Wallet
 
-##### Version:  MAINNET 1.0.1.9
+##### Version:  MAINNET
 
 The "pro" Neuralium crypto token desktop user interface
 

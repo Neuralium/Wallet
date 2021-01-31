@@ -33,6 +33,7 @@ export class UtilitiesComponent implements OnInit, OnDestroy {
   constructor(
     private serverConnection: ServerConnectionService,
     private translateService: TranslateService,
+    private blockchainService: BlockchainService,
     public dialog: MatDialog,
     private _ngZone: NgZone) { }
 
@@ -77,6 +78,24 @@ export class UtilitiesComponent implements OnInit, OnDestroy {
         this.testingPort = false;
       });
     }
+  }
+
+  rescueSuccess : boolean = false;
+  rescueFailed : boolean = false;
+
+  rescueWallet(){
+    this.rescueSuccess = false;
+    this.rescueFailed = false;
+
+    this.serverConnection.callAttemptWalletRescue(this.blockchainService.currentBlockchain.id).then(result => {
+
+      if(result){
+        this.rescueSuccess = true;
+      }
+      else{
+        this.rescueFailed = true;
+      }
+    });
   }
 
   nextTry: DateTime;

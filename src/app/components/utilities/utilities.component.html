@@ -82,4 +82,21 @@
     </mat-card-content>
   </mat-card>
 
+  <mat-card style="width:98%">
+    <mat-card-header>
+      <mat-card-title>{{ 'utilities.RescueWallet' | translate }}</mat-card-title>
+    </mat-card-header>
+    <mat-card-content style="margin-top: 18px;">
+
+      <div *ngIf="rescueSuccess">
+        {{'utilities.rescueSuccess' | translate }}
+      </div>
+      <div *ngIf="rescueFailed">
+        {{'utilities.rescueFailed' | translate }}
+      </div>
+      <button mat-stroked-button color="primary" (click)="rescueWallet()">{{'utilities.AttemptRescue' | translate }}</button>
+    </mat-card-content>
+    
+  </mat-card>
+
 </mat-card>
