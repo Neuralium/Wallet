@@ -131,7 +131,8 @@ export class BlockchainInfoComponent implements OnInit, OnDestroy {
   displayColumn(column: string, details: PeerConnectionDetails): string {
     switch(column)
     {
-      case 'ip': return details.ip + ":" + details.port;
+      case 'ip': 
+      return (details.iPMode == 2? ('['+details.ip+']'):details.ip) + ":" + details.port;
       case 'connectable': return details.isConnectable.toString();
       case 'connected': return details.isConnected.toString();
       case 'latency (ms)': return (1000 * details.stats.latency).toFixed(2); break

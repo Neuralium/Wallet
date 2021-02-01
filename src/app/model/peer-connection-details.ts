@@ -14,6 +14,7 @@ export interface PeerConnectionDetails {
     id:number;                                           
     ip: string;
     port: number;
+    iPMode : number;
     isConnectable: boolean;   
     isConnected: boolean;
     type: string;                                          
