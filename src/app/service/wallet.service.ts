@@ -167,6 +167,15 @@ export class WalletService {
     return this.serverConnectionService.callClearAppointment(this.currentBlockchainId, this.currentAccount.accountCode);
   }
 
+  resetWalletIndex(): Promise<boolean> {
+    if (this.currentBlockchainId === 0) {
+      return new Promise<boolean>((resolve, reject) => {
+        reject(false);
+      });
+    }
+    return this.serverConnectionService.callResetWalletIndex(this.currentBlockchainId);
+  }
+
   queryAppointmentConfirmationResult(): Promise<AccountAppointmentConfirmationResult> {
     if (this.currentBlockchainId === 0) {
       return new Promise<AccountAppointmentConfirmationResult>((resolve, reject) => {

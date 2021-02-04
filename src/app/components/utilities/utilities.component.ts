@@ -1,6 +1,7 @@
 import { Component, OnInit, Input, Output, EventEmitter, OnDestroy, NgZone } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { BlockchainService } from '../..//service/blockchain.service';
+import { WalletService } from '../..//service/wallet.service';
 import { ServerConnectionService } from '../..//service/server-connection.service';
 import { TranslateService } from '@ngx-translate/core';
 
@@ -34,6 +35,7 @@ export class UtilitiesComponent implements OnInit, OnDestroy {
     private serverConnection: ServerConnectionService,
     private translateService: TranslateService,
     private blockchainService: BlockchainService,
+    private walletService: WalletService,
     public dialog: MatDialog,
     private _ngZone: NgZone) { }
 
@@ -95,6 +97,14 @@ export class UtilitiesComponent implements OnInit, OnDestroy {
       else{
         this.rescueFailed = true;
       }
+    });
+  }
+
+  resetWalletIndex(){
+
+    this.walletService.resetWalletIndex().then(result => {
+
+      alert(result);
     });
   }
 

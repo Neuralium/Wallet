@@ -488,6 +488,11 @@ getMessages(): Array<ServerMessage> {
     return service.callQueryWalletSynced(chainType);
   }
 
+  callResetWalletIndex(chainType: number) {
+    const service = WalletCall.create(this, this.logService);
+    return service.callResetWalletIndex(chainType);
+  }
+
   callIsWalletLoaded(chainType: number) {
     const service = WalletCall.create(this, this.logService);
     return service.callIsWalletLoaded(chainType);

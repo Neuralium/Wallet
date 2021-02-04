@@ -232,6 +232,21 @@ export class WalletCall extends CommonCall {
     });
   }
 
+  callResetWalletIndex(chainType: number) {
+    return new Promise<boolean>((resolve, reject) => {
+
+      this.logEvent('ResetWalletIndex - call', { 'chainType': chainType });
+      this.serviceConnectionService.invoke<boolean>('ResetWalletIndex', chainType)
+        .then(
+          response => {
+            this.logEvent('ResetWalletIndex - response', response);
+            resolve(response);
+          })
+        .catch(reason => {
+          reject('QueryWalletSynced error : ' + reason);
+        });
+    });
+  }
 
   callQueryWalletSynced(chainType: number) {
     return new Promise<boolean>((resolve, reject) => {
