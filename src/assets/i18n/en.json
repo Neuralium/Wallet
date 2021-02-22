@@ -42,6 +42,7 @@
 		"KYCVerified" : "Identity",
 		"AppointmentVerified" : "Appointment",
 		"SMSVerified" : "SMS",
+		"VerificationExpiring" : "Expiring",
 		"VerificationExpired" : "Expired",
 		"AccountVerificationNone" : "None",
 		"AccountVerificationActive" : "Active",
@@ -93,24 +94,29 @@
 		"VerificationRenewRequestCompleted" : "Your appointment verification renewal request has been confirmed.",
 		"VerificationRenewRequestRejected" : "Your appointment verification renewal request has been rejected.",
 		"AppointmentContextCached" : "Appointment context has been received.",
-		"TimeBeforeAppointment" : "Time remaining before appointment",
+		"TimeBeforeAppointment" : "Time remaining",
+		"TimeBeforePreparationWindow" : "Time remaining to preparation",
 		"RequestFailed" : "Appointment request failed",
 		"AppointmentRequestedText" : "You appointment has been requested. A confirmation will be received within a few minutes to a few hours.",
 		"AppointmentRequestedTimestamp" : "Request timestamp",
-		"AppointmentConfirmedText" : "Your appointment request has been confirmed and the appointment date and time is now set. Make sure to attend in time!",
-		"AppointmentTimestampUtc" : "Appointment Time (UTC)",
-		"AppointmentTimestampLocal" : "Appointment Time (Local Time)",
+		"AppointmentTentativelyConfirmedText" : "Your appointment request has been tentatively confirmed but you are not yet fully ready to perform your appointment.",
+		"AppointmentConfirmedText" : "Your appointment request has been confirmed and the appointment date and time is now set. You are ready to go and make sure to attend in time!",
+		"Congratulations" : "Congratulations!",
+		"AppointmentTimestamp" : "Appointment Time",
 		"PreferredRegionSelected" : "Region Selected",
 		"AppointmentWindow" : "Appointment Window",
 		"Minutes" : "Minute(s)",
-		"Seconds" : "Second(s)",
+		"Seconds" : "Seconds",
+		"AppointmentDevicePreparationWindow" : "In order to permit your device to properly prepare for the appointment, you must log in at least once during the below time window:",
+		"PreparationTimeWindowStart" : "Preparation Window Start",
+		"PreparationTimeWindowEnd" : "Preparation Window End",
 		"AppointmentContextReceived" : "Appointment Context Received",
 		"AppointmentVerificationRequestedText" : "Your appointment verification request has been dispatched. A confirmation will be received within a few minutes to a few hours after the end of the verification time window displayed below.",
 		"AppointmentVerificationRequestedExpiredResetText" : "Your appointment verification request has expired. You may continue to wait a bit longer if you wish, or you can reset the appointment process and start over by pressing the reset button below.",
 		"AppointmentVerificationCompletedText" : "Your appointment verification renewal request has been confirmed. You may continue using your verified account until it is time to renew again.",
 		"AppointmentVerificationCompletedCanPublishText" : "Your appointment verification request has been confirmed. You may now proceed and publish your account to the blockchain.",
 		"AppointmentVerificationRejectedText" : "Your appointment verification request has been rejected. Please try again with a new appointment request.",
-		"AppointmentVerificationWindow": "The appointment verification time window",
+		"AppointmentVerificationWindow": "Your appointment should be verified within the time window",
 		"AppointmentVerificationWindowEnd" : "Limit",
 		"AppointmentVerificationWindowRemaining" : "Remaining",
 		"InvalidPuzzleEngineVersion" : "Invalid puzzle engine version. Please update your software version.",
@@ -118,7 +124,8 @@
 		"PuzzleClickInstructions" : "Click here do display instructions",
 		"ResetAppointment" : "Reset Appointment",
 		"SuccessClearAppointment" : "Succesfully cleared appointment",
-		"FailedClearAppointment" : "Failed to clear appointment"
+		"FailedClearAppointment" : "Failed to clear appointment",
+		"TimesInUTC" : "Display Timestamps in UTC"
 	},
 	"puzzles" : {
 		"Title" : "Puzzle",
@@ -131,6 +138,11 @@
 		"PreparingPackage" : "Please wait while the appointment process completes, the results are packaged and dispatched for verification.",
 		"Puzzle" : "Puzzle",
 		"Of" : "of"
+	},
+	"puzzlesTest" : {
+		"Title" : "Puzzle Test",
+		"TestPuzzle" : "Test Puzzle",
+		"Complete" : "Complete"
 	},
 	"ths" : {
 		"Title" : "Time Hard Signature Generation",
@@ -435,6 +447,7 @@
 		"BlockExplorer" : "Block Explorer",
 		"ApiExplorer" : "API Explorer",
 		"PortMapping" : "Port Mapping",
+		"AppSettingsEditor": "Application Settings",
 		"Utilities" : "Utilities"
 	},
 	"blockexplorer" : {
@@ -464,7 +477,8 @@
 		"AttemptRescue" : "Attempt Wallet Rescue",
 		"rescueSuccess" : "Wallet rescue was a success!",
 		"rescueFailed" : "Wallet rescue failed.",
-		"ResetWalletIndex" : "Reset the wallet index"
+		"ResetWalletIndex" : "Reset the wallet index",
+		"TestAppointmentPuzzle" : "Test appointment puzzle"
 	},
 	"sync": {
 		"BlockchainStatus": "Blockchain Status",

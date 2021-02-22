@@ -45,25 +45,29 @@ export class AccountDetailsComponent implements OnInit, OnDestroy {
       correlatedKey = 'account.AppointmentVerified';
       testExpiration = true;
     }
-    if(this.account.verification === WalletAccountVerification.SMS){
+    else if(this.account.verification === WalletAccountVerification.SMS){
       correlatedKey = 'account.SMSVerified';
       testExpiration = true;
     }
-    if(this.account.verification === WalletAccountVerification.Phone){
+    else if(this.account.verification === WalletAccountVerification.Phone){
       correlatedKey = 'account.PhoneVerified';
     }
-    if(this.account.verification === WalletAccountVerification.Email){
+    else if(this.account.verification === WalletAccountVerification.Email){
       correlatedKey = 'account.EmailVerified';
     }
-    if(this.account.verification === WalletAccountVerification.Gate){
+    else if(this.account.verification === WalletAccountVerification.Gate){
       correlatedKey = 'account.GateVerified';
     }
-    if(this.account.verification === WalletAccountVerification.KYC){
+    else if(this.account.verification === WalletAccountVerification.KYC){
       correlatedKey = 'account.KYCVerified';
     }
-    if(this.account.verification === WalletAccountVerification.Expired){
+    else if(this.account.verification === WalletAccountVerification.Expiring){
+      correlatedKey = 'account.VerificationExpiring';
+    }
+    else if(this.account.verification === WalletAccountVerification.Expired){
       correlatedKey = 'account.VerificationExpired';
     }
+    
 
     if(testExpiration){
       if(this.account.verificationExpired){

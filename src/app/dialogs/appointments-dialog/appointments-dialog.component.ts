@@ -8,7 +8,7 @@ import { SyncStatusService } from '../..//service/sync-status.service';
 import { TransactionsService } from '../..//service/transactions.service';
 import { NotificationService } from '../..//service/notification.service';
 import { TranslateService } from '@ngx-translate/core';
-import {  WalletAccountAppointment, AppointmentStatus } from '../..//model/walletAccountAppointment';
+import { WalletAccountAppointment, AppointmentStatus } from '../..//model/walletAccountAppointment';
 import { AppointmentsService } from '../..//service/appointment.service';
 import { AppointmentPuzzleDialogComponent } from '../appointment-puzzle-dialog/appointment-puzzle-dialog.component';
 import { PublishAccountDialogComponent } from '../..//dialogs/publish-account-dialog/publish-account-dialog.component';
@@ -18,7 +18,7 @@ import { AppConfig } from '../../../environments/environment';
 import { SyncStatus } from '../..//model/syncProcess';
 import { takeUntil } from 'rxjs/operators';
 import { Subject } from 'rxjs';
-import { DateTime } from 'luxon';
+import { DateTime, Duration } from 'luxon';
 import { Accelerator } from 'electron';
 
 
@@ -34,8 +34,8 @@ enum AppointmentSteps {
 
 enum AppointmentsRegions {
   Occident = 1 << 0, // 1
-	Central  = 1 << 1, // 2
-	Orient   = 1 << 2  // 4
+  Central = 1 << 1, // 2
+  Orient = 1 << 2  // 4
 }
 
 
@@ -50,7 +50,7 @@ export class AppointmentsDialogComponent implements OnInit, OnDestroy {
   @ViewChild('stepper') stepperComponent: MatStepper;
 
   constructor(
-    private translateService:TranslateService,
+    private translateService: TranslateService,
     private serverConnectionService: ServerConnectionService,
     private walletService: WalletService,
     private _ngZone: NgZone,
@@ -60,22 +60,22 @@ export class AppointmentsDialogComponent implements OnInit, OnDestroy {
     public dialog: MatDialog) {
   }
 
-  preferredRegion:number = 1;
+  preferredRegion: number = 1;
 
-  wizzardStep:AppointmentSteps = AppointmentSteps.Begining;
-  wizzardSubStep:number = 0;
+  wizzardStep: AppointmentSteps = AppointmentSteps.Begining;
+  wizzardSubStep: number = 0;
 
   AppointmentSteps = AppointmentSteps;
   AppointmentStatus = AppointmentStatus;
 
-  allowRequestAppointments:boolean = false;
+  allowRequestAppointments: boolean = false;
   private unsubscribe$ = new Subject<void>();
 
-  preferredRegionDetailsText:string = '';
+  preferredRegionDetailsText: string = '';
   occidentHelpText: string = '';
   centralHelpText: string = '';
   orientHelpText: string = '';
-  hideTestRegion:boolean = true;
+  hideTestRegion: boolean = true;
 
   ngOnInit() {
 
@@ -84,7 +84,7 @@ export class AppointmentsDialogComponent implements OnInit, OnDestroy {
         this.updateStep();
       });
 
-      
+
     });
 
     this.appointmentsService.onAppointmentStatusChanged.add(this.appointementStatusChanged);
@@ -95,23 +95,23 @@ export class AppointmentsDialogComponent implements OnInit, OnDestroy {
     this.hideTestRegion = AppConfig.production && !AppConfig.productiontest;
   }
 
-  appointementStatusChanged(status:AppointmentStatus){
+  appointementStatusChanged(status: AppointmentStatus) {
 
   }
 
-  appointmentEventOccured(event:ServerConnectionEvent){
+  appointmentEventOccured(event: ServerConnectionEvent) {
 
     switch (event.eventType) {
 
       case EventTypes.AppointmentRequestSent:
 
-          break;
+        break;
       case EventTypes.AppointmentRequestConfirmed:
 
-          break;
+        break;
       case EventTypes.AppointmentPuzzlePreparation:
 
-          break;
+        break;
       case EventTypes.AppointmentPuzzleBegin:
 
         break;
@@ -126,12 +126,12 @@ export class AppointmentsDialogComponent implements OnInit, OnDestroy {
         break;
       case EventTypes.Error:
 
-          this.allowRequestAppointments = true;
+        this.allowRequestAppointments = true;
 
-          break;
+        break;
       default:
-          break;
-  }
+        break;
+    }
   }
 
 
@@ -144,15 +144,15 @@ export class AppointmentsDialogComponent implements OnInit, OnDestroy {
     this.unsubscribe$.complete();
   }
 
-  moveNext(){
-    if(this.wizzardSubStep === 0){
+  moveNext() {
+    if (this.wizzardSubStep === 0) {
       this.wizzardSubStep = 1;
     }
   }
 
-  updateStep(){
+  updateStep() {
 
-    switch(this.appointmentsService.appointmentStatus){
+    switch (this.appointmentsService.appointmentStatus) {
       case AppointmentStatus.None:
         this.wizzardStep = AppointmentSteps.Begining;
         break;
@@ -173,61 +173,112 @@ export class AppointmentsDialogComponent implements OnInit, OnDestroy {
         break;
     }
 
-    if(this.wizzardStep === AppointmentSteps.Begining){
+    if (this.wizzardStep === AppointmentSteps.Begining) {
       this.allowRequestAppointments = true;
     }
   }
 
-  get appointmentDetails():WalletAccountAppointment{
+  get appointmentRequestTimeStamp() {
+    if (this.timesInUTC) {
+      return this.appointmentDetails.appointmentRequestTimeStamp;
+    }
+
+    return this.appointmentDetails.appointmentRequestTimeStamp.toLocal();
+  }
+
+  get appointmentDetails(): WalletAccountAppointment {
     return this.appointmentsService.appointmentDetails;
   }
 
-  get appointmentContextSet():boolean{
+  get appointmentContextSet(): boolean {
 
     return this.appointmentDetails.Status >= AppointmentStatus.AppointmentContextCached;
   }
-  get localAppointmentTime():DateTime{
-    return  this.appointmentsService.localAppointmentTime;
+
+  get appointmentTime(): DateTime {
+
+    if (this.timesInUTC) {
+      return this.appointmentDetails.AppointmentTime;
+    }
+
+    return this.appointmentDetails.AppointmentTime.toLocal();
   }
 
+  get preparationTimeWindowStart(): DateTime {
+
+    if (this.timesInUTC) {
+      return this.appointmentDetails.appointmentPreparationWindowStart;
+    }
+
+    return this.appointmentDetails.appointmentPreparationWindowStart.toLocal();
+  }
+
+
+  get preparationTimeWindowEnd(): DateTime {
+
+    if (this.timesInUTC) {
+      return this.appointmentDetails.appointmentPreparationWindowEnd;
+    }
+
+    return this.appointmentDetails.appointmentPreparationWindowEnd.toLocal();
+
+  }
+
+
   get currentRemainingTime(): string {
-    return  this.appointmentsService.currentRemainingTime;
+    return this.appointmentsService.currentRemainingTime;
+  }
+
+  get currentRemainingTimePreparation(): string {
+    return this.appointmentsService.currentRemainingTimePreparation;
   }
 
   get verificationConfirmed(): boolean {
-    return  this.appointmentsService.verificationConfirmed;
+    return this.appointmentsService.verificationConfirmed;
   }
 
   get accountPublished(): boolean {
-    return  this.appointmentsService.accountPublished;
+    return this.appointmentsService.accountPublished;
   }
 
   get appointmentWindow(): string {
-    if(this.appointmentDetails.AppointmentWindow){
+    if (this.appointmentDetails.AppointmentWindow) {
       return this.appointmentDetails.AppointmentWindow.toString();
     }
     return '?';
   }
 
   get appointmentVerificationWindow(): DateTime {
-    return this.appointmentDetails.AppointmentVerificationTime;
+    if (this.timesInUTC) {
+      return this.appointmentDetails.AppointmentVerificationTime;
+    }
+
+    return this.appointmentDetails.AppointmentVerificationTime.toLocal();
   }
 
   get appointmentVerificationWindowRemaining(): string {
-    if(!this.appointmentDetails.AppointmentVerificationTime){
+    if (!this.appointmentDetails.AppointmentVerificationTime) {
       return '';
     }
 
     return this.appointmentsService.getTimeRemaining(this.appointmentDetails.AppointmentVerificationTime);
   }
 
-  makeAppointmentRequest(){
+  get timesInUTC(): boolean {
+      return this.appointmentsService.timesInUTC;
+  }
+
+  set timesInUTC(value: boolean) {
+    this.appointmentsService.timesInUTC = value;
+  }
+
+  makeAppointmentRequest() {
 
     this.allowRequestAppointments = false;
     this.walletService.RequestAppointment(this.preferredRegion).then(correlationId => {
 
       this.appointmentsService.correlationId = 1;
-      if(this.appointmentsService.correlationId === 0){
+      if (this.appointmentsService.correlationId === 0) {
         this.translateService.get('appointments.RequestFailed').subscribe((res: string) => {
           this.allowRequestAppointments = true;
           this.notificationService.showError(res);
@@ -236,11 +287,11 @@ export class AppointmentsDialogComponent implements OnInit, OnDestroy {
     });
   }
 
-  get confimationWindowExpired(){
+  get confimationWindowExpired() {
     return this.appointmentDetails.AppointmentVerificationTime < DateTime.utc();
   }
 
-  resetAppointment(){
+  resetAppointment() {
     this.walletService.clearAppointment().then(result => {
 
       this.translateService.get('appointments.SuccessClearAppointment').subscribe((res: string) => {
@@ -255,7 +306,7 @@ export class AppointmentsDialogComponent implements OnInit, OnDestroy {
     });
   }
 
-  publishAccount(){
+  publishAccount() {
     const publishDialogRef = this.dialog.open(PublishAccountDialogComponent, {
       width: '700px',
       data: this.appointmentsService.account.value.accountCode
@@ -268,36 +319,36 @@ export class AppointmentsDialogComponent implements OnInit, OnDestroy {
     this.dialogRef.close();
   }
 
-  displayPreferredRegionInfo(){
+  displayPreferredRegionInfo() {
 
-    
-    if(this.preferredRegion === AppointmentsRegions.Occident){
-      if(this.occidentHelpText){
+
+    if (this.preferredRegion === AppointmentsRegions.Occident) {
+      if (this.occidentHelpText) {
         this.preferredRegionDetailsText = this.occidentHelpText;
       }
-      else{
+      else {
         this.translateService.get('appointments.OccidentHelp').subscribe(text => {
           this.occidentHelpText = text;
           this.preferredRegionDetailsText = text;
         });
       }
     }
-    else if(this.preferredRegion === AppointmentsRegions.Central){
-      if(this.orientHelpText){
+    else if (this.preferredRegion === AppointmentsRegions.Central) {
+      if (this.orientHelpText) {
         this.preferredRegionDetailsText = this.centralHelpText;
       }
-      else{
+      else {
         this.translateService.get('appointments.CentralHelp').subscribe(text => {
           this.centralHelpText = text;
           this.preferredRegionDetailsText = text;
         });
       }
     }
-    else if(this.preferredRegion === AppointmentsRegions.Orient){
-      if(this.orientHelpText){
+    else if (this.preferredRegion === AppointmentsRegions.Orient) {
+      if (this.orientHelpText) {
         this.preferredRegionDetailsText = this.orientHelpText;
       }
-      else{
+      else {
         this.translateService.get('appointments.OrientHelp').subscribe(text => {
           this.orientHelpText = text;
           this.preferredRegionDetailsText = text;
@@ -306,14 +357,14 @@ export class AppointmentsDialogComponent implements OnInit, OnDestroy {
     }
   }
 
-  getPreferredRegionClass(): string{
-    if(this.preferredRegion === AppointmentsRegions.Occident){
+  getPreferredRegionClass(): string {
+    if (this.preferredRegion === AppointmentsRegions.Occident) {
       return 'occidentMap';
     }
-    else if(this.preferredRegion === AppointmentsRegions.Central){
+    else if (this.preferredRegion === AppointmentsRegions.Central) {
       return 'centralMap';
     }
-    else if(this.preferredRegion === AppointmentsRegions.Orient){
+    else if (this.preferredRegion === AppointmentsRegions.Orient) {
       return 'orientMap';
     }
   }

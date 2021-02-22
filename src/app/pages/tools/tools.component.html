@@ -25,6 +25,11 @@
     </ng-template>
     <app-tools-utilities></app-tools-utilities>
   </mat-tab>
-
+  <mat-tab style="width: 100%">
+    <ng-template mat-tab-label>
+      <i class="fas fa-list-ul"></i>&nbsp; {{ 'tools.AppSettingsEditor' | translate }}
+    </ng-template>
+  <app-tools-app-settings-editor></app-tools-app-settings-editor>
+  </mat-tab>
 
 </mat-tab-group>

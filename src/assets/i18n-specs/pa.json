@@ -1829,10 +1829,10 @@
     },
     {
       "Key": "appointments.TimeBeforeAppointment",
-      "MatchingTranslation": "Time remaining before appointment",
+      "MatchingTranslation": "Time remaining",
       "Locked": false,
       "TimeAdded": "2020-08-01T00:10:08.8613747Z",
-      "LastUpdate": "2020-08-18T04:52:36.4863543Z"
+      "LastUpdate": "2021-02-13T00:04:15.3360338Z"
     },
     {
       "Key": "appointments.RequestFailed",
@@ -1857,24 +1857,10 @@
     },
     {
       "Key": "appointments.AppointmentConfirmedText",
-      "MatchingTranslation": "Your appointment request has been confirmed and the appointment date and time is now set. Make sure to attend in time!",
+      "MatchingTranslation": "Your appointment request has been confirmed and the appointment date and time is now set. You are ready to go and make sure to attend in time!",
       "Locked": false,
       "TimeAdded": "2020-08-01T00:10:09.2601862Z",
-      "LastUpdate": "2020-08-18T04:52:37.2193445Z"
-    },
-    {
-      "Key": "appointments.AppointmentTimestampUtc",
-      "MatchingTranslation": "Appointment Time (UTC)",
-      "Locked": false,
-      "TimeAdded": "2020-08-01T00:10:09.3360965Z",
-      "LastUpdate": "2020-08-18T04:52:37.3832909Z"
-    },
-    {
-      "Key": "appointments.AppointmentTimestampLocal",
-      "MatchingTranslation": "Appointment Time (Local Time)",
-      "Locked": false,
-      "TimeAdded": "2020-08-01T00:10:09.4186093Z",
-      "LastUpdate": "2020-08-18T04:52:37.5589838Z"
+      "LastUpdate": "2021-02-13T00:04:15.9392267Z"
     },
     {
       "Key": "appointments.AppointmentWindow",
@@ -1892,10 +1878,10 @@
     },
     {
       "Key": "appointments.Seconds",
-      "MatchingTranslation": "Second(s)",
+      "MatchingTranslation": "Seconds",
       "Locked": false,
       "TimeAdded": "2020-08-01T00:10:09.6429736Z",
-      "LastUpdate": "2020-08-18T04:52:38.0177448Z"
+      "LastUpdate": "2021-02-13T00:04:16.3225758Z"
     },
     {
       "Key": "appointments.AppointmentContextReceived",
@@ -2872,10 +2858,10 @@
     },
     {
       "Key": "appointments.AppointmentVerificationWindow",
-      "MatchingTranslation": "The appointment verification time window",
+      "MatchingTranslation": "Your appointment should be verified within the time window",
       "Locked": false,
       "TimeAdded": "2020-12-17T16:50:32.1700632Z",
-      "LastUpdate": "2020-12-17T16:50:32.3809557Z"
+      "LastUpdate": "2021-02-13T00:04:17.1649655Z"
     },
     {
       "Key": "appointments.AppointmentVerificationWindowEnd",
@@ -3254,6 +3240,132 @@
       "Locked": false,
       "TimeAdded": "2021-01-28T04:31:01.5208911Z",
       "LastUpdate": "2021-01-28T04:31:01.6957854Z"
+    },
+    {
+      "Key": "account.VerificationExpiring",
+      "MatchingTranslation": "Expiring",
+      "Locked": false,
+      "TimeAdded": "2021-02-13T00:04:15.030313Z",
+      "LastUpdate": "2021-02-13T00:04:15.1885551Z"
+    },
+    {
+      "Key": "appointments.TimeBeforePreparationWindow",
+      "MatchingTranslation": "Time remaining to preparation",
+      "Locked": false,
+      "TimeAdded": "2021-02-13T00:04:15.336068Z",
+      "LastUpdate": "2021-02-13T00:04:15.5130219Z"
+    },
+    {
+      "Key": "appointments.AppointmentTentativelyConfirmedText",
+      "MatchingTranslation": "Your appointment request has been tentatively confirmed but you are not yet fully ready to perform your appointment.",
+      "Locked": false,
+      "TimeAdded": "2021-02-13T00:04:15.5130821Z",
+      "LastUpdate": "2021-02-13T00:04:15.7090846Z"
+    },
+    {
+      "Key": "appointments.Congratulations",
+      "MatchingTranslation": "Congratulations!",
+      "Locked": false,
+      "TimeAdded": "2021-02-13T00:04:15.9392595Z",
+      "LastUpdate": "2021-02-13T00:04:16.0250358Z"
+    },
+    {
+      "Key": "appointments.AppointmentTimestamp",
+      "MatchingTranslation": "Appointment Time",
+      "Locked": false,
+      "TimeAdded": "2021-02-13T00:04:16.0250686Z",
+      "LastUpdate": "2021-02-13T00:04:16.1711292Z"
+    },
+    {
+      "Key": "appointments.AppointmentDevicePreparationWindow",
+      "MatchingTranslation": "In order to permit your device to properly prepare for the appointment, you must log in at least once during the below time window:",
+      "Locked": false,
+      "TimeAdded": "2021-02-13T00:04:16.3226085Z",
+      "LastUpdate": "2021-02-13T00:04:16.5616081Z"
+    },
+    {
+      "Key": "appointments.PreparationTimeWindowStart",
+      "MatchingTranslation": "Preparation Window Start",
+      "Locked": false,
+      "TimeAdded": "2021-02-13T00:04:16.5616409Z",
+      "LastUpdate": "2021-02-13T00:04:16.809807Z"
+    },
+    {
+      "Key": "appointments.PreparationTimeWindowEnd",
+      "MatchingTranslation": "Preparation Window End",
+      "Locked": false,
+      "TimeAdded": "2021-02-13T00:04:16.8098466Z",
+      "LastUpdate": "2021-02-13T00:04:16.972711Z"
+    },
+    {
+      "Key": "appointments.TimesInUTC",
+      "MatchingTranslation": "Display Timestamps in UTC",
+      "Locked": false,
+      "TimeAdded": "2021-02-13T00:04:17.1651131Z",
+      "LastUpdate": "2021-02-13T00:04:17.3993583Z"
+    },
+    {
+      "Key": "puzzlesTest.Title",
+      "MatchingTranslation": "Puzzle Test",
+      "Locked": false,
+      "TimeAdded": "2021-02-13T00:04:17.3994766Z",
+      "LastUpdate": "2021-02-13T00:04:17.5810171Z"
+    },
+    {
+      "Key": "puzzlesTest.TestPuzzle",
+      "MatchingTranslation": "Test Puzzle",
+      "Locked": false,
+      "TimeAdded": "2021-02-13T00:04:17.581055Z",
+      "LastUpdate": "2021-02-13T00:04:17.7584308Z"
+    },
+    {
+      "Key": "puzzlesTest.Complete",
+      "MatchingTranslation": "Complete",
+      "Locked": false,
+      "TimeAdded": "2021-02-13T00:04:17.7584646Z",
+      "LastUpdate": "2021-02-13T00:04:17.9421852Z"
+    },
+    {
+      "Key": "utilities.RescueWallet",
+      "MatchingTranslation": "Wallet Rescue",
+      "Locked": false,
+      "TimeAdded": "2021-02-13T00:04:17.9439872Z",
+      "LastUpdate": "2021-02-13T00:04:18.132288Z"
+    },
+    {
+      "Key": "utilities.AttemptRescue",
+      "MatchingTranslation": "Attempt Wallet Rescue",
+      "Locked": false,
+      "TimeAdded": "2021-02-13T00:04:18.132323Z",
+      "LastUpdate": "2021-02-13T00:04:18.3243485Z"
+    },
+    {
+      "Key": "utilities.rescueSuccess",
+      "MatchingTranslation": "Wallet rescue was a success!",
+      "Locked": false,
+      "TimeAdded": "2021-02-13T00:04:18.3243832Z",
+      "LastUpdate": "2021-02-13T00:04:18.5212437Z"
+    },
+    {
+      "Key": "utilities.rescueFailed",
+      "MatchingTranslation": "Wallet rescue failed.",
+      "Locked": false,
+      "TimeAdded": "2021-02-13T00:04:18.5212817Z",
+      "LastUpdate": "2021-02-13T00:04:18.6847986Z"
+    },
+    {
+      "Key": "utilities.ResetWalletIndex",
+      "MatchingTranslation": "Reset the wallet index",
+      "Locked": false,
+      "TimeAdded": "2021-02-13T00:04:18.6848379Z",
+      "LastUpdate": "2021-02-13T00:04:18.8824744Z"
+    },
+    {
+      "Key": "utilities.TestAppointmentPuzzle",
+      "MatchingTranslation": "Test appointment puzzle",
+      "Locked": false,
+      "TimeAdded": "2021-02-13T00:04:18.8825103Z",
+      "LastUpdate": "2021-02-13T00:04:19.0431125Z"
     }
   ]
 }

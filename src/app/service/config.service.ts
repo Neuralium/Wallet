@@ -23,6 +23,8 @@ class Settings {
   currentPlatform: string;
   softwareLicenseAgreementShown: boolean;
   delegateAccount: string;
+  useTLS:boolean;
+  rpcPassword: string;
 }
 
 
@@ -133,6 +135,9 @@ export class ConfigService{
 
     this.defineDefaultSettingIfNecessary('serverIP', this.defaultSettings.serverIP);
     this.defineDefaultSettingIfNecessary('serverType', this.defaultSettings.serverType);
+
+    this.defineDefaultSettingIfNecessary('useTLS', this.defaultSettings.useTLS);
+    this.defineDefaultSettingIfNecessary('rpcPassword', this.defaultSettings.rpcPassword);
 
     this.defineDefaultSettingIfNecessary('serverPath', this.defaultSettings.serverPath);
     if (!this.validateServerPath(this.settings['serverPath'],this.settings.serverFileName)) {
@@ -369,6 +374,22 @@ export class ConfigService{
 
   get serverType(): number {
     return this.settings.serverType;
+  }
+
+  set useTLS(useTLS: boolean) {
+    this.settings.useTLS = useTLS;
+  }
+
+  get useTLS(): boolean {
+    return this.settings.useTLS;
+  }
+
+  set rpcPassword(rpcPassword: string) {
+    this.settings.rpcPassword = rpcPassword;
+  }
+
+  get rpcPassword(): string {
+    return this.settings.rpcPassword;
   }
 
   restoreDefaultServerPath() {

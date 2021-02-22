@@ -176,6 +176,9 @@ export class WalletCall extends CommonCall {
             let AppointmentVerificationTime:  DateTime | null = null;
             let AppointmentConfirmationIdExpiration:  DateTime | null = null;
 
+            let appointmentPreparationWindowStart:  DateTime | null = null;
+            let appointmentPreparationWindowEnd:  DateTime | null = null;
+
             let temp: string | null = account['appointmentRequestTimeStamp'];
 
             if (temp) {
@@ -206,9 +209,21 @@ export class WalletCall extends CommonCall {
               AppointmentConfirmationIdExpiration = DateTime.fromISO(temp).toUTC();
             }
 
+            temp = account['appointmentPreparationWindowStart'];
+
+            if (temp) {
+              appointmentPreparationWindowStart = DateTime.fromISO(temp).toUTC();
+            }
+
+            temp = account['appointmentPreparationWindowEnd'];
+
+            if (temp) {
+              appointmentPreparationWindowEnd = DateTime.fromISO(temp).toUTC();
+            }
+
             const AppointmentWindow: number | null = account['appointmentWindow'];
 
-            const appointment = WalletAccountAppointment.createNew(Status, AppointmentConfirmationId, appointmentRequestTimeStamp, AppointmentTime, AppointmentContextTime, AppointmentVerificationTime, AppointmentConfirmationIdExpiration, AppointmentWindow, AppointmentRequestedRegion);
+            const appointment = WalletAccountAppointment.createNew(Status, AppointmentConfirmationId, appointmentRequestTimeStamp, AppointmentTime, AppointmentContextTime, AppointmentVerificationTime, AppointmentConfirmationIdExpiration, AppointmentWindow, AppointmentRequestedRegion, appointmentPreparationWindowStart, appointmentPreparationWindowEnd);
             resolve(appointment);
           })
         .catch(reason => {

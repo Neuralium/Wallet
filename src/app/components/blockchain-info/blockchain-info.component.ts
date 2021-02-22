@@ -121,7 +121,7 @@ export class BlockchainInfoComponent implements OnInit, OnDestroy {
 
   filterPeerConnectionDetails(details: PeerConnectionDetails[]): PeerConnectionDetails[] {
     details.sort((a, b) => {
-      return (b.stats?(b.stats.metric - a.stats.metric):0) + 1e6 * ((+b.isConnected) - (+a.isConnected))
+      return ((b.stats != null && a.stats != null)?(b.stats.metric - a.stats.metric):0) + 1e6 * ((+b.isConnected) - (+a.isConnected))
         + (+b.isConnectable) - (+a.isConnectable);
     }); // the unary + operator converts its operand into a number.
     return details.filter(details => (this.peerConnectionDetailsShowConnected ? details.isConnected : true) 
@@ -129,18 +129,27 @@ export class BlockchainInfoComponent implements OnInit, OnDestroy {
   }
 
   displayColumn(column: string, details: PeerConnectionDetails): string {
+
+    function checkStats(details:PeerConnectionDetails, f:Function):string
+    {
+      if(details.stats == null)
+        return "N/A"
+        
+      return f(details.stats);
+    }
+    
     switch(column)
     {
       case 'ip': 
       return (details.iPMode == 2? ('['+details.ip+']'):details.ip) + ":" + details.port;
-      case 'connectable': return details.isConnectable.toString();
-      case 'connected': return details.isConnected.toString();
-      case 'latency (ms)': return (1000 * details.stats.latency).toFixed(2); break
-      case 'score': return details.stats.metric.toExponential(3); break;
-      case 'KB/s (in)': return (details.stats.inputKBps).toFixed(3); break;
-      case 'KB/s (out)': return (details.stats.outputKBps).toFixed(3); break;
-      case 'MB (in)': return (details.stats.inputMB).toFixed(3); break;
-      case 'MB (out)': return (details.stats.outputMB).toFixed(3); break;
+      case 'connectable':   return details.isConnectable.toString();
+      case 'connected':     return details.isConnected.toString();
+      case 'latency (ms)':  return checkStats(details, stats => (1000 * stats.latency).toFixed(2)); break;
+      case 'score':         return checkStats(details, stats =>  stats.metric.toExponential(3)); break;
+      case 'KB/s (in)':     return checkStats(details, stats =>  stats.inputKBps.toFixed(3)); break;
+      case 'KB/s (out)':    return checkStats(details, stats =>  stats.outputKBps.toFixed(3)); break;
+      case 'MB (in)':       return checkStats(details, stats =>  stats.inputMB.toFixed(3)); break;
+      case 'MB (out)':      return checkStats(details, stats =>  stats.outputMB.toFixed(3)); break;
       default: return details[column];
     }
   }

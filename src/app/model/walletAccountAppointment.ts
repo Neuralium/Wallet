@@ -13,6 +13,10 @@ export class WalletAccountAppointment {
     AppointmentWindow: number | null;
     AppointmentRequestedRegion: number | null;
 
+    appointmentPreparationWindowStart: DateTime | null;
+    appointmentPreparationWindowEnd: DateTime | null;
+    
+
     static createNew(
         status: AppointmentStatus,
         appointmentConfirmationId: number | null,
@@ -22,7 +26,9 @@ export class WalletAccountAppointment {
         appointmentVerificationTime:  DateTime | null,
         appointmentConfirmationIdExpiration:  DateTime | null,
         appointmentWindow: number | null,
-        appointmentRequestedRegion: number | null) {
+        appointmentRequestedRegion: number | null,
+        appointmentPreparationWindowStart: DateTime | null,
+        appointmentPreparationWindowEnd: DateTime | null) {
         const newAppointment = new WalletAccountAppointment();
 
         newAppointment.Status = status;
@@ -34,7 +40,9 @@ export class WalletAccountAppointment {
         newAppointment.AppointmentConfirmationIdExpiration = appointmentConfirmationIdExpiration;
         newAppointment.AppointmentWindow = appointmentWindow;
         newAppointment.AppointmentRequestedRegion = appointmentRequestedRegion;
-        
+        newAppointment.appointmentPreparationWindowStart = appointmentPreparationWindowStart;
+        newAppointment.appointmentPreparationWindowEnd = appointmentPreparationWindowEnd;
+
         return newAppointment;
     }
 }

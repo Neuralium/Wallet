@@ -27,6 +27,7 @@ export enum WalletAccountVerification {
     Email = 4,
     Gate = 5,
     KYC = 100,
+    Expiring = 255 - 2,
     Expired = 255 - 1,
     Unknown = 255
 }

@@ -66,8 +66,9 @@ import { SendNeuraliumsComponent } from './components/send-neuraliums/send-neura
 import { NeuraliumsHistoryComponent } from './components/neuraliums-history/neuraliums-history.component';
 import { BlockExplorerComponent } from './components/blockexplorer/blockexplorer.component';
 import { ApiExplorerComponent } from './components/apiexplorer/apiexplorer.component';
+import { UpnpComponent } from './components/upnp/upnp.component';
 import { UtilitiesComponent } from './components/utilities/utilities.component';
-
+import { AppSettingsEditor } from './components/app-settings-editor/app-settings-editor.component';
 
 
 import { SelectBlockchainDialogComponent } from './dialogs/select-blockchain-dialog/select-blockchain-dialog.component';
@@ -81,6 +82,9 @@ import { LanguageSelectionDialogComponent } from './dialogs/language-selection-d
 import { PublishAccountDialogComponent } from './dialogs/publish-account-dialog/publish-account-dialog.component';
 import { AppointmentsDialogComponent } from './dialogs/appointments-dialog/appointments-dialog.component';
 import { AppointmentPuzzleDialogComponent } from './dialogs/appointment-puzzle-dialog/appointment-puzzle-dialog.component';
+import { AppointmentPuzzleTestDialogComponent } from './dialogs/appointment-puzzle-test-dialog/appointment-puzzle-test-dialog.component';
+
+
 import { THSDialogComponent } from './dialogs/THS-dialog/THS-dialog.component';
 import { SMSDialogComponent } from './dialogs/sms-dialog/sms-dialog.component';
 
@@ -96,8 +100,6 @@ import { FormatTimelineDatePipe } from './pipes/format-timeline-date.pipe';
 import { FormatTimelineTimePipe, FormatETATimePipe, FormatTimelineTimePipe2 } from './pipes/format-timeline-time.pipe';
 
 import { FormatAccountNumberPipe } from './pipes/format-account-number.pipe';
-import { UpnpComponent } from './components/upnp/upnp.component';
-
 
 export function createTranslateLoader(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -132,6 +134,7 @@ export function createTranslateLoader(http: HttpClient) {
     PublishAccountDialogComponent,
     AppointmentsDialogComponent,
     AppointmentPuzzleDialogComponent,
+    AppointmentPuzzleTestDialogComponent,
     THSDialogComponent,
     SMSDialogComponent,
     DebugComponent,
@@ -172,7 +175,8 @@ export function createTranslateLoader(http: HttpClient) {
     FormatTimelineTimePipe2,
     FormatAccountNumberPipe,
     ValuesPipe,
-    UpnpComponent
+    UpnpComponent,
+    AppSettingsEditor
   ],
   imports: [
     BrowserModule,
@@ -198,7 +202,7 @@ export function createTranslateLoader(http: HttpClient) {
     }),
     NgxMaskModule.forRoot(),
     MatPasswordStrengthModule.forRoot()
-  ],
+    ],
   entryComponents: [
     SelectBlockchainDialogComponent,
     AskOrCreateWalletDialogComponent,
@@ -210,6 +214,7 @@ export function createTranslateLoader(http: HttpClient) {
     PublishAccountDialogComponent,
     AppointmentsDialogComponent,
     AppointmentPuzzleDialogComponent,
+    AppointmentPuzzleTestDialogComponent,
     THSDialogComponent,
     SMSDialogComponent,
     SoftwareLicenseAgreementComponent,

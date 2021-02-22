@@ -67,8 +67,23 @@ export class ServerCall extends CommonCall {
               });
           });
       }
-      
 
+      callGenerateTestPuzzle(): Promise<string> {
+        return new Promise<string>((resolve, reject) => {
+
+            this.logEvent('GenerateTestPuzzle - call', null);
+            this.serviceConnectionService.invoke<string>('GenerateTestPuzzle')
+              .then(
+                response => {
+                  this.logEvent('GenerateTestPuzzle - response', response);
+                  resolve(response);
+                })
+              .catch(reason => {
+                reject('GenerateTestPuzzle error : ' + reason);
+              });
+          });
+      }
+      
       callQuerySystemVersion() {
         return new Promise<SystemInfo>((resolve, reject) => {
 

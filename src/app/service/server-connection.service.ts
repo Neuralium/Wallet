@@ -8,6 +8,7 @@ import { WalletCreation } from '../model/wallet';
 import { NullBlockchainType, NeuraliumBlockchainType } from '../model/blockchain';
 
 import { ConfigService } from './config.service';
+import { AppSettingsCall } from '../business/serverCall/appSettingsCall';
 import { NeuraliumCall } from '../business/serverCall/neuraliumCall';
 import { TransactionsCall } from '../business/serverCall/transactionsCall';
 import { ServerConnectionEvent, EventTypes, ResponseResult } from '../model/serverConnectionEvent';
@@ -78,6 +79,7 @@ export class ServerConnectionService {
   get connection(): HubConnection {
     if(!this.cnx){
 
+      let loginToken:string = this.configService.rpcPassword;
       let ip :string = '127.0.0.1';
       if(this.configService.serverType === 2){
         ip = this.serverIP;
@@ -89,13 +91,18 @@ export class ServerConnectionService {
       if(ip === 'localhost'){
         ip = '127.0.0.1';
       }
-      
+      let protocol = 'http://';
+      if(this.configService.useTLS){
+        protocol = 'https://';
+      }
       this.serverPort = this.configService.serverPort;
       this.cnx = new HubConnectionBuilder()
         .configureLogging(LogLevel.None)
-        .withUrl('http://' + ip + ':' + this.serverPort.toString().trim() + '/signal', {
+
+        .withUrl(protocol + ip + ':' + this.serverPort.toString().trim() + '/signal', {
           skipNegotiation: true,
-          transport: HttpTransportType.WebSockets
+          transport: HttpTransportType.WebSockets,
+          accessTokenFactory: () => loginToken
         })
 
         .withAutomaticReconnect()
@@ -290,6 +297,11 @@ getMessages(): Array<ServerMessage> {
     return service.callTestP2pPort(selectedPort, callback);
   }
 
+  callGenerateTestPuzzle() {
+    const service = ServerCall.create(this, this.logService);
+    return service.callGenerateTestPuzzle();
+  }
+
   callAttemptWalletRescue(chainType: number) {
     const service = ServerCall.create(this, this.logService);
     return service.callAttemptWalletRescue(chainType);
@@ -468,6 +480,22 @@ getMessages(): Array<ServerMessage> {
     const service = PortMappingCall.create(this, this.logService);
     return service.callConfigurePortMappingMode(useUPnP, usePmP, natDeviceIndex);
   }
+
+  callWriteAppSetting(name:string, value:string){
+    const service = AppSettingsCall.create(this, this.logService);
+    return service.callWriteAppSetting(name, value);
+  }
+
+  callReadAppSetting(name:string){
+    const service = AppSettingsCall.create(this, this.logService);
+    return service.callReadAppSetting(name);
+  }
+
+  callReadAppSettingDomain(name:string){
+    const service = AppSettingsCall.create(this, this.logService);
+    return service.callReadAppSettingDomain(name)
+  }
+
   callQueryMiningIPMode(chainType: number){
     const service = MiningCall.create(this, this.logService);
     return service.callQueryMiningIPMode(chainType);

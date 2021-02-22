@@ -54,10 +54,12 @@ export class AppointmentsService {
     lastPuzzleStatus: PuzzleStatus = PuzzleStatus.None;
 
     private currentRemainingTimeVal: string;
+    private currentRemainingTimePreparationVal: string;
+    
     private totalRemainingTime = 0;
 
     private timer: NodeJS.Timeout;
-
+    private timesInUTCVal: boolean = false;
     readonly onAppointmentStatusChanged = new EventHandler<AppointmentStatus>();
     readonly onAppointmentEventOccured = new EventHandler<ServerConnectionEvent>();
     readonly onPuzzleWindowOpen = new EventHandler<void>();
@@ -136,6 +138,14 @@ export class AppointmentsService {
             return this.appointmentDetails.Status;
         }
         return AppointmentStatus.None;
+    }
+
+    get timesInUTC(): boolean {
+        return this.timesInUTCVal;
+    }
+
+    set timesInUTC(value: boolean) {
+        this.timesInUTCVal = value;
     }
 
     private triggerAppointmentStatusChanged() {
@@ -312,6 +322,9 @@ export class AppointmentsService {
         return this.appointmentDetails.AppointmentTime.toLocal();
     }
 
+    get localAppointmentPreparationTime():  DateTime {
+        return this.appointmentDetails.appointmentPreparationWindowStart.toLocal();
+    }
 
     get currentRemainingTime(): string {
 
@@ -319,6 +332,14 @@ export class AppointmentsService {
             return null;
         }
         return this.currentRemainingTimeVal;
+    }
+
+    get currentRemainingTimePreparation(): string {
+
+        if (!this.isInAppointment || this.appointmentStatus !== AppointmentStatus.AppointmentSet) {
+            return null;
+        }
+        return this.currentRemainingTimePreparationVal;
     }
 
     triggerPuzzleWindow() {
@@ -448,6 +469,7 @@ export class AppointmentsService {
 
                 this.currentRemainingTimeVal = this.getTimeRemaining(this.localAppointmentTime);
 
+
                 const delta = this.expainDuration(time.diff(now));
                 const minutes = Math.floor(delta.minutes);
 
@@ -467,6 +489,14 @@ export class AppointmentsService {
                     this.triggerPuzzleWindow();
                 } else {
                     // this.puzzleStatus = PuzzleStatus.PostProcess;
+                }
+            }
+
+            if(this.appointmentStatus === AppointmentStatus.AppointmentSet){
+                const timePreparation = this.localAppointmentPreparationTime.toUTC();
+    
+                if (now < timePreparation) {
+                    this.currentRemainingTimePreparationVal = this.getTimeRemaining(this.localAppointmentPreparationTime);
                 }
             }
 

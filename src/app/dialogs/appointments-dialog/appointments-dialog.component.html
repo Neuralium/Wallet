@@ -1,5 +1,10 @@
-<h1 mat-dialog-title>{{ 'appointments.Title' | translate }}</h1>
+<div>
+  <h1 mat-dialog-title>{{ 'appointments.Title' | translate }}</h1>
 
+</div>
+<div>
+  <mat-checkbox [(ngModel)]="timesInUTC" >{{ 'appointments.TimesInUTC' | translate }}</mat-checkbox>
+ </div>
 <div mat-dialog-content class="column">
   <mat-divider></mat-divider>
 
@@ -9,11 +14,6 @@
         {{ 'appointments.IntroductionText' | translate }}
       </p>
     </mat-card>
-    <div class="row">
-      <button mat-button color="warn" (click)="cancel()"><i class="fas fa-ban"></i> {{ 'app.Close' | translate
-        }}</button>
-      <button mat-button color="primary" (click)="moveNext()">{{ 'appointments.Begin' | translate }}</button>
-    </div>
   </div>
   <div *ngIf="wizzardStep === AppointmentSteps.Begining && wizzardSubStep === 1">
     <mat-card>
@@ -59,11 +59,6 @@
       </div>
 
     </mat-card>
-    <div class="row">
-      <button mat-button color="warn" (click)="cancel()"><i class="fas fa-ban"></i> {{ 'app.Close' | translate
-        }}</button>
-
-    </div>
   </div>
   <div *ngIf="wizzardStep === AppointmentSteps.AppointmentRequested">
     <mat-card>
@@ -76,7 +71,7 @@
             <span class="tableKey"> {{ 'appointments.AppointmentRequestedTimestamp' | translate }}:</span>
           </td>
           <td></td>
-          <td>{{appointmentDetails.appointmentRequestTimeStamp | formatDateWithTime}}</td>
+          <td>{{appointmentRequestTimeStamp | formatDateWithTime}}</td>
         </tr>
         <tr>
           <td>
@@ -98,15 +93,91 @@
       </table>
 
     </mat-card>
-    <div class="row">
-      <button mat-button color="warn" (click)="cancel()"><i class="fas fa-ban"></i> {{ 'app.Close' | translate
-        }}</button>
-
+  </div>
+   <!-- //////// -->
+  <div
+    *ngIf="wizzardStep === AppointmentSteps.AppointmentSet">
+    <mat-card>
+      <div class="BigNumber1">1</div>
+      <div style="margin-top: 10px;">
+        <p>
+          {{ 'appointments.AppointmentTentativelyConfirmedText' | translate }}
+        </p>
+      </div>
+      
+      <hr />
+      <table style="margin-left: 70px;">
+        <tr>
+          <td>
+            <span class="tableKey"> {{ 'appointments.AppointmentTimestamp' | translate }}:</span>
+          </td>
+          <td></td>
+          <td><span style="color: #0b9da5;font-weight: bold;">{{appointmentTime | formatDateWithTime}}</span></td>
+        </tr>
+        <tr>
+          <td>
+            <span class="tableKey"> {{ 'appointments.TimeBeforeAppointment' | translate }}:</span>
+          </td>
+          <td></td>
+          <td><span>{{currentRemainingTime}}</span></td>
+        </tr>
+        <tr>
+          <td>
+            <span class="tableKey"> {{ 'appointments.PreferredRegionSelected' | translate }}:</span>
+          </td>
+          <td></td>
+          <td>
+            <div *ngIf="appointmentDetails.AppointmentRequestedRegion === 1">
+              {{ 'appointments.Occident' | translate }}
+            </div>
+            <div *ngIf="appointmentDetails.AppointmentRequestedRegion === 2">
+              {{ 'appointments.Central' | translate }}
+            </div>
+            <div *ngIf="appointmentDetails.AppointmentRequestedRegion === 4">
+              {{ 'appointments.Orient' | translate }}
+            </div>
+          </td>
+        </tr>
+      </table>
+      <hr />
+      <div class="BigNumber2">2</div>
+      <div style="margin-top: 27px;">
+        <p>
+          {{ 'appointments.AppointmentDevicePreparationWindow' | translate }}
+        </p>
     </div>
+      <table style="margin-left: 70px;">
+        <tr>
+          <td>
+            <span class="tableKey"> {{ 'appointments.PreparationTimeWindowStart' | translate }}:</span>
+          </td>
+          <td></td>
+          <td>{{preparationTimeWindowStart | formatDateWithTime}}</td>
+        </tr>
+        <tr>
+          <td>
+            <span class="tableKey"> {{ 'appointments.PreparationTimeWindowEnd' | translate }}:</span>
+          </td>
+          <td></td>
+          <td>{{preparationTimeWindowEnd | formatDateWithTime}}</td>
+        </tr>
+        <tr style="background-color: #cecece;">
+          <td>
+            <span class="tableKey"> {{ 'appointments.TimeBeforePreparationWindow' | translate }}:</span>
+          </td>
+          <td></td>
+          <td><span>{{currentRemainingTimePreparation}}</span></td>
+        </tr>
+      </table>
+
+    </mat-card>
   </div>
   <div
-    *ngIf="wizzardStep === AppointmentSteps.AppointmentSet || wizzardStep === AppointmentSteps.AppointmentContextCached">
+    *ngIf="wizzardStep === AppointmentSteps.AppointmentContextCached">
     <mat-card>
+      <div style="margin: auto;width: 310px;margin-bottom: 15px;">
+        <h1>{{ 'appointments.Congratulations' | translate }}</h1>
+      </div>
       <p>
         {{ 'appointments.AppointmentConfirmedText' | translate }}
       </p>
@@ -119,17 +190,10 @@
       <table>
         <tr>
           <td>
-            <span class="tableKey"> {{ 'appointments.AppointmentTimestampUtc' | translate }}:</span>
+            <span class="tableKey"> {{ 'appointments.AppointmentTimestamp' | translate }}:</span>
           </td>
           <td></td>
-          <td>{{appointmentDetails.AppointmentTime | formatDateWithTime}}</td>
-        </tr>
-        <tr>
-          <td>
-            <span class="tableKey"> {{ 'appointments.AppointmentTimestampLocal' | translate }}:</span>
-          </td>
-          <td></td>
-          <td>{{localAppointmentTime | formatDateWithTime}}</td>
+          <td><span style="color: #0b9da5;font-weight: bold;">{{appointmentTime | formatDateWithTime}}</span></td>
         </tr>
         <tr>
           <td>
@@ -168,12 +232,8 @@
       </table>
 
     </mat-card>
-    <div class="row">
-      <button mat-button color="warn" (click)="cancel()"><i class="fas fa-ban"></i> {{ 'app.Close' | translate
-        }}</button>
-
-    </div>
   </div>
+  <!-- //////// -->
   <div *ngIf="wizzardStep === AppointmentSteps.AppointmentPuzzleCompleted">
     <mat-card>
       <div *ngIf="!confimationWindowExpired">
@@ -198,10 +258,6 @@
         </div>
       </div>
     </mat-card>
-    <div class="row">
-      <button mat-button color="warn" (click)="cancel()"><i class="fas fa-ban"></i> {{ 'app.Close' | translate}}</button>
-
-    </div>
   </div>
   <div *ngIf="wizzardStep === AppointmentSteps.AppointmentCompleted">
     <mat-card>
@@ -225,14 +281,20 @@
         <p>
           {{ 'appointments.AppointmentVerificationRejectedText' | translate }}
         </p>
+        <div class="row">
+          <button mat-button color="warn" (click)="resetAppointment()"><i class="fas fa-redo-alt"></i> {{ 'appointments.ResetAppointment' | translate}}</button>
+        </div>
       </div>
 
 
     </mat-card>
-    <div class="row">
-      <button mat-button color="warn" (click)="cancel()"><i class="fas fa-ban"></i> {{ 'app.Close' | translate
-        }}</button>
-
+  </div>
+  <div class="row">
+    <div>
+      <button mat-button color="warn" (click)="cancel()"><i class="fas fa-ban"></i> {{ 'app.Close' | translate }}</button>
+    </div>
+    <div *ngIf="wizzardStep === AppointmentSteps.Begining && wizzardSubStep === 0">
+       <button mat-button color="primary" (click)="moveNext()">{{ 'appointments.Begin' | translate }}</button>
     </div>
   </div>
 </div>

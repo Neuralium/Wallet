@@ -4,6 +4,9 @@ import { BlockchainService } from '../..//service/blockchain.service';
 import { WalletService } from '../..//service/wallet.service';
 import { ServerConnectionService } from '../..//service/server-connection.service';
 import { TranslateService } from '@ngx-translate/core';
+import { AppointmentPuzzleTestDialogComponent } from '../..//dialogs/appointment-puzzle-test-dialog/appointment-puzzle-test-dialog.component';
+
+
 
 import { TcpTestResult } from '../..//model/enums';
 import { takeUntil } from 'rxjs/operators';
@@ -105,6 +108,13 @@ export class UtilitiesComponent implements OnInit, OnDestroy {
     this.walletService.resetWalletIndex().then(result => {
 
       alert(result);
+    });
+  }
+
+  testAppointmentPuzzle(){
+    const dialogRef = this.dialog.open(AppointmentPuzzleTestDialogComponent, {
+      width: '600px',
+      height: '600px'
     });
   }
 
