@@ -164,6 +164,23 @@ export class BlockchainCall extends CommonCall {
           });
       }
 
+      callRequestSyncBlockchain(chainType: number) {
+        return new Promise<void>((resolve, reject) => {
+
+            this.logEvent('RequestSyncBlockchain - call', { 'chainType': chainType });
+            this.serviceConnectionService.invoke<void>('RequestSyncBlockchain', chainType)
+              .then(
+                () => {
+                  this.logEvent('RequestSyncBlockchain - response', null);
+                  resolve();
+                })
+              .catch(reason => {
+                reject('RequestSyncBlockchain error : ' + reason);
+              });
+          });
+      }
+
+
       callQueryBlockHeight(chainType: number) {
         return new Promise<number>((resolve, reject) => {
 

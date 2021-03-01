@@ -960,7 +960,7 @@
       "LastUpdate": "2019-11-13T14:46:51.1002604Z"
     },
     {
-      "Key": "neuralium.OutcomingNeuraliums",
+      "Key": "neuralium.OutgoingNeuraliums",
       "MatchingTranslation": "Outcoming Neuraliums",
       "Locked": true,
       "TimeAdded": "2019-11-13T14:46:51.1002696Z",
@@ -1864,10 +1864,10 @@
     },
     {
       "Key": "appointments.AppointmentWindow",
-      "MatchingTranslation": "Appointment Window",
+      "MatchingTranslation": "Puzzle Window",
       "Locked": false,
       "TimeAdded": "2020-07-31T23:44:32.7803195Z",
-      "LastUpdate": "2020-07-31T23:44:32.8560873Z"
+      "LastUpdate": "2021-02-28T22:51:45.7104443Z"
     },
     {
       "Key": "appointments.Minutes",
@@ -3366,6 +3366,27 @@
       "Locked": false,
       "TimeAdded": "2021-02-13T00:03:39.3967593Z",
       "LastUpdate": "2021-02-13T00:03:39.6136994Z"
+    },
+    {
+      "Key": "tools.AppSettingsEditor",
+      "MatchingTranslation": "Application Settings",
+      "Locked": false,
+      "TimeAdded": "2021-02-28T22:51:45.7125449Z",
+      "LastUpdate": "2021-02-28T22:51:45.7969583Z"
+    },
+    {
+      "Key": "wallet.WalletEncryptedByNotKeys",
+      "MatchingTranslation": "SECURITY WARNING: Your wallet is set to be encrypted, but not your keys. Please ensure that this is what you really want to do.",
+      "Locked": false,
+      "TimeAdded": "2021-02-28T22:51:45.7974208Z",
+      "LastUpdate": "2021-02-28T22:51:45.9584876Z"
+    },
+    {
+      "Key": "wallet.KeysEncryptedByNotWallet",
+      "MatchingTranslation": "SECURITY WARNING: Your keys are set to be encrypted, but not your wallet. Please ensure that this is what you really want to do.",
+      "Locked": false,
+      "TimeAdded": "2021-02-28T22:51:45.9585479Z",
+      "LastUpdate": "2021-02-28T22:51:46.1251292Z"
     }
   ]
 }

@@ -49,6 +49,7 @@
               </div>
             </div>
           </mat-card>
+          
         </div>
         <p>
           <span>{{ 'wallet.WalletType' | translate }}:</span>
@@ -57,6 +58,18 @@
             <span style="margin-left: 12px;"><mat-radio-button [value]="2">{{ 'wallet.Server' | translate }}</mat-radio-button></span>
           </mat-radio-group>
         </p>
+        <div *ngIf="walletKeyEncryptionDifference" style="width: 300px;padding-bottom: 10px">
+          <mat-card style="padding: 10px;margin: 0px;color: red;">
+          <div style="width: 250px;height: 90px;font-size: small;">
+            <div *ngIf="isWalletEncryptedByNotKeys">
+              {{ 'wallet.WalletEncryptedByNotKeys' | translate }}
+            </div>
+            <div *ngIf="isKeysEncryptedByNotWallet">
+              {{ 'wallet.KeysEncryptedByNotWallet' | translate }}
+            </div>
+          </div>
+        </mat-card>
+        </div>
         <p>
           <mat-label>
             <mat-slide-toggle [(ngModel)]="walletToCreate.encryptWallet" name="encryptWallet"></mat-slide-toggle>

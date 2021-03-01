@@ -166,6 +166,19 @@ export class CreateWalletProcessDialogComponent implements OnInit, OnDestroy {
     this.unsubscribe$.complete();
   }
 
+  get walletKeyEncryptionDifference(){
+    return this.walletToCreate.encryptWallet !== this.walletToCreate.encryptKey;
+  }
+
+  get isWalletEncryptedByNotKeys(){
+    return this.walletToCreate.encryptWallet && !this.walletToCreate.encryptKey;
+  }
+
+  get isKeysEncryptedByNotWallet(){
+    return !this.walletToCreate.encryptWallet && this.walletToCreate.encryptKey;
+  }
+
+
   runValidate() {
     this.validatePassphrases();
     this.validateIndividualKeysPassphrases();

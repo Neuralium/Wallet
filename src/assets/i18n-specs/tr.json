@@ -960,11 +960,11 @@
       "LastUpdate": "2020-08-18T05:00:52.904405Z"
     },
     {
-      "Key": "neuralium.OutcomingNeuraliums",
-      "MatchingTranslation": "Outcoming Neuraliums",
+      "Key": "neuralium.OutgoingNeuraliums",
+      "MatchingTranslation": "Outgoing Neuraliums",
       "Locked": false,
       "TimeAdded": "2019-11-13T14:46:51.1128313Z",
-      "LastUpdate": "2020-08-18T05:00:53.0645443Z"
+      "LastUpdate": "2021-02-28T22:52:02.0322645Z"
     },
     {
       "Key": "neuralium.PreviousPeriod",
@@ -1864,10 +1864,10 @@
     },
     {
       "Key": "appointments.AppointmentWindow",
-      "MatchingTranslation": "Appointment Window",
+      "MatchingTranslation": "Puzzle Window",
       "Locked": false,
       "TimeAdded": "2020-08-01T00:22:19.5745286Z",
-      "LastUpdate": "2020-08-18T05:00:25.1463881Z"
+      "LastUpdate": "2021-02-28T22:52:01.8869837Z"
     },
     {
       "Key": "appointments.Minutes",
@@ -3366,6 +3366,27 @@
       "Locked": false,
       "TimeAdded": "2021-02-13T00:04:48.2243338Z",
       "LastUpdate": "2021-02-13T00:04:48.3886002Z"
+    },
+    {
+      "Key": "tools.AppSettingsEditor",
+      "MatchingTranslation": "Application Settings",
+      "Locked": false,
+      "TimeAdded": "2021-02-28T22:52:02.0328794Z",
+      "LastUpdate": "2021-02-28T22:52:02.1137575Z"
+    },
+    {
+      "Key": "wallet.WalletEncryptedByNotKeys",
+      "MatchingTranslation": "SECURITY WARNING: Your wallet is set to be encrypted, but not your keys. Please ensure that this is what you really want to do.",
+      "Locked": false,
+      "TimeAdded": "2021-02-28T22:52:02.1142261Z",
+      "LastUpdate": "2021-02-28T22:52:02.2842453Z"
+    },
+    {
+      "Key": "wallet.KeysEncryptedByNotWallet",
+      "MatchingTranslation": "SECURITY WARNING: Your keys are set to be encrypted, but not your wallet. Please ensure that this is what you really want to do.",
+      "Locked": false,
+      "TimeAdded": "2021-02-28T22:52:02.2842992Z",
+      "LastUpdate": "2021-02-28T22:52:02.4128767Z"
     }
   ]
 }

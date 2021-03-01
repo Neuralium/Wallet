@@ -24,6 +24,7 @@ class Settings {
   softwareLicenseAgreementShown: boolean;
   delegateAccount: string;
   useTLS:boolean;
+  rpcUser: string;
   rpcPassword: string;
 }
 
@@ -137,6 +138,7 @@ export class ConfigService{
     this.defineDefaultSettingIfNecessary('serverType', this.defaultSettings.serverType);
 
     this.defineDefaultSettingIfNecessary('useTLS', this.defaultSettings.useTLS);
+    this.defineDefaultSettingIfNecessary('rpcUser', this.defaultSettings.rpcUser);
     this.defineDefaultSettingIfNecessary('rpcPassword', this.defaultSettings.rpcPassword);
 
     this.defineDefaultSettingIfNecessary('serverPath', this.defaultSettings.serverPath);
@@ -383,6 +385,15 @@ export class ConfigService{
   get useTLS(): boolean {
     return this.settings.useTLS;
   }
+
+  set rpcUser(rpcUser: string) {
+    this.settings.rpcUser = rpcUser;
+  }
+
+  get rpcUser(): string {
+    return this.settings.rpcUser;
+  }
+
 
   set rpcPassword(rpcPassword: string) {
     this.settings.rpcPassword = rpcPassword;

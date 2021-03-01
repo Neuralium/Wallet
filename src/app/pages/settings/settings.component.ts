@@ -23,6 +23,7 @@ export class SettingsComponent implements OnInit, AfterViewInit, OnDestroy {
   miningLogLevel: number;
   serverType:number;
   useTLS:boolean;
+  rpcUser: string;
   rpcPassword: string;
 
   public primary: boolean;
@@ -72,6 +73,7 @@ export class SettingsComponent implements OnInit, AfterViewInit, OnDestroy {
     this.serverType = this.configService.serverType;
 
     this.useTLS = this.configService.useTLS;
+    this.rpcUser = this.configService.rpcUser;
     this.rpcPassword = this.configService.rpcPassword;
   }
 
@@ -83,6 +85,7 @@ export class SettingsComponent implements OnInit, AfterViewInit, OnDestroy {
     this.configService.serverPort = this.serverPort;
     this.configService.miningLogLevel = this.miningLogLevel;
     this.configService.useTLS = this.useTLS;
+    this.configService.rpcUser = this.rpcUser;
     this.configService.rpcPassword = this.rpcPassword;
 
     this.configService.saveSettings();
@@ -115,6 +118,10 @@ export class SettingsComponent implements OnInit, AfterViewInit, OnDestroy {
       case 'useTLS':
         this.useTLS = this.configService.defaultSettings.useTLS;
         break;
+      case 'rpcUser':
+        this.rpcUser = this.configService.defaultSettings.rpcUser;
+        break;
+
       case 'rpcPassword':
         this.rpcPassword = this.configService.defaultSettings.rpcPassword;
         break;

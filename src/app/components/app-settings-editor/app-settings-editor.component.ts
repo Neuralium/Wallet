@@ -37,7 +37,9 @@ export class AppSettingsEditor implements OnInit {
   constructor(private serverConnectionService:ServerConnectionService) {
   }
 
-   
+  forceRefresh(){
+    
+  }
   ngOnInit(): void {
     this.refresh();
   }
@@ -47,7 +49,9 @@ export class AppSettingsEditor implements OnInit {
     this.readSettingDomain("*");
   }
   getPropertyNames():string[] {
-    return Object.keys(this.settings).filter(name => !this.hiddenNames.includes(name));
+    if(this.settings)
+      return Object.keys(this.settings).filter(name => !this.hiddenNames.includes(name));
+    return [];
   }
 
   getPropertyType(name:string):string{
@@ -82,7 +86,7 @@ export class AppSettingsEditor implements OnInit {
   }
   readSetting(name:string){
     this.serverConnectionService.callReadAppSetting(name).then(result => {
-      if(result !== undefined)
+      if(result != undefined)
         this.settings = result;
       else
         throw "call to ReadAppSetting(" + name + ") returned 'undefined'"
@@ -95,7 +99,7 @@ export class AppSettingsEditor implements OnInit {
 
   readSettingDomain(name:string){
     this.serverConnectionService.callReadAppSettingDomain(name).then(result => {
-        if(result !== undefined)
+        if(result != undefined)
           this.settingsDomain = result["second"];
         else
           throw "call to ReadAppSettingDomain(" + name + ") returned 'undefined'"

@@ -92,6 +92,7 @@ export class SyncStatusService implements OnDestroy {
           }
           else {
             this.currentBlockchainSyncStatus.next(SyncStatus.NotSynced);
+            this.serverConnectionService.callRequestSyncBlockchain(this.blockchainId);
           }
         })
         .catch(err => {
